@@ -213,6 +213,36 @@ function submitQuiz(event, timeUp = false) {
         event.preventDefault();
     }
     
+    // Show immediate feedback for each question
+    quizData.forEach((question, index) => {
+        const questionNumber = index + 1;
+        const userAnswer = userAnswers[questionNumber];
+        const questionElement = document.getElementById(`question-${questionNumber}`);
+        
+        if (userAnswer !== undefined) {
+            const feedbackElement = document.createElement('div');
+            feedbackElement.className = 'feedback-container mt-2';
+            
+            if ((question.type === 'multiple-choice' && userAnswer === question.correctAnswer) ||
+                (question.type === 'fill-in' && question.correctAnswer.includes(userAnswer.trim().toLowerCase()))) {
+                feedbackElement.innerHTML = `
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle"></i> Richtig! (Correct!)
+                        <p class="mt-2 mb-0"><strong>Explanation:</strong> ${question.explanation || 'Good job!'}</p>
+                    </div>`;
+            } else {
+                feedbackElement.innerHTML = `
+                    <div class="alert alert-danger">
+                        <i class="fas fa-times-circle"></i> Nicht ganz richtig. (Not quite right.)
+                        <p class="mt-2 mb-0"><strong>Correct answer:</strong> ${question.correctAnswer}</p>
+                        <p class="mb-0"><strong>Explanation:</strong> ${question.explanation || 'Keep practicing!'}</p>
+                    </div>`;
+            }
+            
+            questionElement.appendChild(feedbackElement);
+        }
+    });
+    
     // Stop the timer
     if (quizTimer) {
         clearInterval(quizTimer);

@@ -97,3 +97,38 @@
     </div>
 </div>
 {% endblock %}
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Art and Culture{% endblock %}
+
+{% block content %}
+<div class="lesson-header b1-header">
+    <div class="container">
+        <h1>Art and Culture</h1>
+        <p class="lead">Learn vocabulary for discussing arts, literature, and culture</p>
+        <div class="badge bg-light text-dark">25 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#visual-arts" class="list-group-item list-group-item-action">Visual Arts</a>
+                <a href="#literature" class="list-group-item list-group-item-action">Literature</a>
+                <a href="#performing-arts" class="list-group-item list-group-item-action">Performing Arts</a>
+                <a href="#cultural-events" class="list-group-item list-group-item-action">Cultural Events</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <section id="overview">
+                <h2>Art and Culture Vocabulary</h2>
+                <p>Learn essential vocabulary to discuss various aspects of German art and culture.</p>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

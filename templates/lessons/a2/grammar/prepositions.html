@@ -1,0 +1,686 @@
+{% extends "layout.html" %}
+
+{% block title %}A2 - Prepositions | DeutschLernHub{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url_for('a2_index') }}">A2</a></li>
+                    <li class="breadcrumb-item active">Prepositions</li>
+                </ol>
+            </nav>
+
+            <div class="lesson-container">
+                <div class="lesson-header card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h1 class="lesson-title text-center">Prepositions</h1>
+                        <p class="lead text-center">Learn German prepositions and their cases</p>
+                        
+                        {% if current_user.is_authenticated %}
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="lesson-content card shadow-sm mb-4">
+                    <div class="card-body">
+                        <section id="introduction">
+                            <h2>Introduction to German Prepositions</h2>
+                            <p>Prepositions are small words that typically come before nouns or pronouns to show their relationship to other words in a sentence. In German, prepositions are particularly important because they determine the case of the noun or pronoun that follows them.</p>
+                            
+                            <p>There are three main groups of prepositions in German:</p>
+                            <ul>
+                                <li>Prepositions that always take the <strong>accusative</strong> case</li>
+                                <li>Prepositions that always take the <strong>dative</strong> case</li>
+                                <li>Two-way prepositions that can take either the <strong>accusative</strong> or <strong>dative</strong> case depending on the context</li>
+                            </ul>
+                            
+                            <div class="alert alert-info">
+                                <h5>Case Refresher:</h5>
+                                <ul>
+                                    <li><strong>Accusative (Akkusativ)</strong>: Used for the direct object of a sentence (answers the question "wen?" or "was?" - whom? or what?)</li>
+                                    <li><strong>Dative (Dativ)</strong>: Used for the indirect object of a sentence (answers the question "wem?" - to whom?)</li>
+                                </ul>
+                            </div>
+                        </section>
+                        
+                        <section id="accusative-prepositions">
+                            <h2>Prepositions with Accusative Case</h2>
+                            <p>These prepositions always take the accusative case, regardless of the context:</p>
+                            
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Preposition</th>
+                                            <th>Meaning</th>
+                                            <th>Example</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>durch</td>
+                                            <td>through</td>
+                                            <td>Wir gehen <strong>durch</strong> <span class="text-primary">den Park</span>.<br>
+                                                (We're walking through the park.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>für</td>
+                                            <td>for</td>
+                                            <td>Das Geschenk ist <strong>für</strong> <span class="text-primary">meinen Freund</span>.<br>
+                                                (The gift is for my friend.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>gegen</td>
+                                            <td>against, around (time)</td>
+                                            <td>Er spielt <strong>gegen</strong> <span class="text-primary">seinen Bruder</span>.<br>
+                                                (He's playing against his brother.)<br>
+                                                Wir kommen <strong>gegen</strong> <span class="text-primary">acht Uhr</span>.<br>
+                                                (We'll arrive around eight o'clock.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ohne</td>
+                                            <td>without</td>
+                                            <td>Ich gehe <strong>ohne</strong> <span class="text-primary">meinen Regenschirm</span>.<br>
+                                                (I'm going without my umbrella.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>um</td>
+                                            <td>around, at (time)</td>
+                                            <td>Der Hund läuft <strong>um</strong> <span class="text-primary">den Baum</span>.<br>
+                                                (The dog is running around the tree.)<br>
+                                                Das Meeting beginnt <strong>um</strong> <span class="text-primary">drei Uhr</span>.<br>
+                                                (The meeting starts at three o'clock.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>entlang</td>
+                                            <td>along</td>
+                                            <td>Wir spazieren <strong>den Fluss entlang</strong>.<br>
+                                                (We're walking along the river.)<br>
+                                                <em>Note: "entlang" can come after the noun.</em></td>
+                                        </tr>
+                                        <tr>
+                                            <td>bis</td>
+                                            <td>until, as far as</td>
+                                            <td>Wir bleiben <strong>bis</strong> <span class="text-primary">Montag</span>.<br>
+                                                (We're staying until Monday.)<br>
+                                                <em>Note: "bis" is often combined with other prepositions.</em></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="alert alert-warning">
+                                <p><strong>Remember:</strong> When using these prepositions, the article and any adjectives that follow must be in the accusative case:</p>
+                                <ul>
+                                    <li>der → den</li>
+                                    <li>die → die (no change)</li>
+                                    <li>das → das (no change)</li>
+                                    <li>plural die → die (no change)</li>
+                                </ul>
+                                <p>Example: Ich gehe <strong>durch den</strong> großen Park. (I'm walking through the big park.)</p>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">Practice with Accusative Prepositions</div>
+                                <div class="card-body">
+                                    <p>Complete the sentences with the correct form of the articles:</p>
+                                    <ol>
+                                        <li>Er geht durch _____ Stadt. (die)</li>
+                                        <li>Das Buch ist für _____ Kind. (das)</li>
+                                        <li>Sie spielen gegen _____ Mannschaft. (die)</li>
+                                        <li>Ich komme ohne _____ Freund. (mein)</li>
+                                        <li>Die Katze läuft um _____ Tisch. (der)</li>
+                                    </ol>
+                                    <button class="btn btn-sm btn-outline-secondary mt-2" type="button" data-toggle="collapse" data-target="#accusativeAnswers">Show Answers</button>
+                                    <div class="collapse" id="accusativeAnswers">
+                                        <div class="card card-body mt-2">
+                                            <ol>
+                                                <li>Er geht durch <strong>die</strong> Stadt.</li>
+                                                <li>Das Buch ist für <strong>das</strong> Kind.</li>
+                                                <li>Sie spielen gegen <strong>die</strong> Mannschaft.</li>
+                                                <li>Ich komme ohne <strong>meinen</strong> Freund.</li>
+                                                <li>Die Katze läuft um <strong>den</strong> Tisch.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section id="dative-prepositions">
+                            <h2>Prepositions with Dative Case</h2>
+                            <p>These prepositions always take the dative case, regardless of the context:</p>
+                            
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Preposition</th>
+                                            <th>Meaning</th>
+                                            <th>Example</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>aus</td>
+                                            <td>from, out of</td>
+                                            <td>Sie kommt <strong>aus</strong> <span class="text-success">Deutschland</span>.<br>
+                                                (She comes from Germany.)<br>
+                                                Er nimmt das Buch <strong>aus</strong> <span class="text-success">der Tasche</span>.<br>
+                                                (He's taking the book out of the bag.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>außer</td>
+                                            <td>except for</td>
+                                            <td>Alle <strong>außer</strong> <span class="text-success">dem Kind</span> sind gekommen.<br>
+                                                (Everyone except for the child has come.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>bei</td>
+                                            <td>at, near, with</td>
+                                            <td>Ich wohne <strong>bei</strong> <span class="text-success">meinen Eltern</span>.<br>
+                                                (I live with my parents.)<br>
+                                                Das Restaurant ist <strong>bei</strong> <span class="text-success">der Kirche</span>.<br>
+                                                (The restaurant is near the church.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>mit</td>
+                                            <td>with</td>
+                                            <td>Ich fahre <strong>mit</strong> <span class="text-success">dem Bus</span>.<br>
+                                                (I'm going by bus.)<br>
+                                                Sie spricht <strong>mit</strong> <span class="text-success">ihrem Freund</span>.<br>
+                                                (She's talking with her friend.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>nach</td>
+                                            <td>after, to (cities/countries)</td>
+                                            <td><strong>Nach</strong> <span class="text-success">dem Unterricht</span> gehe ich nach Hause.<br>
+                                                (After the class, I go home.)<br>
+                                                Ich reise <strong>nach</strong> Berlin.<br>
+                                                (I'm traveling to Berlin.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>seit</td>
+                                            <td>since, for (time)</td>
+                                            <td>Ich lerne Deutsch <strong>seit</strong> <span class="text-success">drei Jahren</span>.<br>
+                                                (I've been learning German for three years.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>von</td>
+                                            <td>from, of, by</td>
+                                            <td>Das ist ein Geschenk <strong>von</strong> <span class="text-success">meinem Vater</span>.<br>
+                                                (That's a gift from my father.)<br>
+                                                Das Buch ist <strong>von</strong> <span class="text-success">einem bekannten Autor</span>.<br>
+                                                (The book is by a famous author.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>zu</td>
+                                            <td>to</td>
+                                            <td>Ich gehe <strong>zu</strong> <span class="text-success">meiner Freundin</span>.<br>
+                                                (I'm going to my friend's place.)<br>
+                                                Wir fahren <strong>zum</strong> Bahnhof.<br>
+                                                (We're driving to the train station.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>gegenüber</td>
+                                            <td>opposite, across from</td>
+                                            <td>Die Bank ist <strong>dem Supermarkt gegenüber</strong>.<br>
+                                                (The bank is opposite the supermarket.)<br>
+                                                <em>Note: "gegenüber" often comes after the noun.</em></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="alert alert-warning">
+                                <p><strong>Remember:</strong> When using these prepositions, the article and any adjectives that follow must be in the dative case:</p>
+                                <ul>
+                                    <li>der → dem</li>
+                                    <li>die → der</li>
+                                    <li>das → dem</li>
+                                    <li>plural die → den (+ -n ending to the noun)</li>
+                                </ul>
+                                <p>Example: Ich fahre mit <strong>dem</strong> neuen Bus. (I'm driving with the new bus.)</p>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">Practice with Dative Prepositions</div>
+                                <div class="card-body">
+                                    <p>Complete the sentences with the correct form of the articles:</p>
+                                    <ol>
+                                        <li>Sie kommt aus _____ Schweiz. (die)</li>
+                                        <li>Wir gehen zu _____ Museum. (das)</li>
+                                        <li>Er spricht mit _____ Lehrerin. (die)</li>
+                                        <li>Das Kind wohnt bei _____ Großeltern. (die - plural)</li>
+                                        <li>Nach _____ Kino gehen wir essen. (das)</li>
+                                    </ol>
+                                    <button class="btn btn-sm btn-outline-secondary mt-2" type="button" data-toggle="collapse" data-target="#dativeAnswers">Show Answers</button>
+                                    <div class="collapse" id="dativeAnswers">
+                                        <div class="card card-body mt-2">
+                                            <ol>
+                                                <li>Sie kommt aus <strong>der</strong> Schweiz.</li>
+                                                <li>Wir gehen zu <strong>dem</strong> (zum) Museum.</li>
+                                                <li>Er spricht mit <strong>der</strong> Lehrerin.</li>
+                                                <li>Das Kind wohnt bei <strong>den</strong> Großeltern.</li>
+                                                <li>Nach <strong>dem</strong> Kino gehen wir essen.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section id="two-way-prepositions">
+                            <h2>Two-Way Prepositions (Accusative or Dative)</h2>
+                            <p>These prepositions can take either the accusative or dative case, depending on the context:</p>
+                            <ul>
+                                <li><strong>Accusative</strong>: Used when there is movement or direction (answers the question "wohin?" - where to?)</li>
+                                <li><strong>Dative</strong>: Used when there is a location or position (answers the question "wo?" - where?)</li>
+                            </ul>
+                            
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Preposition</th>
+                                            <th>Meaning</th>
+                                            <th>Accusative Example (Movement)</th>
+                                            <th>Dative Example (Location)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>an</td>
+                                            <td>on, at, to</td>
+                                            <td>Ich hänge das Bild <strong>an</strong> <span class="text-primary">die Wand</span>.<br>
+                                                (I'm hanging the picture on the wall.)</td>
+                                            <td>Das Bild hängt <strong>an</strong> <span class="text-success">der Wand</span>.<br>
+                                                (The picture is hanging on the wall.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>auf</td>
+                                            <td>on, onto</td>
+                                            <td>Ich lege das Buch <strong>auf</strong> <span class="text-primary">den Tisch</span>.<br>
+                                                (I'm putting the book on the table.)</td>
+                                            <td>Das Buch liegt <strong>auf</strong> <span class="text-success">dem Tisch</span>.<br>
+                                                (The book is lying on the table.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>hinter</td>
+                                            <td>behind</td>
+                                            <td>Die Katze läuft <strong>hinter</strong> <span class="text-primary">den Baum</span>.<br>
+                                                (The cat is running behind the tree.)</td>
+                                            <td>Die Katze sitzt <strong>hinter</strong> <span class="text-success">dem Baum</span>.<br>
+                                                (The cat is sitting behind the tree.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>in</td>
+                                            <td>in, into</td>
+                                            <td>Ich gehe <strong>in</strong> <span class="text-primary">die Schule</span>.<br>
+                                                (I'm going into the school.)</td>
+                                            <td>Ich bin <strong>in</strong> <span class="text-success">der Schule</span>.<br>
+                                                (I am in the school.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>neben</td>
+                                            <td>next to</td>
+                                            <td>Ich stelle die Lampe <strong>neben</strong> <span class="text-primary">das Sofa</span>.<br>
+                                                (I'm placing the lamp next to the sofa.)</td>
+                                            <td>Die Lampe steht <strong>neben</strong> <span class="text-success">dem Sofa</span>.<br>
+                                                (The lamp is standing next to the sofa.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>über</td>
+                                            <td>over, above</td>
+                                            <td>Ich hänge die Lampe <strong>über</strong> <span class="text-primary">den Tisch</span>.<br>
+                                                (I'm hanging the lamp over the table.)</td>
+                                            <td>Die Lampe hängt <strong>über</strong> <span class="text-success">dem Tisch</span>.<br>
+                                                (The lamp is hanging over the table.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>unter</td>
+                                            <td>under</td>
+                                            <td>Der Hund läuft <strong>unter</strong> <span class="text-primary">den Tisch</span>.<br>
+                                                (The dog is running under the table.)</td>
+                                            <td>Der Hund liegt <strong>unter</strong> <span class="text-success">dem Tisch</span>.<br>
+                                                (The dog is lying under the table.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>vor</td>
+                                            <td>in front of</td>
+                                            <td>Ich stelle mich <strong>vor</strong> <span class="text-primary">die Tür</span>.<br>
+                                                (I'm standing in front of the door.)</td>
+                                            <td>Ich stehe <strong>vor</strong> <span class="text-success">der Tür</span>.<br>
+                                                (I am standing in front of the door.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>zwischen</td>
+                                            <td>between</td>
+                                            <td>Ich setze mich <strong>zwischen</strong> <span class="text-primary">die Studenten</span>.<br>
+                                                (I'm sitting between the students.)</td>
+                                            <td>Ich sitze <strong>zwischen</strong> <span class="text-success">den Studenten</span>.<br>
+                                                (I am sitting between the students.)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="alert alert-info">
+                                <h5>Memory Tip: Common German Verbs for Movement and Position</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p><strong>Movement Verbs (Accusative):</strong></p>
+                                        <ul>
+                                            <li>legen (to put/lay something)</li>
+                                            <li>stellen (to put/place upright)</li>
+                                            <li>setzen (to set/place)</li>
+                                            <li>hängen (to hang something)</li>
+                                            <li>gehen (to go)</li>
+                                            <li>laufen (to run)</li>
+                                            <li>fahren (to drive)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><strong>Position Verbs (Dative):</strong></p>
+                                        <ul>
+                                            <li>liegen (to lie/be lying)</li>
+                                            <li>stehen (to stand/be standing)</li>
+                                            <li>sitzen (to sit/be sitting)</li>
+                                            <li>hängen (to hang/be hanging)</li>
+                                            <li>sein (to be)</li>
+                                            <li>bleiben (to stay)</li>
+                                            <li>wohnen (to live)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">Practice with Two-Way Prepositions</div>
+                                <div class="card-body">
+                                    <p>Choose the correct form of the article (accusative or dative) based on whether the sentence describes movement or location:</p>
+                                    <ol>
+                                        <li>Die Kinder gehen in _____ Schule. (die)</li>
+                                        <li>Die Kinder sind in _____ Schule. (die)</li>
+                                        <li>Ich stelle die Vase auf _____ Tisch. (der)</li>
+                                        <li>Die Vase steht auf _____ Tisch. (der)</li>
+                                        <li>Sie hängt das Bild über _____ Bett. (das)</li>
+                                    </ol>
+                                    <button class="btn btn-sm btn-outline-secondary mt-2" type="button" data-toggle="collapse" data-target="#twoWayAnswers">Show Answers</button>
+                                    <div class="collapse" id="twoWayAnswers">
+                                        <div class="card card-body mt-2">
+                                            <ol>
+                                                <li>Die Kinder gehen in <strong>die</strong> Schule. (accusative - movement)</li>
+                                                <li>Die Kinder sind in <strong>der</strong> Schule. (dative - location)</li>
+                                                <li>Ich stelle die Vase auf <strong>den</strong> Tisch. (accusative - movement)</li>
+                                                <li>Die Vase steht auf <strong>dem</strong> Tisch. (dative - location)</li>
+                                                <li>Sie hängt das Bild über <strong>das</strong> Bett. (accusative - movement)</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section id="contractions">
+                            <h2>Contractions with Prepositions</h2>
+                            <p>In German, certain prepositions combine with articles to form contractions:</p>
+                            
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Preposition + Article</th>
+                                            <th>Contraction</th>
+                                            <th>Example</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>an + dem</td>
+                                            <td>am</td>
+                                            <td>Wir treffen uns <strong>am</strong> Bahnhof.<br>
+                                                (We're meeting at the train station.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>an + das</td>
+                                            <td>ans</td>
+                                            <td>Ich denke <strong>ans</strong> Wochenende.<br>
+                                                (I'm thinking about the weekend.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>auf + das</td>
+                                            <td>aufs</td>
+                                            <td>Wir gehen <strong>aufs</strong> Land.<br>
+                                                (We're going to the countryside.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>in + dem</td>
+                                            <td>im</td>
+                                            <td>Er arbeitet <strong>im</strong> Büro.<br>
+                                                (He works in the office.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>in + das</td>
+                                            <td>ins</td>
+                                            <td>Wir gehen <strong>ins</strong> Kino.<br>
+                                                (We're going to the cinema.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>zu + dem</td>
+                                            <td>zum</td>
+                                            <td>Ich gehe <strong>zum</strong> Arzt.<br>
+                                                (I'm going to the doctor.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>zu + der</td>
+                                            <td>zur</td>
+                                            <td>Wir fahren <strong>zur</strong> Schule.<br>
+                                                (We're driving to the school.)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>von + dem</td>
+                                            <td>vom</td>
+                                            <td>Das ist ein Geschenk <strong>vom</strong> Lehrer.<br>
+                                                (That's a gift from the teacher.)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="alert alert-warning">
+                                <p><strong>Note:</strong> These contractions are common in spoken and written German. In many cases, using these contractions is not just an option but the preferred form.</p>
+                            </div>
+                        </section>
+                        
+                        <section id="practice">
+                            <h2>Comprehensive Practice</h2>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">Exercise 1: Choose the Correct Preposition</div>
+                                <div class="card-body">
+                                    <p>Fill in the blanks with the appropriate preposition:</p>
+                                    <ol>
+                                        <li>Ich fahre _____ dem Bus zur Arbeit. (by bus)</li>
+                                        <li>Sie kommt _____ Frankreich. (from France)</li>
+                                        <li>Das Buch liegt _____ dem Tisch. (on the table)</li>
+                                        <li>Wir gehen _____ das Restaurant. (into the restaurant)</li>
+                                        <li>Die Katze schläft _____ dem Sofa. (under the sofa)</li>
+                                    </ol>
+                                    <button class="btn btn-sm btn-outline-secondary mt-2" type="button" data-toggle="collapse" data-target="#practice1Answers">Show Answers</button>
+                                    <div class="collapse" id="practice1Answers">
+                                        <div class="card card-body mt-2">
+                                            <ol>
+                                                <li>Ich fahre <strong>mit</strong> dem Bus zur Arbeit.</li>
+                                                <li>Sie kommt <strong>aus</strong> Frankreich.</li>
+                                                <li>Das Buch liegt <strong>auf</strong> dem Tisch.</li>
+                                                <li>Wir gehen <strong>in</strong> das Restaurant.</li>
+                                                <li>Die Katze schläft <strong>unter</strong> dem Sofa.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">Exercise 2: Complete the Sentences</div>
+                                <div class="card-body">
+                                    <p>Complete the sentences with the correct preposition and article form:</p>
+                                    <ol>
+                                        <li>Ich warte _____ _____ Bus. (for the)</li>
+                                        <li>Das Geschäft ist _____ _____ Kirche. (next to the)</li>
+                                        <li>Der Schlüssel ist _____ _____ Tür. (in the - location)</li>
+                                        <li>Wir fahren _____ _____ Bergen. (to the - mountains)</li>
+                                        <li>Sie steht _____ _____ Fenster. (at the)</li>
+                                    </ol>
+                                    <button class="btn btn-sm btn-outline-secondary mt-2" type="button" data-toggle="collapse" data-target="#practice2Answers">Show Answers</button>
+                                    <div class="collapse" id="practice2Answers">
+                                        <div class="card card-body mt-2">
+                                            <ol>
+                                                <li>Ich warte <strong>auf den</strong> Bus.</li>
+                                                <li>Das Geschäft ist <strong>neben der</strong> Kirche.</li>
+                                                <li>Der Schlüssel ist <strong>in der</strong> Tür.</li>
+                                                <li>Wir fahren <strong>in die</strong> Bergen.</li>
+                                                <li>Sie steht <strong>am</strong> Fenster. (an dem)</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">Exercise 3: Identify the Case</div>
+                                <div class="card-body">
+                                    <p>For each sentence, identify whether the preposition is used with the accusative or dative case:</p>
+                                    <ol>
+                                        <li>Ich gehe in die Stadt. (I'm going into the city.)</li>
+                                        <li>Das Buch liegt auf dem Tisch. (The book is on the table.)</li>
+                                        <li>Wir fahren durch den Tunnel. (We're driving through the tunnel.)</li>
+                                        <li>Er wohnt seit einem Jahr hier. (He has lived here for a year.)</li>
+                                        <li>Sie stellt die Lampe zwischen die Bücher. (She's putting the lamp between the books.)</li>
+                                    </ol>
+                                    <button class="btn btn-sm btn-outline-secondary mt-2" type="button" data-toggle="collapse" data-target="#practice3Answers">Show Answers</button>
+                                    <div class="collapse" id="practice3Answers">
+                                        <div class="card card-body mt-2">
+                                            <ol>
+                                                <li><strong>Accusative</strong> - movement into the city</li>
+                                                <li><strong>Dative</strong> - location on the table</li>
+                                                <li><strong>Accusative</strong> - "durch" always takes accusative</li>
+                                                <li><strong>Dative</strong> - "seit" always takes dative</li>
+                                                <li><strong>Accusative</strong> - movement, putting something somewhere</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section id="summary">
+                            <h2>Summary</h2>
+                            <div class="card">
+                                <div class="card-body">
+                                    <ul>
+                                        <li>German prepositions determine the case of the nouns or pronouns that follow them.</li>
+                                        <li>Some prepositions always take the <strong>accusative</strong> case (durch, für, gegen, ohne, um, etc.).</li>
+                                        <li>Some prepositions always take the <strong>dative</strong> case (aus, außer, bei, mit, nach, seit, von, zu, etc.).</li>
+                                        <li>Two-way prepositions (an, auf, hinter, in, neben, über, unter, vor, zwischen) can take either:
+                                            <ul>
+                                                <li>The <strong>accusative</strong> case when indicating movement or direction (wohin?)</li>
+                                                <li>The <strong>dative</strong> case when indicating location or position (wo?)</li>
+                                            </ul>
+                                        </li>
+                                        <li>Common contractions (am, ans, aufs, im, ins, zum, zur, vom) are formed by combining prepositions and articles.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="lesson-quiz card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2>Test Your Knowledge</h2>
+                        <p class="mb-3">Ready to test what you've learned? Take our Prepositions quiz!</p>
+                        
+                        <a href="{{ url_for('quiz', level='a2', topic='prepositions') }}" class="btn btn-primary">Take the Quiz</a>
+                    </div>
+                </div>
+
+                <div class="lesson-navigation card shadow-sm">
+                    <div class="card-body d-flex justify-content-between">
+                        <a href="{{ url_for('a2_grammar_modal_verbs') }}" class="btn btn-outline-secondary">&larr; Previous: Modal Verbs</a>
+                        <a href="{{ url_for('a2_grammar_conjunctions') }}" class="btn btn-outline-primary">Next: Conjunctions &rarr;</a>
+                    </div>
+                </div>
+                
+                {% if current_user.is_authenticated %}
+                <div class="text-center mt-4">
+                    <button id="markCompletedBtn" class="btn btn-success" data-level="A2" data-section="grammar" data-lesson="prepositions">Mark as Completed</button>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    {% if current_user.is_authenticated %}
+    // Check if lesson is already completed
+    $.get('/api/progress/check', {
+        level: 'A2',
+        section: 'grammar',
+        lesson: 'prepositions'
+    }).done(function(data) {
+        if (data.completed) {
+            $('#markCompletedBtn').text('Completed').addClass('btn-outline-success').removeClass('btn-success').prop('disabled', true);
+            $('.progress-bar').css('width', '100%').attr('aria-valuenow', 100).text('100%');
+        }
+    });
+    
+    // Mark lesson as completed
+    $('#markCompletedBtn').click(function() {
+        const button = $(this);
+        const level = button.data('level');
+        const section = button.data('section');
+        const lesson = button.data('lesson');
+        
+        $.ajax({
+            url: '/api/progress/update',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                level: level,
+                section: section,
+                lesson: lesson,
+                completed: true
+            }),
+            success: function(response) {
+                button.text('Completed').addClass('btn-outline-success').removeClass('btn-success').prop('disabled', true);
+                $('.progress-bar').css('width', '100%').attr('aria-valuenow', 100).text('100%');
+            }
+        });
+    });
+    {% endif %}
+    
+    // Enable Bootstrap tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+    
+    // Handle the collapsible sections
+    $('.collapse').on('shown.bs.collapse', function() {
+        $(this).prev().find('.fa-chevron-down').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    });
+    
+    $('.collapse').on('hidden.bs.collapse', function() {
+        $(this).prev().find('.fa-chevron-up').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    });
+});
+</script>
+{% endblock %}

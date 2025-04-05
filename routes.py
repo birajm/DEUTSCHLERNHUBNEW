@@ -1,12 +1,20 @@
 from flask import render_template, redirect, url_for, flash, request, jsonify, send_from_directory
 from flask_login import login_user, logout_user, login_required, current_user
 from app import app, db
-from models import User, Progress, QuizResult
-from forms import LoginForm, RegistrationForm, QuizForm
+from models import User, Progress, QuizResult, Vocabulary, Theme, Badge, UserBadge
+from forms import LoginForm, RegistrationForm, QuizForm, ChatbotForm
 from chatbot import get_chatbot_response
-from db_utils import get_user_progress, save_progress, save_quiz_result
+from db_utils import get_user_progress, save_progress, save_quiz_result, get_user_stats, get_leaderboard
+from vocabulary_utils import (get_vocabulary_by_level, get_vocabulary_by_theme, 
+                             search_vocabulary, add_vocabulary_to_user, 
+                             remove_vocabulary_from_user, get_user_vocabulary,
+                             get_user_vocabulary_due_for_review, 
+                             update_vocabulary_familiarity, get_themes,
+                             get_user_vocabulary_stats)
+from badge_utils import check_badge_eligibility, create_initial_badges
 import os
 import json
+from datetime import datetime
 
 # Main routes
 @app.route('/')
@@ -154,6 +162,170 @@ def serve_audio(filename):
 @app.route('/static/downloads/<path:filename>')
 def serve_downloads(filename):
     return send_from_directory('static/downloads', filename)
+
+# Vocabulary routes
+@app.route('/vocabulary')
+def vocabulary():
+    # Get query parameters
+    search = request.args.get('search', '')
+    level = request.args.get('level', '')
+    theme_name = request.args.get('theme', '')
+    
+    # Get themes for navigation
+    themes = get_themes()
+    
+    # Get vocabulary based on filters
+    if search:
+        vocabulary = search_vocabulary(search, level)
+    elif level and theme_name:
+        level_vocab = get_vocabulary_by_level(level)
+        vocabulary = [word for word in level_vocab if word.theme == theme_name]
+    elif level:
+        vocabulary = get_vocabulary_by_level(level)
+    elif theme_name:
+        vocabulary = get_vocabulary_by_theme(theme_name)
+    else:
+        # Get all vocabulary, limited to 100 items for performance
+        vocabulary = Vocabulary.query.limit(100).all()
+    
+    # Get user's saved vocabulary if authenticated
+    user_vocabulary = []
+    stats = {'total': 0, 'mastered': 0, 'learning': 0, 'new': 0}
+    review_count = 0
+    
+    if current_user.is_authenticated:
+        user_vocabulary = get_user_vocabulary(current_user.id)
+        stats = get_user_vocabulary_stats(current_user.id)
+        review_words = get_user_vocabulary_due_for_review(current_user.id)
+        review_count = len(review_words)
+    
+    return render_template('vocabulary/index.html',
+                          vocabulary=vocabulary,
+                          user_vocabulary=user_vocabulary,
+                          themes=themes,
+                          stats=stats,
+                          review_count=review_count,
+                          search=search,
+                          selected_level=level,
+                          selected_theme=theme_name)
+
+@app.route('/vocabulary/review')
+@login_required
+def vocabulary_review():
+    # Get words due for review
+    words = get_user_vocabulary_due_for_review(current_user.id)
+    
+    return render_template('vocabulary/review.html', words=words)
+
+@app.route('/vocabulary/saved')
+@login_required
+def vocabulary_saved():
+    # Get user's saved vocabulary
+    vocabulary = get_user_vocabulary(current_user.id)
+    
+    # Get themes for filtering
+    themes = get_themes()
+    
+    # Get stats
+    stats = get_user_vocabulary_stats(current_user.id)
+    
+    return render_template('vocabulary/saved.html',
+                          vocabulary=vocabulary,
+                          themes=themes,
+                          stats=stats)
+
+@app.route('/vocabulary/stats')
+@login_required
+def vocabulary_stats():
+    # Get user's vocabulary stats
+    stats = get_user_vocabulary_stats(current_user.id)
+    
+    # Get level-specific vocabulary
+    a1_words = get_user_vocabulary(current_user.id, level='a1')
+    a2_words = get_user_vocabulary(current_user.id, level='a2')
+    b1_words = get_user_vocabulary(current_user.id, level='b1')
+    
+    # Get themes for chart
+    themes = get_themes()
+    theme_counts = {}
+    
+    for theme in themes:
+        theme_words = get_user_vocabulary(current_user.id, theme=theme.name)
+        theme_counts[theme.name] = len(theme_words)
+    
+    return render_template('vocabulary/stats.html',
+                          stats=stats,
+                          a1_words=a1_words,
+                          a2_words=a2_words,
+                          b1_words=b1_words,
+                          theme_counts=theme_counts)
+
+@app.route('/vocabulary/add', methods=['POST'])
+@login_required
+def add_vocabulary():
+    data = request.get_json()
+    if not data or 'vocab_id' not in data:
+        return jsonify({'success': False, 'message': 'Invalid request'}), 400
+    
+    vocab_id = data['vocab_id']
+    result = add_vocabulary_to_user(current_user.id, vocab_id)
+    
+    return jsonify({'success': result})
+
+@app.route('/vocabulary/remove', methods=['POST'])
+@login_required
+def remove_vocabulary():
+    data = request.get_json()
+    if not data or 'vocab_id' not in data:
+        return jsonify({'success': False, 'message': 'Invalid request'}), 400
+    
+    vocab_id = data['vocab_id']
+    result = remove_vocabulary_from_user(current_user.id, vocab_id)
+    
+    return jsonify({'success': result})
+
+@app.route('/vocabulary/update-familiarity', methods=['POST'])
+@login_required
+def update_familiarity():
+    data = request.get_json()
+    if not data or 'vocab_id' not in data or 'known' not in data:
+        return jsonify({'success': False, 'message': 'Invalid request'}), 400
+    
+    vocab_id = data['vocab_id']
+    known = data['known']
+    result = update_vocabulary_familiarity(current_user.id, vocab_id, known)
+    
+    return jsonify({'success': result})
+
+# Initialize system data
+# Using with app.app_context() to replace the deprecated before_first_request
+# Note: This will run when the application starts up
+with app.app_context():
+    try:
+        # Create initial badges
+        create_initial_badges()
+        
+        # Create some initial themes if none exist
+        if Theme.query.count() == 0:
+            themes = [
+                {'name': 'Food', 'description': 'Food and drinks vocabulary', 'icon': 'fa-utensils'},
+                {'name': 'Travel', 'description': 'Travel and transportation vocabulary', 'icon': 'fa-plane'},
+                {'name': 'Family', 'description': 'Family and relationships vocabulary', 'icon': 'fa-users'},
+                {'name': 'Home', 'description': 'Home and furniture vocabulary', 'icon': 'fa-home'},
+                {'name': 'Work', 'description': 'Work and career vocabulary', 'icon': 'fa-briefcase'},
+                {'name': 'Health', 'description': 'Health and medical vocabulary', 'icon': 'fa-heartbeat'},
+                {'name': 'Hobbies', 'description': 'Hobbies and interests vocabulary', 'icon': 'fa-gamepad'},
+                {'name': 'Weather', 'description': 'Weather and seasons vocabulary', 'icon': 'fa-cloud-sun'}
+            ]
+            
+            for theme_data in themes:
+                theme = Theme(**theme_data)
+                db.session.add(theme)
+            
+            db.session.commit()
+    except Exception as e:
+        print(f"Error initializing system data: {e}")
+        # Don't let initialization errors prevent app startup
 
 # Error handlers
 @app.errorhandler(404)

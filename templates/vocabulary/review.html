@@ -1,0 +1,271 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Vocabulary Review{% endblock %}
+
+{% block content %}
+<div class="vocab-header bg-light py-4">
+    <div class="container">
+        <h1>Vocabulary Review</h1>
+        <p class="lead">Test your knowledge of saved vocabulary words using spaced repetition</p>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            {% if not words %}
+            <div class="alert alert-info text-center">
+                <i class="fas fa-info-circle fa-2x mb-3"></i>
+                <h4>No words due for review</h4>
+                <p>You don't have any vocabulary words due for review right now. Great job staying on top of your learning!</p>
+                <a href="{{ url_for('vocabulary') }}" class="btn btn-primary mt-2">
+                    <i class="fas fa-book me-2"></i> Browse Vocabulary
+                </a>
+            </div>
+            {% else %}
+            <div class="card flashcard-container">
+                <!-- Flashcard progress -->
+                <div class="card-header bg-primary text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Reviewing <span id="current-card">1</span> of <span id="total-cards">{{ words|length }}</span></h5>
+                        <div>
+                            <span class="badge bg-light text-dark me-1" title="Words remembered">
+                                <i class="fas fa-check text-success"></i> <span id="correct-count">0</span>
+                            </span>
+                            <span class="badge bg-light text-dark" title="Words forgotten">
+                                <i class="fas fa-times text-danger"></i> <span id="incorrect-count">0</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="progress mt-2" style="height: 5px;">
+                        <div id="review-progress" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                
+                <!-- Flashcard content -->
+                <div class="card-body p-0">
+                    <div id="flashcards">
+                        {% for word in words %}
+                        <div class="flashcard" id="card-{{ loop.index }}" style="{% if not loop.first %}display: none;{% endif %}">
+                            <div class="flashcard-front text-center p-5">
+                                <h2 class="flashcard-word mb-4">{{ word.german }}</h2>
+                                
+                                <div class="flashcard-info mb-4">
+                                    <span class="badge {% if word.level == 'a1' %}bg-success{% elif word.level == 'a2' %}bg-primary{% else %}bg-warning text-dark{% endif %}">{{ word.level|upper }}</span>
+                                    {% if word.part_of_speech %}
+                                    <span class="badge bg-light text-dark ms-2">{{ word.part_of_speech }}</span>
+                                    {% endif %}
+                                </div>
+                                
+                                {% if word.audio_filename %}
+                                <button type="button" class="btn btn-outline-primary pronounce-btn mb-4" onclick="playAudio('{{ word.audio_filename }}')">
+                                    <i class="fas fa-volume-up me-2"></i> Listen
+                                </button>
+                                {% endif %}
+                                
+                                <button type="button" class="btn btn-lg btn-primary reveal-btn" onclick="revealAnswer({{ loop.index }})">
+                                    Show Meaning
+                                </button>
+                            </div>
+                            
+                            <div class="flashcard-back text-center p-5" style="display: none;">
+                                <h3 class="flashcard-translation mb-3">{{ word.english }}</h3>
+                                
+                                {% if word.example_sentence %}
+                                <div class="flashcard-example mb-4 p-3 bg-light rounded">
+                                    <p class="mb-0 fst-italic">{{ word.example_sentence }}</p>
+                                </div>
+                                {% endif %}
+                                
+                                <p class="mb-4">Did you remember this word?</p>
+                                
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-success" onclick="recordAnswer({{ word.id }}, true, {{ loop.index }})">
+                                        <i class="fas fa-check-circle me-2"></i> Yes, I knew it
+                                    </button>
+                                    <button type="button" class="btn btn-danger" onclick="recordAnswer({{ word.id }}, false, {{ loop.index }})">
+                                        <i class="fas fa-times-circle me-2"></i> No, I didn't know
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <input type="hidden" id="vocab-id-{{ loop.index }}" value="{{ word.id }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- Review complete screen -->
+                    <div id="review-complete" class="text-center p-5" style="display: none;">
+                        <div class="mb-4">
+                            <i class="fas fa-trophy fa-4x text-warning"></i>
+                        </div>
+                        <h2 class="mb-3">Review Complete!</h2>
+                        <p class="lead mb-4">You've reviewed all the words in this session.</p>
+                        
+                        <div class="review-stats mb-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card bg-success-subtle">
+                                        <div class="card-body">
+                                            <h3 class="text-success" id="final-correct-count">0</h3>
+                                            <p class="mb-0">Remembered</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card bg-danger-subtle">
+                                        <div class="card-body">
+                                            <h3 class="text-danger" id="final-incorrect-count">0</h3>
+                                            <p class="mb-0">Forgotten</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="d-grid gap-2 col-md-8 mx-auto">
+                            <a href="{{ url_for('vocabulary_review') }}" class="btn btn-primary btn-lg">
+                                <i class="fas fa-sync-alt me-2"></i> Review Again
+                            </a>
+                            <a href="{{ url_for('vocabulary') }}" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-book me-2"></i> Back to Vocabulary
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .flashcard {
+        min-height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .flashcard-word {
+        font-size: 2.5rem;
+    }
+    
+    .flashcard-container {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .flashcard-example {
+        font-size: 1.1rem;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+<script>
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let currentCard = 1;
+    const totalCards = {{ words|length }};
+    
+    function revealAnswer(cardIndex) {
+        const card = document.getElementById(`card-${cardIndex}`);
+        const front = card.querySelector('.flashcard-front');
+        const back = card.querySelector('.flashcard-back');
+        
+        front.style.display = 'none';
+        back.style.display = 'block';
+    }
+    
+    function recordAnswer(vocabId, known, cardIndex) {
+        // Update counters
+        if (known) {
+            correctCount++;
+            document.getElementById('correct-count').textContent = correctCount;
+        } else {
+            incorrectCount++;
+            document.getElementById('incorrect-count').textContent = incorrectCount;
+        }
+        
+        // Send result to server
+        fetch('/vocabulary/update-familiarity', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrf_token')
+            },
+            body: JSON.stringify({
+                vocab_id: vocabId,
+                known: known
+            })
+        })
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error updating familiarity:', error);
+        });
+        
+        // Show next card or complete
+        showNextCard(cardIndex);
+    }
+    
+    function showNextCard(currentIndex) {
+        // Hide current card
+        const currentCardElem = document.getElementById(`card-${currentIndex}`);
+        currentCardElem.style.display = 'none';
+        
+        // Update progress
+        currentCard++;
+        document.getElementById('current-card').textContent = currentCard;
+        
+        const progressPercentage = ((currentCard - 1) / totalCards) * 100;
+        const progressBar = document.getElementById('review-progress');
+        progressBar.style.width = `${progressPercentage}%`;
+        progressBar.setAttribute('aria-valuenow', progressPercentage);
+        
+        // Check if review is complete
+        if (currentIndex >= totalCards) {
+            document.getElementById('flashcards').style.display = 'none';
+            document.getElementById('review-complete').style.display = 'block';
+            
+            // Update final stats
+            document.getElementById('final-correct-count').textContent = correctCount;
+            document.getElementById('final-incorrect-count').textContent = incorrectCount;
+        } else {
+            // Show next card
+            const nextCardElem = document.getElementById(`card-${currentIndex + 1}`);
+            if (nextCardElem) {
+                nextCardElem.style.display = 'block';
+            } else {
+                // No more cards, show complete screen
+                document.getElementById('flashcards').style.display = 'none';
+                document.getElementById('review-complete').style.display = 'block';
+                
+                // Update final stats
+                document.getElementById('final-correct-count').textContent = correctCount;
+                document.getElementById('final-incorrect-count').textContent = incorrectCount;
+            }
+        }
+    }
+    
+    // Get CSRF token from cookie (for POST requests)
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,362 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - My Saved Words{% endblock %}
+
+{% block content %}
+<div class="vocab-header bg-light py-4">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1>My Saved Vocabulary</h1>
+                <p class="lead">Manage your personal collection of German vocabulary</p>
+            </div>
+            <div class="vocab-stats text-end">
+                <p><strong>My Vocabulary:</strong> <span class="badge bg-primary">{{ stats.total }}</span> words</p>
+                <p>
+                    <span title="Words you've mastered" class="me-2"><i class="fas fa-check-circle text-success"></i> {{ stats.mastered }}</span>
+                    <span title="Words you're learning" class="me-2"><i class="fas fa-sync-alt text-warning"></i> {{ stats.learning }}</span>
+                    <span title="New words"><i class="fas fa-star text-info"></i> {{ stats.new }}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-lg-3 mb-4">
+            <!-- Sidebar navigation -->
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Vocabulary Tools</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('vocabulary') }}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-book me-2"></i> Browse Vocabulary
+                    </a>
+                    <a href="{{ url_for('vocabulary_saved') }}" class="list-group-item list-group-item-action active">
+                        <i class="fas fa-bookmark me-2"></i> My Saved Words
+                    </a>
+                    <a href="{{ url_for('vocabulary_review') }}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-sync-alt me-2"></i> Review Words
+                    </a>
+                    <a href="{{ url_for('vocabulary_stats') }}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-chart-bar me-2"></i> My Learning Progress
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Filters -->
+            <div class="card mt-4">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0">Filter Options</h5>
+                </div>
+                <div class="card-body">
+                    <form method="GET">
+                        <div class="mb-3">
+                            <label class="form-label">Level:</label>
+                            <div class="d-flex flex-wrap gap-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="level" value="a1" id="a1-filter">
+                                    <label class="form-check-label" for="a1-filter">
+                                        <span class="badge bg-success">A1</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="level" value="a2" id="a2-filter">
+                                    <label class="form-check-label" for="a2-filter">
+                                        <span class="badge bg-primary">A2</span>
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="level" value="b1" id="b1-filter">
+                                    <label class="form-check-label" for="b1-filter">
+                                        <span class="badge bg-warning text-dark">B1</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Themes:</label>
+                            <select class="form-select" name="theme">
+                                <option value="">All Themes</option>
+                                {% for theme in themes %}
+                                <option value="{{ theme.name }}">{{ theme.name|title }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Sort by:</label>
+                            <select class="form-select" name="sort">
+                                <option value="german">German (A-Z)</option>
+                                <option value="english">English (A-Z)</option>
+                                <option value="level">Level</option>
+                                <option value="added">Date Added</option>
+                            </select>
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-filter me-2"></i> Apply Filters
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-9">
+            {% if vocabulary %}
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>My Saved Words <small class="text-muted">({{ vocabulary|length }} words)</small></h2>
+                
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-primary" id="list-view-btn" title="List View">
+                        <i class="fas fa-list"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary active" id="card-view-btn" title="Card View">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Card View (default) -->
+            <div id="card-view" class="row row-cols-1 row-cols-md-2 g-4">
+                {% for word in vocabulary %}
+                <div class="col">
+                    <div class="card h-100 vocab-card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge {% if word.level == 'a1' %}bg-success{% elif word.level == 'a2' %}bg-primary{% else %}bg-warning text-dark{% endif %}">{{ word.level|upper }}</span>
+                            
+                            <div class="vocab-actions">
+                                <button class="btn btn-sm btn-outline-danger remove-vocab" data-vocab-id="{{ word.id }}" title="Remove from my vocabulary">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="vocab-word mb-2">
+                                <h5 class="card-title d-flex justify-content-between">
+                                    {{ word.german }}
+                                    <button class="btn btn-sm btn-link text-primary pronounce-btn" onclick="pronounce('{{ word.german }}', this)" title="Pronounce">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </h5>
+                                <p class="card-text text-muted">{{ word.english }}</p>
+                            </div>
+                            
+                            {% if word.part_of_speech %}
+                            <div class="vocab-pos small text-muted">
+                                <span class="badge bg-light text-dark">{{ word.part_of_speech }}</span>
+                            </div>
+                            {% endif %}
+                            
+                            {% if word.example_sentence %}
+                            <div class="vocab-example mt-2 small fst-italic">
+                                "{{ word.example_sentence }}"
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer bg-transparent d-flex justify-content-between">
+                            <small class="text-muted">
+                                <i class="fas fa-tag me-1"></i> {{ word.theme|title }}
+                            </small>
+                            {% if word.user_familiarity is defined %}
+                            <small class="familiarity-indicator">
+                                {% if word.user_familiarity >= 3 %}
+                                <span class="text-success" title="Mastered"><i class="fas fa-check-circle"></i></span>
+                                {% elif word.user_familiarity > 0 %}
+                                <span class="text-warning" title="Learning"><i class="fas fa-sync-alt"></i></span>
+                                {% else %}
+                                <span class="text-info" title="New"><i class="fas fa-star"></i></span>
+                                {% endif %}
+                            </small>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- List View (hidden by default) -->
+            <div id="list-view" class="d-none">
+                <div class="table-responsive">
+                    <table class="table table-hover vocab-table">
+                        <thead class="table-light">
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Level</th>
+                                <th>Theme</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for word in vocabulary %}
+                            <tr>
+                                <td>
+                                    <strong>{{ word.german }}</strong>
+                                    {% if word.part_of_speech %}
+                                    <small class="text-muted d-block">{{ word.part_of_speech }}</small>
+                                    {% endif %}
+                                </td>
+                                <td>{{ word.english }}</td>
+                                <td>
+                                    <span class="badge {% if word.level == 'a1' %}bg-success{% elif word.level == 'a2' %}bg-primary{% else %}bg-warning text-dark{% endif %}">
+                                        {{ word.level|upper }}
+                                    </span>
+                                </td>
+                                <td>{{ word.theme|title }}</td>
+                                <td>
+                                    {% if word.user_familiarity is defined %}
+                                    {% if word.user_familiarity >= 3 %}
+                                    <span class="text-success" title="Mastered"><i class="fas fa-check-circle"></i> Mastered</span>
+                                    {% elif word.user_familiarity > 0 %}
+                                    <span class="text-warning" title="Learning"><i class="fas fa-sync-alt"></i> Learning</span>
+                                    {% else %}
+                                    <span class="text-info" title="New"><i class="fas fa-star"></i> New</span>
+                                    {% endif %}
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm">
+                                        <button class="btn btn-sm btn-outline-primary pronounce-btn" onclick="pronounce('{{ word.german }}', this)" title="Pronounce">
+                                            <i class="fas fa-volume-up"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger remove-vocab" data-vocab-id="{{ word.id }}" title="Remove from my vocabulary">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            {% else %}
+            <div class="text-center py-5">
+                <div class="empty-state mb-4">
+                    <i class="fas fa-bookmark fa-4x text-muted mb-3"></i>
+                    <h3>No saved vocabulary words yet</h3>
+                    <p class="lead text-muted">You haven't saved any vocabulary words to your personal collection.</p>
+                </div>
+                <a href="{{ url_for('vocabulary') }}" class="btn btn-lg btn-primary">
+                    <i class="fas fa-book me-2"></i> Browse Vocabulary
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .vocab-card {
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .vocab-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .vocab-example {
+        color: #6c757d;
+        border-left: 3px solid #dee2e6;
+        padding-left: 10px;
+    }
+    
+    .vocab-stats .badge {
+        font-size: 1rem;
+    }
+    
+    .vocab-table tr {
+        vertical-align: middle;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // View toggle functionality
+        const cardViewBtn = document.getElementById('card-view-btn');
+        const listViewBtn = document.getElementById('list-view-btn');
+        const cardView = document.getElementById('card-view');
+        const listView = document.getElementById('list-view');
+        
+        cardViewBtn.addEventListener('click', function() {
+            cardView.classList.remove('d-none');
+            listView.classList.add('d-none');
+            cardViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+        });
+        
+        listViewBtn.addEventListener('click', function() {
+            listView.classList.remove('d-none');
+            cardView.classList.add('d-none');
+            listViewBtn.classList.add('active');
+            cardViewBtn.classList.remove('active');
+        });
+        
+        // Handle remove vocabulary button clicks
+        const removeButtons = document.querySelectorAll('.remove-vocab');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const vocabId = this.getAttribute('data-vocab-id');
+                
+                if (confirm('Are you sure you want to remove this word from your vocabulary?')) {
+                    fetch('/vocabulary/remove', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': getCookie('csrf_token')
+                        },
+                        body: JSON.stringify({ vocab_id: vocabId })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Remove the card or row from view
+                            const card = this.closest('.col');
+                            const row = this.closest('tr');
+                            
+                            if (card) card.remove();
+                            if (row) row.remove();
+                        } else {
+                            alert(data.message || 'Failed to remove word from vocabulary');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while removing the word');
+                    });
+                }
+            });
+        });
+    });
+    
+    // Get CSRF token from cookie (for POST requests)
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+</script>
+{% endblock %}

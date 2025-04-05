@@ -39,7 +39,7 @@ login_manager.login_view = 'login'
 
 with app.app_context():
     # Import models to create tables
-    from models import User, Progress, QuizResult
+    from models import User, Progress, QuizResult, Vocabulary, Theme, Badge, UserBadge
     db.create_all()
     
     # Import routes

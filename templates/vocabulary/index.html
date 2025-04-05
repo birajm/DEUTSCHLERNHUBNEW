@@ -1,0 +1,314 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Vocabulary Trainer{% endblock %}
+
+{% block content %}
+<div class="vocab-header bg-light py-4">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h1>Vocabulary Trainer</h1>
+                <p class="lead">Build your German vocabulary with our interactive flashcard system</p>
+            </div>
+            {% if current_user.is_authenticated %}
+            <div class="vocab-stats text-end">
+                <p><strong>My Vocabulary:</strong> <span class="badge bg-primary">{{ stats.total }}</span> words</p>
+                <p>
+                    <span title="Words you've mastered" class="me-2"><i class="fas fa-check-circle text-success"></i> {{ stats.mastered }}</span>
+                    <span title="Words you're learning" class="me-2"><i class="fas fa-sync-alt text-warning"></i> {{ stats.learning }}</span>
+                    <span title="New words"><i class="fas fa-star text-info"></i> {{ stats.new }}</span>
+                </p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-lg-3 mb-4">
+            <!-- Sidebar navigation -->
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Vocabulary Categories</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('vocabulary') }}" class="list-group-item list-group-item-action {% if not selected_theme %}active{% endif %}">
+                        <i class="fas fa-book me-2"></i> All Vocabulary
+                    </a>
+                    
+                    <!-- Levels -->
+                    <a href="{{ url_for('vocabulary', level='a1') }}" class="list-group-item list-group-item-action {% if selected_level == 'a1' %}active{% endif %}">
+                        <span class="badge bg-success me-2">A1</span> Beginner Vocabulary
+                    </a>
+                    <a href="{{ url_for('vocabulary', level='a2') }}" class="list-group-item list-group-item-action {% if selected_level == 'a2' %}active{% endif %}">
+                        <span class="badge bg-primary me-2">A2</span> Elementary Vocabulary
+                    </a>
+                    <a href="{{ url_for('vocabulary', level='b1') }}" class="list-group-item list-group-item-action {% if selected_level == 'b1' %}active{% endif %}">
+                        <span class="badge bg-warning text-dark me-2">B1</span> Intermediate Vocabulary
+                    </a>
+                    
+                    <!-- Separator -->
+                    <div class="list-group-item bg-light text-muted small">Thematic Categories</div>
+                    
+                    <!-- Themes -->
+                    {% for theme in themes %}
+                    <a href="{{ url_for('vocabulary', theme=theme.name) }}" class="list-group-item list-group-item-action {% if selected_theme == theme.name %}active{% endif %}">
+                        <i class="fas {{ theme.icon }} me-2"></i> {{ theme.name|title }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            {% if current_user.is_authenticated %}
+            <!-- Study tools -->
+            <div class="card mt-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">My Study Tools</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('vocabulary_review') }}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-sync-alt me-2"></i> Review Words 
+                        {% if review_count > 0 %}
+                        <span class="badge bg-danger float-end">{{ review_count }}</span>
+                        {% endif %}
+                    </a>
+                    <a href="{{ url_for('vocabulary_saved') }}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-bookmark me-2"></i> My Saved Words
+                    </a>
+                    <a href="{{ url_for('vocabulary_stats') }}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-chart-bar me-2"></i> My Learning Progress
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="col-lg-9">
+            <!-- Search and filter tools -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form method="GET" action="{{ url_for('vocabulary') }}" class="row g-3">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="text" name="search" class="form-control" placeholder="Search vocabulary..." value="{{ search }}">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <select name="level" class="form-select">
+                                <option value="">All Levels</option>
+                                <option value="a1" {% if selected_level == 'a1' %}selected{% endif %}>A1 - Beginner</option>
+                                <option value="a2" {% if selected_level == 'a2' %}selected{% endif %}>A2 - Elementary</option>
+                                <option value="b1" {% if selected_level == 'b1' %}selected{% endif %}>B1 - Intermediate</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <select name="theme" class="form-select">
+                                <option value="">All Themes</option>
+                                {% for theme in themes %}
+                                <option value="{{ theme.name }}" {% if selected_theme == theme.name %}selected{% endif %}>{{ theme.name|title }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Vocabulary cards -->
+            <h2 class="mb-3">
+                {% if search %}Search results for "{{ search }}"
+                {% elif selected_theme %}{{ selected_theme|title }} Vocabulary
+                {% elif selected_level %}{{ selected_level|upper }} Level Vocabulary
+                {% else %}All Vocabulary
+                {% endif %}
+                <small class="text-muted">({{ vocabulary|length }} words)</small>
+            </h2>
+            
+            {% if vocabulary %}
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                {% for word in vocabulary %}
+                <div class="col">
+                    <div class="card h-100 vocab-card">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge {% if word.level == 'a1' %}bg-success{% elif word.level == 'a2' %}bg-primary{% else %}bg-warning text-dark{% endif %}">{{ word.level|upper }}</span>
+                            
+                            {% if current_user.is_authenticated %}
+                            <div class="vocab-actions">
+                                {% if word in user_vocabulary %}
+                                <button class="btn btn-sm btn-outline-danger remove-vocab" data-vocab-id="{{ word.id }}" title="Remove from my vocabulary">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                                {% else %}
+                                <button class="btn btn-sm btn-outline-primary add-vocab" data-vocab-id="{{ word.id }}" title="Add to my vocabulary">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="card-body">
+                            <div class="vocab-word mb-2">
+                                <h5 class="card-title d-flex justify-content-between">
+                                    {{ word.german }}
+                                    <button class="btn btn-sm btn-link text-primary pronounce-btn" onclick="pronounce('{{ word.german }}', this)" title="Pronounce">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </h5>
+                                <p class="card-text text-muted">{{ word.english }}</p>
+                            </div>
+                            
+                            {% if word.part_of_speech %}
+                            <div class="vocab-pos small text-muted">
+                                <span class="badge bg-light text-dark">{{ word.part_of_speech }}</span>
+                            </div>
+                            {% endif %}
+                            
+                            {% if word.example_sentence %}
+                            <div class="vocab-example mt-2 small fst-italic">
+                                "{{ word.example_sentence }}"
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <small class="text-muted">
+                                <i class="fas fa-tag me-1"></i> {{ word.theme|title }}
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i> No vocabulary words found with the current filters.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .vocab-card {
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .vocab-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .vocab-example {
+        color: #6c757d;
+        border-left: 3px solid #dee2e6;
+        padding-left: 10px;
+    }
+    
+    .vocab-stats .badge {
+        font-size: 1rem;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Handle add vocabulary button clicks
+        const addButtons = document.querySelectorAll('.add-vocab');
+        addButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const vocabId = this.getAttribute('data-vocab-id');
+                
+                fetch('/vocabulary/add', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': getCookie('csrf_token')
+                    },
+                    body: JSON.stringify({ vocab_id: vocabId })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update button to remove button
+                        this.className = 'btn btn-sm btn-outline-danger remove-vocab';
+                        this.title = 'Remove from my vocabulary';
+                        this.innerHTML = '<i class="fas fa-trash-alt"></i>';
+                        
+                        // Update data attribute
+                        this.setAttribute('data-vocab-id', vocabId);
+                        
+                        // Show success message
+                        alert('Word added to your vocabulary!');
+                    } else {
+                        alert(data.message || 'Failed to add word to vocabulary');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while adding the word');
+                });
+            });
+        });
+        
+        // Handle remove vocabulary button clicks
+        const removeButtons = document.querySelectorAll('.remove-vocab');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const vocabId = this.getAttribute('data-vocab-id');
+                
+                fetch('/vocabulary/remove', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': getCookie('csrf_token')
+                    },
+                    body: JSON.stringify({ vocab_id: vocabId })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Update button to add button
+                        this.className = 'btn btn-sm btn-outline-primary add-vocab';
+                        this.title = 'Add to my vocabulary';
+                        this.innerHTML = '<i class="fas fa-plus"></i>';
+                        
+                        // Update data attribute
+                        this.setAttribute('data-vocab-id', vocabId);
+                        
+                        // Show success message
+                        alert('Word removed from your vocabulary!');
+                    } else {
+                        alert(data.message || 'Failed to remove word from vocabulary');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while removing the word');
+                });
+            });
+        });
+    });
+    
+    // Get CSRF token from cookie (for POST requests)
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+</script>
+{% endblock %}

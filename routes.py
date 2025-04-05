@@ -230,6 +230,10 @@ def b1_index():
 def b1_communication_complex_ideas():
     return render_template('lessons/b1/communication/complex_ideas.html')
 
+@app.route('/b1/communication/describing-experiences')
+def b1_communication_describing_experiences():
+    return render_template('lessons/b1/communication/describing_experiences.html')
+
 # Grammar reference section
 @app.route('/grammar')
 def grammar():

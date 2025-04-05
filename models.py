@@ -123,3 +123,19 @@ class UserBadge(db.Model):
     
     def __repr__(self):
         return f'<UserBadge User:{self.user_id} Badge:{self.badge_id}>'
+
+class Resource(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200), nullable=False)
+    description = db.Column(db.Text)
+    url = db.Column(db.String(500))
+    resource_type = db.Column(db.String(50), nullable=False)  # book, video, app, website, audio, pdf
+    level = db.Column(db.String(10), nullable=False)  # A1, A2, B1
+    category = db.Column(db.String(50), nullable=False)  # grammar, vocabulary, listening, reading, speaking, writing
+    topic = db.Column(db.String(100))  # specific topic like "modal verbs", "past tense", etc.
+    is_free = db.Column(db.Boolean, default=True)
+    icon = db.Column(db.String(50))  # FontAwesome icon name
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    
+    def __repr__(self):
+        return f'<Resource {self.title} ({self.level}, {self.category})>'

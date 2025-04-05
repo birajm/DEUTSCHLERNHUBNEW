@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, flash, request, jsonify, send_from_directory
 from flask_login import login_user, logout_user, login_required, current_user
 from app import app, db
-from models import User, Progress, QuizResult, Vocabulary, Theme, Badge, UserBadge
+from models import User, Progress, QuizResult, Vocabulary, Theme, Badge, UserBadge, Resource
 from forms import LoginForm, RegistrationForm, QuizForm, ChatbotForm
 from chatbot import get_chatbot_response
 from db_utils import get_user_progress, save_progress, save_quiz_result, get_user_stats, get_leaderboard
@@ -12,6 +12,11 @@ from vocabulary_utils import (get_vocabulary_by_level, get_vocabulary_by_theme,
                              update_vocabulary_familiarity, get_themes,
                              get_user_vocabulary_stats)
 from badge_utils import check_badge_eligibility, create_initial_badges
+from resource_utils import (get_resources_by_level, get_resources_by_category,
+                           get_resources_by_topic, get_free_resources, get_all_resources,
+                           get_resource_by_id, search_resources, create_initial_resources,
+                           get_resource_categories, get_resource_topics, get_resource_levels,
+                           get_resource_categories_by_level, get_resource_topics_by_level)
 import os
 import json
 from datetime import datetime
@@ -470,9 +475,105 @@ with app.app_context():
                 db.session.add(theme)
             
             db.session.commit()
+            
+        # Create initial learning resources
+        create_initial_resources()
     except Exception as e:
         print(f"Error initializing system data: {e}")
         # Don't let initialization errors prevent app startup
+
+# Resources routes
+@app.route('/resources')
+def resources():
+    """Main resources page with all resources"""
+    # Get query parameters
+    search = request.args.get('search', '')
+    level = request.args.get('level', '')
+    category = request.args.get('category', '')
+    resource_type = request.args.get('type', '')
+    free_only = request.args.get('free_only') == 'true'
+    
+    # Filter resources based on parameters
+    if search:
+        resources = search_resources(search, level)
+    elif level and category:
+        resources = get_resources_by_category(category, level)
+    elif level:
+        resources = get_resources_by_level(level)
+    elif category:
+        resources = get_resources_by_category(category)
+    else:
+        # Get all resources
+        resources = get_all_resources()
+    
+    # Filter by resource type if specified
+    if resource_type and resources:
+        resources = [r for r in resources if r.resource_type == resource_type]
+    
+    # Filter by free only if specified
+    if free_only and resources:
+        resources = [r for r in resources if r.is_free]
+    
+    # Get unique categories and resource types for filter options
+    categories = get_resource_categories()
+    
+    # Get unique resource types
+    resource_types = set(r.resource_type for r in get_all_resources())
+    
+    return render_template('resources/index.html',
+                           resources=resources,
+                           categories=categories,
+                           resource_types=resource_types,
+                           selected_level=level,
+                           selected_category=category,
+                           selected_type=resource_type,
+                           free_only=free_only,
+                           search=search)
+
+@app.route('/resources/<string:level>')
+def resources_by_level(level):
+    """Show resources filtered by level"""
+    resources = get_resources_by_level(level)
+    
+    # Get unique categories and topics for this level
+    categories = get_resource_categories_by_level(level)
+    topics = get_resource_topics_by_level(level)
+    
+    return render_template('resources/level.html', 
+                           resources=resources,
+                           level=level,
+                           categories=categories,
+                           topics=topics)
+
+@app.route('/resources/category/<string:category>')
+def resources_by_category(category):
+    """Show resources filtered by category"""
+    level = request.args.get('level', '')
+    
+    if level:
+        resources = get_resources_by_category(category, level)
+    else:
+        resources = get_resources_by_category(category)
+    
+    return render_template('resources/category.html',
+                           resources=resources,
+                           category=category,
+                           selected_level=level)
+
+@app.route('/resources/topic/<string:topic>')
+def resources_by_topic(topic):
+    """Show resources for a specific topic"""
+    level = request.args.get('level', '')
+    
+    if level:
+        resources = get_resources_by_topic(topic, level)
+    else:
+        resources = get_resources_by_topic(topic)
+    
+    return render_template('resources/topic.html',
+                           resources=resources,
+                           topic=topic,
+                           selected_level=level)
 
 # Error handlers
 @app.errorhandler(404)

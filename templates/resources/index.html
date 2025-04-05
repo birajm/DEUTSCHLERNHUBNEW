@@ -1,0 +1,189 @@
+{% extends 'layout.html' %}
+
+{% block title %}Learning Resources - DeutschLernHub{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h1 class="mb-4">German Learning Resources</h1>
+    
+    <div class="alert alert-info mb-4">
+        <h5><i class="fas fa-info-circle"></i> About Resources</h5>
+        <p>
+            Welcome to our curated collection of German learning resources! Here you'll find carefully selected materials to help you on your language journey, organized by level and category.
+        </p>
+    </div>
+    
+    <!-- Level Filters -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Filter by Level</h4>
+        </div>
+        <div class="card-body">
+            <div class="row text-center">
+                <div class="col-md-4 mb-3">
+                    <a href="{{ url_for('resources_by_level', level='A1') }}" class="btn btn-outline-primary btn-lg w-100">
+                        <i class="fas fa-star me-2"></i> A1 Beginner
+                    </a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="{{ url_for('resources_by_level', level='A2') }}" class="btn btn-outline-primary btn-lg w-100">
+                        <i class="fas fa-star-half-alt me-2"></i> A2 Elementary
+                    </a>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <a href="{{ url_for('resources_by_level', level='B1') }}" class="btn btn-outline-primary btn-lg w-100">
+                        <i class="fas fa-stars me-2"></i> B1 Intermediate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Categories -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Browse by Category</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-book fa-3x mb-3 text-primary"></i>
+                            <h5 class="card-title">Grammar</h5>
+                            <p class="card-text">Resources for mastering German grammar rules and structures</p>
+                            <a href="{{ url_for('resources_by_category', category='grammar') }}" class="btn btn-sm btn-primary">Browse Grammar Resources</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-language fa-3x mb-3 text-success"></i>
+                            <h5 class="card-title">Vocabulary</h5>
+                            <p class="card-text">Tools and materials to build your German vocabulary</p>
+                            <a href="{{ url_for('resources_by_category', category='vocabulary') }}" class="btn btn-sm btn-success">Browse Vocabulary Resources</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-headphones fa-3x mb-3 text-warning"></i>
+                            <h5 class="card-title">Listening</h5>
+                            <p class="card-text">Audio materials to improve your listening comprehension</p>
+                            <a href="{{ url_for('resources_by_category', category='listening') }}" class="btn btn-sm btn-warning text-dark">Browse Listening Resources</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-book-open fa-3x mb-3 text-danger"></i>
+                            <h5 class="card-title">Reading</h5>
+                            <p class="card-text">Reading materials suited for different proficiency levels</p>
+                            <a href="{{ url_for('resources_by_category', category='reading') }}" class="btn btn-sm btn-danger">Browse Reading Resources</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-comment fa-3x mb-3 text-info"></i>
+                            <h5 class="card-title">Speaking</h5>
+                            <p class="card-text">Practice materials to improve your speaking skills</p>
+                            <a href="{{ url_for('resources_by_category', category='speaking') }}" class="btn btn-sm btn-info">Browse Speaking Resources</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-pencil-alt fa-3x mb-3 text-secondary"></i>
+                            <h5 class="card-title">Writing</h5>
+                            <p class="card-text">Guides and tools to help you write better in German</p>
+                            <a href="{{ url_for('resources_by_category', category='writing') }}" class="btn btn-sm btn-secondary">Browse Writing Resources</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Popular Topics -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <h4>Popular Topics</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <a href="{{ url_for('resources_by_topic', topic='modal_verbs') }}" class="btn btn-outline-secondary w-100">Modal Verbs</a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <a href="{{ url_for('resources_by_topic', topic='past_tense') }}" class="btn btn-outline-secondary w-100">Past Tense</a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <a href="{{ url_for('resources_by_topic', topic='articles') }}" class="btn btn-outline-secondary w-100">Articles (der/die/das)</a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <a href="{{ url_for('resources_by_topic', topic='pronunciation') }}" class="btn btn-outline-secondary w-100">Pronunciation</a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <a href="{{ url_for('resources_by_topic', topic='alphabet') }}" class="btn btn-outline-secondary w-100">German Alphabet</a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <a href="{{ url_for('resources_by_topic', topic='basic_phrases') }}" class="btn btn-outline-secondary w-100">Basic Phrases</a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <a href="{{ url_for('resources_by_topic', topic='food_vocabulary') }}" class="btn btn-outline-secondary w-100">Food Vocabulary</a>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <a href="{{ url_for('resources_by_topic', topic='travel_vocabulary') }}" class="btn btn-outline-secondary w-100">Travel Vocabulary</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Resource List -->
+    {% if resources %}
+    <h2 class="mb-3">All Resources</h2>
+    <div class="row">
+        {% for resource in resources %}
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <span class="badge bg-primary">{{ resource.level }}</span>
+                    <span class="badge {% if resource.is_free %}bg-success{% else %}bg-warning text-dark{% endif %}">
+                        {% if resource.is_free %}Free{% else %}Paid{% endif %}
+                    </span>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex mb-3">
+                        <div class="resource-icon me-3">
+                            <i class="fa {% if resource.icon %}{{ resource.icon }}{% else %}fa-book{% endif %} fa-2x"></i>
+                        </div>
+                        <div>
+                            <h5 class="card-title">{{ resource.title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ resource.category|title }} | {{ resource.resource_type|title }}</h6>
+                        </div>
+                    </div>
+                    <p class="card-text">{{ resource.description }}</p>
+                    {% if resource.topic %}
+                    <p class="mb-0"><small class="text-muted">Topic: <a href="{{ url_for('resources_by_topic', topic=resource.topic) }}">{{ resource.topic }}</a></small></p>
+                    {% endif %}
+                </div>
+                <div class="card-footer">
+                    {% if resource.url %}
+                    <a href="{{ resource.url }}" target="_blank" class="btn btn-outline-primary btn-sm">
+                        <i class="fa fa-external-link-alt"></i> Visit Resource
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -242,6 +242,23 @@ def b1_communication_debating_persuading():
 def b1_communication_cultural_nuances():
     return render_template('lessons/b1/communication/cultural_nuances.html')
 
+# B1 Grammar routes
+@app.route('/b1/grammar/passive-voice')
+def b1_grammar_passive_voice():
+    return render_template('lessons/b1/grammar/passive_voice.html')
+
+@app.route('/b1/grammar/subjunctive')
+def b1_grammar_subjunctive():
+    return render_template('lessons/b1/grammar/subjunctive.html')
+
+@app.route('/b1/grammar/advanced-tenses')
+def b1_grammar_advanced_tenses():
+    return render_template('lessons/b1/grammar/advanced_tenses.html')
+
+@app.route('/b1/grammar/complex-sentences')
+def b1_grammar_complex_sentences():
+    return render_template('lessons/b1/grammar/complex_sentences.html')
+
 # B1 Vocabulary routes
 @app.route('/b1/vocabulary/work-career')
 def b1_vocabulary_work_career():

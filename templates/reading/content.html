@@ -115,17 +115,81 @@
 {% block extra_js %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // Audio playback functionality
+    const audioCache = new Map();
+    
+    async function playAudio(word) {
+        try {
+            if (!audioCache.has(word)) {
+                const response = await fetch(`/static/audio/vocabulary/${word.toLowerCase()}.mp3`);
+                if (!response.ok) throw new Error('Audio file not found');
+                const blob = await response.blob();
+                const audio = new Audio(URL.createObjectURL(blob));
+                audioCache.set(word, audio);
+            }
+            const audio = audioCache.get(word);
+            audio.currentTime = 0;
+            await audio.play();
+        } catch (error) {
+            console.log("Falling back to AI voice synthesis");
+            const utterance = new SpeechSynthesisUtterance(word);
+            utterance.lang = 'de-DE';
+            speechSynthesis.speak(utterance);
+        }
+    }
+
+    // Add click handlers for pronunciation buttons
+    document.querySelectorAll('.pronounce-word').forEach(button => {
+        button.addEventListener('click', () => {
+            const word = button.dataset.word;
+            playAudio(word);
+        });
+    });
+
+    // Quiz functionality
     const form = document.getElementById('comprehension-form');
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            // Handle form submission
+            
+            // Get correct answers from the reading object
+            const reading = {{ reading|tojson|safe }};
+            if (!reading.questions) return;
+
+            // Check answers
+            let score = 0;
             const formData = new FormData(form);
             const answers = {};
-            for (const [key, value] of formData.entries()) {
-                answers[key] = parseInt(value);
-            }
-            // You can add AJAX call here to check answers
+            
+            reading.questions.forEach((question, index) => {
+                const answer = parseInt(formData.get(`question${index + 1}`));
+                const correct = question.correct;
+                
+                // Get the radio buttons for this question
+                const radioButtons = form.querySelectorAll(`input[name="question${index + 1}"]`);
+                const correctRadio = radioButtons[correct];
+                const selectedRadio = radioButtons[answer];
+                
+                // Clear previous feedback
+                radioButtons.forEach(radio => {
+                    radio.parentElement.classList.remove('text-success', 'text-danger');
+                });
+                
+                // Apply feedback
+                if (answer === correct) {
+                    score++;
+                    selectedRadio.parentElement.classList.add('text-success');
+                } else {
+                    selectedRadio.parentElement.classList.add('text-danger');
+                    correctRadio.parentElement.classList.add('text-success');
+                }
+            });
+
+            // Show score
+            const scoreDisplay = document.createElement('div');
+            scoreDisplay.className = 'alert alert-info mt-3';
+            scoreDisplay.textContent = `Score: ${score}/${reading.questions.length}`;
+            form.appendChild(scoreDisplay);
         });
     }
 });

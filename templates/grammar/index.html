@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Grammar Reference{% endblock %}
+
+{% block content %}
+<div class="grammar-header bg-light py-4">
+    <div class="container">
+        <h1>German Grammar Reference</h1>
+        <p class="lead">Master German grammar with structured examples and explanations</p>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <!-- Grammar navigation sidebar -->
+        <div class="col-lg-3 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Grammar Levels</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('grammar_a1') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-success me-2">A1</span> Beginner Grammar
+                    </a>
+                    <a href="{{ url_for('grammar_a2') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-primary me-2">A2</span> Elementary Grammar
+                    </a>
+                    <a href="{{ url_for('grammar_b1') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-warning text-dark me-2">B1</span> Intermediate Grammar
+                    </a>
+                    <div class="list-group-item bg-light text-muted small">Special Resources</div>
+                    <a href="{{ url_for('grammar_practice') }}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-tasks me-2"></i> Practice Exercises
+                    </a>
+                </div>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Grammar Study Tips</h5>
+                </div>
+                <div class="card-body">
+                    <p class="small">
+                        <i class="fas fa-lightbulb text-warning me-2"></i> Focus on one grammar concept at a time.
+                    </p>
+                    <p class="small">
+                        <i class="fas fa-lightbulb text-warning me-2"></i> Practice with real sentences, not just rules.
+                    </p>
+                    <p class="small">
+                        <i class="fas fa-lightbulb text-warning me-2"></i> Use example sentences in your daily speaking practice.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="col-lg-9">
+            <div class="alert alert-info">
+                <i class="fas fa-info-circle me-2"></i> German grammar has logical patterns that make learning easier once you understand the basic principles. Choose a level to get started.
+            </div>
+            
+            <!-- Grammar level cards -->
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+                <!-- A1 Grammar -->
+                <div class="col">
+                    <div class="card h-100 border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">A1 Grammar</h5>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Fundamental Building Blocks</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i> Alphabet & Pronunciation</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Basic Sentence Structure</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Nouns & Articles</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Present Tense Verbs</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Personal Pronouns</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Basic Questions</li>
+                            </ul>
+                            <a href="{{ url_for('grammar_a1') }}" class="btn btn-success mt-2">
+                                <i class="fas fa-book me-2"></i> Learn A1 Grammar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- A2 Grammar -->
+                <div class="col">
+                    <div class="card h-100 border-primary">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">A2 Grammar</h5>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Expanding Your Foundation</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-primary me-2"></i> Cases (Nominative, Accusative, Dative)</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Modal Verbs</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Perfect Tense</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Prepositions with Cases</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Comparative & Superlative</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Subordinating Conjunctions</li>
+                            </ul>
+                            <a href="{{ url_for('grammar_a2') }}" class="btn btn-primary mt-2">
+                                <i class="fas fa-book me-2"></i> Learn A2 Grammar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- B1 Grammar -->
+                <div class="col">
+                    <div class="card h-100 border-warning">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0">B1 Grammar</h5>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Advanced Structures</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-warning me-2"></i> Genitive Case</li>
+                                <li><i class="fas fa-check text-warning me-2"></i> Passive Voice</li>
+                                <li><i class="fas fa-check text-warning me-2"></i> Future Tense</li>
+                                <li><i class="fas fa-check text-warning me-2"></i> Relative Clauses</li>
+                                <li><i class="fas fa-check text-warning me-2"></i> Complex Conjunctions</li>
+                                <li><i class="fas fa-check text-warning me-2"></i> Subjunctive (Konjunktiv II)</li>
+                            </ul>
+                            <a href="{{ url_for('grammar_b1') }}" class="btn btn-warning text-dark mt-2">
+                                <i class="fas fa-book me-2"></i> Learn B1 Grammar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Why Learn German Grammar -->
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Why Understanding German Grammar is Essential</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-puzzle-piece text-primary me-2"></i> Foundation for Communication</h6>
+                            <p class="small">Grammar provides the structure that helps you build sentences correctly and express yourself clearly.</p>
+                            
+                            <h6><i class="fas fa-brain text-primary me-2"></i> Pattern Recognition</h6>
+                            <p class="small">Once you recognize German grammar patterns, learning becomes faster and more intuitive.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-comments text-primary me-2"></i> Confidence in Speaking</h6>
+                            <p class="small">Understanding grammar gives you the confidence to speak without worrying about making basic mistakes.</p>
+                            
+                            <h6><i class="fas fa-book-reader text-primary me-2"></i> Access to Literature</h6>
+                            <p class="small">Grammar knowledge allows you to read and enjoy German literature, newspapers, and other written materials.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Practice Exercises -->
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Practice Makes Perfect</h5>
+                </div>
+                <div class="card-body">
+                    <p>Test your grammar knowledge with our interactive exercises. Choose from multiple-choice questions, fill-in-the-blanks, and more.</p>
+                    <a href="{{ url_for('grammar_practice') }}" class="btn btn-success">
+                        <i class="fas fa-tasks me-2"></i> Try Our Grammar Exercises
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card {
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}

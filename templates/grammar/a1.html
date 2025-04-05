@@ -1,0 +1,338 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - A1 Grammar{% endblock %}
+
+{% block content %}
+<div class="grammar-header bg-light py-4">
+    <div class="container">
+        <h1>A1 German Grammar</h1>
+        <p class="lead">Foundational grammar concepts for beginners</p>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <!-- Grammar navigation sidebar -->
+        <div class="col-lg-3 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Grammar Levels</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('grammar_a1') }}" class="list-group-item list-group-item-action active">
+                        <span class="badge bg-success me-2">A1</span> Beginner Grammar
+                    </a>
+                    <a href="{{ url_for('grammar_a2') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-primary me-2">A2</span> Elementary Grammar
+                    </a>
+                    <a href="{{ url_for('grammar_b1') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-warning text-dark me-2">B1</span> Intermediate Grammar
+                    </a>
+                    <div class="list-group-item bg-light text-muted small">Special Resources</div>
+                    <a href="{{ url_for('grammar_practice') }}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-tasks me-2"></i> Practice Exercises
+                    </a>
+                </div>
+            </div>
+            
+            <!-- A1 Topics Navigation -->
+            <div class="card mt-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">A1 Topics</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="#alphabet" class="list-group-item list-group-item-action">Alphabet & Pronunciation</a>
+                    <a href="#sentence-structure" class="list-group-item list-group-item-action">Basic Sentence Structure</a>
+                    <a href="#nouns-articles" class="list-group-item list-group-item-action">Nouns and Articles</a>
+                    <a href="#present-tense" class="list-group-item list-group-item-action">Present Tense</a>
+                    <a href="#personal-pronouns" class="list-group-item list-group-item-action">Personal Pronouns</a>
+                    <a href="#basic-questions" class="list-group-item list-group-item-action">Basic Questions</a>
+                    <a href="#prepositions" class="list-group-item list-group-item-action">Basic Prepositions</a>
+                    <a href="#numbers" class="list-group-item list-group-item-action">Numbers</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="col-lg-9">
+            <div class="alert alert-success">
+                <i class="fas fa-info-circle me-2"></i> A1 grammar forms the foundation of your German language learning. Master these concepts and you'll be well on your way to speaking German!
+            </div>
+            
+            <!-- Alphabet & Pronunciation -->
+            <div id="alphabet" class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0">The German Alphabet and Pronunciation</h3>
+                </div>
+                <div class="card-body">
+                    <p>The German alphabet has 26 letters, just like English, plus four special characters:</p>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div class="card bg-light mb-3">
+                                <div class="card-body">
+                                    <h5>Special Characters</h5>
+                                    <ul>
+                                        <li><strong>ä</strong> (a-Umlaut): Pronounced like the 'e' in 'bed'</li>
+                                        <li><strong>ö</strong> (o-Umlaut): Pronounced like the 'ur' in 'burn' (British English)</li>
+                                        <li><strong>ü</strong> (u-Umlaut): Pronounced like the 'ew' in 'few'</li>
+                                        <li><strong>ß</strong> (Eszett or sharp s): Pronounced like a double 's'</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h5>Key Pronunciation Points</h5>
+                                    <ul>
+                                        <li><strong>v</strong> is usually pronounced like an 'f' (e.g., <em>Vogel</em> - bird)</li>
+                                        <li><strong>w</strong> is pronounced like a 'v' (e.g., <em>Wasser</em> - water)</li>
+                                        <li><strong>z</strong> is pronounced like a 'ts' (e.g., <em>Zahl</em> - number)</li>
+                                        <li><strong>s</strong> is pronounced like a 'z' before a vowel (e.g., <em>Sonne</em> - sun)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4 class="mt-4">Vowel Combinations</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Combination</th>
+                                    <th>Pronunciation</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>ie</strong></td>
+                                    <td>Long 'ee' sound</td>
+                                    <td><em>Liebe</em> (love)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ei</strong></td>
+                                    <td>Like 'eye'</td>
+                                    <td><em>mein</em> (my)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>eu</strong></td>
+                                    <td>Like 'oy'</td>
+                                    <td><em>neu</em> (new)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ch</strong> after i/e</td>
+                                    <td>Soft 'sh' sound</td>
+                                    <td><em>ich</em> (I)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ch</strong> after a/o/u</td>
+                                    <td>Guttural sound (like Scottish 'loch')</td>
+                                    <td><em>Buch</em> (book)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Basic Sentence Structure -->
+            <div id="sentence-structure" class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0">Basic Sentence Structure</h3>
+                </div>
+                <div class="card-body">
+                    <p>The most common sentence structure in German is Subject - Verb - Object (SVO), similar to English.</p>
+                    
+                    <div class="card bg-light mb-3">
+                        <div class="card-body">
+                            <h5>Examples</h5>
+                            <p><strong>Ich</strong> (Subject) <strong>bin</strong> (Verb) <strong>Anna</strong> (Complement).<br><em>I am Anna.</em></p>
+                            <p><strong>Du</strong> (Subject) <strong>sprichst</strong> (Verb) <strong>Deutsch</strong> (Object).<br><em>You speak German.</em></p>
+                        </div>
+                    </div>
+                    
+                    <h4 class="mt-4">Important Rule: Verb Position</h4>
+                    <p>In German, the conjugated verb always comes in the second position in a main clause (except in questions and commands).</p>
+                    
+                    <div class="card bg-light mb-3">
+                        <div class="card-body">
+                            <h5>Examples</h5>
+                            <p><strong>Ich</strong> <strong>gehe</strong> morgen ins Kino.<br><em>I am going to the cinema tomorrow.</em></p>
+                            <p><strong>Morgen</strong> <strong>gehe</strong> ich ins Kino.<br><em>Tomorrow I am going to the cinema.</em></p>
+                            <p><strong>Ins Kino</strong> <strong>gehe</strong> ich morgen.<br><em>To the cinema I am going tomorrow.</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nouns and Articles -->
+            <div id="nouns-articles" class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0">Nouns and Articles</h3>
+                </div>
+                <div class="card-body">
+                    <p>Every noun in German has a grammatical gender (masculine, feminine, or neuter) that determines which article to use.</p>
+                    
+                    <h4>Grammatical Gender</h4>
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <div class="card bg-light h-100">
+                                <div class="card-body">
+                                    <h5 class="text-primary">Masculine (der)</h5>
+                                    <ul>
+                                        <li>der Mann (the man)</li>
+                                        <li>der Tisch (the table)</li>
+                                        <li>der Computer (the computer)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-light h-100">
+                                <div class="card-body">
+                                    <h5 class="text-danger">Feminine (die)</h5>
+                                    <ul>
+                                        <li>die Frau (the woman)</li>
+                                        <li>die Lampe (the lamp)</li>
+                                        <li>die Schule (the school)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-light h-100">
+                                <div class="card-body">
+                                    <h5 class="text-success">Neuter (das)</h5>
+                                    <ul>
+                                        <li>das Kind (the child)</li>
+                                        <li>das Buch (the book)</li>
+                                        <li>das Auto (the car)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i> You need to learn the gender of each noun as it affects the articles and other parts of speech.
+                    </div>
+                    
+                    <h4 class="mt-4">Definite Articles (Bestimmte Artikel)</h4>
+                    <p>Used when you are talking about a specific person or thing.</p>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Gender</th>
+                                    <th>Singular</th>
+                                    <th>Plural</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Masculine</td>
+                                    <td>der</td>
+                                    <td rowspan="3">die</td>
+                                </tr>
+                                <tr>
+                                    <td>Feminine</td>
+                                    <td>die</td>
+                                </tr>
+                                <tr>
+                                    <td>Neuter</td>
+                                    <td>das</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h4 class="mt-4">Indefinite Articles (Unbestimmte Artikel)</h4>
+                    <p>Used when you are talking about a general or non-specific person or thing.</p>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Gender</th>
+                                    <th>Singular</th>
+                                    <th>Plural</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Masculine</td>
+                                    <td>ein</td>
+                                    <td rowspan="3">keine (means "no")</td>
+                                </tr>
+                                <tr>
+                                    <td>Feminine</td>
+                                    <td>eine</td>
+                                </tr>
+                                <tr>
+                                    <td>Neuter</td>
+                                    <td>ein</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card bg-light mt-3">
+                        <div class="card-body">
+                            <h5>Examples</h5>
+                            <p><strong>Der</strong> Tisch ist groß. (The table is big.)</p>
+                            <p><strong>Die</strong> Lampe ist neu. (The lamp is new.)</p>
+                            <p><strong>Das</strong> Buch ist interessant. (The book is interesting.)</p>
+                            <p><strong>Ein</strong> Mann steht dort. (A man is standing there.)</p>
+                            <p><strong>Eine</strong> Frau liest. (A woman is reading.)</p>
+                            <p><strong>Ein</strong> Kind spielt. (A child is playing.)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- More sections for other grammar topics would continue here -->
+            
+            <!-- Practice and Review -->
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Practice and Review</h3>
+                </div>
+                <div class="card-body">
+                    <p>Ready to test your knowledge of A1 German grammar? Try our practice exercises!</p>
+                    <a href="{{ url_for('grammar_practice') }}" class="btn btn-primary">
+                        <i class="fas fa-tasks me-2"></i> Go to Practice Exercises
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Add space before headings with IDs (for anchor links) */
+    [id] {
+        scroll-margin-top: 60px;
+    }
+</style>
+{% endblock %}

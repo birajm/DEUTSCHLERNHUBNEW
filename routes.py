@@ -97,7 +97,23 @@ def b1_index():
 # Grammar reference section
 @app.route('/grammar')
 def grammar():
-    return render_template('grammar.html')
+    return render_template('grammar/index.html')
+
+@app.route('/grammar/a1')
+def grammar_a1():
+    return render_template('grammar/a1.html')
+
+@app.route('/grammar/a2')
+def grammar_a2():
+    return render_template('grammar/a2.html')
+
+@app.route('/grammar/b1')
+def grammar_b1():
+    return render_template('grammar/b1.html')
+
+@app.route('/grammar/practice')
+def grammar_practice():
+    return render_template('grammar/practice.html')
 
 # Listening comprehension exercises
 @app.route('/listening')

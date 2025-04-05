@@ -1,0 +1,472 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Grammar Practice{% endblock %}
+
+{% block content %}
+<div class="grammar-header bg-light py-4">
+    <div class="container">
+        <h1>German Grammar Practice</h1>
+        <p class="lead">Test your grammar knowledge with interactive exercises</p>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <!-- Grammar navigation sidebar -->
+        <div class="col-lg-3 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Grammar Levels</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('grammar_a1') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-success me-2">A1</span> Beginner Grammar
+                    </a>
+                    <a href="{{ url_for('grammar_a2') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-primary me-2">A2</span> Elementary Grammar
+                    </a>
+                    <a href="{{ url_for('grammar_b1') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-warning text-dark me-2">B1</span> Intermediate Grammar
+                    </a>
+                    <div class="list-group-item bg-light text-muted small">Special Resources</div>
+                    <a href="{{ url_for('grammar_practice') }}" class="list-group-item list-group-item-action active">
+                        <i class="fas fa-tasks me-2"></i> Practice Exercises
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Practice Topics Navigation -->
+            <div class="card mt-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Practice by Level</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="#a1-practice" class="list-group-item list-group-item-action">A1 Practice Exercises</a>
+                    <a href="#a2-practice" class="list-group-item list-group-item-action">A2 Practice Exercises</a>
+                    <a href="#b1-practice" class="list-group-item list-group-item-action">B1 Practice Exercises</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="col-lg-9">
+            <div class="alert alert-success">
+                <i class="fas fa-info-circle me-2"></i> Regular practice is the key to mastering German grammar. Try these exercises to reinforce what you've learned.
+            </div>
+            
+            <!-- A1 Practice Section -->
+            <div id="a1-practice" class="card mb-5">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0">A1 Practice Exercises</h3>
+                </div>
+                <div class="card-body">
+                    <p>Test your knowledge of A1 German grammar with these multiple-choice questions.</p>
+                    
+                    <!-- Topic 1: Articles -->
+                    <div class="practice-section mb-4">
+                        <h4>Topic 1: Articles (Der Artikel)</h4>
+                        
+                        <div class="question-block mb-3">
+                            <p><strong>Q1: Was ist der bestimmte Artikel für "Tisch"?</strong></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                <label class="form-check-label" for="q1a">ein</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                <label class="form-check-label" for="q1b">die</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                <label class="form-check-label" for="q1c">das</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                <label class="form-check-label" for="q1d">der</label>
+                            </div>
+                            <div class="answer-feedback mt-2 d-none" id="feedback-q1">
+                                <div class="alert alert-success">
+                                    <strong>Richtig!</strong> Der Tisch - "der" is the correct definite article for masculine nouns.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="question-block mb-3">
+                            <p><strong>Q2: Was ist der unbestimmte Artikel für "Lampe"?</strong></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2a" value="a">
+                                <label class="form-check-label" for="q2a">der</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2b" value="b">
+                                <label class="form-check-label" for="q2b">ein</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2c" value="c">
+                                <label class="form-check-label" for="q2c">das</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2d" value="d">
+                                <label class="form-check-label" for="q2d">eine</label>
+                            </div>
+                            <div class="answer-feedback mt-2 d-none" id="feedback-q2">
+                                <div class="alert alert-success">
+                                    <strong>Richtig!</strong> Eine Lampe - "eine" is the correct indefinite article for feminine nouns.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Topic 2: Personal Pronouns -->
+                    <div class="practice-section mb-4">
+                        <h4>Topic 2: Personal Pronouns (Das Personalpronomen)</h4>
+                        
+                        <div class="question-block mb-3">
+                            <p><strong>Q3: Wie sagt man "I" auf Deutsch?</strong></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3a" value="a">
+                                <label class="form-check-label" for="q3a">du</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3b" value="b">
+                                <label class="form-check-label" for="q3b">er</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3c" value="c">
+                                <label class="form-check-label" for="q3c">ich</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3d" value="d">
+                                <label class="form-check-label" for="q3d">sie</label>
+                            </div>
+                            <div class="answer-feedback mt-2 d-none" id="feedback-q3">
+                                <div class="alert alert-success">
+                                    <strong>Richtig!</strong> "Ich" is the German word for "I".
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <button class="btn btn-success btn-lg" onclick="checkA1Answers()">
+                            <i class="fas fa-check me-2"></i> Check A1 Answers
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- A2 Practice Section -->
+            <div id="a2-practice" class="card mb-5">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">A2 Practice Exercises</h3>
+                </div>
+                <div class="card-body">
+                    <p>Test your knowledge of A2 German grammar with these multiple-choice questions.</p>
+                    
+                    <!-- Topic 1: Cases -->
+                    <div class="practice-section mb-4">
+                        <h4>Topic 1: Cases - Nominative, Accusative, Dative</h4>
+                        
+                        <div class="question-block mb-3">
+                            <p><strong>Q1: "Ich sehe ____ Mann." (der) Welcher Artikel passt im Akkusativ?</strong></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="a2q1" id="a2q1a" value="a">
+                                <label class="form-check-label" for="a2q1a">der</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="a2q1" id="a2q1b" value="b">
+                                <label class="form-check-label" for="a2q1b">dem</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="a2q1" id="a2q1c" value="c">
+                                <label class="form-check-label" for="a2q1c">den</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="a2q1" id="a2q1d" value="d">
+                                <label class="form-check-label" for="a2q1d">des</label>
+                            </div>
+                            <div class="answer-feedback mt-2 d-none" id="feedback-a2q1">
+                                <div class="alert alert-success">
+                                    <strong>Richtig!</strong> "Den" is the correct article for masculine nouns in the accusative case.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Topic 2: Modal Verbs -->
+                    <div class="practice-section mb-4">
+                        <h4>Topic 2: Modal Verbs (Die Modalverben)</h4>
+                        
+                        <div class="question-block mb-3">
+                            <p><strong>Q2: "Ich ____ Deutsch sprechen." (können) Welche Form ist richtig?</strong></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="a2q2" id="a2q2a" value="a">
+                                <label class="form-check-label" for="a2q2a">kann</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="a2q2" id="a2q2b" value="b">
+                                <label class="form-check-label" for="a2q2b">kannst</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="a2q2" id="a2q2c" value="c">
+                                <label class="form-check-label" for="a2q2c">könnt</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="a2q2" id="a2q2d" value="d">
+                                <label class="form-check-label" for="a2q2d">können</label>
+                            </div>
+                            <div class="answer-feedback mt-2 d-none" id="feedback-a2q2">
+                                <div class="alert alert-success">
+                                    <strong>Richtig!</strong> "Kann" is the correct conjugation of "können" for "ich".
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <button class="btn btn-primary btn-lg" onclick="checkA2Answers()">
+                            <i class="fas fa-check me-2"></i> Check A2 Answers
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- B1 Practice Section -->
+            <div id="b1-practice" class="card mb-5">
+                <div class="card-header bg-warning text-dark">
+                    <h3 class="mb-0">B1 Practice Exercises</h3>
+                </div>
+                <div class="card-body">
+                    <p>Test your knowledge of B1 German grammar with these multiple-choice questions.</p>
+                    
+                    <!-- Topic 1: Genitive Case -->
+                    <div class="practice-section mb-4">
+                        <h4>Topic 1: Genitive Case (Der Genitiv)</h4>
+                        
+                        <div class="question-block mb-3">
+                            <p><strong>Q1: Welcher Artikel passt? "Das ist das Auto ____ Mannes."</strong></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="b1q1" id="b1q1a" value="a">
+                                <label class="form-check-label" for="b1q1a">der</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="b1q1" id="b1q1b" value="b">
+                                <label class="form-check-label" for="b1q1b">dem</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="b1q1" id="b1q1c" value="c">
+                                <label class="form-check-label" for="b1q1c">den</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="b1q1" id="b1q1d" value="d">
+                                <label class="form-check-label" for="b1q1d">des</label>
+                            </div>
+                            <div class="answer-feedback mt-2 d-none" id="feedback-b1q1">
+                                <div class="alert alert-success">
+                                    <strong>Richtig!</strong> "Des" is the correct article for masculine nouns in the genitive case.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Topic 2: Passive Voice -->
+                    <div class="practice-section mb-4">
+                        <h4>Topic 2: Passive Voice (Das Passiv)</h4>
+                        
+                        <div class="question-block mb-3">
+                            <p><strong>Q2: Transformiere: "Der Lehrer korrigiert die Tests." Welche Form ist richtig im Passiv?</strong></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="b1q2" id="b1q2a" value="a">
+                                <label class="form-check-label" for="b1q2a">Die Tests werden von dem Lehrer korrigiert.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="b1q2" id="b1q2b" value="b">
+                                <label class="form-check-label" for="b1q2b">Die Tests sind von dem Lehrer korrigiert.</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="b1q2" id="b1q2c" value="c">
+                                <label class="form-check-label" for="b1q2c">Die Tests wurden von dem Lehrer korrigiert.</label>
+                            </div>
+                            <div class="answer-feedback mt-2 d-none" id="feedback-b1q2">
+                                <div class="alert alert-success">
+                                    <strong>Richtig!</strong> "Die Tests werden von dem Lehrer korrigiert." is the correct present passive form.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <button class="btn btn-warning btn-lg" onclick="checkB1Answers()">
+                            <i class="fas fa-check me-2"></i> Check B1 Answers
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Overall Score -->
+            <div class="card mb-4 d-none" id="overall-score">
+                <div class="card-header bg-success text-white">
+                    <h3 class="mb-0">Your Score</h3>
+                </div>
+                <div class="card-body text-center">
+                    <h4 class="mb-4">You answered <span id="correct-answers">0</span> out of <span id="total-questions">7</span> questions correctly!</h4>
+                    <div class="progress mb-4" style="height: 30px;">
+                        <div class="progress-bar bg-success" id="score-progress" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <div id="score-feedback" class="mb-3">
+                        <!-- Feedback will be inserted here -->
+                    </div>
+                    <button class="btn btn-primary btn-lg" onclick="resetQuiz()">
+                        <i class="fas fa-redo me-2"></i> Try Again
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Defining the correct answers
+    const correctAnswers = {
+        'q1': 'd',  // der Tisch
+        'q2': 'd',  // eine Lampe
+        'q3': 'c',  // ich
+        'a2q1': 'c', // den Mann
+        'a2q2': 'a', // ich kann
+        'b1q1': 'd', // des Mannes
+        'b1q2': 'a'  // Die Tests werden...
+    };
+    
+    // Function to check A1 answers
+    function checkA1Answers() {
+        checkAnswers(['q1', 'q2', 'q3']);
+    }
+    
+    // Function to check A2 answers
+    function checkA2Answers() {
+        checkAnswers(['a2q1', 'a2q2']);
+    }
+    
+    // Function to check B1 answers
+    function checkB1Answers() {
+        checkAnswers(['b1q1', 'b1q2']);
+    }
+    
+    // Function to check answers and provide feedback
+    function checkAnswers(questionIds) {
+        questionIds.forEach(qId => {
+            const selectedAnswer = document.querySelector(`input[name="${qId}"]:checked`)?.value;
+            const feedbackElement = document.getElementById(`feedback-${qId}`);
+            
+            if (feedbackElement) {
+                feedbackElement.classList.remove('d-none');
+                
+                if (selectedAnswer === correctAnswers[qId]) {
+                    feedbackElement.innerHTML = `
+                        <div class="alert alert-success">
+                            <strong>Richtig!</strong> That's the correct answer!
+                        </div>
+                    `;
+                } else {
+                    feedbackElement.innerHTML = `
+                        <div class="alert alert-danger">
+                            <strong>Falsch!</strong> The correct answer is option ${correctAnswers[qId].toUpperCase()}.
+                        </div>
+                    `;
+                }
+            }
+        });
+        
+        // Calculate and display overall score
+        let correctCount = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+        
+        Object.keys(correctAnswers).forEach(qId => {
+            const selectedAnswer = document.querySelector(`input[name="${qId}"]:checked`)?.value;
+            if (selectedAnswer === correctAnswers[qId]) {
+                correctCount++;
+            }
+        });
+        
+        const scorePercentage = Math.round((correctCount / totalQuestions) * 100);
+        
+        document.getElementById('correct-answers').textContent = correctCount;
+        document.getElementById('total-questions').textContent = totalQuestions;
+        document.getElementById('score-progress').style.width = `${scorePercentage}%`;
+        document.getElementById('score-progress').textContent = `${scorePercentage}%`;
+        document.getElementById('score-progress').setAttribute('aria-valuenow', scorePercentage);
+        
+        let feedbackMessage = '';
+        if (scorePercentage >= 90) {
+            feedbackMessage = '<div class="alert alert-success">Ausgezeichnet! (Excellent!) You have a great understanding of German grammar!</div>';
+        } else if (scorePercentage >= 70) {
+            feedbackMessage = '<div class="alert alert-info">Sehr gut! (Very good!) You\'re on the right track!</div>';
+        } else if (scorePercentage >= 50) {
+            feedbackMessage = '<div class="alert alert-warning">Nicht schlecht! (Not bad!) Keep practicing to improve your skills.</div>';
+        } else {
+            feedbackMessage = '<div class="alert alert-danger">Es gibt noch Raum für Verbesserung! (There\'s still room for improvement!) Review the grammar lessons and try again.</div>';
+        }
+        
+        document.getElementById('score-feedback').innerHTML = feedbackMessage;
+        document.getElementById('overall-score').classList.remove('d-none');
+        
+        // Scroll to the score section
+        document.getElementById('overall-score').scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Function to reset the quiz
+    function resetQuiz() {
+        // Clear all radio button selections
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.checked = false;
+        });
+        
+        // Hide all feedback
+        document.querySelectorAll('.answer-feedback').forEach(feedback => {
+            feedback.classList.add('d-none');
+        });
+        
+        // Hide overall score
+        document.getElementById('overall-score').classList.add('d-none');
+        
+        // Scroll to the top of the practice page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Add space before headings with IDs (for anchor links) */
+    [id] {
+        scroll-margin-top: 60px;
+    }
+    
+    /* Styling for the practice sections */
+    .practice-section {
+        border-left: 4px solid #dee2e6;
+        padding-left: 15px;
+    }
+    
+    /* Add some additional space between questions */
+    .question-block {
+        margin-bottom: 25px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,221 @@
+. Review of A1 and A2 Grammar (Wiederholung der A1- und A2-Grammatik)
+
+Ensure you have a strong grasp of all the grammar points covered in A1 and A2, including:
+Nouns, articles, and their declension in Nominative, Accusative, and Dative cases.
+Verb conjugation in present and perfect tenses.
+Modal verbs and their usage.
+Basic sentence structure (SVO and variations).
+Personal and possessive pronouns.
+Basic prepositions with their respective cases.
+Comparative and superlative forms of adjectives.
+Subordinating conjunctions like weil, dass, wenn, ob.
+Time expressions.
+2. Genitive Case (Der Genitiv)
+
+The genitive case answers the question "Wessen?" (Whose?). It indicates possession or belonging. While less common in spoken German (often replaced by the dative with von), it's important for formal writing and understanding written texts.
+
+Changes in Articles:
+
+| Case        | Masculine | Feminine | Neuter    | Plural    |
+| :---------- | :-------- | :------- | :-------- | :-------- |
+| Nominative  | der       | die      | das       | die       |
+| Accusative  | den       | die      | das       | die       |
+| Dative      | dem       | der      | dem       | den + -n  |
+| Genitive | des | der | des | der |   
+
+Changes in Nouns:
+
+Masculine and Neuter Nouns: Usually add an -s or -es ending in the genitive singular.
+
+der Mann -> des Mannes
+das Auto -> des Autos
+der Tag -> des Tages
+das Jahr -> des Jahres (often just -s)
+Feminine and Plural Nouns: Usually don't change in the genitive.
+
+die Frau -> der Frau
+die Kinder -> der Kinder
+Examples:
+
+Das ist das Auto des Mannes. (This is the man's car.)
+Die Farbe des Himmels ist blau. (The color of the sky is blue.)
+Die Bücher der Kinder sind hier. (The children's books are here.)
+3. Passive Voice (Das Passiv)
+
+The passive voice is used when the focus is on the action rather than the actor.
+
+Formation of the werden-Passiv (Process Passive): Used to describe an action that is being done.
+
+werden + Past Participle (Partizip II) of the main verb
+
+Present Passive: werden (present tense) + Partizip II
+
+Das Haus wird gebaut. (The house is being built.)
+Die Tür wird geöffnet. (The door is being opened.)
+Past Passive (Präteritum Passiv): wurde + Partizip II
+
+Das Haus wurde gebaut. (The house was built.)
+Die Tür wurde geöffnet. (The door was opened.)
+Perfect Passive: sein (present tense) + Partizip II + worden
+
+Das Haus ist gebaut worden. (The house has been built.)
+Die Tür ist geöffnet worden. (The door has been opened.)
+Formation of the sein-Passiv (State Passive): Describes a state that has resulted from a previous action.
+
+sein + Past Participle (Partizip II) of the main verb
+
+Present State Passive: sein (present tense) + Partizip II
+
+Die Tür ist geöffnet. (The door is open.) (Result of being opened)
+Das Essen ist gekocht. (The food is cooked.)
+Agent in Passive Sentences: The person or thing performing the action can be mentioned using the preposition von (if it's a person or organization) or durch (if it's a means or cause) with the dative case.
+
+Das Haus wurde von einem Architekten entworfen. (The house was designed by an architect.)
+Die Tür wurde durch den Wind geöffnet. (The door was opened by the wind.)
+4. Future I Tense (Futur I)
+
+The Future I tense is used to talk about actions that will happen in the future.
+
+Formation: werden (conjugated in the present tense) + Infinitive of the main verb (at the end of the sentence).
+
+| Pronoun | werden   | Example                                    |
+| :------ | :------- | :----------------------------------------- |
+| ich     | werde    | Ich werde morgen arbeiten. (I will work tomorrow.) |
+| du      | wirst    | Du wirst eine Prüfung machen. (You will take an exam.) |
+| er/sie/es | wird     | Er wird nach Deutschland reisen. (He will travel to Germany.) |
+| wir     | werden   | Wir werden ein neues Auto kaufen. (We will buy a new car.) |
+| ihr     | werdet   | Ihr werdet viel Spaß haben. (You will have a lot of fun.) |
+| sie/Sie | werden   | Sie werden uns besuchen. (They/You will visit us.) |
+
+5. Relative Clauses (Relativsätze)
+
+Relative clauses provide additional information about a noun in the main clause. They are introduced by relative pronouns.   
+
+Relative Pronouns: The choice of relative pronoun depends on the gender, number, and case of the noun it refers to.
+
+| Case        | Masculine | Feminine | Neuter    | Plural    |
+| :---------- | :-------- | :------- | :-------- | :-------- |
+| Nominative  | der       | die      | das       | die       |
+| Accusative  | den       | die      | das       | die       |
+| Dative      | dem       | der      | dem       | denen     |
+| Genitive    | dessen    | deren    | dessen    | deren     |   
+
+Word Order in Relative Clauses: The relative pronoun comes at the beginning of the relative clause, and the conjugated verb goes to the end of the clause.
+
+Das ist der Mann, der gestern hier war. (That is the man who was here yesterday.) (der refers to der Mann, nominative)
+Ich suche das Buch, das auf dem Tisch liegt. (I am looking for the book that is lying on the table.) (das refers to das Buch, nominative)
+Sie spricht mit der Frau, die neben mir wohnt. (She is talking to the woman who lives next to me.) (die refers to die Frau, nominative)
+Er hat ein Auto, das er letztes Jahr gekauft hat. (He has a car that he bought last year.) (das refers to das Auto, accusative)
+Das ist der Freund, dem ich das Geld gegeben habe. (That is the friend to whom I gave the money.) (dem refers to der Freund, dative)
+Das ist die Firma, deren Chef mein Onkel ist. (That is the company whose boss is my uncle.) (deren refers to die Firma, genitive)
+Alternative Relative Pronouns: welcher, welche, welches These can be used instead of der, die, das, especially in more formal contexts. They follow the same declension patterns.
+
+6. More Complex Conjunctions (Komplexere Konjunktionen)
+
+B1 introduces a wider range of conjunctions that connect clauses and express different relationships.
+
+Conjunctions that introduce subordinate clauses (verb at the end):
+
+obwohl (although): Obwohl es regnet, gehen wir spazieren. (Although it is raining, we are going for a walk.)
+damit (so that, in order that): Ich lerne Deutsch, damit ich in Deutschland studieren kann. (I am learning German so that I can study in Germany.)
+sodass (so that, as a result): Er hat sehr schnell gesprochen, sodass ich ihn nicht verstanden habe. (He spoke very quickly, so that I didn't understand him.)
+bevor (before): Bevor ich ins Bett gehe, putze ich meine Zähne. (Before I go to bed, I brush my teeth.)
+nachdem (after): Nachdem ich gefrühstückt habe, gehe ich zur Arbeit. (After I have had breakfast, I go to work.)
+während (while): Während ich koche, hört er Musik. (While I am cooking, he listens to music.)
+Two-part conjunctions (zweiteilige Konjunktionen):
+
+entweder ... oder (either ... or): Entweder du kommst mit, oder du bleibst hier. (Either you come with me, or you stay here.)
+nicht nur ... sondern auch (not only ... but also): Er spricht nicht nur Deutsch, sondern auch Englisch. (He speaks not only German, but also English.)
+sowohl ... als auch (both ... and): Sowohl meine Mutter als auch mein Vater sind Lehrer. (Both my mother and my father are teachers.)
+weder ... noch (neither ... nor): Ich mag weder Kaffee noch Tee. (I like neither coffee nor tea.)
+7. Reflexive Verbs (Reflexive Verben)
+
+Reflexive verbs are verbs where the action is directed back at the subject. They are used with reflexive pronouns.
+
+Reflexive Pronouns:
+
+| Pronoun | Reflexive Pronoun (Accusative) | Reflexive Pronoun (Dative) |
+| :------ | :----------------------------- | :-------------------------- |
+| ich     | mich                           | mir                         |
+| du      | dich                           | dir                         |
+| er/sie/es | sich                           | sich                        |
+| wir     | uns                            | uns                         |
+| ihr     | euch                           | euch                        |
+| sie/Sie | sich                           | sich                        |
+
+Usage: Many reflexive verbs use the accusative reflexive pronoun. Some common ones:
+
+sich waschen (to wash oneself)
+sich anziehen (to get dressed)
+sich ausruhen (to rest)
+sich freuen über (+ Accusative) (to be happy about)
+sich interessieren für (+ Accusative) (to be interested in)
+Some verbs can also use the dative reflexive pronoun, often when another accusative object is present:
+
+sich die Hände waschen (to wash one's hands)
+sich die Haare kämmen (to comb one's hair)
+Examples:
+
+Ich wasche mich. (I wash myself.)
+Du ziehst dich schnell an. (You get dressed quickly.)
+Er ruht sich nach der Arbeit aus. (He rests after work.)
+Wir freuen uns über das Geschenk. (We are happy about the present.)
+Sie interessiert sich für Musik. (She is interested in music.)
+Ich wasche mir die Hände. (I wash my hands.)
+8. Prepositions with Two Cases (Wechselpräpositionen)
+
+These prepositions can take either the accusative or the dative case, depending on whether the verb indicates movement (accusative) or a fixed location (dative). The most common ones are:
+
+an (on, at)
+auf (on)
+hinter (behind)
+in (in, into)
+neben (next to)
+über (over, above)
+unter (under, below)
+vor (in front of)
+zwischen (between)
+Movement (Accusative): Answers the question "Wohin?" (Where to?).
+
+Ich lege das Buch auf den Tisch. (I put the book on the table.) (Movement of the book)
+Wir gehen in das Kino. (We are going into the cinema.) (Movement of people)
+Fixed Location (Dative): Answers the question "Wo?" (Where?).
+
+Das Buch liegt auf dem Tisch. (The book is lying on the table.) (Fixed location of the book)
+Wir sind in dem Kino. (We are in the cinema.) (Fixed location of people)
+9. Subjunctive II (Konjunktiv II)
+
+The Subjunctive II (Konjunktiv II) is used to express hypothetical situations, wishes, polite requests, and indirect speech. At the B1 level, you'll primarily focus on:
+
+würde + Infinitive: Used for most verbs to express hypothetical situations or polite requests.
+
+Ich würde gern einen Kaffee trinken. (I would like to drink a coffee.)
+Würden Sie mir bitte helfen? (Would you please help me?)
+Wenn ich Zeit hätte, würde ich reisen. (If I had time, I would travel.)
+Past Tense Forms of Common Irregular Verbs: Some common irregular verbs have specific Subjunctive II forms based on their past tense (Präteritum). Often, the vowel in the past tense form gets an umlaut, and an "-e" is added.
+
+haben (hatte) -> hätte
+Ich hätte gern mehr Zeit. (I would like to have more time.)
+sein (war) -> wäre
+Wenn ich du wäre, würde ich das nicht tun. (If I were you, I wouldn't do that.)
+können (konnte) -> könnte
+Ich könnte dir helfen. (I could help you.)
+müssen (musste) -> müsste
+Du müsstest pünktlich sein. (You would have to be on time.)
+dürfen (durfte) -> dürfte
+Dürfte ich Sie etwas fragen? (May I ask you something?)
+sollen (sollte) -> sollte
+Du solltest mehr lernen. (You should study more.)
+wollen (wollte) -> wollte
+Ich wollte dich etwas fragen. (I wanted to ask you something.)
+10. Noun Compounds (Nomenkomposita)
+
+German frequently forms new nouns by combining two or more existing nouns. The last noun in the compound determines the grammatical gender of the entire compound.
+
+das Buch (the book) + der Tisch (the table) = der Büchertisch (the book table/shelf) (gender is masculine because of Tisch)
+die Schule (the school) + der Bus (the bus) = der Schulbus (the school bus) (gender is masculine because of Bus)
+die Tür (the door) + die Glocke (the bell) = die Türklingel (the doorbell) (gender is feminine because of Glocke)
+das Wetter (the weather) + der Bericht (the report) = der Wetterbericht (the weather report) (gender is masculine because of Bericht)
+11. Adjective Declension (Advanced)
+
+By B1, you should have a good understanding of adjective endings in all cases (Nominative, Accusative, Dative, Genitive) after definite articles, indefinite articles, possessive pronouns, and without articles. Continue to practice and refine your understanding of these patterns.

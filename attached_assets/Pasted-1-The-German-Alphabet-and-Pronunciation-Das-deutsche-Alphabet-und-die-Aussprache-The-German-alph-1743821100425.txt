@@ -1,0 +1,229 @@
+1. The German Alphabet and Pronunciation (Das deutsche Alphabet und die Aussprache)
+
+The German alphabet has 26 letters, just like English.
+
+There are also four special characters:
+
+ä (a-Umlaut): Pronounced like the 'e' in 'bed'.
+ö (o-Umlaut): Pronounced like the 'ur' in 'burn' (British English) or a similar sound.
+ü (u-Umlaut): Pronounced like the 'ew' in 'few'.
+ß (Eszett or sharp s): Pronounced like a double 's'.
+Key Pronunciation Points for Beginners:
+
+v is usually pronounced like an 'f' (e.g., Vogel - bird).
+w is pronounced like a 'v' (e.g., Wasser - water).
+z is pronounced like a 'ts' (e.g., Zahl - number).
+s is pronounced like a 'z' before a vowel (e.g., Sonne - sun).
+ch after 'i' or 'e' is a soft 'sh' sound (e.g., ich - I, Milch - milk).
+ch after 'a', 'o', 'u' is a guttural sound, like the 'ch' in Scottish 'loch' (e.g., Buch - book).
+ie is pronounced like a long 'ee' (e.g., Liebe - love).
+ei is pronounced like 'eye' (e.g., mein - my).
+eu is pronounced like 'oy' (e.g., neu - new).
+2. Basic Sentence Structure (Der einfache Satzbau)
+
+The most common sentence structure in German is Subject - Verb - Object (SVO), similar to English.
+
+Ich (Subject) bin (Verb) Anna. (Object/Complement) - I am Anna.
+Du (Subject) sprichst (Verb) Deutsch. (Object) - You speak German.
+Sometimes the object comes before other parts of the sentence.
+
+3. Nouns and Articles (Die Nomen und Artikel)
+
+Every noun in German has a grammatical gender:
+
+Masculine (der): der Mann (the man)
+Feminine (die): die Frau (the woman)
+Neuter (das): das Kind (the child)
+You need to learn the gender of each noun as it affects the articles and other parts of speech.
+
+Definite Articles (Bestimmte Artikel): Used when you are talking about a specific person or thing.
+
+| Gender    | Singular | Plural    |
+| :-------- | :------- | :-------- |
+| Masculine | der      | die (same) |
+| Feminine  | die      | die (same) |
+| Neuter    | das      | die (same) |
+
+Der Tisch (the table)
+Die Lampe (the lamp)
+Das Buch (the book)
+Die Tische (the tables)
+Die Lampen (the lamps)
+Die Bücher (the books)
+Indefinite Articles (Unbestimmte Artikel): Used when you are talking about a general or non-specific person or thing.
+
+| Gender    | Singular | Plural |
+| :-------- | :------- | :----- |
+| Masculine | ein      | keine  |
+| Feminine  | eine     | keine  |
+| Neuter    | ein      | keine  |
+
+Ein Mann (a man)
+Eine Frau (a woman)
+Ein Kind (a child)
+Keine Männer (no men)
+Keine Frauen (no women)
+Keine Kinder (no children)
+4. Verbs (Die Verben)
+
+Verbs in German are conjugated, meaning their form changes depending on the subject.
+
+Present Tense Conjugation of Regular Verbs: The basic pattern involves dropping the -en ending from the infinitive and adding specific endings.
+
+| Pronoun | Ending | Example: machen (to make) | Example: spielen (to play) |
+| :------ | :----- | :------------------------- | :-------------------------- |
+| ich     | -e     | ich mache | ich spiele |
+| du      | -st    | du machst | du spielst |
+| er/sie/es | -t     | er/sie/es macht | er/sie/es spielt |
+| wir     | -en    | wir machen | wir spielen |
+| ihr     | -t     | ihr macht | ihr spielt |
+| sie/Sie | -en    | sie/Sie machen | sie/Sie spielen |
+
+Sie (lowercase) means "they".
+Sie (uppercase) means "you" (formal).
+Common Irregular Verbs (Important for Beginners):
+
+sein (to be):
+
+ich bin
+du bist
+er/sie/es ist
+wir sind
+ihr seid
+sie/Sie sind
+haben (to have):
+
+ich habe
+du hast
+er/sie/es hat
+wir haben
+ihr habt
+sie/Sie haben   
+werden (to become):
+
+ich werde
+du wirst
+er/sie/es wird
+wir werden
+ihr werdet
+sie/Sie werden   
+5. Personal Pronouns (Die Personalpronomen)
+
+Pronoun	English	Example
+ich	I	Ich wohne in Berlin. (I live in Berlin.)
+du	you (informal)	Du bist mein Freund. (You are my friend.)
+er	he	Er kommt aus Deutschland. (He comes from Germany.)
+sie	she	Sie ist Lehrerin. (She is a teacher.)
+es	it	Es ist kalt heute. (It is cold today.)
+wir	we	Wir lernen Deutsch. (We are learning German.)
+ihr	you (plural, informal)	Ihr seid nett. (You are nice.)
+sie	they	Sie spielen Fußball. (They play football.)
+Sie	you (formal)	Sie sprechen gut Deutsch. (You speak German well.)
+
+Export to Sheets
+6. Basic Adjectives (Die einfachen Adjektive)
+
+Adjectives describe nouns. In their basic form (before a noun), they don't usually change in A1 level.
+
+ein kleines Haus (a small house) - Note: Here the adjective ending changes, but this is usually introduced later. For A1, focus on the basic form.
+eine gute Idee (a good idea)
+der nette Mann (the nice man)
+Common A1 Adjectives:
+
+gut (good)
+schlecht (bad)
+groß (big)
+klein (small)
+neu (new)
+alt (old)
+schön (beautiful)
+nett (nice)
+7. Numbers (Die Zahlen)
+
+0 - 20:
+
+null, eins, zwei, drei, vier, fünf, sechs, sieben, acht, neun, zehn, elf, zwölf, dreizehn, vierzehn, fünfzehn, sechzehn, siebzehn, achtzehn, neunzehn, zwanzig   
+Tens (20 - 100):
+
+dreißig (30), vierzig (40), fünfzig (50), sechzig (60), siebzig (70), achtzig (80), neunzig (90), hundert (100)
+Combining Tens and Units: Notice the order is reversed compared to English (e.g., twenty-one becomes "one and twenty").
+
+21: einundzwanzig
+35: fünfunddreißig
+8. Basic Questions (Die einfachen Fragen)
+
+Yes/No Questions (Ja/Nein-Fragen): The verb comes at the beginning of the sentence.
+
+Bist du müde? (Are you tired?)
+Sprechen Sie Englisch? (Do you speak English?)
+W-Questions (W-Fragen): These questions start with a question word (Wort).
+
+| Question Word | English | Example                               |
+| :------------ | :------ | :------------------------------------ |
+| wer           | who     | Wer sind Sie? (Who are you?)     |
+| was           | what    | Was ist das? (What is that?)      |
+| wann          | when    | Wann kommst du? (When are you coming?) |
+| wo            | where   | Wo wohnst du? (Where do you live?) |
+| wohin         | where to | Wohin gehst du? (Where are you going?) |
+| woher         | where from | Woher kommen Sie? (Where do you come from?) |
+| wie           | how     | Wie geht es Ihnen? (How are you?) (formal) |
+| wie viel      | how much | Wie viel kostet das? (How much does that cost?) |
+
+9. Basic Prepositions (Die einfachen Präpositionen)
+
+Prepositions show the relationship between nouns or pronouns and other words in the sentence (e.g., location, time).
+
+Prepositions of Place:
+
+in (in) - Ich wohne in Berlin. (I live in Berlin.)
+auf (on) - Das Buch liegt auf dem Tisch. (The book is on the table.)
+unter (under) - Die Katze ist unter dem Stuhl. (The cat is under the chair.)
+neben (next to) - Das Kino ist neben dem Supermarkt. (The cinema is next to the supermarket.)
+vor (in front of) - Das Auto steht vor dem Haus. (The car is in front of the house.)
+hinter (behind) - Der Garten ist hinter dem Haus. (The garden is behind the house.)
+zwischen (between) - Die Bank ist zwischen dem Baum und dem Fluss. (The bench is between the tree and the river.)
+Prepositions of Time:
+
+am (on - for days of the week and parts of the day) - Ich gehe am Montag ins Kino. (I go to the cinema on Monday.) / Ich stehe am Morgen auf. (I get up in the morning.)
+im (in - for months and seasons) - Wir fahren im Sommer in Urlaub. (We go on vacation in the summer.) / Ich bin im Juli geboren. (I was born in July.)
+um (at - for specific times) - Der Unterricht beginnt um 9 Uhr. (The lesson starts at 9 o'clock.)
+10. Basic Vocabulary (Grundlegender Wortschatz)
+
+Greetings:
+
+Hallo (Hello)
+Guten Morgen (Good morning)
+Guten Tag (Good day/afternoon)
+Guten Abend (Good evening)
+Gute Nacht (Good night)
+Tschüss (Goodbye)
+Auf Wiedersehen (Goodbye - more formal)
+Bis bald (See you soon)
+Introductions:
+
+Ich bin... (I am...)
+Wie heißen Sie? (What is your name? - formal)
+Wie heißt du? (What is your name? - informal)
+Mein Name ist... (My name is...)
+Ich komme aus... (I come from...)
+Ich wohne in... (I live in...)
+Everyday Objects:
+
+der Tisch (the table)
+der Stuhl (the chair)
+das Buch (the book)
+die Lampe (the lamp)
+das Haus (the house)
+die Tür (the door)
+das Fenster (the window)
+Basic Actions:
+
+sprechen (to speak)
+lesen (to read)
+schreiben (to write)
+essen (to eat)
+trinken (to drink)
+gehen (to go)
+kommen (to come)
+haben (to have)
+sein (to be)

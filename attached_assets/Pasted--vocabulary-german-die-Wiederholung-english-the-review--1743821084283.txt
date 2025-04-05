@@ -1,0 +1,1054 @@
+],
+    vocabulary: [
+      {
+        german: "die Wiederholung",
+        english: "the review",
+        context: "Grammar review",
+        example: "Eine Wiederholung der Grammatik ist wichtig.",
+      },
+      {
+        german: "die Deklination",
+        english: "declension",
+        context: "Grammar concept",
+        example: "Die Deklination der Artikel ist ein wichtiges Thema.",
+      },
+      {
+        german: "die Konjugation",
+        english: "conjugation",
+        context: "Verb forms",
+        example: "Die Konjugation im Präsens ist grundlegend.",
+      }
+    ],
+    grammar: {
+      title: "Review of A1 and A2 Grammar Points",
+      description: "Comprehensive review of fundamental grammar concepts from A1 and A2 levels",
+      sections: [
+        {
+          title: "Nouns and Articles",
+          description: "Review of noun gender and case declension:",
+          bullets: [
+            "Nominative case: der, die, das, die (plural)",
+            "Accusative case: den, die, das, die (plural)",
+            "Dative case: dem, der, dem, den (plural)",
+            "Articles with adjective endings"
+          ],
+          example: "Der Mann gibt der Frau das Buch. (Nominative, Dative, Accusative)"
+        },
+        {
+          title: "Verb Conjugation",
+          description: "Review of important verb tenses:",
+          bullets: [
+            "Present tense (Präsens)",
+            "Perfect tense (Perfekt)",
+            "Modal verbs (können, müssen, etc.)",
+            "Regular and irregular verb patterns"
+          ],
+          example: "Ich habe gestern Deutsch gelernt. (Perfect tense)"
+        },
+        {
+          title: "Sentence Structure",
+          description: "Basic and expanded sentence patterns:",
+          bullets: [
+            "Subject-Verb-Object (SVO) order",
+            "Time-Manner-Place rule",
+            "Position of nicht in sentences",
+            "Coordinating and subordinating conjunctions"
+          ],
+          example: "Ich gehe heute mit meiner Freundin ins Kino."
+        }
+      ],
+      linkText: "Learn more about German grammar fundamentals",
+      linkSlug: "grammar-fundamentals"
+    }
+  },
+  {
+    id: "b1-genitive",
+    title: "The Genitive Case",
+    level: "b1",
+    order: 1,
+    vocabulary: [
+      {
+        german: "des Mannes",
+        english: "of the man",
+        context: "Genitive case example",
+        example: "Das ist das Auto des Mannes.",
+      },
+      {
+        german: "der Frau",
+        english: "of the woman",
+        context: "Genitive case example",
+        example: "Die Tasche der Frau ist blau.",
+      },
+      {
+        german: "des Kindes",
+        english: "of the child",
+        context: "Genitive case example",
+        example: "Die Spielzeuge des Kindes sind neu.",
+      }
+    ],
+    grammar: {
+      title: "The Genitive Case in German",
+      description: "The genitive case shows possession and answers the question 'Wessen?' (Whose?)",
+      sections: [
+        {
+          title: "Article Changes",
+          description: "Articles change in the genitive case:",
+          bullets: [
+            "Masculine: der → des",
+            "Feminine: die → der",
+            "Neuter: das → des",
+            "Plural: die → der"
+          ],
+          example: "Das Auto des Mannes. (The man's car.)"
+        },
+        {
+          title: "Noun Changes",
+          description: "Masculine and neuter nouns add endings:",
+          bullets: [
+            "Add -s or -es to masculine and neuter nouns",
+            "Feminine and plural nouns don't change",
+            "Common examples: des Mannes, des Autos, des Tages",
+            "No changes: der Frau, der Kinder"
+          ],
+          example: "Die Farbe des Himmels ist blau. (The color of the sky is blue.)"
+        }
+      ],
+      linkText: "Learn more about the genitive case",
+      linkSlug: "genitive-case"
+    }
+  },
+  {
+    id: "b1-passive",
+    title: "Passive Voice",
+    level: "b1",
+    order: 2,
+    exercises: [
+      {
+        title: "Transform active to passive voice",
+        questions: [
+          {
+            id: "q1",
+            text: "Transform: 'Der Lehrer korrigiert die Tests.'",
+            context: "Choose the correct passive form:",
+            options: [
+              { id: "a", text: "Die Tests werden von dem Lehrer korrigiert." },
+              { id: "b", text: "Die Tests sind von dem Lehrer korrigiert." },
+              { id: "c", text: "Die Tests wurden von dem Lehrer korrigiert." }
+            ],
+            correctAnswer: "a"
+          },
+          {
+            id: "q2",
+            text: "Complete the sentence in passive voice:",
+            context: "Das Haus ___ vor zwei Jahren _____.",
+            options: [
+              { id: "a", text: "wurde ... gebaut" },
+              { id: "b", text: "wird ... gebaut" },
+              { id: "c", text: "ist ... gebaut" }
+            ],
+            correctAnswer: "a"
+          }
+        ]
+      }
+    ],
+    vocabulary: [
+      {
+        german: "werden",
+        english: "to become/will be",
+        context: "Auxiliary verb for passive",
+        example: "Das Haus wird gebaut.",
+      },
+      {
+        german: "von",
+        english: "by",
+        context: "Used with passive for agent",
+        example: "Das Buch wurde von einem Autor geschrieben.",
+      },
+      {
+        german: "durch",
+        english: "through/by",
+        context: "Used with passive for means",
+        example: "Die Tür wurde durch den Wind geöffnet.",
+      }
+    ],
+    grammar: {
+      title: "Passive Voice in German",
+      description: "The passive voice focuses on the action rather than who performs it",
+      sections: [
+        {
+          title: "Present Passive",
+          description: "Formation: werden (present) + past participle",
+          bullets: [
+            "Present: werden + Partizip II",
+            "Past: wurde + Partizip II",
+            "Perfect: ist + Partizip II + worden",
+            "With agent: von (person) or durch (means)"
+          ],
+          example: "Die Tür wird geöffnet. (The door is being opened.)"
+        },
+        {
+          title: "State Passive",
+          description: "Formation: sein + past participle",
+          bullets: [
+            "Describes resulting state",
+            "Uses sein instead of werden",
+            "Indicates completed action result",
+            "Common with state verbs"
+          ],
+          example: "Die Tür ist geöffnet. (The door is open.)"
+        }
+      ],
+      linkText: "Learn more about passive voice",
+      linkSlug: "passive-voice"
+    }
+  },
+  {
+    id: "b1-reflexive",
+    title: "Reflexive Verbs",
+    level: "b1",
+    order: 3,
+    vocabulary: [
+      {
+        german: "sich waschen",
+        english: "to wash oneself",
+        context: "Reflexive verb example",
+        example: "Ich wasche mich jeden Morgen.",
+      },
+      {
+        german: "sich freuen",
+        english: "to be happy",
+        context: "Reflexive verb with preposition",
+        example: "Ich freue mich über das Geschenk.",
+      },
+      {
+        german: "sich die Hände waschen",
+        english: "to wash one's hands",
+        context: "Reflexive with accusative object",
+        example: "Er wäscht sich die Hände.",
+      }
+    ],
+    grammar: {
+      title: "Reflexive Verbs in German",
+      description: "Reflexive verbs include a reflexive pronoun that refers back to the subject",
+      sections: [
+        {
+          title: "Accusative Reflexive Pronouns",
+          description: "Used when the action reflects directly back:",
+          bullets: [
+            "mich (myself), dich (yourself)",
+            "sich (himself/herself/itself)",
+            "uns (ourselves), euch (yourselves)",
+            "sich (themselves/yourself formal)"
+          ],
+          example: "Ich wasche mich. (I wash myself.)"
+        },
+        {
+          title: "Dative Reflexive Pronouns",
+          description: "Used with accusative objects:",
+          bullets: [
+            "mir, dir, sich, uns, euch, sich",
+            "Used when another accusative object exists",
+            "Common with body parts and clothing",
+            "Follows regular dative patterns"
+          ],
+          example: "Ich wasche mir die Hände. (I wash my hands.)"
+        }
+      ],
+      linkText: "Learn more about reflexive verbs",
+      linkSlug: "reflexive-verbs"
+    }
+  },
+  {
+    id: "b1-future",
+    title: "Future Tense",
+    level: "b1",
+    order: 4,
+    vocabulary: [
+      {
+        german: "werden",
+        english: "will/to become",
+        context: "Future tense auxiliary",
+        example: "Ich werde morgen kommen.",
+      },
+      {
+        german: "planen",
+        english: "to plan",
+        context: "Future actions",
+        example: "Ich plane, nach Berlin zu fahren.",
+      },
+      {
+        german: "vorhaben",
+        english: "to intend/plan",
+        context: "Future intentions",
+        example: "Was hast du vor?",
+      }
+    ],
+    grammar: {
+      title: "Future Tense in German",
+      description: "Express future actions using werden + infinitive or present tense with future context",
+      sections: [
+        {
+          title: "Future with werden",
+          description: "Formation: werden (conjugated) + infinitive",
+          bullets: [
+            "ich werde, du wirst, er/sie/es wird",
+            "wir werden, ihr werdet, sie/Sie werden",
+            "Infinitive goes to end of clause",
+            "Used for predictions and future facts"
+          ],
+          example: "Ich werde nächstes Jahr nach Deutschland reisen."
+        },
+        {
+          title: "Present as Future",
+          description: "Using present tense with future time expressions",
+          bullets: [
+            "Common in spoken German",
+            "Must include future time reference",
+            "More certain than werden-future",
+            "Used for planned events"
+          ],
+          example: "Morgen gehe ich ins Kino."
+        }
+      ],
+      linkText: "Learn more about future tense",
+      linkSlug: "future-tense"
+    }
+  },
+  {
+    id: "b1-conjunctions",
+    title: "Complex Conjunctions",
+    level: "b1",
+    order: 5,
+    vocabulary: [
+      {
+        german: "während",
+        english: "while/whereas",
+        context: "Temporal/contrasting conjunction",
+        example: "Während ich lese, hört er Musik.",
+      },
+      {
+        german: "nachdem",
+        english: "after",
+        context: "Temporal conjunction",
+        example: "Nachdem ich gegessen hatte, ging ich schlafen.",
+      },
+      {
+        german: "damit",
+        english: "so that",
+        context: "Purpose conjunction",
+        example: "Ich lerne Deutsch, damit ich in Deutschland studieren kann.",
+      }
+    ],
+    grammar: {
+      title: "Complex Conjunctions in German",
+      description: "Advanced conjunctions to create more sophisticated sentence structures",
+      sections: [
+        {
+          title: "Subordinating Conjunctions",
+          description: "Conjunctions that affect word order:",
+          bullets: [
+            "während (while/whereas)",
+            "nachdem (after)",
+            "bevor (before)",
+            "seitdem (since)",
+            "damit (so that)"
+          ],
+          example: "Während ich arbeite, kocht meine Frau."
+        },
+        {
+          title: "Two-Part Conjunctions",
+          description: "Correlative conjunctions:",
+          bullets: [
+            "nicht nur ... sondern auch (not only ... but also)",
+            "weder ... noch (neither ... nor)",
+            "sowohl ... als auch (both ... and)",
+            "je ... desto (the ... the)"
+          ],
+          example: "Je mehr ich übe, desto besser werde ich."
+        }
+      ],
+      linkText: "Learn more about complex conjunctions",
+      linkSlug: "complex-conjunctions"
+    }
+  },
+  {
+    id: "b1-prepositions",
+    title: "Two-way Prepositions",
+    level: "b1",
+    order: 6,
+    vocabulary: [
+      {
+        german: "in",
+        english: "in/into",
+        context: "Location/direction",
+        example: "Ich gehe in die Schule. / Ich bin in der Schule.",
+      },
+      {
+        german: "auf",
+        english: "on/onto",
+        context: "Location/direction",
+        example: "Das Buch liegt auf dem Tisch. / Ich lege das Buch auf den Tisch.",
+      },
+      {
+        german: "über",
+        english: "over/above",
+        context: "Location/direction",
+        example: "Die Lampe hängt über dem Tisch. / Ich hänge die Lampe über den Tisch.",
+      }
+    ],
+    grammar: {
+      title: "Two-way Prepositions in German",
+      description: "Prepositions that can take either accusative or dative case depending on motion vs. location",
+      sections: [
+        {
+          title: "Case Selection",
+          description: "How to choose between accusative and dative:",
+          bullets: [
+            "Accusative for motion/direction (wohin?)",
+            "Dative for location/static position (wo?)",
+            "Motion verbs trigger accusative",
+            "State verbs trigger dative"
+          ],
+          example: "Ich gehe in den Park. (ACC) / Ich bin im Park. (DAT)"
+        },
+        {
+          title: "Common Two-way Prepositions",
+          description: "The nine two-way prepositions:",
+          bullets: [
+            "an (at/to), auf (on/onto), hinter (behind)",
+            "in (in/into), neben (next to)",
+            "über (over/above), unter (under)",
+            "vor (in front of), zwischen (between)"
+          ],
+          example: "Die Katze springt auf den Tisch. (ACC) / Die Katze sitzt auf dem Tisch. (DAT)"
+        }
+      ],
+      linkText: "Learn more about two-way prepositions",
+      linkSlug: "two-way-prepositions"
+    }
+  },
+  {
+    id: "b1-adjective-declension",
+    title: "Extended Adjective Declension",
+    level: "b1",
+    order: 7,
+    vocabulary: [
+      {
+        german: "der große Mann",
+        english: "the tall man",
+        context: "Adjective with definite article",
+        example: "Der große Mann trägt einen Hut.",
+      },
+      {
+        german: "ein großer Mann",
+        english: "a tall man",
+        context: "Adjective with indefinite article",
+        example: "Ein großer Mann steht vor der Tür.",
+      },
+      {
+        german: "großer Mann",
+        english: "tall man",
+        context: "Adjective without article",
+        example: "Großer Mann sucht kleine Wohnung.",
+      }
+    ],
+    grammar: {
+      title: "Advanced Adjective Declension",
+      description: "Learn how adjectives change based on articles and case:",
+      sections: [
+        {
+          title: "Strong Declension (No Article)",
+          description: "Used when there is no article before the adjective:",
+          bullets: [
+            "Nominative: -er, -e, -es, -e",
+            "Accusative: -en, -e, -es, -e",
+            "Dative: -em, -er, -em, -en",
+            "Genitive: -en, -er, -en, -er"
+          ],
+          example: "Frischer Kaffee schmeckt gut. (Fresh coffee tastes good.)"
+        },
+        {
+          title: "Mixed Declension (Indefinite Article)",
+          description: "Used with ein, kein, mein, etc.:",
+          bullets: [
+            "Nominative: -er, -e, -es, -en",
+            "Accusative: -en, -e, -es, -en",
+            "Dative: -en, -en, -en, -en",
+            "Genitive: -en, -en, -en, -en"
+          ],
+          example: "Ein kalter Wind weht. (A cold wind is blowing.)"
+        }
+      ],
+      linkText: "Learn more about adjective declension",
+      linkSlug: "adjective-declension"
+    }
+  },
+  {
+    id: "b1-comparisons",
+    title: "Comparative and Superlative",
+    level: "b1",
+    order: 8,
+    vocabulary: [
+      {
+        german: "schneller",
+        english: "faster",
+        context: "Comparative form",
+        example: "Das neue Auto ist schneller als das alte.",
+      },
+      {
+        german: "am schnellsten",
+        english: "fastest",
+        context: "Superlative form",
+        example: "Dieses Auto ist am schnellsten.",
+      },
+      {
+        german: "besser",
+        english: "better",
+        context: "Irregular comparative",
+        example: "Das schmeckt besser als erwartet.",
+      }
+    ],
+    grammar: {
+      title: "Forming Comparisons in German",
+      description: "Learn how to form and use comparative and superlative forms:",
+      sections: [
+        {
+          title: "Comparative Forms",
+          description: "Adding -er to the adjective:",
+          bullets: [
+            "Regular forms: klein → kleiner",
+            "With umlaut: alt → älter",
+            "Irregular forms: gut → besser",
+            "Use 'als' for comparisons"
+          ],
+          example: "Berlin ist größer als Hamburg."
+        },
+        {
+          title: "Superlative Forms",
+          description: "Two ways to form superlatives:",
+          bullets: [
+            "am + -sten: am kleinsten",
+            "der/die/das + -ste: der kleinste",
+            "Irregular forms: gut → am besten",
+            "Special cases with -esten: heiß → am heißesten"
+          ],
+          example: "Das ist der höchste Berg Deutschlands."
+        }
+      ],
+      linkText: "Learn more about comparisons",
+      linkSlug: "comparisons"
+    }
+  },
+  {
+    id: "b1-infinitive",
+    title: "Infinitive Constructions",
+    level: "b1",
+    order: 9,
+    vocabulary: [
+      {
+        german: "um ... zu",
+        english: "in order to",
+        context: "Purpose clause",
+        example: "Ich lerne Deutsch, um in Deutschland zu studieren.",
+      },
+      {
+        german: "ohne ... zu",
+        english: "without",
+        context: "Negative infinitive construction",
+        example: "Er ging, ohne sich zu verabschieden.",
+      },
+      {
+        german: "(an)statt ... zu",
+        english: "instead of",
+        context: "Alternative action",
+        example: "Statt zu arbeiten, ist er ins Kino gegangen.",
+      }
+    ],
+    grammar: {
+      title: "Infinitive Constructions in German",
+      description: "Learn how to use different types of infinitive constructions:",
+      sections: [
+        {
+          title: "Purpose Clauses (um ... zu)",
+          description: "Expressing purpose or intention:",
+          bullets: [
+            "um at the beginning of the clause",
+            "zu before the infinitive at the end",
+            "Can include other elements between um and zu",
+            "Subject must be the same in both clauses"
+          ],
+          example: "Ich spare Geld, um ein Auto zu kaufen."
+        },
+        {
+          title: "Other Infinitive Constructions",
+          description: "ohne ... zu and (an)statt ... zu:",
+          bullets: [
+            "ohne ... zu = without doing something",
+            "(an)statt ... zu = instead of doing something",
+            "Follow same word order pattern as um ... zu",
+            "Can be replaced by ohne dass/anstatt dass + subordinate clause"
+          ],
+          example: "Sie ging ins Bett, ohne die Hausaufgaben zu machen."
+        }
+      ],
+      linkText: "Learn more about infinitive constructions",
+      linkSlug: "infinitive-constructions"
+    }
+  },
+  {
+    id: "b1-subjunctive",
+    title: "Expressing Hypothetical Situations",
+    level: "b1",
+    order: 1,
+    vocabulary: [
+      {
+        german: "wenn",
+        english: "if",
+        context: "Used for conditional statements",
+        example: "Wenn ich Zeit hätte, würde ich dich besuchen.",
+      },
+      {
+        german: "hätte",
+        english: "would have",
+        context: "Subjunctive form of 'haben'",
+        example: "Ich hätte gern mehr Zeit für Hobbys.",
+      },
+      {
+        german: "wäre",
+        english: "would be",
+        context: "Subjunctive form of 'sein'",
+        example: "Es wäre schön, wenn du kommen könntest.",
+      },
+      {
+        german: "könnte",
+        english: "could",
+        context: "Subjunctive form of 'können'",
+        example: "Ich könnte dir helfen, wenn du willst.",
+      },
+    ],
+    grammar: {
+      title: "Konjunktiv II (Subjunctive Mood)",
+      description: "Used to express hypothetical situations, wishes, and polite requests:",
+      sections: [
+        {
+          title: "Forming Konjunktiv II",
+          description: "Two ways to form the subjunctive:",
+          bullets: [
+            "From the simple past tense (Präteritum) + umlaut changes",
+            "With würde + infinitive (more common for regular verbs)",
+            "Common verbs (sein, haben, modal verbs) use their own forms"
+          ],
+          example: "Ich hätte gern... (I would like...) / Ich würde gern... (I would like...)"
+        },
+        {
+          title: "Common Uses",
+          description: "The subjunctive is used for:",
+          bullets: [
+            "Polite requests",
+            "Hypothetical situations",
+            "Wishes and desires",
+            "Giving advice"
+          ],
+          example: "Könnten Sie mir bitte helfen? (Could you please help me?)"
+        }
+      ],
+      linkText: "Learn more about the subjunctive mood",
+      linkSlug: "subjunctive"
+    },
+    exercises: [
+      {
+        title: "Complete the sentences with the correct subjunctive form:",
+        questions: [
+          {
+            id: "q1",
+            text: "Choose the correct form:",
+            context: "Wenn ich reich ___, ___ ich eine Weltreise machen.",
+            options: [
+              { id: "a", text: "wäre ... würde" },
+              { id: "b", text: "wäre ... werde" },
+              { id: "c", text: "bin ... würde" }
+            ],
+            correctAnswer: "a"
+          },
+          {
+            id: "q2",
+            text: "Complete the polite request:",
+            context: "_____ Sie mir bitte sagen, wie ich zum Bahnhof komme?",
+            options: [
+              { id: "a", text: "Können" },
+              { id: "b", text: "Könnten" },
+              { id: "c", text: "Konnten" }
+            ],
+            correctAnswer: "b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "b1-passive-voice",
+    title: "Passive Voice",
+    level: "b1",
+    order: 2,
+    vocabulary: [
+      {
+        german: "werden",
+        english: "to become",
+        context: "Auxiliary verb used to form passive voice",
+        example: "Das Haus wird renoviert.",
+      },
+      {
+        german: "worden",
+        english: "been (past participle of werden)",
+        context: "Used in perfect tenses of passive voice",
+        example: "Das Haus ist renoviert worden.",
+      },
+      {
+        german: "von",
+        english: "by",
+        context: "Preposition used to indicate the agent in passive voice",
+        example: "Das Buch wurde von einem berühmten Autor geschrieben.",
+      },
+      {
+        german: "durch",
+        english: "through/by means of",
+        context: "Alternative to 'von' for non-personal agents",
+        example: "Der Unfall wurde durch schlechtes Wetter verursacht.",
+      },
+      {
+        german: "lassen",
+        english: "to let/have something done",
+        context: "Used for causative constructions",
+        example: "Ich lasse mein Auto reparieren.",
+      }
+    ],
+    grammar: {
+      title: "Passive Voice in German",
+      description: "The passive voice focuses on the action rather than who performs it:",
+      sections: [
+        {
+          title: "Forming the Passive",
+          description: "Basic formation pattern:",
+          bullets: [
+            "Present: werden (conjugated) + past participle",
+            "Past (Perfekt): sein (conjugated) + past participle + worden",
+            "Past (Präteritum): wurden (conjugated) + past participle",
+            "Future: werden (conjugated) + past participle + werden"
+          ],
+          example: "Active: Sie baut ein Haus. | Passive: Ein Haus wird (von ihr) gebaut."
+        },
+        {
+          title: "Agent Phrases",
+          description: "Indicating who performs the action:",
+          bullets: [
+            "von + dative: used for people/living beings",
+            "durch + accusative: used for inanimate causes or means",
+            "mit + dative: used for instruments or tools",
+            "Agent can be omitted if unknown or unimportant"
+          ],
+          example: "Der Brief wurde von meiner Schwester geschrieben. (The letter was written by my sister.)"
+        },
+        {
+          title: "Stative Passive vs. Process Passive",
+          description: "Two types of passive constructions:",
+          bullets: [
+            "Vorgangspassiv (process passive): formed with werden",
+            "Zustandspassiv (stative passive): formed with sein + past participle",
+            "Zustandspassiv describes a state resulting from an action"
+          ],
+          example: "Vorgangspassiv: Die Tür wird geschlossen. (The door is being closed.) | Zustandspassiv: Die Tür ist geschlossen. (The door is closed.)"
+        }
+      ],
+      linkText: "Learn more about passive voice",
+      linkSlug: "passive-voice"
+    },
+    exercises: [
+      {
+        title: "Practice with passive voice:",
+        questions: [
+          {
+            id: "q1",
+            text: "Transform the active sentence to passive:",
+            context: "Active: Der Lehrer korrigiert die Hausaufgaben. | Passive: Die Hausaufgaben _____.",
+            options: [
+              { id: "a", text: "werden von dem Lehrer korrigiert" },
+              { id: "b", text: "sind von dem Lehrer korrigiert" },
+              { id: "c", text: "werden korrigiert von dem Lehrer" }
+            ],
+            correctAnswer: "a"
+          },
+          {
+            id: "q2",
+            text: "Choose the correct form of Perfekt passive:",
+            context: "Der Film _____ gestern _____ _____.",
+            options: [
+              { id: "a", text: "hat ... gesehen ... worden" },
+              { id: "b", text: "ist ... gesehen ... worden" },
+              { id: "c", text: "wird ... gesehen ... worden" }
+            ],
+            correctAnswer: "b"
+          },
+          {
+            id: "q3",
+            text: "Identify the stative passive:",
+            options: [
+              { id: "a", text: "Die Tür wird geöffnet." },
+              { id: "b", text: "Die Tür ist geöffnet." },
+              { id: "c", text: "Die Tür wurde geöffnet." }
+            ],
+            correctAnswer: "b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "b1-relative-clauses",
+    title: "Relative Clauses",
+    level: "b1",
+    order: 3,
+    vocabulary: [
+      {
+        german: "der",
+        english: "who/that/which (masculine)",
+        context: "Relative pronoun for masculine nouns",
+        example: "Der Mann, der dort sitzt, ist mein Vater.",
+      },
+      {
+        german: "die",
+        english: "who/that/which (feminine)",
+        context: "Relative pronoun for feminine nouns",
+        example: "Die Frau, die ein rotes Kleid trägt, ist meine Lehrerin.",
+      },
+      {
+        german: "das",
+        english: "that/which (neuter)",
+        context: "Relative pronoun for neuter nouns",
+        example: "Das Buch, das auf dem Tisch liegt, ist interessant.",
+      },
+      {
+        german: "dessen",
+        english: "whose (masculine/neuter)",
+        context: "Possessive relative pronoun",
+        example: "Der Mann, dessen Auto gestohlen wurde, ist sehr traurig.",
+      },
+      {
+        german: "deren",
+        english: "whose (feminine/plural)",
+        context: "Possessive relative pronoun",
+        example: "Die Frau, deren Kinder hier spielen, ist Ärztin.",
+      }
+    ],
+    grammar: {
+      title: "Relative Clauses in German",
+      description: "Relative clauses provide additional information about a noun:",
+      sections: [
+        {
+          title: "Relative Pronouns",
+          description: "Relative pronouns agree with the gender and number of the noun they refer to:",
+          bullets: [
+            "der/die/das/die (masculine/feminine/neuter/plural nominative)",
+            "den/die/das/die (masculine/feminine/neuter/plural accusative)",
+            "dem/der/dem/denen (masculine/feminine/neuter/plural dative)",
+            "dessen/deren/dessen/deren (masculine/feminine/neuter/plural genitive)"
+          ],
+          example: "Die Frau, die ich gestern getroffen habe, ist Lehrerin. (The woman whom I met yesterday is a teacher.)"
+        },
+        {
+          title: "Word Order in Relative Clauses",
+          description: "Relative clauses follow specific word order rules:",
+          bullets: [
+            "Relative pronoun comes immediately after the noun it modifies",
+            "Verb is placed at the end of the relative clause",
+            "Comma is required before and after the relative clause",
+            "Separable prefix verbs reunite at the end of the clause"
+          ],
+          example: "Der Film, den wir gestern angeschaut haben, war sehr spannend. (The movie that we watched yesterday was very exciting.)"
+        },
+        {
+          title: "Prepositions with Relative Pronouns",
+          description: "Prepositions can appear before relative pronouns:",
+          bullets: [
+            "Preposition + dem/der/dem/denen depending on case",
+            "Prepositions with accusative or dative follow their usual case rules",
+            "Wo/wohin/woher can replace preposition + relative pronoun for places"
+          ],
+          example: "Das ist die Stadt, in der ich geboren bin. (That is the city in which I was born.)"
+        }
+      ],
+      linkText: "Learn more about relative clauses",
+      linkSlug: "relative-clauses"
+    },
+    exercises: [
+      {
+        title: "Complete with the correct relative pronoun:",
+        questions: [
+          {
+            id: "q1",
+            text: "Choose the correct relative pronoun:",
+            context: "Das ist der Mann, _____ mir geholfen hat.",
+            options: [
+              { id: "a", text: "der" },
+              { id: "b", text: "den" },
+              { id: "c", text: "dem" }
+            ],
+            correctAnswer: "a"
+          },
+          {
+            id: "q2",
+            text: "Complete with the correct form:",
+            context: "Die Frau, _____ Auto vor der Tür steht, ist meine Nachbarin.",
+            options: [
+              { id: "a", text: "deren" },
+              { id: "b", text: "dessen" },
+              { id: "c", text: "denen" }
+            ],
+            correctAnswer: "a"
+          },
+          {
+            id: "q3",
+            text: "Select the correct relative clause:",
+            options: [
+              { id: "a", text: "Das ist das Buch, das ich lese es." },
+              { id: "b", text: "Das ist das Buch, das ich lese." },
+              { id: "c", text: "Das ist das Buch, das lese ich." }
+            ],
+            correctAnswer: "b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "b1-indirect-speech",
+    title: "Reported Speech",
+    level: "b1",
+    order: 4,
+    vocabulary: [
+      {
+        german: "sagen",
+        english: "to say",
+        context: "Verb used to introduce reported speech",
+        example: "Er sagt, dass er müde ist.",
+      },
+      {
+        german: "behaupten",
+        english: "to claim/assert",
+        context: "Verb used to introduce claimed statements",
+        example: "Sie behauptet, dass sie unschuldig sei.",
+      },
+      {
+        german: "fragen",
+        english: "to ask",
+        context: "Verb used to report questions",
+        example: "Er fragte, ob ich Zeit hätte.",
+      },
+      {
+        german: "mitteilen",
+        english: "to inform/communicate",
+        context: "Formal verb for reporting information",
+        example: "Sie teilte mir mit, dass die Besprechung verschoben worden sei.",
+      },
+      {
+        german: "antworten",
+        english: "to answer/reply",
+        context: "Verb used to report responses",
+        example: "Er antwortete, dass er einverstanden sei.",
+      }
+    ],
+    grammar: {
+      title: "Reported Speech (Indirekte Rede)",
+      description: "Reported speech is used to relay what someone else has said:",
+      sections: [
+        {
+          title: "Structure of Reported Speech",
+          description: "Two main ways to form reported speech:",
+          bullets: [
+            "With 'dass' clause: Er sagt, dass er müde ist.",
+            "Without 'dass' (verb in second position): Er sagt, er ist müde.",
+            "For questions with 'ob' (if/whether): Sie fragt, ob ich Zeit habe.",
+            "For W-questions, keep the question word: Er fragt, wann der Film beginnt."
+          ],
+          example: "Direkte Rede: 'Ich bin krank.' | Indirekte Rede: Er sagt, dass er krank sei/ist."
+        },
+        {
+          title: "Subjunctive in Reported Speech",
+          description: "The subjunctive (Konjunktiv I) is often used in reported speech:",
+          bullets: [
+            "Konjunktiv I forms: sein → sei, haben → habe, kommen → komme",
+            "If Konjunktiv I is identical to present tense, use Konjunktiv II",
+            "More common in formal writing than in everyday speech",
+            "In spoken language, indicative forms are often used instead"
+          ],
+          example: "Sie sagt, sie sei/ist krank. (She says she is sick.)"
+        },
+        {
+          title: "Changes in Reported Speech",
+          description: "Other elements that change in reported speech:",
+          bullets: [
+            "Pronouns change perspective: 'Ich bin' → 'Er sei'",
+            "Time expressions may shift: 'heute' → 'an diesem Tag'",
+            "Place references may change: 'hier' → 'dort'",
+            "Tenses may shift backward in time: 'komme' → 'käme'"
+          ],
+          example: "Direkt: 'Ich komme morgen.' | Indirekt: Er sagte, er komme/käme am nächsten Tag."
+        }
+      ],
+      linkText: "Learn more about reported speech",
+      linkSlug: "reported-speech"
+    },
+    exercises: [
+      {
+        title: "Transform into reported speech:",
+        questions: [
+          {
+            id: "q1",
+            text: "Change to reported speech:",
+            context: "Direct: 'Ich bin müde.' | Reported: Er sagt, _____.",
+            options: [
+              { id: "a", text: "dass er müde ist" },
+              { id: "b", text: "dass er ist müde" },
+              { id: "c", text: "dass ist er müde" }
+            ],
+            correctAnswer: "a"
+          },
+          {
+            id: "q2",
+            text: "Choose the correct form for reported speech:",
+            context: "Direct: 'Hast du Zeit?' | Reported: Sie fragt, _____.",
+            options: [
+              { id: "a", text: "wenn ich Zeit habe" },
+              { id: "b", text: "ob ich Zeit habe" },
+              { id: "c", text: "dass ich Zeit habe" }
+            ],
+            correctAnswer: "b"
+          },
+          {
+            id: "q3",
+            text: "Select the correct subjunctive form:",
+            context: "Er behauptet, dass er das Buch _____.",
+            options: [
+              { id: "a", text: "liest" },
+              { id: "b", text: "lese" },
+              { id: "c", text: "läse" }
+            ],
+            correctAnswer: "b"
+          }
+        ]
+      }
+    ]
+  }
+];
+
+export const getLessons = (level: string): Lesson[] => {
+  switch (level) {
+    case 'a1':
+      return a1Lessons;
+    case 'a2':
+      return a2Lessons;
+    case 'b1':
+      return b1Lessons;
+    default:
+      return a1Lessons;
+  }
+};

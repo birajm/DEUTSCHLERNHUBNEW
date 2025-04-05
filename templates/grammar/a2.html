@@ -1,0 +1,505 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - A2 Grammar{% endblock %}
+
+{% block content %}
+<div class="grammar-header bg-light py-4">
+    <div class="container">
+        <h1>A2 German Grammar</h1>
+        <p class="lead">Expanding your grammar knowledge for intermediate learners</p>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <!-- Grammar navigation sidebar -->
+        <div class="col-lg-3 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Grammar Levels</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('grammar_a1') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-success me-2">A1</span> Beginner Grammar
+                    </a>
+                    <a href="{{ url_for('grammar_a2') }}" class="list-group-item list-group-item-action active">
+                        <span class="badge bg-primary me-2">A2</span> Elementary Grammar
+                    </a>
+                    <a href="{{ url_for('grammar_b1') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-warning text-dark me-2">B1</span> Intermediate Grammar
+                    </a>
+                    <div class="list-group-item bg-light text-muted small">Special Resources</div>
+                    <a href="{{ url_for('grammar_practice') }}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-tasks me-2"></i> Practice Exercises
+                    </a>
+                </div>
+            </div>
+            
+            <!-- A2 Topics Navigation -->
+            <div class="card mt-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">A2 Topics</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="#review" class="list-group-item list-group-item-action">Review of A1 Grammar</a>
+                    <a href="#cases" class="list-group-item list-group-item-action">Cases (Nominative, Accusative, Dative)</a>
+                    <a href="#modal-verbs" class="list-group-item list-group-item-action">Modal Verbs</a>
+                    <a href="#perfect-tense" class="list-group-item list-group-item-action">Perfect Tense</a>
+                    <a href="#prepositions" class="list-group-item list-group-item-action">Prepositions with Cases</a>
+                    <a href="#possessive" class="list-group-item list-group-item-action">Possessive Pronouns</a>
+                    <a href="#adjectives" class="list-group-item list-group-item-action">Adjective Endings</a>
+                    <a href="#comparative" class="list-group-item list-group-item-action">Comparative & Superlative</a>
+                    <a href="#conjunctions" class="list-group-item list-group-item-action">Subordinating Conjunctions</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="col-lg-9">
+            <div class="alert alert-primary">
+                <i class="fas fa-info-circle me-2"></i> A2 grammar builds on your A1 foundation, introducing more complex structures and verb tenses that will help you express more nuanced ideas.
+            </div>
+            
+            <!-- Review of A1 Grammar -->
+            <div id="review" class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Review of A1 Grammar</h3>
+                </div>
+                <div class="card-body">
+                    <p>Before diving into A2 grammar, make sure you have a solid understanding of the following A1 topics:</p>
+                    
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Alphabet and pronunciation</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Basic sentence structure (SVO)</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Nouns and articles (der, die, das; ein, eine, ein)</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Present tense verb conjugation (regular and irregular verbs)</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Personal pronouns (ich, du, er, sie, es, wir, ihr, sie/Sie)</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Basic adjectives</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Numbers</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Basic questions (yes/no and W-questions)</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Simple prepositions of place and time</li>
+                    </ul>
+                    
+                    <p>If you need to review any of these topics, visit our <a href="{{ url_for('grammar_a1') }}">A1 Grammar section</a>.</p>
+                </div>
+            </div>
+            
+            <!-- Cases: Nominative, Accusative, and Dative -->
+            <div id="cases" class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Cases: Nominative, Accusative, and Dative</h3>
+                </div>
+                <div class="card-body">
+                    <p>Cases indicate the function of a noun or pronoun in a sentence and affect the articles and adjective endings. In A2, we focus on three cases: Nominative, Accusative, and Dative.</p>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">Nominative Case</div>
+                                <div class="card-body">
+                                    <p><strong>Question words:</strong> Wer? Was? (Who? What?)</p>
+                                    <p><strong>Function:</strong> Subject of the sentence</p>
+                                    <p><strong>Example:</strong><br>
+                                    <strong>Der Mann</strong> liest die Zeitung.<br>
+                                    <em>The man reads the newspaper.</em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">Accusative Case</div>
+                                <div class="card-body">
+                                    <p><strong>Question words:</strong> Wen? Was? (Whom? What?)</p>
+                                    <p><strong>Function:</strong> Direct object</p>
+                                    <p><strong>Example:</strong><br>
+                                    Ich sehe <strong>den Hund</strong>.<br>
+                                    <em>I see the dog.</em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">Dative Case</div>
+                                <div class="card-body">
+                                    <p><strong>Question word:</strong> Wem? (To whom?)</p>
+                                    <p><strong>Function:</strong> Indirect object</p>
+                                    <p><strong>Example:</strong><br>
+                                    Ich gebe <strong>dem Mann</strong> das Buch.<br>
+                                    <em>I give the man the book.</em></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Changes in Definite Articles</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Case</th>
+                                    <th>Masculine</th>
+                                    <th>Feminine</th>
+                                    <th>Neuter</th>
+                                    <th>Plural</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nominative</td>
+                                    <td>der</td>
+                                    <td>die</td>
+                                    <td>das</td>
+                                    <td>die</td>
+                                </tr>
+                                <tr>
+                                    <td>Accusative</td>
+                                    <td>den</td>
+                                    <td>die</td>
+                                    <td>das</td>
+                                    <td>die</td>
+                                </tr>
+                                <tr>
+                                    <td>Dative</td>
+                                    <td>dem</td>
+                                    <td>der</td>
+                                    <td>dem</td>
+                                    <td>den + -n*</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="small text-muted">* In the plural dative, most nouns add an "-n" at the end (if they don't already end in "-n" or "-s").</p>
+                    
+                    <h4 class="mt-4">Changes in Indefinite Articles</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Case</th>
+                                    <th>Masculine</th>
+                                    <th>Feminine</th>
+                                    <th>Neuter</th>
+                                    <th>Plural</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nominative</td>
+                                    <td>ein</td>
+                                    <td>eine</td>
+                                    <td>ein</td>
+                                    <td>keine</td>
+                                </tr>
+                                <tr>
+                                    <td>Accusative</td>
+                                    <td>einen</td>
+                                    <td>eine</td>
+                                    <td>ein</td>
+                                    <td>keine</td>
+                                </tr>
+                                <tr>
+                                    <td>Dative</td>
+                                    <td>einem</td>
+                                    <td>einer</td>
+                                    <td>einem</td>
+                                    <td>keinen</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="card bg-light mt-4">
+                        <div class="card-body">
+                            <h5>Examples</h5>
+                            <p><strong>Nominative:</strong> <strong>Der Mann</strong> gibt der Frau das Buch. (The man gives the woman the book.)</p>
+                            <p><strong>Accusative:</strong> Der Mann gibt der Frau <strong>das Buch</strong>. (The man gives the woman the book.)</p>
+                            <p><strong>Dative:</strong> Der Mann gibt <strong>der Frau</strong> das Buch. (The man gives the woman the book.)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal Verbs -->
+            <div id="modal-verbs" class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Modal Verbs</h3>
+                </div>
+                <div class="card-body">
+                    <p>Modal verbs add meaning to the main verb, expressing possibility, necessity, desire, etc. They are conjugated and placed in the second position, while the main verb goes to the end of the sentence in its infinitive form.</p>
+                    
+                    <h4>The Six Modal Verbs</h4>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card bg-light mb-3">
+                                <div class="card-body">
+                                    <h5>können</h5>
+                                    <p><strong>Meaning:</strong> can, to be able to</p>
+                                    <p><strong>Example:</strong> Ich <strong>kann</strong> Deutsch <strong>sprechen</strong>.<br>
+                                    <em>I can speak German.</em></p>
+                                </div>
+                            </div>
+                            <div class="card bg-light mb-3">
+                                <div class="card-body">
+                                    <h5>müssen</h5>
+                                    <p><strong>Meaning:</strong> must, to have to</p>
+                                    <p><strong>Example:</strong> Du <strong>musst</strong> jetzt <strong>gehen</strong>.<br>
+                                    <em>You must go now.</em></p>
+                                </div>
+                            </div>
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h5>dürfen</h5>
+                                    <p><strong>Meaning:</strong> may, to be allowed to</p>
+                                    <p><strong>Example:</strong> Wir <strong>dürfen</strong> hier nicht <strong>parken</strong>.<br>
+                                    <em>We are not allowed to park here.</em></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light mb-3">
+                                <div class="card-body">
+                                    <h5>sollen</h5>
+                                    <p><strong>Meaning:</strong> should, ought to</p>
+                                    <p><strong>Example:</strong> Sie <strong>soll</strong> ihre Hausaufgaben <strong>machen</strong>.<br>
+                                    <em>She should do her homework.</em></p>
+                                </div>
+                            </div>
+                            <div class="card bg-light mb-3">
+                                <div class="card-body">
+                                    <h5>wollen</h5>
+                                    <p><strong>Meaning:</strong> want to</p>
+                                    <p><strong>Example:</strong> Er <strong>will</strong> ein Buch <strong>lesen</strong>.<br>
+                                    <em>He wants to read a book.</em></p>
+                                </div>
+                            </div>
+                            <div class="card bg-light">
+                                <div class="card-body">
+                                    <h5>mögen/möchten</h5>
+                                    <p><strong>Meaning:</strong> to like/would like to</p>
+                                    <p><strong>Example:</strong> Sie <strong>möchten</strong> einen Kaffee <strong>trinken</strong>.<br>
+                                    <em>They would like to drink a coffee.</em></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Conjugation of Modal Verbs (Present Tense)</h4>
+                    <p>Notice the vowel change in the singular forms.</p>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Pronoun</th>
+                                    <th>können</th>
+                                    <th>müssen</th>
+                                    <th>dürfen</th>
+                                    <th>sollen</th>
+                                    <th>wollen</th>
+                                    <th>mögen</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ich</td>
+                                    <td>kann</td>
+                                    <td>muss</td>
+                                    <td>darf</td>
+                                    <td>soll</td>
+                                    <td>will</td>
+                                    <td>mag</td>
+                                </tr>
+                                <tr>
+                                    <td>du</td>
+                                    <td>kannst</td>
+                                    <td>musst</td>
+                                    <td>darfst</td>
+                                    <td>sollst</td>
+                                    <td>willst</td>
+                                    <td>magst</td>
+                                </tr>
+                                <tr>
+                                    <td>er/sie/es</td>
+                                    <td>kann</td>
+                                    <td>muss</td>
+                                    <td>darf</td>
+                                    <td>soll</td>
+                                    <td>will</td>
+                                    <td>mag</td>
+                                </tr>
+                                <tr>
+                                    <td>wir</td>
+                                    <td>können</td>
+                                    <td>müssen</td>
+                                    <td>dürfen</td>
+                                    <td>sollen</td>
+                                    <td>wollen</td>
+                                    <td>mögen</td>
+                                </tr>
+                                <tr>
+                                    <td>ihr</td>
+                                    <td>könnt</td>
+                                    <td>müsst</td>
+                                    <td>dürft</td>
+                                    <td>sollt</td>
+                                    <td>wollt</td>
+                                    <td>mögt</td>
+                                </tr>
+                                <tr>
+                                    <td>sie/Sie</td>
+                                    <td>können</td>
+                                    <td>müssen</td>
+                                    <td>dürfen</td>
+                                    <td>sollen</td>
+                                    <td>wollen</td>
+                                    <td>mögen</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Perfect Tense -->
+            <div id="perfect-tense" class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Perfect Tense (Perfekt)</h3>
+                </div>
+                <div class="card-body">
+                    <p>The perfect tense is a common way to talk about the past in spoken German. It's formed with an auxiliary verb (haben or sein) and the past participle (Partizip II) of the main verb.</p>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">Formation with haben</div>
+                                <div class="card-body">
+                                    <p><strong>When to use:</strong> Most verbs use haben</p>
+                                    <p><strong>Formula:</strong> haben (conjugated) + past participle</p>
+                                    <p><strong>Examples:</strong></p>
+                                    <ul>
+                                        <li>Ich <strong>habe</strong> ein Buch <strong>gelesen</strong>.<br>
+                                        <em>I have read a book.</em></li>
+                                        <li>Du <strong>hast</strong> Fußball <strong>gespielt</strong>.<br>
+                                        <em>You have played football.</em></li>
+                                        <li>Wir <strong>haben</strong> Pizza <strong>gegessen</strong>.<br>
+                                        <em>We have eaten pizza.</em></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">Formation with sein</div>
+                                <div class="card-body">
+                                    <p><strong>When to use:</strong> Verbs that indicate a change of location or state</p>
+                                    <p><strong>Formula:</strong> sein (conjugated) + past participle</p>
+                                    <p><strong>Examples:</strong></p>
+                                    <ul>
+                                        <li>Ich <strong>bin</strong> nach Berlin <strong>gefahren</strong>.<br>
+                                        <em>I have gone to Berlin.</em></li>
+                                        <li>Du <strong>bist</strong> zu Hause <strong>geblieben</strong>.<br>
+                                        <em>You have stayed at home.</em></li>
+                                        <li>Er <strong>ist</strong> <strong>aufgewacht</strong>.<br>
+                                        <em>He has woken up.</em></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Formation of Past Participle (Partizip II)</h4>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">Regular Verbs</div>
+                                <div class="card-body">
+                                    <p><strong>Formula:</strong> ge- + verb stem + -t</p>
+                                    <p><strong>Examples:</strong></p>
+                                    <ul>
+                                        <li>machen → <strong>gemacht</strong></li>
+                                        <li>spielen → <strong>gespielt</strong></li>
+                                        <li>kaufen → <strong>gekauft</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">Irregular Verbs</div>
+                                <div class="card-body">
+                                    <p><strong>Formula:</strong> ge- + changed verb stem + -en</p>
+                                    <p><strong>Examples:</strong></p>
+                                    <ul>
+                                        <li>trinken → <strong>getrunken</strong></li>
+                                        <li>lesen → <strong>gelesen</strong></li>
+                                        <li>sehen → <strong>gesehen</strong></li>
+                                        <li>gehen → <strong>gegangen</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">Verbs with -ieren</div>
+                                <div class="card-body">
+                                    <p><strong>Formula:</strong> verb stem + -iert (no ge-)</p>
+                                    <p><strong>Examples:</strong></p>
+                                    <ul>
+                                        <li>studieren → <strong>studiert</strong></li>
+                                        <li>telefonieren → <strong>telefoniert</strong></li>
+                                        <li>funktionieren → <strong>funktioniert</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> Remember: In the perfect tense, the auxiliary verb (haben or sein) comes in the second position, and the past participle goes to the end of the sentence.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- More A2 grammar sections would continue here -->
+            
+            <!-- Practice and Review -->
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Practice and Review</h3>
+                </div>
+                <div class="card-body">
+                    <p>Ready to test your knowledge of A2 German grammar? Try our practice exercises!</p>
+                    <a href="{{ url_for('grammar_practice') }}" class="btn btn-primary">
+                        <i class="fas fa-tasks me-2"></i> Go to Practice Exercises
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Add space before headings with IDs (for anchor links) */
+    [id] {
+        scroll-margin-top: 60px;
+    }
+</style>
+{% endblock %}

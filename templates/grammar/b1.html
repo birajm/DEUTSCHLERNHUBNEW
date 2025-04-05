@@ -1,0 +1,432 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - B1 Grammar{% endblock %}
+
+{% block content %}
+<div class="grammar-header bg-light py-4">
+    <div class="container">
+        <h1>B1 German Grammar</h1>
+        <p class="lead">Advanced grammar concepts for intermediate to upper-intermediate learners</p>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <!-- Grammar navigation sidebar -->
+        <div class="col-lg-3 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Grammar Levels</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('grammar_a1') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-success me-2">A1</span> Beginner Grammar
+                    </a>
+                    <a href="{{ url_for('grammar_a2') }}" class="list-group-item list-group-item-action">
+                        <span class="badge bg-primary me-2">A2</span> Elementary Grammar
+                    </a>
+                    <a href="{{ url_for('grammar_b1') }}" class="list-group-item list-group-item-action active">
+                        <span class="badge bg-warning text-dark me-2">B1</span> Intermediate Grammar
+                    </a>
+                    <div class="list-group-item bg-light text-muted small">Special Resources</div>
+                    <a href="{{ url_for('grammar_practice') }}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-tasks me-2"></i> Practice Exercises
+                    </a>
+                </div>
+            </div>
+            
+            <!-- B1 Topics Navigation -->
+            <div class="card mt-4">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0">B1 Topics</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="#review" class="list-group-item list-group-item-action">Review of A1-A2 Grammar</a>
+                    <a href="#genitive" class="list-group-item list-group-item-action">Genitive Case</a>
+                    <a href="#passive" class="list-group-item list-group-item-action">Passive Voice</a>
+                    <a href="#future" class="list-group-item list-group-item-action">Future Tense</a>
+                    <a href="#relative" class="list-group-item list-group-item-action">Relative Clauses</a>
+                    <a href="#conjunctions" class="list-group-item list-group-item-action">Complex Conjunctions</a>
+                    <a href="#reflexive" class="list-group-item list-group-item-action">Reflexive Verbs</a>
+                    <a href="#subjunctive" class="list-group-item list-group-item-action">Subjunctive Mood (Konjunktiv II)</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="col-lg-9">
+            <div class="alert alert-warning">
+                <i class="fas fa-info-circle me-2"></i> B1 grammar introduces advanced concepts that will help you express complex ideas, discuss hypothetical situations, and understand more sophisticated German texts.
+            </div>
+            
+            <!-- Review of A1-A2 Grammar -->
+            <div id="review" class="card mb-4">
+                <div class="card-header bg-warning text-dark">
+                    <h3 class="mb-0">Review of A1 and A2 Grammar</h3>
+                </div>
+                <div class="card-body">
+                    <p>Ensure you have a strong grasp of all the grammar points covered in A1 and A2, including:</p>
+                    
+                    <ul class="list-group mb-3">
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Nouns, articles, and their declension in Nominative, Accusative, and Dative cases</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Verb conjugation in present and perfect tenses</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Modal verbs and their usage</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Basic sentence structure (SVO and variations)</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Personal and possessive pronouns</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Basic prepositions with their respective cases</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Comparative and superlative forms of adjectives</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Subordinating conjunctions like weil, dass, wenn, ob</li>
+                        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i> Time expressions</li>
+                    </ul>
+                    
+                    <p>If you need to review any of these topics, visit our <a href="{{ url_for('grammar_a1') }}">A1 Grammar</a> or <a href="{{ url_for('grammar_a2') }}">A2 Grammar</a> sections.</p>
+                </div>
+            </div>
+            
+            <!-- Genitive Case -->
+            <div id="genitive" class="card mb-4">
+                <div class="card-header bg-warning text-dark">
+                    <h3 class="mb-0">Genitive Case (Der Genitiv)</h3>
+                </div>
+                <div class="card-body">
+                    <p>The genitive case answers the question "Wessen?" (Whose?). It indicates possession or belonging. While less common in spoken German (often replaced by the dative with "von"), it's important for formal writing and understanding written texts.</p>
+                    
+                    <h4>Changes in Articles</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Case</th>
+                                    <th>Masculine</th>
+                                    <th>Feminine</th>
+                                    <th>Neuter</th>
+                                    <th>Plural</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nominative</td>
+                                    <td>der</td>
+                                    <td>die</td>
+                                    <td>das</td>
+                                    <td>die</td>
+                                </tr>
+                                <tr>
+                                    <td>Accusative</td>
+                                    <td>den</td>
+                                    <td>die</td>
+                                    <td>das</td>
+                                    <td>die</td>
+                                </tr>
+                                <tr>
+                                    <td>Dative</td>
+                                    <td>dem</td>
+                                    <td>der</td>
+                                    <td>dem</td>
+                                    <td>den + -n*</td>
+                                </tr>
+                                <tr class="table-warning">
+                                    <td>Genitive</td>
+                                    <td>des</td>
+                                    <td>der</td>
+                                    <td>des</td>
+                                    <td>der</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h4 class="mt-4">Changes in Nouns</h4>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">Masculine and Neuter Nouns</div>
+                                <div class="card-body">
+                                    <p>Usually add an <strong>-s</strong> or <strong>-es</strong> ending in the genitive singular.</p>
+                                    <ul>
+                                        <li>der Mann → des Mann<strong>es</strong></li>
+                                        <li>das Auto → des Auto<strong>s</strong></li>
+                                        <li>der Tag → des Tag<strong>es</strong></li>
+                                        <li>das Jahr → des Jahr<strong>es</strong> (often just -s)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">Feminine and Plural Nouns</div>
+                                <div class="card-body">
+                                    <p>Usually don't change in the genitive.</p>
+                                    <ul>
+                                        <li>die Frau → der Frau</li>
+                                        <li>die Kinder → der Kinder</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-light mt-4">
+                        <div class="card-body">
+                            <h5>Examples</h5>
+                            <ul>
+                                <li>Das ist das Auto <strong>des Mannes</strong>. (This is the man's car.)</li>
+                                <li>Die Farbe <strong>des Himmels</strong> ist blau. (The color of the sky is blue.)</li>
+                                <li>Die Bücher <strong>der Kinder</strong> sind hier. (The children's books are here.)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info mt-4">
+                        <i class="fas fa-info-circle me-2"></i> In spoken German, people often avoid the genitive case by using the dative case with "von": <em>Das ist das Auto <strong>von dem Mann</strong>.</em> (This is the man's car.)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Passive Voice -->
+            <div id="passive" class="card mb-4">
+                <div class="card-header bg-warning text-dark">
+                    <h3 class="mb-0">Passive Voice (Das Passiv)</h3>
+                </div>
+                <div class="card-body">
+                    <p>The passive voice is used when the focus is on the action rather than the actor. There are two types of passive voice in German: the process passive (werden-Passiv) and the state passive (sein-Passiv).</p>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">Process Passive (werden-Passiv)</div>
+                                <div class="card-body">
+                                    <p>Used to describe an action that is being done.</p>
+                                    <p><strong>Formation:</strong> werden + Past Participle (Partizip II) of the main verb</p>
+                                    <h6>Present Passive:</h6>
+                                    <p>werden (present tense) + Partizip II</p>
+                                    <ul>
+                                        <li>Das Haus <strong>wird gebaut</strong>. (The house is being built.)</li>
+                                        <li>Die Tür <strong>wird geöffnet</strong>. (The door is being opened.)</li>
+                                    </ul>
+                                    <h6>Past Passive (Präteritum Passiv):</h6>
+                                    <p>wurde + Partizip II</p>
+                                    <ul>
+                                        <li>Das Haus <strong>wurde gebaut</strong>. (The house was built.)</li>
+                                        <li>Die Tür <strong>wurde geöffnet</strong>. (The door was opened.)</li>
+                                    </ul>
+                                    <h6>Perfect Passive:</h6>
+                                    <p>sein (present tense) + Partizip II + worden</p>
+                                    <ul>
+                                        <li>Das Haus <strong>ist gebaut worden</strong>. (The house has been built.)</li>
+                                        <li>Die Tür <strong>ist geöffnet worden</strong>. (The door has been opened.)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card bg-light h-100">
+                                <div class="card-header">State Passive (sein-Passiv)</div>
+                                <div class="card-body">
+                                    <p>Describes a state that has resulted from a previous action.</p>
+                                    <p><strong>Formation:</strong> sein + Past Participle (Partizip II) of the main verb</p>
+                                    <h6>Present State Passive:</h6>
+                                    <p>sein (present tense) + Partizip II</p>
+                                    <ul>
+                                        <li>Die Tür <strong>ist geöffnet</strong>. (The door is open.) (Result of being opened)</li>
+                                        <li>Das Essen <strong>ist gekocht</strong>. (The food is cooked.)</li>
+                                    </ul>
+                                    <h6>Agent in Passive Sentences:</h6>
+                                    <p>The person or thing performing the action can be mentioned using:</p>
+                                    <ul>
+                                        <li><strong>von</strong> (if it's a person or organization) + dative case</li>
+                                        <li><strong>durch</strong> (if it's a means or cause) + accusative case</li>
+                                    </ul>
+                                    <p>Examples:</p>
+                                    <ul>
+                                        <li>Das Haus wurde <strong>von einem Architekten</strong> entworfen. (The house was designed by an architect.)</li>
+                                        <li>Die Tür wurde <strong>durch den Wind</strong> geöffnet. (The door was opened by the wind.)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Future I Tense -->
+            <div id="future" class="card mb-4">
+                <div class="card-header bg-warning text-dark">
+                    <h3 class="mb-0">Future I Tense (Futur I)</h3>
+                </div>
+                <div class="card-body">
+                    <p>The Future I tense is used to talk about actions that will happen in the future.</p>
+                    
+                    <h4>Formation:</h4>
+                    <p>werden (conjugated in the present tense) + Infinitive of the main verb (at the end of the sentence).</p>
+                    
+                    <div class="table-responsive mb-4">
+                        <table class="table table-striped">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Pronoun</th>
+                                    <th>werden</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ich</td>
+                                    <td>werde</td>
+                                    <td>Ich <strong>werde</strong> morgen <strong>arbeiten</strong>. (I will work tomorrow.)</td>
+                                </tr>
+                                <tr>
+                                    <td>du</td>
+                                    <td>wirst</td>
+                                    <td>Du <strong>wirst</strong> eine Prüfung <strong>machen</strong>. (You will take an exam.)</td>
+                                </tr>
+                                <tr>
+                                    <td>er/sie/es</td>
+                                    <td>wird</td>
+                                    <td>Er <strong>wird</strong> nach Deutschland <strong>reisen</strong>. (He will travel to Germany.)</td>
+                                </tr>
+                                <tr>
+                                    <td>wir</td>
+                                    <td>werden</td>
+                                    <td>Wir <strong>werden</strong> ein neues Auto <strong>kaufen</strong>. (We will buy a new car.)</td>
+                                </tr>
+                                <tr>
+                                    <td>ihr</td>
+                                    <td>werdet</td>
+                                    <td>Ihr <strong>werdet</strong> viel Spaß <strong>haben</strong>. (You will have a lot of fun.)</td>
+                                </tr>
+                                <tr>
+                                    <td>sie/Sie</td>
+                                    <td>werden</td>
+                                    <td>Sie <strong>werden</strong> uns <strong>besuchen</strong>. (They/You will visit us.)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> In spoken German, the present tense is often used with a time expression to talk about the future: <em>Morgen <strong>gehe</strong> ich ins Kino.</em> (Tomorrow I am going to the cinema.)
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Relative Clauses -->
+            <div id="relative" class="card mb-4">
+                <div class="card-header bg-warning text-dark">
+                    <h3 class="mb-0">Relative Clauses (Relativsätze)</h3>
+                </div>
+                <div class="card-body">
+                    <p>Relative clauses provide additional information about a noun in the main clause. They are introduced by relative pronouns.</p>
+                    
+                    <h4>Relative Pronouns</h4>
+                    <p>The choice of relative pronoun depends on the gender, number, and case of the noun it refers to.</p>
+                    
+                    <div class="table-responsive mb-4">
+                        <table class="table table-striped">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Case</th>
+                                    <th>Masculine</th>
+                                    <th>Feminine</th>
+                                    <th>Neuter</th>
+                                    <th>Plural</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nominative</td>
+                                    <td>der</td>
+                                    <td>die</td>
+                                    <td>das</td>
+                                    <td>die</td>
+                                </tr>
+                                <tr>
+                                    <td>Accusative</td>
+                                    <td>den</td>
+                                    <td>die</td>
+                                    <td>das</td>
+                                    <td>die</td>
+                                </tr>
+                                <tr>
+                                    <td>Dative</td>
+                                    <td>dem</td>
+                                    <td>der</td>
+                                    <td>dem</td>
+                                    <td>denen</td>
+                                </tr>
+                                <tr>
+                                    <td>Genitive</td>
+                                    <td>dessen</td>
+                                    <td>deren</td>
+                                    <td>dessen</td>
+                                    <td>deren</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="alert alert-warning mb-4">
+                        <i class="fas fa-exclamation-triangle me-2"></i> Important rule: In relative clauses, the conjugated verb moves to the end of the clause.
+                    </div>
+                    
+                    <div class="card bg-light mb-4">
+                        <div class="card-body">
+                            <h5>Examples</h5>
+                            <ul>
+                                <li>Das ist der Mann, <strong>der</strong> gestern hier <strong>war</strong>. (That is the man who was here yesterday.) (der refers to der Mann, nominative)</li>
+                                <li>Ich suche das Buch, <strong>das</strong> auf dem Tisch <strong>liegt</strong>. (I am looking for the book that is lying on the table.) (das refers to das Buch, nominative)</li>
+                                <li>Sie spricht mit der Frau, <strong>die</strong> neben mir <strong>wohnt</strong>. (She is talking to the woman who lives next to me.) (die refers to die Frau, nominative)</li>
+                                <li>Er hat ein Auto, <strong>das</strong> er letztes Jahr <strong>gekauft hat</strong>. (He has a car that he bought last year.) (das refers to das Auto, accusative)</li>
+                                <li>Das ist der Freund, <strong>dem</strong> ich das Geld <strong>gegeben habe</strong>. (That is the friend to whom I gave the money.) (dem refers to der Freund, dative)</li>
+                                <li>Das ist die Firma, <strong>deren</strong> Chef mein Onkel <strong>ist</strong>. (That is the company whose boss is my uncle.) (deren refers to die Firma, genitive)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4>Alternative Relative Pronouns</h4>
+                    <p>welcher, welche, welches can be used instead of der, die, das, especially in more formal contexts. They follow the same declension patterns.</p>
+                </div>
+            </div>
+            
+            <!-- More B1 grammar sections would continue here -->
+            
+            <!-- Practice and Review -->
+            <div class="card mb-4">
+                <div class="card-header bg-warning text-dark">
+                    <h3 class="mb-0">Practice and Review</h3>
+                </div>
+                <div class="card-body">
+                    <p>Ready to test your knowledge of B1 German grammar? Try our practice exercises!</p>
+                    <a href="{{ url_for('grammar_practice') }}" class="btn btn-warning">
+                        <i class="fas fa-tasks me-2"></i> Go to Practice Exercises
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Add space before headings with IDs (for anchor links) */
+    [id] {
+        scroll-margin-top: 60px;
+    }
+</style>
+{% endblock %}

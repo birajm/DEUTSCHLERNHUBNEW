@@ -242,6 +242,23 @@ def b1_communication_debating_persuading():
 def b1_communication_cultural_nuances():
     return render_template('lessons/b1/communication/cultural_nuances.html')
 
+# B1 Vocabulary routes
+@app.route('/b1/vocabulary/work-career')
+def b1_vocabulary_work_career():
+    return render_template('lessons/b1/vocabulary/work_career.html')
+
+@app.route('/b1/vocabulary/current-events')
+def b1_vocabulary_current_events():
+    return render_template('lessons/b1/vocabulary/current_events.html')
+
+@app.route('/b1/vocabulary/environment-nature')
+def b1_vocabulary_environment_nature():
+    return render_template('lessons/b1/vocabulary/environment_nature.html')
+
+@app.route('/b1/vocabulary/art-culture')
+def b1_vocabulary_art_culture():
+    return render_template('lessons/b1/vocabulary/art_culture.html')
+
 # Grammar reference section
 @app.route('/grammar')
 def grammar():

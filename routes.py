@@ -681,3 +681,60 @@ def page_not_found(e):
 @app.errorhandler(500)
 def internal_error(e):
     return render_template('500.html'), 500
+@app.route('/reading/content/<int:reading_id>')
+def reading_content(reading_id):
+    # Sample reading data - In production, this would come from a database
+    readings = {
+        1: {
+            'title': 'Meine Familie',
+            'subtitle': 'My Family',
+            'level': 'A1',
+            'category': 'Short Story',
+            'content': '''
+                <p>Hallo! Ich möchte euch meine Familie vorstellen. Ich heiße Thomas und bin 25 Jahre alt. 
+                Meine Familie ist nicht sehr groß, aber ich liebe sie sehr.</p>
+                
+                <p>Mein Vater heißt Michael und ist 50 Jahre alt. Er ist Lehrer von Beruf. 
+                Meine Mutter heißt Anna und ist 48 Jahre alt. Sie arbeitet als Krankenschwester.</p>
+                
+                <p>Ich habe eine Schwester. Sie heißt Laura und ist 20 Jahre alt. 
+                Sie studiert Medizin an der Universität. Wir haben auch eine Katze. 
+                Sie heißt Luna und ist 3 Jahre alt.</p>
+            ''',
+            'vocabulary': [
+                {'german': 'Familie', 'english': 'family'},
+                {'german': 'Vater', 'english': 'father'},
+                {'german': 'Mutter', 'english': 'mother'},
+                {'german': 'Schwester', 'english': 'sister'},
+                {'german': 'Katze', 'english': 'cat'},
+                {'german': 'Lehrer', 'english': 'teacher'},
+                {'german': 'Krankenschwester', 'english': 'nurse'}
+            ],
+            'questions': [
+                {
+                    'text': 'Wie alt ist Thomas?',
+                    'options': ['20 Jahre alt', '25 Jahre alt', '48 Jahre alt', '50 Jahre alt'],
+                    'correct': 1
+                },
+                {
+                    'text': 'Was ist der Beruf von Thomas Vater?',
+                    'options': ['Arzt', 'Lehrer', 'Krankenpfleger', 'Student'],
+                    'correct': 1
+                },
+                {
+                    'text': 'Was studiert Laura?',
+                    'options': ['Medizin', 'Deutsch', 'Mathematik', 'Geschichte'],
+                    'correct': 0
+                }
+            ],
+            'word_count': 150,
+            'estimated_time': 5
+        }
+        # Add more readings here
+    }
+    
+    reading = readings.get(reading_id)
+    if not reading:
+        abort(404)
+    
+    return render_template('reading/content.html', reading=reading)

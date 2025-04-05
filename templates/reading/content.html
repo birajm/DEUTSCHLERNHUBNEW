@@ -1,0 +1,135 @@
+
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - {{ reading.title }}{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <div class="row">
+        <div class="col-lg-8">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('reading') }}">Reading</a></li>
+                    <li class="breadcrumb-item active">{{ reading.title }}</li>
+                </ol>
+            </nav>
+            
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="badge {% if reading.level == 'A1' %}bg-success{% elif reading.level == 'A2' %}bg-primary{% else %}bg-warning text-dark{% endif %} me-2">{{ reading.level }}</span>
+                        <span class="badge bg-light text-dark">{{ reading.category }}</span>
+                    </div>
+                    <small class="text-muted">{{ reading.word_count }} words | {{ reading.estimated_time }} min</small>
+                </div>
+                <div class="card-body">
+                    <h2 class="card-title">{{ reading.title }}</h2>
+                    <h6 class="card-subtitle mb-3 text-muted">{{ reading.subtitle }}</h6>
+                    
+                    <div class="reading-text mb-4">
+                        {{ reading.content | safe }}
+                    </div>
+
+                    {% if reading.vocabulary %}
+                    <div class="vocabulary-section mt-4">
+                        <h5>Key Vocabulary</h5>
+                        <div class="row">
+                            {% for word in reading.vocabulary %}
+                            <div class="col-md-4 mb-2">
+                                <div class="vocabulary-item">
+                                    <strong>{{ word.german }}</strong> - {{ word.english }}
+                                    <button class="btn btn-sm btn-link pronounce-word" data-word="{{ word.german }}">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if reading.questions %}
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Comprehension Questions</h5>
+                </div>
+                <div class="card-body">
+                    <form id="comprehension-form">
+                        {% for question in reading.questions %}
+                        <div class="mb-4">
+                            <p class="fw-bold">{{ loop.index }}. {{ question.text }}</p>
+                            {% for option in question.options %}
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question{{ loop.parent.index }}" value="{{ loop.index0 }}" id="q{{ loop.parent.index }}o{{ loop.index }}">
+                                <label class="form-check-label" for="q{{ loop.parent.index }}o{{ loop.index }}">
+                                    {{ option }}
+                                </label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                        <button type="submit" class="btn btn-primary">Check Answers</button>
+                    </form>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Reading Tips</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Read through once without stopping</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Look up key vocabulary</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Read again for better understanding</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Try to answer questions without looking back</li>
+                    </ul>
+                </div>
+            </div>
+
+            {% if current_user.is_authenticated %}
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Progress</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <button id="mark-complete" class="btn btn-success">
+                            <i class="fas fa-check-circle me-2"></i>Mark as Complete
+                        </button>
+                        <button id="save-vocabulary" class="btn btn-outline-primary">
+                            <i class="fas fa-bookmark me-2"></i>Save Vocabulary
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('comprehension-form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Handle form submission
+            const formData = new FormData(form);
+            const answers = {};
+            for (const [key, value] of formData.entries()) {
+                answers[key] = parseInt(value);
+            }
+            // You can add AJAX call here to check answers
+        });
+    }
+});
+</script>
+{% endblock %}

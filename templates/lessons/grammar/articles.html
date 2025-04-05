@@ -1,0 +1,490 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - German Articles{% endblock %}
+
+{% block content %}
+<div class="lesson-header a1-header">
+    <div class="container">
+        <h1>Articles (der, die, das)</h1>
+        <p class="lead">Learn the German articles and when to use them</p>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#definite" class="list-group-item list-group-item-action">Definite Articles</a>
+                <a href="#indefinite" class="list-group-item list-group-item-action">Indefinite Articles</a>
+                <a href="#gender" class="list-group-item list-group-item-action">Gender Rules</a>
+                <a href="#cases" class="list-group-item list-group-item-action">Cases</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a1" data-section="grammar" data-lesson="articles" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>One of the key differences between German and English is that in German, every noun has a gender: masculine, feminine, or neuter. This gender affects which article (equivalent to "the" or "a/an" in English) to use with each noun.</p>
+                <p>By the end of this lesson, you will be able to:</p>
+                <ul>
+                    <li>Identify and use the correct definite articles (der, die, das)</li>
+                    <li>Identify and use the correct indefinite articles (ein, eine)</li>
+                    <li>Understand basic patterns for determining a noun's gender</li>
+                    <li>Recognize how cases affect articles</li>
+                </ul>
+            </section>
+            
+            <section id="definite" class="mb-5">
+                <h2>Definite Articles (der, die, das)</h2>
+                <p>Definite articles in German are equivalent to "the" in English. Unlike English, which uses only one definite article ("the"), German has three, depending on the gender of the noun:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Gender</th>
+                                <th>Definite Article</th>
+                                <th>Example</th>
+                                <th>Translation</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Masculine</td>
+                                <td>der</td>
+                                <td>der Mann</td>
+                                <td>the man</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('der Mann')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Feminine</td>
+                                <td>die</td>
+                                <td>die Frau</td>
+                                <td>the woman</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('die Frau')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Neuter</td>
+                                <td>das</td>
+                                <td>das Kind</td>
+                                <td>the child</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('das Kind')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Plural (all genders)</td>
+                                <td>die</td>
+                                <td>die Kinder</td>
+                                <td>the children</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('die Kinder')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <h5>Important Note:</h5>
+                    <p>In German, nouns are always capitalized, regardless of where they appear in a sentence. This makes it easier to identify them in written text.</p>
+                </div>
+            </section>
+            
+            <section id="indefinite" class="mb-5">
+                <h2>Indefinite Articles (ein, eine)</h2>
+                <p>Indefinite articles in German are equivalent to "a" or "an" in English. Like definite articles, they change based on the gender of the noun:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Gender</th>
+                                <th>Indefinite Article</th>
+                                <th>Example</th>
+                                <th>Translation</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Masculine</td>
+                                <td>ein</td>
+                                <td>ein Mann</td>
+                                <td>a man</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('ein Mann')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Feminine</td>
+                                <td>eine</td>
+                                <td>eine Frau</td>
+                                <td>a woman</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('eine Frau')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Neuter</td>
+                                <td>ein</td>
+                                <td>ein Kind</td>
+                                <td>a child</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('ein Kind')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Plural (all genders)</td>
+                                <td>keine* (no/not any)</td>
+                                <td>keine Kinder</td>
+                                <td>no children</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('keine Kinder')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Note</h5>
+                        <p>* There is no indefinite article for plural nouns in German, just as there isn't in English (we don't say "a children"). However, the negative form "kein/keine" (no, not any) does have a plural form.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="gender" class="mb-5">
+                <h2>Gender Rules</h2>
+                <p>Determining the gender of a German noun can be challenging, as there is no single rule that applies to all nouns. However, there are some patterns that can help:</p>
+                
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-header bg-primary text-white">Masculine (der)</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Days, months, and seasons</li>
+                                <li class="list-group-item">Most nouns ending in -er that refer to male persons</li>
+                                <li class="list-group-item">Most nouns ending in -ant, -ast, -ismus, -or</li>
+                                <li class="list-group-item">Many alcoholic drinks (der Wein, der Whiskey)</li>
+                            </ul>
+                            <div class="card-footer">
+                                <p><strong>Examples:</strong> der Montag (Monday), der Lehrer (teacher), der Student (student), der Optimismus (optimism)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-header bg-danger text-white">Feminine (die)</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Most nouns ending in -e</li>
+                                <li class="list-group-item">Most nouns ending in -heit, -keit, -schaft, -ung, -tät</li>
+                                <li class="list-group-item">Most nouns ending in -ik, -ie, -ei, -ur, -ion</li>
+                                <li class="list-group-item">Most nouns referring to female persons</li>
+                            </ul>
+                            <div class="card-footer">
+                                <p><strong>Examples:</strong> die Katze (cat), die Freiheit (freedom), die Universität (university), die Schwester (sister)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-header bg-success text-white">Neuter (das)</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Most nouns ending in -chen or -lein (diminutives)</li>
+                                <li class="list-group-item">Most metals and chemical elements</li>
+                                <li class="list-group-item">Most nouns ending in -um, -ment, -ma</li>
+                                <li class="list-group-item">Most nouns that are infinitives used as nouns</li>
+                            </ul>
+                            <div class="card-footer">
+                                <p><strong>Examples:</strong> das Mädchen (girl), das Gold (gold), das Dokument (document), das Essen (eating/food)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning mt-3">
+                    <h5>Memory Tip:</h5>
+                    <p>These rules will help you make educated guesses, but there are many exceptions. The best way to learn noun genders is to memorize them along with the noun itself, always including the article: <strong>der</strong> Mann, <strong>die</strong> Frau, <strong>das</strong> Kind.</p>
+                </div>
+            </section>
+            
+            <section id="cases" class="mb-5">
+                <h2>Cases and How They Affect Articles</h2>
+                <p>In German, articles change depending on the case of the noun. There are four cases in German, but at the A1 level, we'll focus mainly on Nominative (subject) and Accusative (direct object) cases:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Case</th>
+                                <th>Usage</th>
+                                <th>Masculine</th>
+                                <th>Feminine</th>
+                                <th>Neuter</th>
+                                <th>Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Nominative</strong><br>(subject)</td>
+                                <td>The subject of the sentence<br>Who is doing the action</td>
+                                <td>der<br>ein</td>
+                                <td>die<br>eine</td>
+                                <td>das<br>ein</td>
+                                <td>die<br>keine</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Accusative</strong><br>(direct object)</td>
+                                <td>The direct object of the sentence<br>Who/what is receiving the action</td>
+                                <td>den<br>einen</td>
+                                <td>die<br>eine</td>
+                                <td>das<br>ein</td>
+                                <td>die<br>keine</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Examples</h5>
+                        <p><strong>Nominative (subject):</strong></p>
+                        <ul>
+                            <li><strong>Der</strong> Mann kauft ein Buch. (The man buys a book.)</li>
+                            <li><strong>Die</strong> Frau liest die Zeitung. (The woman reads the newspaper.)</li>
+                            <li><strong>Das</strong> Kind spielt im Garten. (The child plays in the garden.)</li>
+                        </ul>
+                        <p><strong>Accusative (direct object):</strong></p>
+                        <ul>
+                            <li>Ich sehe <strong>den</strong> Mann. (I see the man.)</li>
+                            <li>Er kennt <strong>die</strong> Frau. (He knows the woman.)</li>
+                            <li>Sie liebt <strong>das</strong> Kind. (She loves the child.)</li>
+                        </ul>
+                        <p>Notice that only masculine articles change in the accusative case.</p>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <h5>A1 Focus:</h5>
+                    <p>At the A1 level, focus primarily on mastering the nominative case and learning the basics of the accusative case. Dative and genitive cases will be covered in more detail at the A2 level.</p>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice using the correct articles:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Choose the correct definite article</div>
+                    <div class="card-body">
+                        <form id="definite-articles">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>1. _____ Buch (book)</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q1" id="q1-a" value="a">
+                                        <label class="form-check-label" for="q1-a">der</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q1" id="q1-b" value="b">
+                                        <label class="form-check-label" for="q1-b">die</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q1" id="q1-c" value="c">
+                                        <label class="form-check-label" for="q1-c">das</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>2. _____ Mutter (mother)</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2" id="q2-a" value="a">
+                                        <label class="form-check-label" for="q2-a">der</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2" id="q2-b" value="b">
+                                        <label class="form-check-label" for="q2-b">die</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2" id="q2-c" value="c">
+                                        <label class="form-check-label" for="q2-c">das</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>3. _____ Auto (car)</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q3" id="q3-a" value="a">
+                                        <label class="form-check-label" for="q3-a">der</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q3" id="q3-b" value="b">
+                                        <label class="form-check-label" for="q3-b">die</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q3" id="q3-c" value="c">
+                                        <label class="form-check-label" for="q3-c">das</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>4. _____ Lehrer (teacher)</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q4" id="q4-a" value="a">
+                                        <label class="form-check-label" for="q4-a">der</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q4" id="q4-b" value="b">
+                                        <label class="form-check-label" for="q4-b">die</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q4" id="q4-c" value="c">
+                                        <label class="form-check-label" for="q4-c">das</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-definite">Check Answers</button>
+                        </form>
+                        <div id="definite-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Fill in the correct indefinite article</div>
+                    <div class="card-body">
+                        <form id="indefinite-articles">
+                            <div class="mb-3">
+                                <label for="ia1" class="form-label">1. Ich habe _____ Bruder. (I have a brother.)</label>
+                                <input type="text" class="form-control" id="ia1" data-answer="einen">
+                            </div>
+                            <div class="mb-3">
+                                <label for="ia2" class="form-label">2. Das ist _____ Tasse. (That is a cup.)</label>
+                                <input type="text" class="form-control" id="ia2" data-answer="eine">
+                            </div>
+                            <div class="mb-3">
+                                <label for="ia3" class="form-label">3. Er kauft _____ Haus. (He buys a house.)</label>
+                                <input type="text" class="form-control" id="ia3" data-answer="ein">
+                            </div>
+                            <div class="mb-3">
+                                <label for="ia4" class="form-label">4. Sie haben _____ Kinder. (They have no children.)</label>
+                                <input type="text" class="form-control" id="ia4" data-answer="keine">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-indefinite">Check Answers</button>
+                        </form>
+                        <div id="indefinite-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the German Articles lesson. Keep practicing to improve your ability to use the correct articles with German nouns.</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('a1_quiz_articles') }}" class="alert-link">Articles Quiz</a>.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check definite articles exercise
+        document.getElementById('check-definite').addEventListener('click', function() {
+            const answers = {
+                q1: 'c', // das Buch
+                q2: 'b', // die Mutter
+                q3: 'c', // das Auto
+                q4: 'a'  // der Lehrer
+            };
+            
+            let correct = 0;
+            for (const q in answers) {
+                const selectedOption = document.querySelector(`input[name=${q}]:checked`);
+                if (selectedOption && selectedOption.value === answers[q]) {
+                    correct++;
+                }
+            }
+            
+            const resultDiv = document.getElementById('definite-result');
+            if (correct === 4) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! You got all answers correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of 4 correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check indefinite articles exercise
+        document.getElementById('check-indefinite').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#indefinite-articles input[type="text"]');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('indefinite-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! You got all answers correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

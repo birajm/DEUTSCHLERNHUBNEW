@@ -1,0 +1,560 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Numbers 1-100{% endblock %}
+
+{% block content %}
+<div class="lesson-header a1-header">
+    <div class="container">
+        <h1>Numbers 1-100</h1>
+        <p class="lead">Learn to count in German from 1 to 100</p>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#numbers1-12" class="list-group-item list-group-item-action">Numbers 1-12</a>
+                <a href="#numbers13-19" class="list-group-item list-group-item-action">Numbers 13-19</a>
+                <a href="#tens" class="list-group-item list-group-item-action">Tens (20, 30, 40...)</a>
+                <a href="#combined" class="list-group-item list-group-item-action">Combined Numbers</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a1" data-section="basics" data-lesson="numbers" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Numbers are an essential part of any language. In German, the system for forming numbers follows clear patterns that make it relatively easy to learn once you understand the basic principles.</p>
+                <p>By the end of this lesson, you will be able to:</p>
+                <ul>
+                    <li>Count from 1 to 100 in German</li>
+                    <li>Understand the pattern for forming numbers</li>
+                    <li>Read and pronounce German numbers correctly</li>
+                </ul>
+            </section>
+            
+            <section id="numbers1-12" class="mb-5">
+                <h2>Numbers 1-12</h2>
+                <p>Let's start with the numbers from 1 to 12, which form the foundation of the German number system:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Number</th>
+                                <th>German</th>
+                                <th>Pronunciation</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>eins</td>
+                                <td>eyns</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('eins')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>zwei</td>
+                                <td>tsvay</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('zwei')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>drei</td>
+                                <td>dry</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('drei')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>vier</td>
+                                <td>feer</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('vier')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>fünf</td>
+                                <td>fuenf</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('fünf')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>sechs</td>
+                                <td>zeks</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('sechs')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>sieben</td>
+                                <td>zee-ben</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('sieben')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>acht</td>
+                                <td>ahkt</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('acht')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>neun</td>
+                                <td>noyn</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('neun')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>zehn</td>
+                                <td>tsayn</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('zehn')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>elf</td>
+                                <td>elf</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('elf')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>zwölf</td>
+                                <td>tsvuelf</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('zwölf')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Memory Tip</h5>
+                        <p>The numbers 1-12 are unique and need to be memorized individually. Try creating flashcards or practice counting from 1 to 12 throughout your day.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="numbers13-19" class="mb-5">
+                <h2>Numbers 13-19</h2>
+                <p>The numbers 13-19 follow a pattern. They are formed by combining the basic number + "zehn" (ten), with some slight modifications:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Number</th>
+                                <th>German</th>
+                                <th>Explanation</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>13</td>
+                                <td>dreizehn</td>
+                                <td>drei (3) + zehn (10)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('dreizehn')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>vierzehn</td>
+                                <td>vier (4) + zehn (10)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('vierzehn')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>fünfzehn</td>
+                                <td>fünf (5) + zehn (10)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('fünfzehn')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>sechzehn</td>
+                                <td>sechs (6) + zehn (10), but dropping the 's' in sechs</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('sechzehn')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>siebzehn</td>
+                                <td>sieben (7) + zehn (10), but dropping the 'en' in sieben</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('siebzehn')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>achtzehn</td>
+                                <td>acht (8) + zehn (10)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('achtzehn')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>neunzehn</td>
+                                <td>neun (9) + zehn (10)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('neunzehn')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Note</h5>
+                        <p>Pay special attention to 16 (sechzehn) and 17 (siebzehn), as they have slight modifications from their base numbers.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="tens" class="mb-5">
+                <h2>Tens (20, 30, 40...)</h2>
+                <p>The tens follow another clear pattern. Most are formed by adding "zig" to the base number:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Number</th>
+                                <th>German</th>
+                                <th>Explanation</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>20</td>
+                                <td>zwanzig</td>
+                                <td>From zwei (2), with a vowel change</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('zwanzig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>30</td>
+                                <td>dreißig</td>
+                                <td>From drei (3), with "ßig" instead of "zig"</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('dreißig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>40</td>
+                                <td>vierzig</td>
+                                <td>vier (4) + zig</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('vierzig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>50</td>
+                                <td>fünfzig</td>
+                                <td>fünf (5) + zig</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('fünfzig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>60</td>
+                                <td>sechzig</td>
+                                <td>sechs (6) + zig, dropping the 's'</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('sechzig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>70</td>
+                                <td>siebzig</td>
+                                <td>sieben (7) + zig, dropping the 'en'</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('siebzig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>80</td>
+                                <td>achtzig</td>
+                                <td>acht (8) + zig</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('achtzig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>90</td>
+                                <td>neunzig</td>
+                                <td>neun (9) + zig</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('neunzig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>100</td>
+                                <td>hundert</td>
+                                <td>hundert (hundred)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('hundert')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <h5>Special Cases</h5>
+                    <p>Note the exceptions:</p>
+                    <ul>
+                        <li><strong>zwanzig</strong> (20) - Not "zweizig"</li>
+                        <li><strong>dreißig</strong> (30) - Uses "ßig" instead of "zig"</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="combined" class="mb-5">
+                <h2>Combined Numbers (21-99)</h2>
+                <p>To form numbers between the tens (like 21, 35, 42, etc.), German uses a different word order than English:</p>
+                <p>In German, the ones digit comes first, followed by "und" (and), then the tens digit:</p>
+                
+                <div class="alert alert-primary">
+                    <strong>Formula:</strong> [ones digit] + und + [tens digit]
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Number</th>
+                                <th>German</th>
+                                <th>Literal Translation</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>21</td>
+                                <td>einundzwanzig</td>
+                                <td>one and twenty</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('einundzwanzig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>35</td>
+                                <td>fünfunddreißig</td>
+                                <td>five and thirty</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('fünfunddreißig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>42</td>
+                                <td>zweiundvierzig</td>
+                                <td>two and forty</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('zweiundvierzig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>67</td>
+                                <td>siebenundsechzig</td>
+                                <td>seven and sixty</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('siebenundsechzig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>99</td>
+                                <td>neunundneunzig</td>
+                                <td>nine and ninety</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('neunundneunzig')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Important Note</h5>
+                        <p>For numbers 21-99, we use "ein" instead of "eins" for the number 1:</p>
+                        <ul>
+                            <li>21 = einundzwanzig (not "einsundzwanzig")</li>
+                            <li>31 = einunddreißig </li>
+                            <li>41 = einundvierzig</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Now let's practice reading and writing numbers in German:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Write these numbers in German</div>
+                    <div class="card-body">
+                        <form id="numbers-practice">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="number7" class="form-label">7:</label>
+                                    <input type="text" class="form-control" id="number7" data-answer="sieben">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="number15" class="form-label">15:</label>
+                                    <input type="text" class="form-control" id="number15" data-answer="fünfzehn">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="number23" class="form-label">23:</label>
+                                    <input type="text" class="form-control" id="number23" data-answer="dreiundzwanzig">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="number48" class="form-label">48:</label>
+                                    <input type="text" class="form-control" id="number48" data-answer="achtundvierzig">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="number72" class="form-label">72:</label>
+                                    <input type="text" class="form-control" id="number72" data-answer="zweiundsiebzig">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="number99" class="form-label">99:</label>
+                                    <input type="text" class="form-control" id="number99" data-answer="neunundneunzig">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-numbers">Check Answers</button>
+                        </form>
+                        <div id="numbers-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Translate these numbers to digits</div>
+                    <div class="card-body">
+                        <form id="numbers-translation">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="wordZwolf" class="form-label">zwölf:</label>
+                                    <input type="text" class="form-control" id="wordZwolf" data-answer="12">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="wordSiebzehn" class="form-label">siebzehn:</label>
+                                    <input type="text" class="form-control" id="wordSiebzehn" data-answer="17">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="wordFunfunddreissig" class="form-label">fünfunddreißig:</label>
+                                    <input type="text" class="form-control" id="wordFunfunddreissig" data-answer="35">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="wordSechzig" class="form-label">sechzig:</label>
+                                    <input type="text" class="form-control" id="wordSechzig" data-answer="60">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="wordAchtundachtzig" class="form-label">achtundachtzig:</label>
+                                    <input type="text" class="form-control" id="wordAchtundachtzig" data-answer="88">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="wordEinundneunzig" class="form-label">einundneunzig:</label>
+                                    <input type="text" class="form-control" id="wordEinundneunzig" data-answer="91">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-translation">Check Answers</button>
+                        </form>
+                        <div id="translation-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the German numbers lesson. Keep practicing to improve your counting skills.</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('a1_quiz_comprehensive') }}" class="alert-link">A1 Comprehensive Quiz</a>, which includes questions about numbers.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Number practice functionality
+        document.getElementById('check-numbers').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#numbers-practice input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('numbers-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Translation practice functionality
+        document.getElementById('check-translation').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#numbers-translation input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('translation-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

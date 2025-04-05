@@ -1,0 +1,616 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Basic Phrases{% endblock %}
+
+{% block content %}
+<div class="lesson-header a1-header">
+    <div class="container">
+        <h1>Basic Phrases</h1>
+        <p class="lead">Essential phrases for everyday situations</p>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#greetings" class="list-group-item list-group-item-action">Greetings</a>
+                <a href="#polite" class="list-group-item list-group-item-action">Polite Expressions</a>
+                <a href="#questions" class="list-group-item list-group-item-action">Common Questions</a>
+                <a href="#situations" class="list-group-item list-group-item-action">Daily Situations</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a1" data-section="basics" data-lesson="phrases" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Basic phrases are essential for everyday communication in German. They will help you navigate common situations, be polite, and make a good impression when interacting with German speakers.</p>
+                <p>By the end of this lesson, you will be able to:</p>
+                <ul>
+                    <li>Use essential German phrases in everyday situations</li>
+                    <li>Express basic needs and requests</li>
+                    <li>Navigate common social interactions</li>
+                    <li>Understand when others use these phrases</li>
+                </ul>
+            </section>
+            
+            <section id="greetings" class="mb-5">
+                <h2>Greetings and Farewells</h2>
+                <p>Let's review some basic greetings and ways to say goodbye in German:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Usage</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hallo</td>
+                                <td>Hello</td>
+                                <td>General greeting, can be used in most situations</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Hallo')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Guten Morgen</td>
+                                <td>Good morning</td>
+                                <td>Used until around noon</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Morgen')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Guten Tag</td>
+                                <td>Good day</td>
+                                <td>Used during the day</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Tag')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Guten Abend</td>
+                                <td>Good evening</td>
+                                <td>Used in the evening</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Abend')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Auf Wiedersehen</td>
+                                <td>Goodbye</td>
+                                <td>Formal farewell</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Auf Wiedersehen')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Tschüss</td>
+                                <td>Bye</td>
+                                <td>Informal farewell</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Tschüss')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Bis später</td>
+                                <td>See you later</td>
+                                <td>Informal, when you'll see the person again soon</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Bis später')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Bis morgen</td>
+                                <td>See you tomorrow</td>
+                                <td>When you'll see the person tomorrow</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Bis morgen')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Gute Nacht</td>
+                                <td>Good night</td>
+                                <td>Used when someone is going to sleep</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Gute Nacht')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="polite" class="mb-5">
+                <h2>Polite Expressions</h2>
+                <p>Germans value politeness. Here are some essential polite expressions:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Usage</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bitte</td>
+                                <td>Please / You're welcome</td>
+                                <td>Multiple uses: for requests, offering something, or responding to "Danke"</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Bitte')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Danke</td>
+                                <td>Thank you</td>
+                                <td>Basic way to say thanks</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Danke')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Vielen Dank</td>
+                                <td>Thank you very much</td>
+                                <td>More emphatic thanks</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Vielen Dank')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Entschuldigung</td>
+                                <td>Excuse me / Sorry</td>
+                                <td>To get attention or apologize</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Entschuldigung')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Es tut mir leid</td>
+                                <td>I'm sorry</td>
+                                <td>More formal/sincere apology</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Es tut mir leid')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Kein Problem</td>
+                                <td>No problem</td>
+                                <td>Casual response to an apology or thanks</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Kein Problem')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Gern geschehen</td>
+                                <td>You're welcome</td>
+                                <td>More formal response to "Danke"</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Gern geschehen')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="questions" class="mb-5">
+                <h2>Common Questions</h2>
+                <p>Being able to ask and understand basic questions is essential:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Possible Answers</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Wie heißen Sie? / Wie heißt du?</td>
+                                <td>What is your name? (formal/informal)</td>
+                                <td>Ich heiße... / Mein Name ist...</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wie heißen Sie?')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Woher kommen Sie? / Woher kommst du?</td>
+                                <td>Where are you from? (formal/informal)</td>
+                                <td>Ich komme aus...</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Woher kommen Sie?')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Wie geht es Ihnen? / Wie geht's?</td>
+                                <td>How are you? (formal/informal)</td>
+                                <td>Gut, danke. / Nicht so gut. / Es geht.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wie geht es Ihnen?')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Sprechen Sie Englisch?</td>
+                                <td>Do you speak English?</td>
+                                <td>Ja, ein bisschen. / Nein, leider nicht. / Ja, fließend.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Sprechen Sie Englisch?')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Wie viel kostet das?</td>
+                                <td>How much does this cost?</td>
+                                <td>Das kostet ... Euro.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wie viel kostet das?')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Wo ist die Toilette?</td>
+                                <td>Where is the bathroom?</td>
+                                <td>Die Toilette ist...</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wo ist die Toilette?')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Wie spät ist es?</td>
+                                <td>What time is it?</td>
+                                <td>Es ist ... Uhr.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wie spät ist es?')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="situations" class="mb-5">
+                <h2>Daily Situations</h2>
+                <p>Here are phrases that will help you in specific everyday situations:</p>
+                
+                <div class="accordion" id="situationsAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingRestaurant">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRestaurant" aria-expanded="true" aria-controls="collapseRestaurant">
+                                Restaurant
+                            </button>
+                        </h2>
+                        <div id="collapseRestaurant" class="accordion-collapse collapse show" aria-labelledby="headingRestaurant" data-bs-parent="#situationsAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Einen Tisch für zwei, bitte.</strong>
+                                            <p class="mb-0 text-muted">A table for two, please.</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Einen Tisch für zwei, bitte.')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Die Speisekarte, bitte.</strong>
+                                            <p class="mb-0 text-muted">The menu, please.</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Die Speisekarte, bitte.')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Ich möchte bestellen.</strong>
+                                            <p class="mb-0 text-muted">I would like to order.</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Ich möchte bestellen.')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Die Rechnung, bitte.</strong>
+                                            <p class="mb-0 text-muted">The bill, please.</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Die Rechnung, bitte.')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingShopping">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseShopping" aria-expanded="false" aria-controls="collapseShopping">
+                                Shopping
+                            </button>
+                        </h2>
+                        <div id="collapseShopping" class="accordion-collapse collapse" aria-labelledby="headingShopping" data-bs-parent="#situationsAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Kann ich Ihnen helfen?</strong>
+                                            <p class="mb-0 text-muted">Can I help you?</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Kann ich Ihnen helfen?')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Ich schaue nur.</strong>
+                                            <p class="mb-0 text-muted">I'm just looking.</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Ich schaue nur.')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Haben Sie das in einer anderen Größe?</strong>
+                                            <p class="mb-0 text-muted">Do you have this in another size?</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Haben Sie das in einer anderen Größe?')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Wo ist die Umkleidekabine?</strong>
+                                            <p class="mb-0 text-muted">Where is the changing room?</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wo ist die Umkleidekabine?')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTransport">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTransport" aria-expanded="false" aria-controls="collapseTransport">
+                                Transportation
+                            </button>
+                        </h2>
+                        <div id="collapseTransport" class="accordion-collapse collapse" aria-labelledby="headingTransport" data-bs-parent="#situationsAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Eine Fahrkarte nach Berlin, bitte.</strong>
+                                            <p class="mb-0 text-muted">A ticket to Berlin, please.</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Eine Fahrkarte nach Berlin, bitte.')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Wann fährt der nächste Zug?</strong>
+                                            <p class="mb-0 text-muted">When does the next train depart?</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wann fährt der nächste Zug?')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Ist dieser Platz frei?</strong>
+                                            <p class="mb-0 text-muted">Is this seat free?</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Ist dieser Platz frei?')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Entschuldigung, wo muss ich umsteigen?</strong>
+                                            <p class="mb-0 text-muted">Excuse me, where do I need to change?</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Entschuldigung, wo muss ich umsteigen?')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingEmergency">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEmergency" aria-expanded="false" aria-controls="collapseEmergency">
+                                Emergency Phrases
+                            </button>
+                        </h2>
+                        <div id="collapseEmergency" class="accordion-collapse collapse" aria-labelledby="headingEmergency" data-bs-parent="#situationsAccordion">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Hilfe!</strong>
+                                            <p class="mb-0 text-muted">Help!</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Hilfe!')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Ich brauche einen Arzt.</strong>
+                                            <p class="mb-0 text-muted">I need a doctor.</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Ich brauche einen Arzt.')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Rufen Sie bitte einen Krankenwagen!</strong>
+                                            <p class="mb-0 text-muted">Please call an ambulance!</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Rufen Sie bitte einen Krankenwagen!')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <strong>Ich habe mich verlaufen.</strong>
+                                            <p class="mb-0 text-muted">I am lost.</p>
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Ich habe mich verlaufen.')"><i class="fas fa-volume-up"></i></button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice using these phrases in context:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Situation 1: At a restaurant</div>
+                    <div class="card-body">
+                        <p>Match the German phrases with the appropriate context:</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="list-group" id="situation1-phrases">
+                                    <button type="button" class="list-group-item list-group-item-action" data-target="waiter">Die Speisekarte, bitte.</button>
+                                    <button type="button" class="list-group-item list-group-item-action" data-target="arrival">Einen Tisch für zwei, bitte.</button>
+                                    <button type="button" class="list-group-item list-group-item-action" data-target="ready">Ich möchte bestellen.</button>
+                                    <button type="button" class="list-group-item list-group-item-action" data-target="finish">Die Rechnung, bitte.</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="list-group">
+                                    <div class="list-group-item" id="arrival">1. When you first arrive at the restaurant</div>
+                                    <div class="list-group-item" id="waiter">2. When the waiter approaches your table</div>
+                                    <div class="list-group-item" id="ready">3. When you're ready to order</div>
+                                    <div class="list-group-item" id="finish">4. When you're done eating</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="situation1-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Fill in the Blanks</div>
+                    <div class="card-body">
+                        <p>Complete the conversation with the appropriate phrases:</p>
+                        <form id="fill-blanks">
+                            <div class="mb-3">
+                                <p><strong>Person A:</strong> <select class="form-select" id="blank1">
+                                    <option value="">Select...</option>
+                                    <option value="correct">Guten Tag!</option>
+                                    <option value="wrong">Auf Wiedersehen!</option>
+                                    <option value="wrong">Die Rechnung, bitte.</option>
+                                </select></p>
+                                <p><strong>Person B:</strong> Guten Tag! Wie geht es Ihnen?</p>
+                                <p><strong>Person A:</strong> <select class="form-select" id="blank2">
+                                    <option value="">Select...</option>
+                                    <option value="wrong">Ja, bitte.</option>
+                                    <option value="correct">Danke, gut. Und Ihnen?</option>
+                                    <option value="wrong">Auf Wiedersehen!</option>
+                                </select></p>
+                                <p><strong>Person B:</strong> Auch gut, danke. Sprechen Sie Englisch?</p>
+                                <p><strong>Person A:</strong> <select class="form-select" id="blank3">
+                                    <option value="">Select...</option>
+                                    <option value="wrong">Nein, ich spreche kein Deutsch.</option>
+                                    <option value="wrong">Ja, ich komme aus England.</option>
+                                    <option value="correct">Ja, ein bisschen.</option>
+                                </select></p>
+                                <p><strong>Person B:</strong> Super! Woher kommen Sie?</p>
+                                <p><strong>Person A:</strong> <select class="form-select" id="blank4">
+                                    <option value="">Select...</option>
+                                    <option value="correct">Ich komme aus Amerika.</option>
+                                    <option value="wrong">Ich bin 25 Jahre alt.</option>
+                                    <option value="wrong">Ich heiße Peter.</option>
+                                </select></p>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-blanks">Check Answers</button>
+                        </form>
+                        <div id="blanks-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Basic Phrases lesson. Keep practicing these phrases to improve your conversational skills.</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('a1_quiz_phrases') }}" class="alert-link">Basic Phrases Quiz</a>.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (this.getAttribute('href') && this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Situation 1 practice
+        let correctMatches = 0;
+        const totalMatches = 4;
+        
+        document.querySelectorAll('#situation1-phrases button').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = this.dataset.target;
+                const targetElement = document.getElementById(target);
+                
+                if (this.classList.contains('list-group-item-success')) {
+                    // Already matched correctly
+                    return;
+                }
+                
+                if (this.classList.contains('active')) {
+                    // Deselect
+                    this.classList.remove('active');
+                } else {
+                    // Select and check for match
+                    document.querySelectorAll('#situation1-phrases button').forEach(b => {
+                        b.classList.remove('active');
+                    });
+                    
+                    this.classList.add('active');
+                    
+                    // Check if any element is highlighted
+                    const highlighted = document.querySelector('#situation1-phrases button.active');
+                    
+                    if (highlighted) {
+                        // Check if it's a correct match
+                        const targetText = targetElement.textContent;
+                        if (targetText.includes(target)) {
+                            // Correct match
+                            highlighted.classList.remove('active');
+                            highlighted.classList.add('list-group-item-success');
+                            targetElement.classList.add('list-group-item-success');
+                            correctMatches++;
+                            
+                            // Check if all matches are correct
+                            if (correctMatches === totalMatches) {
+                                document.getElementById('situation1-result').innerHTML = '<div class="alert alert-success">Great job! You\'ve correctly matched all phrases!</div>';
+                            }
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Fill in the blanks practice
+        document.getElementById('check-blanks').addEventListener('click', function() {
+            const blank1 = document.getElementById('blank1').value;
+            const blank2 = document.getElementById('blank2').value;
+            const blank3 = document.getElementById('blank3').value;
+            const blank4 = document.getElementById('blank4').value;
+            
+            let correct = 0;
+            
+            if (blank1 === 'correct') correct++;
+            if (blank2 === 'correct') correct++;
+            if (blank3 === 'correct') correct++;
+            if (blank4 === 'correct') correct++;
+            
+            const resultDiv = document.getElementById('blanks-result');
+            
+            if (correct === 4) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfekt! You got all answers correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of 4 correct. Try again!</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,393 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Telling Stories{% endblock %}
+
+{% block content %}
+<div class="lesson-header a2-header">
+    <div class="container">
+        <h1>Telling Stories</h1>
+        <p class="lead">Learn to tell simple stories in German</p>
+        <div class="badge bg-light text-dark">25 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#key-vocabulary" class="list-group-item list-group-item-action">Key Vocabulary</a>
+                <a href="#grammar" class="list-group-item list-group-item-action">Grammar Focus</a>
+                <a href="#phrases" class="list-group-item list-group-item-action">Useful Phrases</a>
+                <a href="#example" class="list-group-item list-group-item-action">Example Story</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Learning Tips</h5>
+                    <p class="card-text">Try to use time markers and connecting words to make your stories flow better. Practice telling simple stories about things that happened to you.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <div class="card mb-4" id="overview">
+                <div class="card-body">
+                    <h2>Overview</h2>
+                    <p>Being able to tell simple stories is a fun and important part of learning a language. In this lesson, you will learn some useful vocabulary and phrases to narrate past events in German. We will mainly focus on using the <em>Perfekt</em> tense, which you have already learned.</p>
+                    <p>By the end of this lesson, you will be able to:</p>
+                    <ul>
+                        <li>Use time markers and connecting words to tell a coherent story</li>
+                        <li>Apply the <em>Perfekt</em> tense to narrate past events</li>
+                        <li>Structure a simple story with a beginning, middle, and end</li>
+                        <li>Tell simple stories about your own experiences</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card mb-4" id="key-vocabulary">
+                <div class="card-body">
+                    <h2>Key Vocabulary for Telling Stories</h2>
+                    
+                    <h4>Time Markers</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>gestern</strong></td>
+                                    <td>yesterday</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>vorgestern</strong></td>
+                                    <td>the day before yesterday</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>letzte Woche</strong></td>
+                                    <td>last week</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>letzten Monat</strong></td>
+                                    <td>last month</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>letztes Jahr</strong></td>
+                                    <td>last year</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>früher</strong></td>
+                                    <td>earlier, in the past</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>eines Tages</strong></td>
+                                    <td>one day</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>plötzlich</strong></td>
+                                    <td>suddenly</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>dann</strong></td>
+                                    <td>then</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>später</strong></td>
+                                    <td>later</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>danach</strong></td>
+                                    <td>after that</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>endlich</strong></td>
+                                    <td>finally</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h4>Connecting Words</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>und</strong></td>
+                                    <td>and</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>aber</strong></td>
+                                    <td>but</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>oder</strong></td>
+                                    <td>or</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>denn</strong></td>
+                                    <td>because</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>deshalb</strong></td>
+                                    <td>therefore</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>weil</strong></td>
+                                    <td>because</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h4>Other Useful Words</h4>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>passieren</strong></td>
+                                    <td>to happen</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>erzählen</strong></td>
+                                    <td>to tell</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>fragen</strong></td>
+                                    <td>to ask</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>antworten</strong></td>
+                                    <td>to answer</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>lachen</strong></td>
+                                    <td>to laugh</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>weinen</strong></td>
+                                    <td>to cry</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>sagen</strong></td>
+                                    <td>to say</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>denken</strong></td>
+                                    <td>to think</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>finden</strong></td>
+                                    <td>to find</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>sehen</strong></td>
+                                    <td>to see</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>hören</strong></td>
+                                    <td>to hear</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-4" id="grammar">
+                <div class="card-body">
+                    <h2>Grammar Focus: The Perfekt Tense</h2>
+                    <p>The <em>Perfekt</em> tense is the primary past tense used in spoken German to tell stories and talk about past events. Let's briefly review how it's formed:</p>
+                    
+                    <div class="alert alert-info">
+                        <h5><i class="fas fa-info-circle"></i> Perfekt Formula</h5>
+                        <p><strong>haben</strong> or <strong>sein</strong> (conjugated) + <strong>Partizip II</strong> (at the end of the sentence)</p>
+                    </div>
+                    
+                    <h4>When to use "haben" and when to use "sein"</h4>
+                    <p>Use <strong>haben</strong> with:</p>
+                    <ul>
+                        <li>Transitive verbs (verbs that take an object): <em>Ich habe einen Film gesehen.</em> (I watched a movie.)</li>
+                        <li>Most reflexive verbs: <em>Ich habe mich gefreut.</em> (I was happy.)</li>
+                        <li>Most intransitive verbs that don't indicate motion or change of state: <em>Ich habe geschlafen.</em> (I slept.)</li>
+                    </ul>
+                    
+                    <p>Use <strong>sein</strong> with:</p>
+                    <ul>
+                        <li>Verbs of motion: <em>Ich bin gegangen/gelaufen/gefahren.</em> (I went/walked/drove.)</li>
+                        <li>Verbs indicating a change of state: <em>Ich bin eingeschlafen/aufgewacht.</em> (I fell asleep/woke up.)</li>
+                        <li>The verbs: sein, werden, bleiben: <em>Ich bin dort gewesen/geworden/geblieben.</em> (I was there/became/stayed.)</li>
+                    </ul>
+                    
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> Remember that the <em>Partizip II</em> usually goes at the end of the sentence!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-4" id="phrases">
+                <div class="card-body">
+                    <h2>Useful Phrases for Telling Stories</h2>
+                    
+                    <h4>Starting a Story</h4>
+                    <ul>
+                        <li><strong>Gestern habe ich...</strong> (Yesterday I...)</li>
+                        <li><strong>Letzte Woche ist etwas Interessantes passiert.</strong> (Last week something interesting happened.)</li>
+                        <li><strong>Eines Tages habe ich...</strong> (One day I...)</li>
+                        <li><strong>Weißt du, was gestern passiert ist?</strong> (Do you know what happened yesterday?)</li>
+                    </ul>
+                    
+                    <h4>Connecting Events in a Story</h4>
+                    <ul>
+                        <li><strong>Und dann...</strong> (And then...)</li>
+                        <li><strong>Danach habe ich...</strong> (After that, I...)</li>
+                        <li><strong>Plötzlich...</strong> (Suddenly...)</li>
+                        <li><strong>Aber...</strong> (But...)</li>
+                        <li><strong>Weil...</strong> (Because...)</li>
+                        <li><strong>Deshalb habe ich...</strong> (Therefore, I...)</li>
+                    </ul>
+                    
+                    <h4>Ending a Story</h4>
+                    <ul>
+                        <li><strong>Und am Ende...</strong> (And in the end...)</li>
+                        <li><strong>Das war's.</strong> (That was it.)</li>
+                        <li><strong>So ist das passiert.</strong> (That's how it happened.)</li>
+                        <li><strong>Das war eine interessante Erfahrung.</strong> (That was an interesting experience.)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card mb-4" id="example">
+                <div class="card-body">
+                    <h2>Example Story</h2>
+                    <div class="p-3 mb-3 bg-light rounded">
+                        <p class="mb-2"><strong>Ein Tag im Park</strong> (A Day in the Park)</p>
+                        <p>
+                            Gestern bin ich in den Park gegangen. Dort habe ich einen alten Freund getroffen. Wir haben uns lange nicht gesehen. Er hat mir von seiner neuen Arbeit erzählt. Dann haben wir zusammen Kaffee getrunken. Plötzlich hat es angefangen zu regnen. Deshalb sind wir schnell nach Hause gegangen. Das war ein schöner Tag.
+                        </p>
+                    </div>
+                    
+                    <div class="p-3 mb-3 bg-light rounded">
+                        <p class="mb-2"><strong>English Translation:</strong></p>
+                        <p>
+                            Yesterday I went to the park. There I met an old friend. We hadn't seen each other for a long time. He told me about his new job. Then we drank coffee together. Suddenly it started to rain. Therefore, we quickly went home. It was a nice day.
+                        </p>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle"></i> Notice the use of:
+                        <ul>
+                            <li>Time markers: "gestern" (yesterday), "plötzlich" (suddenly)</li>
+                            <li>Connecting words: "dann" (then), "deshalb" (therefore)</li>
+                            <li>Perfekt tense throughout: "bin ich gegangen", "habe ich getroffen", etc.</li>
+                            <li>Both "haben" and "sein" as auxiliary verbs, depending on the main verb</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-4" id="practice">
+                <div class="card-body">
+                    <h2>Practice</h2>
+                    
+                    <div class="exercise">
+                        <h4>Exercise 1: Fill in the Blanks</h4>
+                        <p>Complete this short story with the appropriate words from the vocabulary list:</p>
+                        <p>
+                            _______ bin ich ins Kino _______. Dort habe ich einen _______ Film _______. _______ habe ich Popcorn _______. _______ ist der Film zu Ende _______.
+                        </p>
+                        <p class="text-muted mt-3">Possible answers: Gestern, gegangen, interessanten, gesehen, Dann, gegessen, Plötzlich, gewesen.</p>
+                    </div>
+                    
+                    <div class="exercise mt-4">
+                        <h4>Exercise 2: Picture Story</h4>
+                        <p>Look at these pictures and tell a short story. Use the <em>Perfekt</em> tense and at least 3 words from the vocabulary lists above.</p>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-4 mb-2">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><i class="fas fa-bed fa-3x"></i></p>
+                                        <p>A person waking up late</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><i class="fas fa-running fa-3x"></i></p>
+                                        <p>The person running to catch a bus</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><i class="fas fa-briefcase fa-3x"></i></p>
+                                        <p>The person arriving at work looking stressed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p>Story starter: <em>Gestern bin ich spät aufgewacht...</em></p>
+                        
+                        <div class="p-3 mt-3 bg-light rounded">
+                            <p class="text-muted">Example story:</p>
+                            <p>
+                                Gestern bin ich sehr spät aufgewacht. Plötzlich habe ich gesehen, dass es schon 8:30 Uhr war! Ich habe schnell geduscht und mich angezogen. Dann bin ich zur Bushaltestelle gerannt. Der Bus ist gerade abgefahren, deshalb habe ich ein Taxi genommen. Endlich bin ich bei der Arbeit angekommen, aber mein Chef war nicht glücklich. Das war ein stressiger Morgen!
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="exercise mt-4">
+                        <h4>Exercise 3: Tell Your Own Story</h4>
+                        <p>Think about something simple that happened to you yesterday or last week. Write a short story about it using at least three words from the "Key Vocabulary" section and the <em>Perfekt</em> tense.</p>
+                        <textarea class="form-control" rows="5" placeholder="Your story here..."></textarea>
+                    </div>
+                    
+                    <div class="exercise mt-4">
+                        <h4>Exercise 4: Ordering Events</h4>
+                        <p>Put these sentences in the correct order to form a coherent story:</p>
+                        <ol>
+                            <li>Dann habe ich ein Eis gegessen.</li>
+                            <li>Zuerst bin ich in den Supermarkt gegangen.</li>
+                            <li>Am Ende bin ich glücklich nach Hause gegangen.</li>
+                            <li>Ich habe Obst und Gemüse gekauft.</li>
+                        </ol>
+                        <p class="text-muted">Correct order: 2, 4, 1, 3</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-4 mb-5">
+                <a href="{{ url_for('a2_index') }}" class="btn btn-outline-primary">Back to A2 Index</a>
+                
+                <form action="{{ url_for('update_progress') }}" method="post" class="d-inline">
+                    <input type="hidden" name="level" value="A2">
+                    <input type="hidden" name="section" value="expanded_basics">
+                    <input type="hidden" name="lesson" value="telling_stories">
+                    <input type="hidden" name="completed" value="true">
+                    <button type="submit" class="btn btn-success float-end">Mark as Completed</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

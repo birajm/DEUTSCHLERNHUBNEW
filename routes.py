@@ -197,6 +197,14 @@ def a2_grammar_past_tense():
 def a2_grammar_modal_verbs():
     return render_template('lessons/a2/grammar/modal_verbs.html')
 
+@app.route('/a2/grammar/prepositions')
+def a2_grammar_prepositions():
+    return render_template('lessons/a2/grammar/prepositions.html')
+
+@app.route('/a2/grammar/conjunctions')
+def a2_grammar_conjunctions():
+    return render_template('lessons/a2/grammar/conjunctions.html')
+
 @app.route('/a2/vocabulary/health-body')
 def a2_vocabulary_health_body():
     return render_template('lessons/a2/vocabulary/health_body.html')
@@ -204,6 +212,14 @@ def a2_vocabulary_health_body():
 @app.route('/a2/vocabulary/work-education')
 def a2_vocabulary_work_education():
     return render_template('lessons/a2/vocabulary/work_education.html')
+
+@app.route('/a2/expanded-basics/expressing-opinions')
+def a2_basics_expressing_opinions():
+    return render_template('lessons/a2/expanded_basics/expressing_opinions.html')
+
+@app.route('/a2/expanded-basics/telling-stories')
+def a2_basics_telling_stories():
+    return render_template('lessons/a2/expanded_basics/telling_stories.html')
 
 @app.route('/b1')
 def b1_index():

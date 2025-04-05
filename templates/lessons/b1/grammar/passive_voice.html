@@ -1,0 +1,73 @@
+
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - B1 Passive Voice{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Learning Tips</h5>
+                    <p class="card-text">Focus on understanding the difference between Vorgangspassiv and Zustandspassiv.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Passive Voice (Passiv)</h2>
+                <p>The passive voice in German is used when the focus is on the action rather than the doer.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Vorgangspassiv (Process Passive)</div>
+                    <div class="card-body">
+                        <h5>Formation:</h5>
+                        <ul>
+                            <li>Present: werden (present) + Partizip II</li>
+                            <li>Past: wurde + Partizip II</li>
+                            <li>Perfect: sein + Partizip II + worden</li>
+                        </ul>
+                        <div class="example-box bg-light p-3 mt-3">
+                            <p><strong>Active:</strong> Der Lehrer korrigiert die Tests.</p>
+                            <p><strong>Passive:</strong> Die Tests werden vom Lehrer korrigiert.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">Zustandspassiv (Statal Passive)</div>
+                    <div class="card-body">
+                        <h5>Formation:</h5>
+                        <ul>
+                            <li>Present: sein (present) + Partizip II</li>
+                            <li>Past: war + Partizip II</li>
+                        </ul>
+                        <div class="example-box bg-light p-3 mt-3">
+                            <p>Das Fenster ist geöffnet. (The window is open.)</p>
+                            <p>Die Tür war geschlossen. (The door was closed.)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="practice" class="mb-5">
+                <h3>Practice Exercises</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="exercise mb-4">
+                            <h5>Transform these sentences into passive voice:</h5>
+                            <ol>
+                                <li>Der Koch kocht das Essen. → ________________</li>
+                                <li>Die Studenten lesen das Buch. → ________________</li>
+                                <li>Der Architekt plant das Gebäude. → ________________</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

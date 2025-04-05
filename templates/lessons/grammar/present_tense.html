@@ -1,0 +1,490 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Present Tense{% endblock %}
+
+{% block content %}
+<div class="lesson-header a1-header">
+    <div class="container">
+        <h1>Present Tense (Präsens)</h1>
+        <p class="lead">Learn how to conjugate verbs in the present tense</p>
+        <div class="badge bg-light text-dark">30 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#regular" class="list-group-item list-group-item-action">Regular Verbs</a>
+                <a href="#irregular" class="list-group-item list-group-item-action">Irregular Verbs</a>
+                <a href="#usage" class="list-group-item list-group-item-action">Usage</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a1" data-section="grammar" data-lesson="present_tense" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>The present tense (Präsens) in German is used to express:</p>
+                <ul>
+                    <li>Actions happening now</li>
+                    <li>Facts and general truths</li>
+                    <li>Habitual or regular actions</li>
+                    <li>Future actions (when a time expression is included)</li>
+                </ul>
+                <p>In this lesson, we'll learn how to conjugate regular and irregular verbs in the present tense and understand when to use them.</p>
+            </section>
+            
+            <section id="regular" class="mb-5">
+                <h2>Regular Verb Conjugation</h2>
+                <p>To conjugate a regular verb in German, we identify the verb stem by removing the infinitive ending (-en or -n), then add specific endings for each person.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Conjugation Pattern</div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Person</th>
+                                    <th>Ending</th>
+                                    <th>Example with "machen" (to make/do)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ich (I)</td>
+                                    <td>-e</td>
+                                    <td>ich mache</td>
+                                </tr>
+                                <tr>
+                                    <td>du (you, singular informal)</td>
+                                    <td>-st</td>
+                                    <td>du machst</td>
+                                </tr>
+                                <tr>
+                                    <td>er/sie/es (he/she/it)</td>
+                                    <td>-t</td>
+                                    <td>er/sie/es macht</td>
+                                </tr>
+                                <tr>
+                                    <td>wir (we)</td>
+                                    <td>-en</td>
+                                    <td>wir machen</td>
+                                </tr>
+                                <tr>
+                                    <td>ihr (you, plural informal)</td>
+                                    <td>-t</td>
+                                    <td>ihr macht</td>
+                                </tr>
+                                <tr>
+                                    <td>sie/Sie (they/you formal)</td>
+                                    <td>-en</td>
+                                    <td>sie/Sie machen</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <h3>More Examples of Regular Verbs</h3>
+                
+                <div class="accordion mb-4" id="regularExamples">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                spielen (to play)
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#regularExamples">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">ich spiele (I play)</li>
+                                    <li class="list-group-item">du spielst (you play)</li>
+                                    <li class="list-group-item">er/sie/es spielt (he/she/it plays)</li>
+                                    <li class="list-group-item">wir spielen (we play)</li>
+                                    <li class="list-group-item">ihr spielt (you all play)</li>
+                                    <li class="list-group-item">sie/Sie spielen (they/you formal play)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                kaufen (to buy)
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#regularExamples">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">ich kaufe (I buy)</li>
+                                    <li class="list-group-item">du kaufst (you buy)</li>
+                                    <li class="list-group-item">er/sie/es kauft (he/she/it buys)</li>
+                                    <li class="list-group-item">wir kaufen (we buy)</li>
+                                    <li class="list-group-item">ihr kauft (you all buy)</li>
+                                    <li class="list-group-item">sie/Sie kaufen (they/you formal buy)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                wohnen (to live)
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#regularExamples">
+                            <div class="accordion-body">
+                                <ul class="list-group">
+                                    <li class="list-group-item">ich wohne (I live)</li>
+                                    <li class="list-group-item">du wohnst (you live)</li>
+                                    <li class="list-group-item">er/sie/es wohnt (he/she/it lives)</li>
+                                    <li class="list-group-item">wir wohnen (we live)</li>
+                                    <li class="list-group-item">ihr wohnt (you all live)</li>
+                                    <li class="list-group-item">sie/Sie wohnen (they/you formal live)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <h5>Special Cases for Regular Verbs</h5>
+                    <p>Some regular verbs need a small spelling adjustment when conjugated:</p>
+                    <ul>
+                        <li>Verbs ending in <strong>-ten, -den, -nen</strong>: Add an extra 'e' in the du/er/sie/es forms.<br>
+                        Example: "arbeiten" → du arbeitest, er/sie/es arbeitet</li>
+                        <li>Verbs ending in <strong>-s, -ß, -z, -x</strong>: The du form adds only 't' instead of 'st'.<br>
+                        Example: "tanzen" → du tanzt (not tanzst)</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="irregular" class="mb-5">
+                <h2>Irregular Verbs</h2>
+                <p>Many commonly used German verbs are irregular, meaning they don't follow the regular conjugation pattern. Most irregularities occur in the du and er/sie/es forms, often involving a vowel change in the stem.</p>
+                
+                <div class="table-responsive mb-4">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Verb</th>
+                                <th>ich</th>
+                                <th>du</th>
+                                <th>er/sie/es</th>
+                                <th>wir</th>
+                                <th>ihr</th>
+                                <th>sie/Sie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>sein</strong> (to be)</td>
+                                <td>bin</td>
+                                <td>bist</td>
+                                <td>ist</td>
+                                <td>sind</td>
+                                <td>seid</td>
+                                <td>sind</td>
+                            </tr>
+                            <tr>
+                                <td><strong>haben</strong> (to have)</td>
+                                <td>habe</td>
+                                <td>hast</td>
+                                <td>hat</td>
+                                <td>haben</td>
+                                <td>habt</td>
+                                <td>haben</td>
+                            </tr>
+                            <tr>
+                                <td><strong>werden</strong> (to become)</td>
+                                <td>werde</td>
+                                <td>wirst</td>
+                                <td>wird</td>
+                                <td>werden</td>
+                                <td>werdet</td>
+                                <td>werden</td>
+                            </tr>
+                            <tr>
+                                <td><strong>sprechen</strong> (to speak)</td>
+                                <td>spreche</td>
+                                <td>sprichst</td>
+                                <td>spricht</td>
+                                <td>sprechen</td>
+                                <td>sprecht</td>
+                                <td>sprechen</td>
+                            </tr>
+                            <tr>
+                                <td><strong>essen</strong> (to eat)</td>
+                                <td>esse</td>
+                                <td>isst</td>
+                                <td>isst</td>
+                                <td>essen</td>
+                                <td>esst</td>
+                                <td>essen</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <h5>Memory Tip</h5>
+                    <p>The verbs "sein" and "haben" are extremely important to memorize as they're also used as auxiliary verbs for forming other tenses.</p>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Common Vowel Changes in Irregular Verbs</div>
+                    <div class="card-body">
+                        <ul>
+                            <li>e → i: geben → du gibst, er gibt (to give)</li>
+                            <li>e → ie: lesen → du liest, er liest (to read)</li>
+                            <li>a → ä: fahren → du fährst, er fährt (to drive)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="usage" class="mb-5">
+                <h2>Usage of Present Tense</h2>
+                <p>The present tense in German (Präsens) is more versatile than in English. It can express:</p>
+                
+                <div class="card mb-3">
+                    <div class="card-header">Current Actions</div>
+                    <div class="card-body">
+                        <p><strong>Example:</strong> Ich lerne jetzt Deutsch. (I am learning German now.)</p>
+                        <p class="text-muted">Note that German doesn't differentiate between "I learn" and "I am learning" like English does. The context indicates the continuous aspect.</p>
+                    </div>
+                </div>
+                
+                <div class="card mb-3">
+                    <div class="card-header">General Facts</div>
+                    <div class="card-body">
+                        <p><strong>Example:</strong> Wasser kocht bei 100 Grad Celsius. (Water boils at 100 degrees Celsius.)</p>
+                    </div>
+                </div>
+                
+                <div class="card mb-3">
+                    <div class="card-header">Habitual Actions</div>
+                    <div class="card-body">
+                        <p><strong>Example:</strong> Ich spiele jeden Tag Fußball. (I play soccer every day.)</p>
+                    </div>
+                </div>
+                
+                <div class="card mb-3">
+                    <div class="card-header">Future Actions</div>
+                    <div class="card-body">
+                        <p><strong>Example:</strong> Morgen fahre ich nach Berlin. (Tomorrow I'm going to Berlin.)</p>
+                        <p class="text-muted">For future actions, a time expression like "morgen" (tomorrow) or "nächste Woche" (next week) clarifies that the action will happen in the future.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice conjugating verbs in the present tense:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Fill in the correct form of the verb</div>
+                    <div class="card-body">
+                        <form id="conjugation-practice">
+                            <div class="mb-3">
+                                <label for="q1" class="form-label">1. Ich ________ Deutsch. (lernen)</label>
+                                <input type="text" class="form-control" id="q1" data-answer="lerne">
+                            </div>
+                            <div class="mb-3">
+                                <label for="q2" class="form-label">2. Du ________ eine Katze. (haben)</label>
+                                <input type="text" class="form-control" id="q2" data-answer="hast">
+                            </div>
+                            <div class="mb-3">
+                                <label for="q3" class="form-label">3. Er ________ in Berlin. (wohnen)</label>
+                                <input type="text" class="form-control" id="q3" data-answer="wohnt">
+                            </div>
+                            <div class="mb-3">
+                                <label for="q4" class="form-label">4. Wir ________ ins Kino. (gehen)</label>
+                                <input type="text" class="form-control" id="q4" data-answer="gehen">
+                            </div>
+                            <div class="mb-3">
+                                <label for="q5" class="form-label">5. Ihr ________ sehr gut Deutsch. (sprechen)</label>
+                                <input type="text" class="form-control" id="q5" data-answer="sprecht">
+                            </div>
+                            <div class="mb-3">
+                                <label for="q6" class="form-label">6. Sie ________ Studenten. (sein)</label>
+                                <input type="text" class="form-control" id="q6" data-answer="sind">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-conjugation">Check Answers</button>
+                        </form>
+                        <div id="conjugation-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Match Subjects with Verb Forms</div>
+                    <div class="card-body">
+                        <p>Below are subject pronouns and conjugated forms of the verb "lesen" (to read). Drag each subject to match its correct verb form:</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="list-group" id="subjects">
+                                    <button type="button" class="list-group-item list-group-item-action" data-match="lese">ich</button>
+                                    <button type="button" class="list-group-item list-group-item-action" data-match="liest">du</button>
+                                    <button type="button" class="list-group-item list-group-item-action" data-match="liest">er/sie/es</button>
+                                    <button type="button" class="list-group-item list-group-item-action" data-match="lesen">wir</button>
+                                    <button type="button" class="list-group-item list-group-item-action" data-match="lest">ihr</button>
+                                    <button type="button" class="list-group-item list-group-item-action" data-match="lesen">sie/Sie</button>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="list-group">
+                                    <div class="list-group-item" id="lese">lese</div>
+                                    <div class="list-group-item" id="liest">liest</div>
+                                    <div class="list-group-item" id="lesen">lesen</div>
+                                    <div class="list-group-item" id="lest">lest</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="matching-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Present Tense lesson. This is one of the most fundamental aspects of German grammar!</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('a1_quiz_present_tense') }}" class="alert-link">Present Tense Quiz</a>.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check conjugation exercise
+        document.getElementById('check-conjugation').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#conjugation-practice input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('conjugation-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Subject-verb matching exercise
+        let correctMatches = 0;
+        const totalMatches = 6;
+        
+        document.querySelectorAll('#subjects button').forEach(button => {
+            button.addEventListener('click', function() {
+                const targetMatch = this.dataset.match;
+                const targetElement = document.getElementById(targetMatch);
+                
+                if (this.classList.contains('list-group-item-success')) {
+                    // Already matched correctly
+                    return;
+                }
+                
+                if (this.classList.contains('active')) {
+                    // Deselect
+                    this.classList.remove('active');
+                } else {
+                    // Select and check for match
+                    document.querySelectorAll('#subjects button').forEach(b => {
+                        b.classList.remove('active');
+                    });
+                    
+                    this.classList.add('active');
+                    
+                    // Check if any element is highlighted
+                    const highlighted = document.querySelector('#subjects button.active');
+                    
+                    if (highlighted) {
+                        // Check if it's a correct match
+                        const matchText = targetElement.textContent;
+                        if (targetMatch === matchText) {
+                            // Correct match
+                            highlighted.classList.remove('active');
+                            highlighted.classList.add('list-group-item-success');
+                            targetElement.classList.add('list-group-item-success');
+                            correctMatches++;
+                            
+                            // Check if all matches are correct
+                            if (correctMatches === totalMatches) {
+                                document.getElementById('matching-result').innerHTML = '<div class="alert alert-success">Great job! You\'ve correctly matched all subjects to their verb forms!</div>';
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

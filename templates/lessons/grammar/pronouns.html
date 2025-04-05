@@ -1,0 +1,449 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Personal Pronouns{% endblock %}
+
+{% block content %}
+<div class="lesson-header a1-header">
+    <div class="container">
+        <h1>Personal Pronouns</h1>
+        <p class="lead">Learn German personal pronouns (ich, du, er, sie, es, ...)</p>
+        <div class="badge bg-light text-dark">20 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#nominative" class="list-group-item list-group-item-action">Nominative Pronouns</a>
+                <a href="#formal" class="list-group-item list-group-item-action">Formal vs. Informal</a>
+                <a href="#usage" class="list-group-item list-group-item-action">Usage Examples</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a1" data-section="grammar" data-lesson="pronouns" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Personal pronouns are essential words that replace nouns or names in sentences. They change depending on their function within the sentence (similar to how "I" changes to "me" in English). In German, personal pronouns are also affected by:</p>
+                <ul>
+                    <li>Person (first, second, or third)</li>
+                    <li>Number (singular or plural)</li>
+                    <li>Gender (masculine, feminine, or neuter)</li>
+                    <li>Case (nominative, accusative, dative, genitive)</li>
+                    <li>Formality (formal or informal)</li>
+                </ul>
+                <p>At the A1 level, we'll focus on nominative personal pronouns (those used as the subject of a sentence) and learn about the formal/informal distinction.</p>
+            </section>
+            
+            <section id="nominative" class="mb-5">
+                <h2>Nominative Personal Pronouns</h2>
+                <p>These pronouns are used as the subject of the sentence (the person or thing performing the action):</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Person</th>
+                                <th>Singular</th>
+                                <th>English</th>
+                                <th>Plural</th>
+                                <th>English</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-primary">
+                                <td>First person</td>
+                                <td><strong>ich</strong></td>
+                                <td>I</td>
+                                <td><strong>wir</strong></td>
+                                <td>we</td>
+                            </tr>
+                            <tr class="table-success">
+                                <td>Second person (informal)</td>
+                                <td><strong>du</strong></td>
+                                <td>you</td>
+                                <td><strong>ihr</strong></td>
+                                <td>you all</td>
+                            </tr>
+                            <tr class="table-warning">
+                                <td>Second person (formal)</td>
+                                <td><strong>Sie</strong></td>
+                                <td>you</td>
+                                <td><strong>Sie</strong></td>
+                                <td>you all</td>
+                            </tr>
+                            <tr class="table-danger">
+                                <td>Third person</td>
+                                <td><strong>er</strong> (masculine)<br>
+                                    <strong>sie</strong> (feminine)<br>
+                                    <strong>es</strong> (neuter)</td>
+                                <td>he<br>she<br>it</td>
+                                <td><strong>sie</strong></td>
+                                <td>they</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <h5>Important Note:</h5>
+                    <p>Notice that "sie" can mean three things depending on context:</p>
+                    <ul>
+                        <li>"she" (third person singular feminine)</li>
+                        <li>"they" (third person plural)</li>
+                        <li>"Sie" with a capital S means "you" (formal, singular or plural)</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="formal" class="mb-5">
+                <h2>Formal vs. Informal Pronouns</h2>
+                <p>In German, the distinction between formal and informal "you" is very important:</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header bg-success text-white">Informal: "du" / "ihr"</div>
+                            <div class="card-body">
+                                <h5>Use with:</h5>
+                                <ul>
+                                    <li>Friends and family</li>
+                                    <li>Children and young people</li>
+                                    <li>Colleagues who have agreed to use "du"</li>
+                                    <li>Animals and pets</li>
+                                </ul>
+                                <p><strong>Examples:</strong></p>
+                                <p><em>Du spielst sehr gut Klavier.</em><br>(You play the piano very well.)</p>
+                                <p><em>Woher kommt ihr?</em><br>(Where are you all from?)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header bg-warning text-dark">Formal: "Sie"</div>
+                            <div class="card-body">
+                                <h5>Use with:</h5>
+                                <ul>
+                                    <li>Adults you don't know well</li>
+                                    <li>People in official or business settings</li>
+                                    <li>Older people (unless invited to use "du")</li>
+                                    <li>Teachers, doctors, officials</li>
+                                </ul>
+                                <p><strong>Examples:</strong></p>
+                                <p><em>Sprechen Sie Deutsch?</em><br>(Do you speak German?)</p>
+                                <p><em>Kommen Sie aus Deutschland?</em><br>(Are you from Germany?)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <h5>Cultural Note:</h5>
+                    <p>Using the wrong form (formal vs. informal) can be considered rude in German culture. When in doubt, start with "Sie" (formal) until the other person suggests switching to "du" with a phrase like "<em>Wir können 'du' sagen.</em>" (We can say 'du'.)</p>
+                </div>
+            </section>
+            
+            <section id="usage" class="mb-5">
+                <h2>Usage Examples</h2>
+                <p>Here are examples of how to use personal pronouns in simple sentences:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">First Person</div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <strong>Ich</strong> heiße Anna. (I am called Anna.)
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Wir</strong> kommen aus Österreich. (We come from Austria.)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Second Person</div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <strong>Du</strong> sprichst sehr gut Deutsch. (You speak German very well.) [informal, singular]
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Ihr</strong> seid Studenten. (You are students.) [informal, plural]
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Sie</strong> arbeiten in Berlin. (You work in Berlin.) [formal, singular or plural]
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Third Person</div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <strong>Er</strong> ist mein Bruder. (He is my brother.)
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Sie</strong> heißt Maria. (She is called Maria.)
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Es</strong> ist ein schönes Haus. (It is a beautiful house.)
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Sie</strong> sind meine Freunde. (They are my friends.)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <h5>Context Clues:</h5>
+                    <p>In spoken and written German, you can often distinguish between the various meanings of "sie" and "Sie" through:</p>
+                    <ul>
+                        <li>Verb conjugation: "sie ist" (she is) vs. "sie sind" (they are) vs. "Sie sind" (you are, formal)</li>
+                        <li>Context: The surrounding information usually makes it clear which "sie" is meant</li>
+                        <li>Capitalization in writing: Formal "Sie" is always capitalized</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice using personal pronouns:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Choose the correct pronoun</div>
+                    <div class="card-body">
+                        <form id="pronoun-practice">
+                            <div class="mb-3">
+                                <p>1. Michael kommt aus Deutschland. _____ ist 25 Jahre alt.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1-a" value="er">
+                                    <label class="form-check-label" for="q1-a">er</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1-b" value="sie">
+                                    <label class="form-check-label" for="q1-b">sie</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1-c" value="es">
+                                    <label class="form-check-label" for="q1-c">es</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <p>2. Anna und Thomas sind Geschwister. _____ wohnen in München.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2-a" value="er">
+                                    <label class="form-check-label" for="q2-a">er</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2-b" value="sie">
+                                    <label class="form-check-label" for="q2-b">sie</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2-c" value="wir">
+                                    <label class="form-check-label" for="q2-c">wir</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <p>3. In a business setting, you ask your new boss about her job. Which form would you use?</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3-a" value="Du">
+                                    <label class="form-check-label" for="q3-a">Du arbeitest hier.</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3-b" value="Sie">
+                                    <label class="form-check-label" for="q3-b">Sie arbeiten hier.</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <p>4. Das ist ein Buch. _____ ist sehr interessant.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4-a" value="er">
+                                    <label class="form-check-label" for="q4-a">er</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4-b" value="sie">
+                                    <label class="form-check-label" for="q4-b">sie</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4-c" value="es">
+                                    <label class="form-check-label" for="q4-c">es</label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <p>5. Peter und _____ gehen ins Kino. (You're including yourself)</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5-a" value="ich">
+                                    <label class="form-check-label" for="q5-a">ich</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5-b" value="wir">
+                                    <label class="form-check-label" for="q5-b">wir</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q5" id="q5-c" value="sie">
+                                    <label class="form-check-label" for="q5-c">sie</label>
+                                </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary" id="check-pronouns">Check Answers</button>
+                        </form>
+                        <div id="pronoun-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Fill in the correct pronoun</div>
+                    <div class="card-body">
+                        <form id="fill-pronouns">
+                            <div class="mb-3">
+                                <label for="f1" class="form-label">1. _____ heißen Thomas und Lisa. (We)</label>
+                                <input type="text" class="form-control" id="f1" data-answer="wir">
+                            </div>
+                            <div class="mb-3">
+                                <label for="f2" class="form-label">2. _____ bist sehr nett. (You, informal singular)</label>
+                                <input type="text" class="form-control" id="f2" data-answer="du">
+                            </div>
+                            <div class="mb-3">
+                                <label for="f3" class="form-label">3. _____ sind aus Frankfurt. (They)</label>
+                                <input type="text" class="form-control" id="f3" data-answer="sie">
+                            </div>
+                            <div class="mb-3">
+                                <label for="f4" class="form-label">4. _____ komme aus den USA. (I)</label>
+                                <input type="text" class="form-control" id="f4" data-answer="ich">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-fill">Check Answers</button>
+                        </form>
+                        <div id="fill-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Personal Pronouns lesson. Understanding pronouns is essential for forming correct sentences in German!</p>
+                    <p>Continue to the next lesson on <a href="{{ url_for('a1_grammar_sentences') }}" class="alert-link">Simple Sentences</a> to learn how to put these pronouns to use in basic German sentences.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check pronoun multiple choice
+        document.getElementById('check-pronouns').addEventListener('click', function() {
+            const answers = {
+                q1: 'er',
+                q2: 'sie',
+                q3: 'Sie',
+                q4: 'es',
+                q5: 'ich'
+            };
+            
+            let correct = 0;
+            for (const q in answers) {
+                const selectedOption = document.querySelector(`input[name=${q}]:checked`);
+                if (selectedOption && selectedOption.value === answers[q]) {
+                    correct++;
+                }
+            }
+            
+            const resultDiv = document.getElementById('pronoun-result');
+            if (correct === Object.keys(answers).length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${Object.keys(answers).length} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check fill-in exercise
+        document.getElementById('check-fill').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#fill-pronouns input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('fill-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

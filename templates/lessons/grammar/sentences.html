@@ -1,0 +1,543 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Simple Sentences{% endblock %}
+
+{% block content %}
+<div class="lesson-header a1-header">
+    <div class="container">
+        <h1>Simple Sentences</h1>
+        <p class="lead">Learn how to form basic sentences in German</p>
+        <div class="badge bg-light text-dark">25 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#wordorder" class="list-group-item list-group-item-action">Word Order</a>
+                <a href="#statements" class="list-group-item list-group-item-action">Simple Statements</a>
+                <a href="#questions" class="list-group-item list-group-item-action">Questions</a>
+                <a href="#negation" class="list-group-item list-group-item-action">Negation</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a1" data-section="grammar" data-lesson="sentences" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Being able to form simple sentences is essential for communicating in German. The good news is that basic German sentence structure has some similarities to English, but there are also important differences to learn.</p>
+                <p>In this lesson, you'll learn how to:</p>
+                <ul>
+                    <li>Understand the basic word order in German sentences</li>
+                    <li>Form simple statements (Subject-Verb-Object)</li>
+                    <li>Create basic questions</li>
+                    <li>Express negation</li>
+                </ul>
+            </section>
+            
+            <section id="wordorder" class="mb-5">
+                <h2>German Word Order</h2>
+                <p>The basic word order in German is <strong>Subject-Verb-Object (SVO)</strong>, similar to English. However, there's one crucial rule to remember:</p>
+                
+                <div class="alert alert-primary">
+                    <h5>The Verb Position Rule:</h5>
+                    <p>In a German main clause (statement), the <strong>conjugated verb must always be in the second position</strong>.</p>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Basic Word Order Examples</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Position 1</th>
+                                        <th>Position 2 (Verb)</th>
+                                        <th>Position 3, 4, etc.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Ich</td>
+                                        <td>lerne</td>
+                                        <td>Deutsch.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Er</td>
+                                        <td>kommt</td>
+                                        <td>aus Deutschland.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wir</td>
+                                        <td>gehen</td>
+                                        <td>ins Kino.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>Note that the subject often comes before the verb, but not always!</p>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <h5>Flexible First Position:</h5>
+                    <p>Unlike in English, the subject doesn't have to be in the first position. Other elements, such as time expressions or adverbs, can come first. But the verb still stays in the second position:</p>
+                    <ul>
+                        <li><strong>Heute</strong> gehe ich ins Kino. (Today I'm going to the cinema.)</li>
+                        <li><strong>Manchmal</strong> trinke ich Kaffee. (Sometimes I drink coffee.)</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="statements" class="mb-5">
+                <h2>Simple Statements</h2>
+                <p>Here are some examples of simple German statements:</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">Basic Sentences with Subjects + Verbs</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Ich bin Anna. (I am Anna.)</li>
+                                    <li class="list-group-item">Du bist müde. (You are tired.)</li>
+                                    <li class="list-group-item">Er schläft. (He sleeps/is sleeping.)</li>
+                                    <li class="list-group-item">Wir lernen. (We learn/are learning.)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">Sentences with Objects</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Ich trinke Wasser. (I drink water.)</li>
+                                    <li class="list-group-item">Du liest ein Buch. (You read a book.)</li>
+                                    <li class="list-group-item">Er kauft Brot. (He buys bread.)</li>
+                                    <li class="list-group-item">Wir haben einen Hund. (We have a dog.)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Sentences with Time and Place Information</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Subject</th>
+                                        <th>Verb</th>
+                                        <th>Object (What?)</th>
+                                        <th>Time (When?)</th>
+                                        <th>Place (Where?)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Ich</td>
+                                        <td>trinke</td>
+                                        <td>Kaffee</td>
+                                        <td>jeden Morgen</td>
+                                        <td>zu Hause</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">I drink coffee every morning at home.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Du</td>
+                                        <td>spielst</td>
+                                        <td>Fußball</td>
+                                        <td>am Samstag</td>
+                                        <td>im Park</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">You play soccer on Saturday in the park.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="mt-3"><strong>General order guideline:</strong> Time expressions usually come before place expressions.</p>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <h5>Time-Manner-Place Rule:</h5>
+                    <p>For ordering information after the verb, German often follows the "TeKaMoLo" rule:</p>
+                    <ul>
+                        <li><strong>Te</strong>mporal (Time): <em>When?</em></li>
+                        <li><strong>Ka</strong>usal (Cause): <em>Why?</em></li>
+                        <li><strong>Mo</strong>dal (Manner): <em>How?</em></li>
+                        <li><strong>Lo</strong>kal (Place): <em>Where?</em></li>
+                    </ul>
+                    <p>Example: Ich fahre <em>morgen</em> (time) <em>mit dem Bus</em> (manner) <em>nach Berlin</em> (place).</p>
+                    <p>(I'm going tomorrow by bus to Berlin.)</p>
+                </div>
+            </section>
+            
+            <section id="questions" class="mb-5">
+                <h2>Questions</h2>
+                <p>There are two main types of questions in German:</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">Yes/No Questions</div>
+                            <div class="card-body">
+                                <p>For yes/no questions, put the <strong>verb in first position</strong>, followed by the subject:</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>Bist</strong> du müde? (Are you tired?)</li>
+                                    <li class="list-group-item"><strong>Sprichst</strong> du Deutsch? (Do you speak German?)</li>
+                                    <li class="list-group-item"><strong>Hat</strong> er einen Bruder? (Does he have a brother?)</li>
+                                    <li class="list-group-item"><strong>Kommt</strong> ihr aus Berlin? (Are you from Berlin?)</li>
+                                </ul>
+                                <p class="mt-3">Possible answers: Ja (Yes) / Nein (No)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">W-Questions (Information Questions)</div>
+                            <div class="card-body">
+                                <p>For W-questions, start with the question word, then follow with the verb and subject:</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>Wer</strong> bist du? (Who are you?)</li>
+                                    <li class="list-group-item"><strong>Was</strong> machst du? (What are you doing?)</li>
+                                    <li class="list-group-item"><strong>Wo</strong> wohnt er? (Where does he live?)</li>
+                                    <li class="list-group-item"><strong>Wann</strong> kommt ihr? (When are you coming?)</li>
+                                    <li class="list-group-item"><strong>Wie</strong> heißt du? (What is your name?)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Common Question Words</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>German</th>
+                                        <th>English</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>wer</td>
+                                        <td>who</td>
+                                        <td>Wer ist das? (Who is that?)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>was</td>
+                                        <td>what</td>
+                                        <td>Was ist das? (What is that?)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>wo</td>
+                                        <td>where</td>
+                                        <td>Wo ist die Toilette? (Where is the bathroom?)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>wann</td>
+                                        <td>when</td>
+                                        <td>Wann beginnt der Kurs? (When does the course begin?)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>warum</td>
+                                        <td>why</td>
+                                        <td>Warum lernst du Deutsch? (Why are you learning German?)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>wie</td>
+                                        <td>how</td>
+                                        <td>Wie geht es dir? (How are you?)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>wie viel(e)</td>
+                                        <td>how much/many</td>
+                                        <td>Wie viel kostet das? (How much does this cost?)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="negation" class="mb-5">
+                <h2>Negation</h2>
+                <p>To make a statement negative in German, you typically use "nicht" (not) or "kein/keine" (no, not any):</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">Using "nicht"</div>
+                            <div class="card-body">
+                                <p>Use "nicht" to negate verbs, adjectives, and adverbs:</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Ich komme <strong>nicht</strong> aus Deutschland.<br>(I don't come from Germany.)</li>
+                                    <li class="list-group-item">Er spielt <strong>nicht</strong> Tennis.<br>(He doesn't play tennis.)</li>
+                                    <li class="list-group-item">Das Buch ist <strong>nicht</strong> teuer.<br>(The book is not expensive.)</li>
+                                </ul>
+                                <p class="mt-3"><strong>Position:</strong> "Nicht" typically comes after the verb and before the element it negates.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">Using "kein/keine"</div>
+                            <div class="card-body">
+                                <p>Use "kein/keine" to negate nouns (instead of "nicht ein/eine"):</p>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Ich habe <strong>kein</strong> Auto.<br>(I don't have a car.)</li>
+                                    <li class="list-group-item">Das ist <strong>keine</strong> Frau.<br>(That is not a woman.)</li>
+                                    <li class="list-group-item">Wir haben <strong>keine</strong> Zeit.<br>(We don't have time.)</li>
+                                </ul>
+                                <p class="mt-3">"Kein" follows the same pattern as the indefinite articles (ein, eine, etc.) and changes form based on gender and case.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <h5>Quick Rule for Negation:</h5>
+                    <p>Use <strong>kein/keine</strong> to negate nouns that would have "ein/eine" or no article.<br>
+                    Use <strong>nicht</strong> for everything else (verbs, adjectives, adverbs, and nouns with definite articles).</p>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice forming simple sentences in German:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Arrange words to form correct sentences</div>
+                    <div class="card-body">
+                        <form id="word-order">
+                            <div class="mb-3">
+                                <label for="s1" class="form-label">1. aus / Deutschland / kommt / er</label>
+                                <input type="text" class="form-control" id="s1" data-answer="Er kommt aus Deutschland.">
+                                <small class="form-text text-muted">Remember to capitalize the first word and add a period.</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="s2" class="form-label">2. lerne / ich / Deutsch / jeden Tag</label>
+                                <input type="text" class="form-control" id="s2" data-answer="Ich lerne jeden Tag Deutsch.">
+                            </div>
+                            <div class="mb-3">
+                                <label for="s3" class="form-label">3. du / woher / kommst</label>
+                                <input type="text" class="form-control" id="s3" data-answer="Woher kommst du?">
+                                <small class="form-text text-muted">This is a question, so use a question mark.</small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="s4" class="form-label">4. nicht / wir / haben / Zeit</label>
+                                <input type="text" class="form-control" id="s4" data-answer="Wir haben nicht Zeit.">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-word-order">Check Answers</button>
+                        </form>
+                        <div id="word-order-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Create questions from statements</div>
+                    <div class="card-body">
+                        <form id="questions-practice">
+                            <div class="mb-3">
+                                <p>1. Statement: <strong>Du sprichst Deutsch.</strong> (You speak German.)</p>
+                                <label class="form-label">Yes/No question:</label>
+                                <input type="text" class="form-control" id="q1" data-answer="Sprichst du Deutsch?">
+                            </div>
+                            <div class="mb-3">
+                                <p>2. Statement: <strong>Er kommt aus Berlin.</strong> (He comes from Berlin.)</p>
+                                <label class="form-label">W-question with "woher" (where from):</label>
+                                <input type="text" class="form-control" id="q2" data-answer="Woher kommt er?">
+                            </div>
+                            <div class="mb-3">
+                                <p>3. Statement: <strong>Sie hat einen Bruder.</strong> (She has a brother.)</p>
+                                <label class="form-label">Yes/No question:</label>
+                                <input type="text" class="form-control" id="q3" data-answer="Hat sie einen Bruder?">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-questions">Check Answers</button>
+                        </form>
+                        <div id="questions-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Negation Practice</div>
+                    <div class="card-body">
+                        <form id="negation-practice">
+                            <div class="mb-3">
+                                <p>1. Make negative: <strong>Ich habe ein Auto.</strong> (I have a car.)</p>
+                                <input type="text" class="form-control" id="n1" data-answer="Ich habe kein Auto.">
+                            </div>
+                            <div class="mb-3">
+                                <p>2. Make negative: <strong>Er wohnt in Berlin.</strong> (He lives in Berlin.)</p>
+                                <input type="text" class="form-control" id="n2" data-answer="Er wohnt nicht in Berlin.">
+                            </div>
+                            <div class="mb-3">
+                                <p>3. Make negative: <strong>Das ist eine Frau.</strong> (That is a woman.)</p>
+                                <input type="text" class="form-control" id="n3" data-answer="Das ist keine Frau.">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-negation">Check Answers</button>
+                        </form>
+                        <div id="negation-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Simple Sentences lesson. You now have the essential tools to form basic German sentences!</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('a1_quiz_comprehensive') }}" class="alert-link">A1 Comprehensive Quiz</a>, which includes questions about sentence formation.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Word order exercise
+        document.getElementById('check-word-order').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#word-order input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('word-order-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Questions exercise
+        document.getElementById('check-questions').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#questions-practice input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('questions-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Negation exercise
+        document.getElementById('check-negation').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#negation-practice input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('negation-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

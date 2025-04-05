@@ -1,0 +1,717 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Asking for Information{% endblock %}
+
+{% block content %}
+<div class="lesson-header a2-header">
+    <div class="container">
+        <h1>Asking for Information</h1>
+        <p class="lead">Learn to ask for and understand detailed information</p>
+        <div class="badge bg-light text-dark">25 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#question-words" class="list-group-item list-group-item-action">Question Words</a>
+                <a href="#question-structures" class="list-group-item list-group-item-action">Question Structures</a>
+                <a href="#asking-directions" class="list-group-item list-group-item-action">Asking for Directions</a>
+                <a href="#service-requests" class="list-group-item list-group-item-action">Service Requests</a>
+                <a href="#clarification" class="list-group-item list-group-item-action">Asking for Clarification</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a2" data-section="expanded_basics" data-lesson="asking_information" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Being able to ask for specific information in German is an essential skill for daily interactions, whether you're traveling, shopping, or handling official matters. At the A2 level, you should be able to ask more detailed questions and understand responses.</p>
+                <p>In this lesson, you'll learn:</p>
+                <ul>
+                    <li>How to form different types of questions in German</li>
+                    <li>Key question words and their uses</li>
+                    <li>How to ask for directions, services, and clarification</li>
+                    <li>How to understand and process the information you receive</li>
+                </ul>
+                <div class="alert alert-info">
+                    <h5>Cultural Note:</h5>
+                    <p>Germans generally appreciate direct and clear questions. It's perfectly acceptable to ask for information you need, but remember to use polite forms (with "Sie") when talking to strangers or in formal situations.</p>
+                </div>
+            </section>
+            
+            <section id="question-words" class="mb-5">
+                <h2>Question Words in German</h2>
+                <p>Question words (W-Fragen) are essential for asking specific information. Here are the most important ones:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Example</th>
+                                <th>Usage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Wer?</strong></td>
+                                <td>Who?</td>
+                                <td>Wer ist das?</td>
+                                <td>Asking about people</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Was?</strong></td>
+                                <td>What?</td>
+                                <td>Was ist das?</td>
+                                <td>Asking about things/actions</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wo?</strong></td>
+                                <td>Where?</td>
+                                <td>Wo ist die Apotheke?</td>
+                                <td>Asking about locations</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wohin?</strong></td>
+                                <td>Where to?</td>
+                                <td>Wohin gehst du?</td>
+                                <td>Asking about direction (to where)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Woher?</strong></td>
+                                <td>Where from?</td>
+                                <td>Woher kommst du?</td>
+                                <td>Asking about origin</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wann?</strong></td>
+                                <td>When?</td>
+                                <td>Wann öffnet das Museum?</td>
+                                <td>Asking about time/date</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wie?</strong></td>
+                                <td>How?</td>
+                                <td>Wie funktioniert das?</td>
+                                <td>Asking about manner/method</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wie viel?</strong></td>
+                                <td>How much?</td>
+                                <td>Wie viel kostet das?</td>
+                                <td>Asking about quantity (uncountable)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wie viele?</strong></td>
+                                <td>How many?</td>
+                                <td>Wie viele Personen?</td>
+                                <td>Asking about quantity (countable)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Warum?</strong></td>
+                                <td>Why?</td>
+                                <td>Warum ist das Museum geschlossen?</td>
+                                <td>Asking about reasons</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Welcher/e/es?</strong></td>
+                                <td>Which?</td>
+                                <td>Welches Buch suchst du?</td>
+                                <td>Asking for selection from options</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="alert alert-warning mt-3">
+                    <h5>Note:</h5>
+                    <p>"Welcher" changes form based on gender and case:</p>
+                    <ul>
+                        <li>Masculine: welch<strong>er</strong> (nominative), welch<strong>en</strong> (accusative)</li>
+                        <li>Feminine: welch<strong>e</strong></li>
+                        <li>Neuter: welch<strong>es</strong></li>
+                        <li>Plural: welch<strong>e</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="mt-4">
+                    <h5>Listen to the question words:</h5>
+                    <div id="question-words-audio-player" class="audio-player">
+                        <button class="btn btn-sm btn-outline-primary play-button" onclick="playAudio('/static/audio/a2/asking_information_words.mp3', this)">
+                            <i class="fas fa-play"></i> Listen
+                        </button>
+                        <div class="progress mt-2 audio-progress">
+                            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="question-structures" class="mb-5">
+                <h2>Question Structures in German</h2>
+                <p>There are two main types of questions in German:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">1. Yes/No Questions (Ja/Nein-Fragen)</div>
+                    <div class="card-body">
+                        <p>These questions can be answered with "yes" or "no". The structure is:</p>
+                        <div class="alert alert-secondary">
+                            <strong>Verb</strong> + Subject + Other elements + ?
+                        </div>
+                        
+                        <h5>Examples:</h5>
+                        <ul>
+                            <li><strong>Haben</strong> Sie einen Stadtplan? <em>(Do you have a city map?)</em></li>
+                            <li><strong>Ist</strong> das Restaurant geöffnet? <em>(Is the restaurant open?)</em></li>
+                            <li><strong>Kann</strong> ich mit Kreditkarte bezahlen? <em>(Can I pay with credit card?)</em></li>
+                            <li><strong>Sprechen</strong> Sie Englisch? <em>(Do you speak English?)</em></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">2. Information Questions (W-Fragen)</div>
+                    <div class="card-body">
+                        <p>These questions ask for specific information and start with a question word. The structure is:</p>
+                        <div class="alert alert-secondary">
+                            <strong>Question word</strong> + Verb + Subject + Other elements + ?
+                        </div>
+                        
+                        <h5>Examples:</h5>
+                        <ul>
+                            <li><strong>Wo</strong> ist der Bahnhof? <em>(Where is the train station?)</em></li>
+                            <li><strong>Wann</strong> fährt der nächste Bus? <em>(When does the next bus leave?)</em></li>
+                            <li><strong>Wie viel</strong> kostet ein Ticket? <em>(How much does a ticket cost?)</em></li>
+                            <li><strong>Warum</strong> ist das Museum heute geschlossen? <em>(Why is the museum closed today?)</em></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">3. Indirect Questions</div>
+                    <div class="card-body">
+                        <p>These are questions embedded in statements, often used to sound more polite. The structure is different:</p>
+                        <div class="alert alert-secondary">
+                            Statement + , + question word + subject + other elements + verb.
+                        </div>
+                        
+                        <h5>Examples:</h5>
+                        <ul>
+                            <li>Können Sie mir sagen, <strong>wo</strong> der Bahnhof <strong>ist</strong>? <em>(Can you tell me where the train station is?)</em></li>
+                            <li>Wissen Sie, <strong>wann</strong> das Museum <strong>öffnet</strong>? <em>(Do you know when the museum opens?)</em></li>
+                            <li>Ich möchte wissen, <strong>wie</strong> ich zum Hotel <strong>komme</strong>. <em>(I would like to know how to get to the hotel.)</em></li>
+                        </ul>
+                        
+                        <div class="alert alert-warning mt-3">
+                            <h5>Important Note:</h5>
+                            <p>In indirect questions, the verb moves to the end of the clause, unlike in direct questions where it's in second position.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="asking-directions" class="mb-5">
+                <h2>Asking for Directions</h2>
+                <p>Knowing how to ask for and understand directions is essential when traveling in German-speaking countries.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Key Phrases for Asking Directions</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Entschuldigung, wo ist...?</td>
+                                    <td>Excuse me, where is...?</td>
+                                </tr>
+                                <tr>
+                                    <td>Wie komme ich zum/zur...?</td>
+                                    <td>How do I get to the...?</td>
+                                </tr>
+                                <tr>
+                                    <td>Ist es weit von hier?</td>
+                                    <td>Is it far from here?</td>
+                                </tr>
+                                <tr>
+                                    <td>Gibt es einen Bus dorthin?</td>
+                                    <td>Is there a bus going there?</td>
+                                </tr>
+                                <tr>
+                                    <td>Kann man zu Fuß dorthin gehen?</td>
+                                    <td>Can one walk there?</td>
+                                </tr>
+                                <tr>
+                                    <td>Können Sie mir auf der Karte zeigen?</td>
+                                    <td>Can you show me on the map?</td>
+                                </tr>
+                                <tr>
+                                    <td>Ist das in der Nähe von...?</td>
+                                    <td>Is that near to...?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Understanding Direction Responses</div>
+                    <div class="card-body">
+                        <h5>Common Terms in Directions:</h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul>
+                                    <li><strong>links</strong> - left</li>
+                                    <li><strong>rechts</strong> - right</li>
+                                    <li><strong>geradeaus</strong> - straight ahead</li>
+                                    <li><strong>zurück</strong> - back</li>
+                                    <li><strong>die Ecke</strong> - corner</li>
+                                    <li><strong>die Kreuzung</strong> - intersection</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul>
+                                    <li><strong>die Ampel</strong> - traffic light</li>
+                                    <li><strong>die nächste Straße</strong> - the next street</li>
+                                    <li><strong>gegenüber von</strong> - opposite to</li>
+                                    <li><strong>neben</strong> - next to</li>
+                                    <li><strong>zwischen</strong> - between</li>
+                                    <li><strong>ungefähr 5 Minuten zu Fuß</strong> - about 5 minutes by foot</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mt-3">Example Direction:</h5>
+                        <p class="bg-light p-3 rounded">
+                            "Gehen Sie geradeaus bis zur Ampel. Dann biegen Sie rechts ab. Das Museum ist auf der linken Seite, neben der Bank."<br>
+                            <em>(Go straight ahead until the traffic light. Then turn right. The museum is on the left side, next to the bank.)</em>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h5>Listen to a conversation about directions:</h5>
+                    <div id="directions-audio-player" class="audio-player">
+                        <button class="btn btn-sm btn-outline-primary play-button" onclick="playAudio('/static/audio/a2/asking_directions.mp3', this)">
+                            <i class="fas fa-play"></i> Listen
+                        </button>
+                        <div class="progress mt-2 audio-progress">
+                            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="service-requests" class="mb-5">
+                <h2>Asking for Services and Information</h2>
+                <p>In shops, restaurants, hotels, and public institutions, you'll need to ask for specific services or information.</p>
+                
+                <div class="accordion" id="serviceAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="restaurantHeading">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#restaurantCollapse" aria-expanded="true" aria-controls="restaurantCollapse">
+                                In Restaurants
+                            </button>
+                        </h3>
+                        <div id="restaurantCollapse" class="accordion-collapse collapse show" aria-labelledby="restaurantHeading" data-bs-parent="#serviceAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Haben Sie einen Tisch für zwei Personen?</strong> <em>(Do you have a table for two people?)</em></li>
+                                    <li><strong>Können Sie mir die Speisekarte bringen?</strong> <em>(Can you bring me the menu?)</em></li>
+                                    <li><strong>Was können Sie empfehlen?</strong> <em>(What can you recommend?)</em></li>
+                                    <li><strong>Gibt es vegetarische/vegane Gerichte?</strong> <em>(Are there vegetarian/vegan dishes?)</em></li>
+                                    <li><strong>Was ist in diesem Gericht enthalten?</strong> <em>(What is included in this dish?)</em></li>
+                                    <li><strong>Kann ich mit Kreditkarte bezahlen?</strong> <em>(Can I pay with credit card?)</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="shoppingHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shoppingCollapse" aria-expanded="false" aria-controls="shoppingCollapse">
+                                While Shopping
+                            </button>
+                        </h3>
+                        <div id="shoppingCollapse" class="accordion-collapse collapse" aria-labelledby="shoppingHeading" data-bs-parent="#serviceAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Wo finde ich...?</strong> <em>(Where can I find...?)</em></li>
+                                    <li><strong>Haben Sie dieses Produkt in anderen Farben/Größen?</strong> <em>(Do you have this product in other colors/sizes?)</em></li>
+                                    <li><strong>Wie viel kostet das?</strong> <em>(How much does this cost?)</em></li>
+                                    <li><strong>Gibt es das im Angebot?</strong> <em>(Is this on sale?)</em></li>
+                                    <li><strong>Kann ich das anprobieren?</strong> <em>(Can I try this on?)</em></li>
+                                    <li><strong>Wo ist die Umkleidekabine?</strong> <em>(Where is the changing room?)</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="hotelHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hotelCollapse" aria-expanded="false" aria-controls="hotelCollapse">
+                                At Hotels
+                            </button>
+                        </h3>
+                        <div id="hotelCollapse" class="accordion-collapse collapse" aria-labelledby="hotelHeading" data-bs-parent="#serviceAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Ich habe eine Reservierung auf den Namen...</strong> <em>(I have a reservation under the name...)</em></li>
+                                    <li><strong>Haben Sie noch Zimmer frei?</strong> <em>(Do you still have rooms available?)</em></li>
+                                    <li><strong>Was kostet ein Einzelzimmer/Doppelzimmer pro Nacht?</strong> <em>(How much is a single/double room per night?)</em></li>
+                                    <li><strong>Ist das Frühstück inklusive?</strong> <em>(Is breakfast included?)</em></li>
+                                    <li><strong>Um wie viel Uhr ist das Frühstück?</strong> <em>(At what time is breakfast?)</em></li>
+                                    <li><strong>Bis wann muss ich auschecken?</strong> <em>(By when do I have to check out?)</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="transportHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#transportCollapse" aria-expanded="false" aria-controls="transportCollapse">
+                                Public Transportation
+                            </button>
+                        </h3>
+                        <div id="transportCollapse" class="accordion-collapse collapse" aria-labelledby="transportHeading" data-bs-parent="#serviceAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Wann fährt der nächste Zug/Bus nach...?</strong> <em>(When does the next train/bus to... leave?)</em></li>
+                                    <li><strong>Von welchem Gleis/Bahnsteig fährt der Zug ab?</strong> <em>(From which platform does the train depart?)</em></li>
+                                    <li><strong>An welcher Haltestelle muss ich aussteigen?</strong> <em>(At which stop should I get off?)</em></li>
+                                    <li><strong>Wie viel kostet eine Fahrkarte nach...?</strong> <em>(How much does a ticket to... cost?)</em></li>
+                                    <li><strong>Gibt es eine Tageskarte?</strong> <em>(Is there a day ticket?)</em></li>
+                                    <li><strong>Muss ich umsteigen?</strong> <em>(Do I need to change trains/buses?)</em></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="clarification" class="mb-5">
+                <h2>Asking for Clarification</h2>
+                <p>When you don't understand something or need more information, these phrases will help you ask for clarification.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Usage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Entschuldigung, ich habe nicht verstanden.</strong></td>
+                                    <td>Excuse me, I didn't understand.</td>
+                                    <td>When you didn't catch what was said</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Können Sie das bitte wiederholen?</strong></td>
+                                    <td>Could you please repeat that?</td>
+                                    <td>When you need something repeated</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Können Sie bitte langsamer sprechen?</strong></td>
+                                    <td>Could you please speak more slowly?</td>
+                                    <td>When someone is speaking too fast</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Was bedeutet...?</strong></td>
+                                    <td>What does... mean?</td>
+                                    <td>When you don't understand a word</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Könnten Sie das bitte aufschreiben?</strong></td>
+                                    <td>Could you please write that down?</td>
+                                    <td>When you need to see it written</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Können Sie mir das genauer erklären?</strong></td>
+                                    <td>Can you explain that to me in more detail?</td>
+                                    <td>When you need more information</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Haben Sie ein Beispiel?</strong></td>
+                                    <td>Do you have an example?</td>
+                                    <td>When you need a concrete example</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <h5>Cultural Tip:</h5>
+                    <p>Don't be afraid to ask for clarification in German-speaking countries. It's better to ask than to misunderstand important information. Germans generally appreciate direct communication and will usually be patient if you're learning their language.</p>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice asking for information in different situations:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 1: Form questions using the correct question word</div>
+                    <div class="card-body">
+                        <form id="question-words-practice">
+                            <div class="mb-3">
+                                <p>1. ________ kostet eine Fahrkarte nach Berlin? (asking about price)</p>
+                                <select class="form-select" id="qw1">
+                                    <option value="">Select a question word...</option>
+                                    <option value="incorrect">Wer</option>
+                                    <option value="incorrect">Wo</option>
+                                    <option value="correct">Wie viel</option>
+                                    <option value="incorrect">Wann</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <p>2. ________ fährt der nächste Bus? (asking about time)</p>
+                                <select class="form-select" id="qw2">
+                                    <option value="">Select a question word...</option>
+                                    <option value="incorrect">Wie</option>
+                                    <option value="incorrect">Warum</option>
+                                    <option value="incorrect">Wo</option>
+                                    <option value="correct">Wann</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <p>3. ________ ist die Apotheke? (asking about location)</p>
+                                <select class="form-select" id="qw3">
+                                    <option value="">Select a question word...</option>
+                                    <option value="correct">Wo</option>
+                                    <option value="incorrect">Wann</option>
+                                    <option value="incorrect">Wer</option>
+                                    <option value="incorrect">Wie lange</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <p>4. ________ Farbe möchten Sie? (asking which one)</p>
+                                <select class="form-select" id="qw4">
+                                    <option value="">Select a question word...</option>
+                                    <option value="incorrect">Was für eine</option>
+                                    <option value="correct">Welche</option>
+                                    <option value="incorrect">Wie</option>
+                                    <option value="incorrect">Woher</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-qw">Check Answers</button>
+                        </form>
+                        <div id="qw-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 2: Complete the dialogues</div>
+                    <div class="card-body">
+                        <form id="dialogue-practice">
+                            <div class="mb-3">
+                                <p><strong>In a shop:</strong></p>
+                                <p>You: <select class="form-select" id="d1">
+                                    <option value="">Select...</option>
+                                    <option value="correct">Entschuldigung, wo finde ich die Schuhabteilung?</option>
+                                    <option value="incorrect">Guten Tag, ich hätte gerne einen Kaffee.</option>
+                                    <option value="incorrect">Wo ist der Bahnhof?</option>
+                                    <option value="incorrect">Haben Sie einen Tisch für zwei Personen?</option>
+                                </select></p>
+                                
+                                <p>Shop assistant: Die Schuhabteilung ist im zweiten Stock.</p>
+                                
+                                <p>You: <select class="form-select" id="d2">
+                                    <option value="">Select...</option>
+                                    <option value="incorrect">Ich möchte mit dem Bus fahren.</option>
+                                    <option value="incorrect">Sprechen Sie Englisch?</option>
+                                    <option value="correct">Gibt es dort auch Sportschuhe?</option>
+                                    <option value="incorrect">Ich hätte gerne einen Apfelsaft.</option>
+                                </select></p>
+                            </div>
+                            
+                            <div class="mb-3 mt-4">
+                                <p><strong>At the train station:</strong></p>
+                                <p>You: <select class="form-select" id="d3">
+                                    <option value="">Select...</option>
+                                    <option value="incorrect">Haben Sie ein Einzelzimmer frei?</option>
+                                    <option value="incorrect">Wo ist die Toilette?</option>
+                                    <option value="correct">Wann fährt der nächste Zug nach München?</option>
+                                    <option value="incorrect">Was kostet ein Kilogramm Äpfel?</option>
+                                </select></p>
+                                
+                                <p>Information desk: Der nächste Zug nach München fährt um 14:30 Uhr.</p>
+                                
+                                <p>You: <select class="form-select" id="d4">
+                                    <option value="">Select...</option>
+                                    <option value="incorrect">Ich möchte das Zimmer sehen.</option>
+                                    <option value="incorrect">Kann ich das anprobieren?</option>
+                                    <option value="correct">Von welchem Gleis fährt der Zug ab?</option>
+                                    <option value="incorrect">Was ist die Spezialität des Hauses?</option>
+                                </select></p>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-dialogues">Check Answers</button>
+                        </form>
+                        <div id="dialogue-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 3: Role Play</div>
+                    <div class="card-body">
+                        <p>Choose one of the following scenarios and write a short dialogue asking for information:</p>
+                        <ul class="mb-3">
+                            <li>Asking for directions to a tourist attraction</li>
+                            <li>Inquiring about a hotel room and its amenities</li>
+                            <li>Getting information about train/bus schedules</li>
+                            <li>Asking for details about a menu item in a restaurant</li>
+                        </ul>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="role-play" rows="6" placeholder="Write your dialogue here..."></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="save-dialogue">Save</button>
+                        <div id="dialogue-feedback" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the "Asking for Information" lesson. Being able to ask for and understand information is one of the most practical skills in language learning.</p>
+                    <p>Use these question structures and phrases in real-life situations whenever possible to reinforce your learning.</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('quiz', level='a2', topic='information') }}" class="alert-link">Information Quiz</a>.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check question words exercise
+        document.getElementById('check-qw').addEventListener('click', function() {
+            const selects = document.querySelectorAll('#question-words-practice select');
+            let correct = 0;
+            const totalQuestions = selects.length;
+            
+            selects.forEach(select => {
+                if (select.value === 'correct') {
+                    select.classList.add('is-valid');
+                    select.classList.remove('is-invalid');
+                    correct++;
+                } else if (select.value === 'incorrect') {
+                    select.classList.add('is-invalid');
+                    select.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('qw-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfekt! You chose all the correct question words!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check dialogues exercise
+        document.getElementById('check-dialogues').addEventListener('click', function() {
+            const selects = document.querySelectorAll('#dialogue-practice select');
+            let correct = 0;
+            const totalQuestions = selects.length;
+            
+            selects.forEach(select => {
+                if (select.value === 'correct') {
+                    select.classList.add('is-valid');
+                    select.classList.remove('is-invalid');
+                    correct++;
+                } else if (select.value === 'incorrect') {
+                    select.classList.add('is-invalid');
+                    select.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('dialogue-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Ausgezeichnet! Your dialogue responses are all appropriate!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Think about which responses make the most sense in the context!</div>`;
+            }
+        });
+        
+        // Save dialogue
+        document.getElementById('save-dialogue').addEventListener('click', function() {
+            const textArea = document.getElementById('role-play');
+            const text = textArea.value.trim();
+            
+            if (text.length < 20) {
+                document.getElementById('dialogue-feedback').innerHTML = '<div class="alert alert-warning">Please write a more complete dialogue.</div>';
+                return;
+            }
+            
+            // Save to local storage for potential use in user progress
+            localStorage.setItem('asking_information_dialogue', text);
+            
+            document.getElementById('dialogue-feedback').innerHTML = '<div class="alert alert-success">Your dialogue has been saved! In a classroom setting, you would practice this with a partner.</div>';
+        });
+    });
+</script>
+{% endblock %}

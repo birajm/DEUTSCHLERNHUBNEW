@@ -172,9 +172,17 @@ def a2_index():
 def a2_basics_small_talk():
     return render_template('lessons/a2/expanded_basics/small_talk.html')
 
+@app.route('/a2/expanded-basics/asking-information')
+def a2_basics_asking_information():
+    return render_template('lessons/a2/expanded_basics/asking_information.html')
+
 @app.route('/a2/grammar/past-tense')
 def a2_grammar_past_tense():
     return render_template('lessons/a2/grammar/past_tense.html')
+
+@app.route('/a2/grammar/modal-verbs')
+def a2_grammar_modal_verbs():
+    return render_template('lessons/a2/grammar/modal_verbs.html')
 
 @app.route('/b1')
 def b1_index():

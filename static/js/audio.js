@@ -19,14 +19,12 @@ function playListeningAudio(audioButton) {
     return;
   }
 
-  const existingAudio = audioElements.get(audioPath);
-  if (existingAudio) {
-    existingAudio.pause();
-    existingAudio.currentTime = 0;
-    audioElements.delete(audioPath);
-    audioButton.innerHTML = '<i class="fas fa-play"></i>';
-    return;
-  }
+  // Stop any currently playing audio
+  audioElements.forEach((audio) => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+  audioElements.clear();
 
   const audio = new Audio(audioPath);
   audioElements.set(audioPath, audio);
@@ -48,7 +46,10 @@ function playListeningAudio(audioButton) {
 
   audio.addEventListener('canplay', () => {
     audioButton.innerHTML = '<i class="fas fa-pause"></i>';
-    audio.play();
+    audio.play().catch(error => {
+      console.error('Error playing audio:', error);
+      audioButton.innerHTML = '<i class="fas fa-play"></i>';
+    });
   });
 
   audio.addEventListener('ended', () => {
@@ -58,7 +59,7 @@ function playListeningAudio(audioButton) {
   });
 
   audio.addEventListener('error', (e) => {
-    console.error('Error playing audio:', e);
+    console.error('Error loading audio file:', audioPath);
     audioButton.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
     audioElements.delete(audioPath);
   });

@@ -1,0 +1,691 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Small Talk{% endblock %}
+
+{% block content %}
+<div class="lesson-header a2-header">
+    <div class="container">
+        <h1>Small Talk</h1>
+        <p class="lead">Learn how to make conversation in German</p>
+        <div class="badge bg-light text-dark">20 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#topics" class="list-group-item list-group-item-action">Common Topics</a>
+                <a href="#phrases" class="list-group-item list-group-item-action">Useful Phrases</a>
+                <a href="#questions" class="list-group-item list-group-item-action">Asking Questions</a>
+                <a href="#conversations" class="list-group-item list-group-item-action">Sample Conversations</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a2" data-section="expanded_basics" data-lesson="small_talk" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Small talk (der Smalltalk or die Konversation) is the casual conversation that happens when you meet someone, especially for the first time or in a casual setting. In German-speaking countries, small talk is an important social skill, though it may be a bit more reserved than in some other cultures.</p>
+                <p>In this lesson, you'll learn:</p>
+                <ul>
+                    <li>Common small talk topics in German culture</li>
+                    <li>Useful phrases to start and maintain a conversation</li>
+                    <li>How to ask appropriate questions</li>
+                    <li>Cultural nuances of German small talk</li>
+                </ul>
+                <div class="alert alert-info">
+                    <h5>Cultural Note:</h5>
+                    <p>Germans tend to be more direct and value personal space more than people in some other cultures. Small talk is common but often focuses on concrete topics rather than very personal matters with people they don't know well.</p>
+                </div>
+            </section>
+            
+            <section id="topics" class="mb-5">
+                <h2>Common Small Talk Topics</h2>
+                <p>Here are some topics that are generally safe and common for small talk in German-speaking countries:</p>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">Safe Topics</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <strong>Das Wetter</strong> (The weather)
+                                        <p class="small text-muted mb-0">Always a safe choice to start a conversation</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Reisen und Urlaub</strong> (Travel and vacations)
+                                        <p class="small text-muted mb-0">Germans love to travel and discuss destinations</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Essen und lokale Spezialitäten</strong> (Food and local specialties)
+                                        <p class="small text-muted mb-0">Regional food is a point of pride</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Hobbys und Freizeit</strong> (Hobbies and leisure activities)
+                                        <p class="small text-muted mb-0">Sports, hiking, cultural activities, etc.</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Öffentliche Veranstaltungen</strong> (Public events)
+                                        <p class="small text-muted mb-0">Local festivals, concerts, markets</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">Topics to Approach Carefully</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <strong>Beruf und Einkommen</strong> (Profession and income)
+                                        <p class="small text-muted mb-0">While asking about profession is ok, asking about income is considered rude</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Politik</strong> (Politics)
+                                        <p class="small text-muted mb-0">Can be discussed but may become heated; approach with caution</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Religion</strong> (Religion)
+                                        <p class="small text-muted mb-0">Generally a more private topic in German-speaking countries</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Sehr persönliche Fragen</strong> (Very personal questions)
+                                        <p class="small text-muted mb-0">About relationships, health issues, weight, age, etc.</p>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Deutsche Geschichte</strong> (German history)
+                                        <p class="small text-muted mb-0">Particularly sensitive topics like WWII</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="phrases" class="mb-5">
+                <h2>Useful Phrases for Small Talk</h2>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Starting a Conversation</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Usage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Hallo! Wie geht's?</strong></td>
+                                    <td>Hello! How are you?</td>
+                                    <td>Casual greeting</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Guten Tag! Wie geht es Ihnen?</strong></td>
+                                    <td>Good day! How are you?</td>
+                                    <td>More formal greeting</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Schönes Wetter heute, oder?</strong></td>
+                                    <td>Nice weather today, isn't it?</td>
+                                    <td>Classic weather opener</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sind Sie zum ersten Mal hier?</strong></td>
+                                    <td>Is this your first time here?</td>
+                                    <td>At an event or location</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Kennen wir uns nicht von...?</strong></td>
+                                    <td>Don't we know each other from...?</td>
+                                    <td>If you think you've met before</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Maintaining the Conversation</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Usage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Das ist ja interessant!</strong></td>
+                                    <td>That's interesting!</td>
+                                    <td>Showing interest</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich verstehe, was Sie meinen.</strong></td>
+                                    <td>I understand what you mean.</td>
+                                    <td>Showing understanding</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wirklich? Das wusste ich nicht.</strong></td>
+                                    <td>Really? I didn't know that.</td>
+                                    <td>Expressing surprise</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Und wie ist es bei Ihnen?</strong></td>
+                                    <td>And how about you?</td>
+                                    <td>Reciprocating a question</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Da haben Sie recht.</strong></td>
+                                    <td>You're right about that.</td>
+                                    <td>Agreeing with someone</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Ending a Conversation Politely</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Usage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Es war schön, mit Ihnen zu sprechen.</strong></td>
+                                    <td>It was nice speaking with you.</td>
+                                    <td>Polite closing</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich muss leider los.</strong></td>
+                                    <td>Unfortunately, I have to go.</td>
+                                    <td>Explaining you need to leave</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Vielleicht sehen wir uns wieder.</strong></td>
+                                    <td>Perhaps we'll see each other again.</td>
+                                    <td>Open-ended farewell</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich wünsche Ihnen noch einen schönen Tag.</strong></td>
+                                    <td>I wish you a nice day.</td>
+                                    <td>Polite good wishes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Auf Wiedersehen! / Tschüss!</strong></td>
+                                    <td>Goodbye! / Bye!</td>
+                                    <td>Formal / informal farewell</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h5>Listen to these small talk phrases:</h5>
+                    <div id="phrases-audio-player" class="audio-player">
+                        <button class="btn btn-sm btn-outline-primary play-button" onclick="playAudio('/static/audio/a2/small_talk_phrases.mp3', this)">
+                            <i class="fas fa-play"></i> Listen
+                        </button>
+                        <div class="progress mt-2 audio-progress">
+                            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="questions" class="mb-5">
+                <h2>Asking Questions</h2>
+                <p>Asking questions is an important part of small talk. Here are some common questions organized by topic:</p>
+                
+                <div class="accordion" id="smallTalkQuestions">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="weatherHeading">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#weatherCollapse" aria-expanded="true" aria-controls="weatherCollapse">
+                                Weather (Das Wetter)
+                            </button>
+                        </h3>
+                        <div id="weatherCollapse" class="accordion-collapse collapse show" aria-labelledby="weatherHeading" data-bs-parent="#smallTalkQuestions">
+                            <div class="accordion-body">
+                                <ul class="mb-0">
+                                    <li><strong>Wie finden Sie das Wetter heute?</strong> (How do you find the weather today?)</li>
+                                    <li><strong>Ist es immer so warm/kalt zu dieser Jahreszeit?</strong> (Is it always this warm/cold at this time of year?)</li>
+                                    <li><strong>Wie ist das Wetter in Ihrer Heimatstadt?</strong> (How is the weather in your hometown?)</li>
+                                    <li><strong>Welche Jahreszeit mögen Sie am liebsten?</strong> (Which season do you like the most?)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="travelHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#travelCollapse" aria-expanded="false" aria-controls="travelCollapse">
+                                Travel (Reisen)
+                            </button>
+                        </h3>
+                        <div id="travelCollapse" class="accordion-collapse collapse" aria-labelledby="travelHeading" data-bs-parent="#smallTalkQuestions">
+                            <div class="accordion-body">
+                                <ul class="mb-0">
+                                    <li><strong>Waren Sie schon einmal in...?</strong> (Have you ever been to...?)</li>
+                                    <li><strong>Wohin reisen Sie am liebsten?</strong> (Where do you most like to travel?)</li>
+                                    <li><strong>Haben Sie dieses Jahr Urlaubspläne?</strong> (Do you have vacation plans this year?)</li>
+                                    <li><strong>Was war Ihre schönste Reise?</strong> (What was your best trip?)</li>
+                                    <li><strong>Reisen Sie lieber ans Meer oder in die Berge?</strong> (Do you prefer traveling to the sea or to the mountains?)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="foodHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#foodCollapse" aria-expanded="false" aria-controls="foodCollapse">
+                                Food (Essen)
+                            </button>
+                        </h3>
+                        <div id="foodCollapse" class="accordion-collapse collapse" aria-labelledby="foodHeading" data-bs-parent="#smallTalkQuestions">
+                            <div class="accordion-body">
+                                <ul class="mb-0">
+                                    <li><strong>Welche deutsche Spezialität mögen Sie am liebsten?</strong> (Which German specialty do you like the most?)</li>
+                                    <li><strong>Kochen Sie gerne?</strong> (Do you enjoy cooking?)</li>
+                                    <li><strong>Kennen Sie ein gutes Restaurant in der Nähe?</strong> (Do you know a good restaurant nearby?)</li>
+                                    <li><strong>Was ist Ihr Lieblingsessen?</strong> (What is your favorite food?)</li>
+                                    <li><strong>Haben Sie schon ... probiert?</strong> (Have you tried ... yet?)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="hobbiesHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hobbiesCollapse" aria-expanded="false" aria-controls="hobbiesCollapse">
+                                Hobbies (Hobbys)
+                            </button>
+                        </h3>
+                        <div id="hobbiesCollapse" class="accordion-collapse collapse" aria-labelledby="hobbiesHeading" data-bs-parent="#smallTalkQuestions">
+                            <div class="accordion-body">
+                                <ul class="mb-0">
+                                    <li><strong>Was machen Sie in Ihrer Freizeit?</strong> (What do you do in your free time?)</li>
+                                    <li><strong>Treiben Sie Sport?</strong> (Do you play sports?)</li>
+                                    <li><strong>Lesen Sie gerne?</strong> (Do you like reading?)</li>
+                                    <li><strong>Haben Sie ein interessantes Hobby?</strong> (Do you have an interesting hobby?)</li>
+                                    <li><strong>Gehen Sie oft ins Kino/Theater/Museum?</strong> (Do you often go to the cinema/theater/museum?)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="localHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#localCollapse" aria-expanded="false" aria-controls="localCollapse">
+                                Local Information (Lokale Informationen)
+                            </button>
+                        </h3>
+                        <div id="localCollapse" class="accordion-collapse collapse" aria-labelledby="localHeading" data-bs-parent="#smallTalkQuestions">
+                            <div class="accordion-body">
+                                <ul class="mb-0">
+                                    <li><strong>Wohnen Sie schon lange hier?</strong> (Have you lived here for a long time?)</li>
+                                    <li><strong>Was kann man in dieser Stadt unternehmen?</strong> (What can one do in this city?)</li>
+                                    <li><strong>Gibt es besondere Veranstaltungen in der Stadt?</strong> (Are there special events in the city?)</li>
+                                    <li><strong>Können Sie mir ein schönes Café empfehlen?</strong> (Can you recommend a nice café?)</li>
+                                    <li><strong>Was ist Ihrer Meinung nach die schönste Ecke der Stadt?</strong> (In your opinion, what's the nicest corner of the city?)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="conversations" class="mb-5">
+                <h2>Sample Conversations</h2>
+                <p>Here are two example conversations showing how small talk typically flows in German:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Conversation 1: At a Party</div>
+                    <div class="card-body">
+                        <div class="conversation">
+                            <p><strong>Person A:</strong> Hallo! Ich bin Julia. Und wie heißt du?</p>
+                            <p class="text-muted"><em>Hello! I'm Julia. And what's your name?</em></p>
+                            
+                            <p><strong>Person B:</strong> Hallo Julia! Ich bin Thomas. Schön, dich kennenzulernen.</p>
+                            <p class="text-muted"><em>Hello Julia! I'm Thomas. Nice to meet you.</em></p>
+                            
+                            <p><strong>Person A:</strong> Gleichfalls! Bist du ein Freund des Gastgebers?</p>
+                            <p class="text-muted"><em>Likewise! Are you a friend of the host?</em></p>
+                            
+                            <p><strong>Person B:</strong> Ja, wir kennen uns von der Arbeit. Und du?</p>
+                            <p class="text-muted"><em>Yes, we know each other from work. And you?</em></p>
+                            
+                            <p><strong>Person A:</strong> Ich bin eine ehemalige Kommilitonin. Wir haben zusammen studiert.</p>
+                            <p class="text-muted"><em>I'm a former fellow student. We studied together.</em></p>
+                            
+                            <p><strong>Person B:</strong> Oh, interessant! Was hast du studiert?</p>
+                            <p class="text-muted"><em>Oh, interesting! What did you study?</em></p>
+                            
+                            <p><strong>Person A:</strong> Informatik. Und was machst du beruflich?</p>
+                            <p class="text-muted"><em>Computer science. And what do you do professionally?</em></p>
+                            
+                            <p><strong>Person B:</strong> Ich arbeite als Grafikdesigner. Ich gestalte Websites und Logos.</p>
+                            <p class="text-muted"><em>I work as a graphic designer. I design websites and logos.</em></p>
+                            
+                            <p><strong>Person A:</strong> Das klingt sehr kreativ! Machst du das schon lange?</p>
+                            <p class="text-muted"><em>That sounds very creative! Have you been doing that for long?</em></p>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <button class="btn btn-sm btn-outline-primary" onclick="playAudio('/static/audio/a2/small_talk_conversation1.mp3', this)">
+                                <i class="fas fa-play"></i> Listen to Conversation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Conversation 2: On a Train</div>
+                    <div class="card-body">
+                        <div class="conversation">
+                            <p><strong>Person A:</strong> Entschuldigung, ist dieser Platz noch frei?</p>
+                            <p class="text-muted"><em>Excuse me, is this seat still free?</em></p>
+                            
+                            <p><strong>Person B:</strong> Ja, bitte setzen Sie sich.</p>
+                            <p class="text-muted"><em>Yes, please have a seat.</em></p>
+                            
+                            <p><strong>Person A:</strong> Danke. Es ist heute ziemlich voll im Zug.</p>
+                            <p class="text-muted"><em>Thank you. It's quite full on the train today.</em></p>
+                            
+                            <p><strong>Person B:</strong> Ja, wahrscheinlich wegen des Wochenendes. Fahren Sie weit?</p>
+                            <p class="text-muted"><em>Yes, probably because of the weekend. Are you traveling far?</em></p>
+                            
+                            <p><strong>Person A:</strong> Ich fahre nach München. Und Sie?</p>
+                            <p class="text-muted"><em>I'm going to Munich. And you?</em></p>
+                            
+                            <p><strong>Person B:</strong> Nur bis Stuttgart. Besuchen Sie Familie in München?</p>
+                            <p class="text-muted"><em>Only to Stuttgart. Are you visiting family in Munich?</em></p>
+                            
+                            <p><strong>Person A:</strong> Nein, ich fahre geschäftlich dorthin. Aber ich mag München sehr. Die Stadt hat viel zu bieten.</p>
+                            <p class="text-muted"><em>No, I'm going there on business. But I like Munich very much. The city has a lot to offer.</em></p>
+                            
+                            <p><strong>Person B:</strong> Da haben Sie recht. Besonders die Biergärten im Sommer sind toll.</p>
+                            <p class="text-muted"><em>You're right about that. Especially the beer gardens in summer are great.</em></p>
+                            
+                            <p><strong>Person A:</strong> Ja, und die Museen. Waren Sie schon im Deutschen Museum?</p>
+                            <p class="text-muted"><em>Yes, and the museums. Have you been to the German Museum?</em></p>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <button class="btn btn-sm btn-outline-primary" onclick="playAudio('/static/audio/a2/small_talk_conversation2.mp3', this)">
+                                <i class="fas fa-play"></i> Listen to Conversation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 1: Match the questions with appropriate topics</div>
+                    <div class="card-body">
+                        <form id="topics-practice">
+                            <div class="mb-3">
+                                <p>1. Wie lange wohnen Sie schon in dieser Stadt?</p>
+                                <select class="form-select" id="t1">
+                                    <option value="">Select a topic...</option>
+                                    <option value="incorrect">Weather</option>
+                                    <option value="incorrect">Food</option>
+                                    <option value="correct">Local information</option>
+                                    <option value="incorrect">Travel</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <p>2. Haben Sie schon die lokale Spezialität probiert?</p>
+                                <select class="form-select" id="t2">
+                                    <option value="">Select a topic...</option>
+                                    <option value="incorrect">Weather</option>
+                                    <option value="correct">Food</option>
+                                    <option value="incorrect">Local information</option>
+                                    <option value="incorrect">Travel</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <p>3. Glauben Sie, dass es morgen regnen wird?</p>
+                                <select class="form-select" id="t3">
+                                    <option value="">Select a topic...</option>
+                                    <option value="correct">Weather</option>
+                                    <option value="incorrect">Food</option>
+                                    <option value="incorrect">Local information</option>
+                                    <option value="incorrect">Travel</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <p>4. Was war Ihr schönstes Urlaubsziel?</p>
+                                <select class="form-select" id="t4">
+                                    <option value="">Select a topic...</option>
+                                    <option value="incorrect">Weather</option>
+                                    <option value="incorrect">Food</option>
+                                    <option value="incorrect">Local information</option>
+                                    <option value="correct">Travel</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-topics">Check Answers</button>
+                        </form>
+                        <div id="topics-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 2: Complete the small talk conversation</div>
+                    <div class="card-body">
+                        <p>Fill in the blanks with appropriate phrases:</p>
+                        <form id="conversation-practice">
+                            <div class="mb-3">
+                                <p><strong>Person A:</strong> Hallo! Wie geht es Ihnen?</p>
+                                <p><strong>Person B:</strong> <select class="form-select" id="c1">
+                                    <option value="">Select a response...</option>
+                                    <option value="correct">Danke, mir geht es gut. Und Ihnen?</option>
+                                    <option value="incorrect">Auf Wiedersehen!</option>
+                                    <option value="incorrect">Schönes Wetter, oder?</option>
+                                    <option value="incorrect">Ich bin 30 Jahre alt.</option>
+                                </select></p>
+                                
+                                <p><strong>Person A:</strong> Auch gut, danke. <select class="form-select" id="c2">
+                                    <option value="">Select a phrase...</option>
+                                    <option value="incorrect">Ich mag Kaffee.</option>
+                                    <option value="correct">Sind Sie zum ersten Mal hier?</option>
+                                    <option value="incorrect">Wie spät ist es?</option>
+                                    <option value="incorrect">Ich wohne in Berlin.</option>
+                                </select></p>
+                                
+                                <p><strong>Person B:</strong> Nein, ich war schon ein paar Mal hier. Es ist eine schöne Veranstaltung.</p>
+                                
+                                <p><strong>Person A:</strong> <select class="form-select" id="c3">
+                                    <option value="">Select a phrase...</option>
+                                    <option value="incorrect">Ich verstehe kein Deutsch.</option>
+                                    <option value="incorrect">Das stimmt nicht.</option>
+                                    <option value="correct">Da haben Sie recht. Die Musik ist besonders gut.</option>
+                                    <option value="incorrect">Es tut mir leid.</option>
+                                </select></p>
+                                
+                                <p><strong>Person B:</strong> Ja, ich liebe klassische Musik. Gehen Sie oft zu Konzerten?</p>
+                                
+                                <p><strong>Person A:</strong> <select class="form-select" id="c4">
+                                    <option value="">Select a phrase...</option>
+                                    <option value="incorrect">Ich hasse Musik.</option>
+                                    <option value="incorrect">Ich muss jetzt gehen.</option>
+                                    <option value="incorrect">Wie alt sind Sie?</option>
+                                    <option value="correct">Ab und zu. Ich besuche gerne verschiedene kulturelle Veranstaltungen.</option>
+                                </select></p>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-conversation">Check Answers</button>
+                        </form>
+                        <div id="conversation-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 3: Role Play</div>
+                    <div class="card-body">
+                        <p>Imagine you are at one of these situations and write a short dialogue:</p>
+                        <ul class="mb-3">
+                            <li>At a café, talking to someone at the next table</li>
+                            <li>At a language course, meeting a new classmate</li>
+                            <li>At a conference, during a coffee break</li>
+                        </ul>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="role-play" rows="6" placeholder="Write your dialogue here..."></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="save-dialogue">Save</button>
+                        <div id="dialogue-feedback" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Small Talk lesson. You now have the tools to start and maintain simple conversations in German.</p>
+                    <p>Remember that making mistakes is a natural part of learning, so don't be afraid to practice your small talk skills whenever you have the opportunity!</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('quiz', level='a2', topic='small-talk') }}" class="alert-link">Small Talk Quiz</a>.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check topics exercise
+        document.getElementById('check-topics').addEventListener('click', function() {
+            const selects = document.querySelectorAll('#topics-practice select');
+            let correct = 0;
+            const totalQuestions = selects.length;
+            
+            selects.forEach(select => {
+                if (select.value === 'correct') {
+                    select.classList.add('is-valid');
+                    select.classList.remove('is-invalid');
+                    correct++;
+                } else if (select.value === 'incorrect') {
+                    select.classList.add('is-invalid');
+                    select.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('topics-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! You correctly identified all the small talk topics!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check conversation exercise
+        document.getElementById('check-conversation').addEventListener('click', function() {
+            const selects = document.querySelectorAll('#conversation-practice select');
+            let correct = 0;
+            const totalQuestions = selects.length;
+            
+            selects.forEach(select => {
+                if (select.value === 'correct') {
+                    select.classList.add('is-valid');
+                    select.classList.remove('is-invalid');
+                    correct++;
+                } else if (select.value === 'incorrect') {
+                    select.classList.add('is-invalid');
+                    select.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('conversation-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Excellent! You completed the conversation with appropriate phrases!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Think about which phrases make the most sense in context!</div>`;
+            }
+        });
+        
+        // Save dialogue
+        document.getElementById('save-dialogue').addEventListener('click', function() {
+            const textArea = document.getElementById('role-play');
+            const text = textArea.value.trim();
+            
+            if (text.length < 20) {
+                document.getElementById('dialogue-feedback').innerHTML = '<div class="alert alert-warning">Please write a more complete dialogue.</div>';
+                return;
+            }
+            
+            // Save to local storage for potential use in user progress
+            localStorage.setItem('small_talk_dialogue', text);
+            
+            document.getElementById('dialogue-feedback').innerHTML = '<div class="alert alert-success">Your dialogue has been saved! In a classroom setting, you would practice this with a partner.</div>';
+        });
+    });
+</script>
+{% endblock %}

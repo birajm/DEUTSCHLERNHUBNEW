@@ -1,0 +1,648 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Expressing Complex Ideas{% endblock %}
+
+{% block content %}
+<div class="lesson-header b1-header">
+    <div class="container">
+        <h1>Expressing Complex Ideas</h1>
+        <p class="lead">Learn to express more complex thoughts and opinions in German</p>
+        <div class="badge bg-light text-dark">30 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#opinion-phrases" class="list-group-item list-group-item-action">Opinion Phrases</a>
+                <a href="#nuanced-agreement" class="list-group-item list-group-item-action">Nuanced Agreement/Disagreement</a>
+                <a href="#linking-ideas" class="list-group-item list-group-item-action">Linking Ideas</a>
+                <a href="#abstract-concepts" class="list-group-item list-group-item-action">Abstract Concepts</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="b1" data-section="communication" data-lesson="complex_ideas" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>At the B1 level, you should be able to express more complex ideas, opinions, and thoughts in German. This involves using more sophisticated sentence structures, nuanced vocabulary, and appropriate connectors to link your ideas together.</p>
+                <p>In this lesson, you'll learn:</p>
+                <ul>
+                    <li>Phrases for expressing detailed opinions and viewpoints</li>
+                    <li>How to express agreement or disagreement in a nuanced way</li>
+                    <li>Connecting words and phrases to link ideas together logically</li>
+                    <li>Vocabulary for discussing abstract concepts</li>
+                </ul>
+                <div class="alert alert-info">
+                    <h5>Tip:</h5>
+                    <p>Pay attention to the grammatical structures used in these expressions. Many involve specific word order rules, particularly with subordinate clauses.</p>
+                </div>
+            </section>
+            
+            <section id="opinion-phrases" class="mb-5">
+                <h2>Expressing Opinions with Justification</h2>
+                <p>In a more advanced conversation, you'll need to go beyond simple phrases like "Ich denke..." (I think...) and express your opinions with more depth and reasoning.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Key Phrases for Expressing Opinions</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Ich bin der Meinung, dass...</strong></td>
+                                    <td>I am of the opinion that...</td>
+                                    <td>Ich bin der Meinung, dass wir mehr für die Umwelt tun sollten.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Meiner Ansicht nach...</strong></td>
+                                    <td>In my view...</td>
+                                    <td>Meiner Ansicht nach ist das Problem komplexer.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich vertrete den Standpunkt, dass...</strong></td>
+                                    <td>I take the position that...</td>
+                                    <td>Ich vertrete den Standpunkt, dass Bildung ein Grundrecht ist.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Meines Erachtens...</strong></td>
+                                    <td>In my judgment/opinion...</td>
+                                    <td>Meines Erachtens liegt der Fehler im System.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich glaube/finde, dass... weil...</strong></td>
+                                    <td>I believe/find that... because...</td>
+                                    <td>Ich glaube, dass diese Methode besser ist, weil sie effizienter ist.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Providing Reasons and Evidence</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Dafür spricht, dass...</strong></td>
+                                    <td>An argument in favor is that...</td>
+                                    <td>Dafür spricht, dass die Zahlen dies bestätigen.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Das lässt sich dadurch belegen, dass...</strong></td>
+                                    <td>This can be proven by the fact that...</td>
+                                    <td>Das lässt sich dadurch belegen, dass mehrere Studien zu diesem Ergebnis gekommen sind.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ein wichtiger Punkt ist...</strong></td>
+                                    <td>An important point is...</td>
+                                    <td>Ein wichtiger Punkt ist, dass wir die langfristigen Folgen bedenken müssen.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Als Beispiel kann man anführen, dass...</strong></td>
+                                    <td>As an example, one can cite that...</td>
+                                    <td>Als Beispiel kann man anführen, dass ähnliche Projekte bereits erfolgreich waren.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="alert alert-warning mt-3">
+                            <h5>Remember:</h5>
+                            <p>After expressions like "Ich bin der Meinung, dass..." and similar phrases containing "dass" (that), the verb moves to the end of the clause:</p>
+                            <p>Ich bin der Meinung, dass wir mehr für die Umwelt tun <strong>sollten</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h5>Listen to these opinion expressions:</h5>
+                    <div id="opinion-audio-player" class="audio-player">
+                        <button class="btn btn-sm btn-outline-primary play-button" onclick="playAudio('/static/audio/b1/complex_ideas_opinions.mp3', this)">
+                            <i class="fas fa-play"></i> Listen
+                        </button>
+                        <div class="progress mt-2 audio-progress">
+                            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="nuanced-agreement" class="mb-5">
+                <h2>Expressing Agreement and Disagreement with Nuance</h2>
+                <p>Instead of simply saying "Ja, ich stimme zu" (Yes, I agree) or "Nein, ich stimme nicht zu" (No, I don't agree), you can express different degrees of agreement or disagreement.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Nuanced Agreement</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Ich stimme Ihnen/dir völlig zu, dass...</strong></td>
+                                    <td>I completely agree with you that...</td>
+                                    <td>Ich stimme Ihnen völlig zu, dass wir neue Lösungen brauchen.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich bin ganz Ihrer/deiner Meinung, wenn...</strong></td>
+                                    <td>I am entirely of your opinion when...</td>
+                                    <td>Ich bin ganz deiner Meinung, wenn es um Klimaschutz geht.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich stimme Ihnen/dir im Prinzip zu, aber...</strong></td>
+                                    <td>I agree with you in principle, but...</td>
+                                    <td>Ich stimme dir im Prinzip zu, aber es gibt auch andere Faktoren zu bedenken.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Da haben Sie/hast du sicherlich recht, jedoch...</strong></td>
+                                    <td>You're certainly right about that, however...</td>
+                                    <td>Da hast du sicherlich recht, jedoch müssen wir auch die Kosten berücksichtigen.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Nuanced Disagreement</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Ich sehe das etwas anders, weil...</strong></td>
+                                    <td>I see that somewhat differently, because...</td>
+                                    <td>Ich sehe das etwas anders, weil die Daten eine andere Tendenz zeigen.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich kann Ihrem/deinem Argument nicht ganz folgen, da...</strong></td>
+                                    <td>I can't quite follow your argument, since...</td>
+                                    <td>Ich kann deinem Argument nicht ganz folgen, da es einige Widersprüche gibt.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich verstehe Ihren/deinen Standpunkt, aber ich denke, dass...</strong></td>
+                                    <td>I understand your position, but I think that...</td>
+                                    <td>Ich verstehe deinen Standpunkt, aber ich denke, dass wir andere Prioritäten setzen sollten.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Das mag stimmen, allerdings...</strong></td>
+                                    <td>That may be true, however...</td>
+                                    <td>Das mag stimmen, allerdings ist der Kontext hier ein anderer.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h5>Listen to these expressions of agreement and disagreement:</h5>
+                    <div id="agreement-audio-player" class="audio-player">
+                        <button class="btn btn-sm btn-outline-primary play-button" onclick="playAudio('/static/audio/b1/complex_ideas_agreement.mp3', this)">
+                            <i class="fas fa-play"></i> Listen
+                        </button>
+                        <div class="progress mt-2 audio-progress">
+                            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="linking-ideas" class="mb-5">
+                <h2>Connecting Words and Phrases to Link Ideas</h2>
+                <p>To express complex ideas clearly, you need to use appropriate connectors to show the relationship between different thoughts.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Contrasting Ideas</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Einerseits... andererseits...</strong></td>
+                                    <td>On one hand... on the other hand...</td>
+                                    <td>Einerseits ist es teuer, andererseits ist es sehr effektiv.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Zwar... aber...</strong></td>
+                                    <td>Although... but...</td>
+                                    <td>Zwar kostet es viel, aber es lohnt sich langfristig.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Im Gegensatz dazu...</strong></td>
+                                    <td>In contrast to that...</td>
+                                    <td>Berlin ist eine große Stadt. Im Gegensatz dazu ist Freiburg klein und ruhig.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Obwohl... trotzdem...</strong></td>
+                                    <td>Although... nevertheless...</td>
+                                    <td>Obwohl es regnete, sind wir trotzdem spazieren gegangen.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Adding Information and Reasons</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Außerdem / Zudem / Darüber hinaus</strong></td>
+                                    <td>Furthermore / Additionally / Moreover</td>
+                                    <td>Der Kurs ist interessant. Außerdem ist der Lehrer sehr kompetent.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Da / Weil / Denn</strong></td>
+                                    <td>Since / Because / For</td>
+                                    <td>Wir müssen jetzt handeln, da die Zeit drängt.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Nicht nur... sondern auch...</strong></td>
+                                    <td>Not only... but also...</td>
+                                    <td>Das ist nicht nur günstiger, sondern auch besser für die Umwelt.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Zum einen... zum anderen...</strong></td>
+                                    <td>For one thing... for another...</td>
+                                    <td>Zum einen spart es Zeit, zum anderen verbessert es die Qualität.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Drawing Conclusions</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Daher / Deshalb / Aus diesem Grund</strong></td>
+                                    <td>Therefore / For this reason</td>
+                                    <td>Es regnet stark. Deshalb bleiben wir zu Hause.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Folglich / Infolgedessen</strong></td>
+                                    <td>Consequently / As a result</td>
+                                    <td>Die Nachfrage ist gestiegen. Folglich sind auch die Preise höher.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Zusammenfassend kann man sagen, dass...</strong></td>
+                                    <td>In summary, one can say that...</td>
+                                    <td>Zusammenfassend kann man sagen, dass das Projekt ein Erfolg war.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Es kommt darauf an, ob...</strong></td>
+                                    <td>It depends on whether...</td>
+                                    <td>Es kommt darauf an, ob wir genug Zeit haben.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="alert alert-warning mt-3">
+                            <h5>Word Order Note:</h5>
+                            <p>Remember that different connectors affect the word order in German sentences:</p>
+                            <ul>
+                                <li><strong>Coordinating conjunctions</strong> (und, aber, oder, denn) don't change the word order.</li>
+                                <li><strong>Subordinating conjunctions</strong> (weil, obwohl, dass, wenn) send the verb to the end of the clause.</li>
+                                <li><strong>Adverbial connectors</strong> (deshalb, trotzdem, außerdem) cause inversion (verb before subject) when they start a clause.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="abstract-concepts" class="mb-5">
+                <h2>Discussing Abstract Concepts</h2>
+                <p>At the B1 level, you should be able to discuss more abstract ideas and concepts. Here is some key vocabulary for discussing abstract themes.</p>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">Social Concepts</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">die Freiheit (freedom)</li>
+                                    <li class="list-group-item">die Gerechtigkeit (justice)</li>
+                                    <li class="list-group-item">die Gleichheit (equality)</li>
+                                    <li class="list-group-item">die Demokratie (democracy)</li>
+                                    <li class="list-group-item">die Solidarität (solidarity)</li>
+                                    <li class="list-group-item">die Ethik (ethics)</li>
+                                    <li class="list-group-item">die Verantwortung (responsibility)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">Philosophical Concepts</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">die Wahrheit (truth)</li>
+                                    <li class="list-group-item">die Weisheit (wisdom)</li>
+                                    <li class="list-group-item">das Bewusstsein (consciousness)</li>
+                                    <li class="list-group-item">die Identität (identity)</li>
+                                    <li class="list-group-item">die Existenz (existence)</li>
+                                    <li class="list-group-item">die Theorie (theory)</li>
+                                    <li class="list-group-item">der Fortschritt (progress)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Example Sentences with Abstract Concepts</div>
+                    <div class="card-body">
+                        <ul class="mb-0">
+                            <li>Die <strong>Freiheit</strong> ist ein grundlegendes Menschenrecht. (Freedom is a fundamental human right.)</li>
+                            <li>In einer modernen Gesellschaft ist <strong>Gleichheit</strong> sehr wichtig. (In a modern society, equality is very important.)</li>
+                            <li>Der <strong>Fortschritt</strong> der Technologie bringt sowohl Vor- als auch Nachteile. (Technological progress brings both advantages and disadvantages.)</li>
+                            <li>Die <strong>Demokratie</strong> basiert auf der Idee, dass die Macht vom Volk ausgeht. (Democracy is based on the idea that power comes from the people.)</li>
+                            <li>Die <strong>Verantwortung</strong> für die Umwelt liegt bei uns allen. (The responsibility for the environment lies with all of us.)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice using these structures and vocabulary to express complex ideas:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 1: Express your opinion</div>
+                    <div class="card-body">
+                        <p>Complete the sentences using appropriate phrases for expressing opinions:</p>
+                        <form id="opinion-practice">
+                            <div class="mb-3">
+                                <label for="ex1-1" class="form-label">1. Zum Thema Umweltschutz... (On the topic of environmental protection...)</label>
+                                <select class="form-select" id="ex1-1">
+                                    <option value="">Select a phrase...</option>
+                                    <option value="correct">bin ich der Meinung, dass wir mehr recyceln sollten.</option>
+                                    <option value="correct">vertrete ich den Standpunkt, dass wir nachhaltiger leben müssen.</option>
+                                    <option value="correct">finde ich, dass jeder Einzelne etwas beitragen kann.</option>
+                                    <option value="incorrect">ich denke, dass ist wichtig.</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ex1-2" class="form-label">2. Die Idee einer 4-Tage-Arbeitswoche... (The idea of a 4-day work week...)</label>
+                                <select class="form-select" id="ex1-2">
+                                    <option value="">Select a phrase...</option>
+                                    <option value="incorrect">ich glaube, es ist gut.</option>
+                                    <option value="correct">finde ich interessant, weil sie die Work-Life-Balance verbessern könnte.</option>
+                                    <option value="correct">könnte meines Erachtens die Produktivität erhöhen.</option>
+                                    <option value="correct">halte ich für einen vielversprechenden Ansatz, da sie Stress reduzieren kann.</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-opinion">Check Answers</button>
+                        </form>
+                        <div id="opinion-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 2: Connect ideas</div>
+                    <div class="card-body">
+                        <p>Select the appropriate connector for each sentence:</p>
+                        <form id="connector-practice">
+                            <div class="mb-3">
+                                <label for="ex2-1" class="form-label">1. Die Kosten sind hoch, ________ ist das Produkt von sehr guter Qualität.</label>
+                                <select class="form-select" id="ex2-1" data-answer="aber / jedoch / trotzdem">
+                                    <option value="">Select...</option>
+                                    <option value="correct">aber</option>
+                                    <option value="correct">jedoch</option>
+                                    <option value="correct">trotzdem</option>
+                                    <option value="incorrect">und</option>
+                                    <option value="incorrect">weil</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ex2-2" class="form-label">2. ________ ich viel gelernt habe, habe ich die Prüfung nicht bestanden.</label>
+                                <select class="form-select" id="ex2-2" data-answer="Obwohl">
+                                    <option value="">Select...</option>
+                                    <option value="correct">Obwohl</option>
+                                    <option value="incorrect">Denn</option>
+                                    <option value="incorrect">Deshalb</option>
+                                    <option value="incorrect">Und</option>
+                                    <option value="incorrect">Außerdem</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ex2-3" class="form-label">3. ________ spart das neue System Energie, ________ reduziert es die Kosten.</label>
+                                <select class="form-select" id="ex2-3" data-answer="Einerseits / andererseits">
+                                    <option value="">Select...</option>
+                                    <option value="correct">Einerseits / andererseits</option>
+                                    <option value="incorrect">Weil / dann</option>
+                                    <option value="incorrect">Obwohl / trotzdem</option>
+                                    <option value="incorrect">Da / deshalb</option>
+                                    <option value="incorrect">Zwar / denn</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="ex2-4" class="form-label">4. Wir müssen jetzt eine Entscheidung treffen, ________ die Zeit drängt.</label>
+                                <select class="form-select" id="ex2-4" data-answer="da / weil / denn">
+                                    <option value="">Select...</option>
+                                    <option value="correct">da</option>
+                                    <option value="correct">weil</option>
+                                    <option value="correct">denn</option>
+                                    <option value="incorrect">aber</option>
+                                    <option value="incorrect">trotzdem</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-connectors">Check Answers</button>
+                        </form>
+                        <div id="connector-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 3: Express a complex view</div>
+                    <div class="card-body">
+                        <p>Write a short paragraph (3-5 sentences) expressing your view on one of the following topics. Use at least two opinion phrases and two connectors from this lesson:</p>
+                        <ul class="mb-3">
+                            <li>Die Rolle der sozialen Medien in der modernen Gesellschaft (The role of social media in modern society)</li>
+                            <li>Die Bedeutung von Umweltschutz (The importance of environmental protection)</li>
+                            <li>Die Vor- und Nachteile von Remote-Arbeit (The advantages and disadvantages of remote work)</li>
+                        </ul>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="complex-view" rows="5"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary" id="save-view">Save</button>
+                        <div id="view-feedback" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the "Expressing Complex Ideas" lesson. You now have the tools to express more sophisticated thoughts and opinions in German.</p>
+                    <p>Remember to practice these structures in your conversations and writing to make them a natural part of your German communication.</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('quiz', level='b1', topic='communication') }}" class="alert-link">B1 Communication Quiz</a>.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Exercise 1: Opinion phrases
+        document.getElementById('check-opinion').addEventListener('click', function() {
+            const select1 = document.getElementById('ex1-1');
+            const select2 = document.getElementById('ex1-2');
+            let correct = 0;
+            
+            if (select1.value === 'correct') correct++;
+            if (select2.value === 'correct') correct++;
+            
+            const resultDiv = document.getElementById('opinion-result');
+            if (correct === 2) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Sehr gut! You selected appropriate phrases for expressing opinions!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of 2 correct. Try to choose phrases that express opinions with justification.</div>`;
+            }
+        });
+        
+        // Exercise 2: Connectors
+        document.getElementById('check-connectors').addEventListener('click', function() {
+            const selects = document.querySelectorAll('#connector-practice select');
+            let correct = 0;
+            
+            selects.forEach(select => {
+                if (select.value === 'correct') {
+                    select.classList.add('is-valid');
+                    select.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    select.classList.add('is-invalid');
+                    select.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('connector-result');
+            if (correct === selects.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Ausgezeichnet! You chose all the correct connectors!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${selects.length} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Exercise 3: Save complex view
+        document.getElementById('save-view').addEventListener('click', function() {
+            const textArea = document.getElementById('complex-view');
+            const text = textArea.value.trim();
+            
+            if (text.length < 15) {
+                document.getElementById('view-feedback').innerHTML = '<div class="alert alert-warning">Please write a more complete paragraph.</div>';
+                return;
+            }
+            
+            // Save to local storage for potential use in user progress
+            localStorage.setItem('complex_ideas_exercise', text);
+            
+            document.getElementById('view-feedback').innerHTML = '<div class="alert alert-success">Your response has been saved! An instructor would review this in a classroom setting.</div>';
+        });
+    });
+</script>
+{% endblock %}

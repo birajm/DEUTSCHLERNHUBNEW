@@ -1,0 +1,660 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Past Tense (Perfekt){% endblock %}
+
+{% block content %}
+<div class="lesson-header a2-header">
+    <div class="container">
+        <h1>Past Tense (Perfekt)</h1>
+        <p class="lead">Learn the present perfect tense in German</p>
+        <div class="badge bg-light text-dark">30 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#formation" class="list-group-item list-group-item-action">Formation</a>
+                <a href="#haben" class="list-group-item list-group-item-action">With "haben"</a>
+                <a href="#sein" class="list-group-item list-group-item-action">With "sein"</a>
+                <a href="#irregulars" class="list-group-item list-group-item-action">Irregular Forms</a>
+                <a href="#word-order" class="list-group-item list-group-item-action">Word Order</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a2" data-section="grammar" data-lesson="past_tense" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>The Perfect tense (Perfekt) is the most commonly used past tense in spoken German. Unlike English, where you distinguish between "I spoke" (simple past) and "I have spoken" (present perfect), German primarily uses the Perfect tense for everyday past actions.</p>
+                <p>In this lesson, you'll learn:</p>
+                <ul>
+                    <li>How to form the Perfect tense with different verbs</li>
+                    <li>When to use "haben" versus "sein" as auxiliary verbs</li>
+                    <li>How to form past participles (both regular and irregular)</li>
+                    <li>The correct word order in Perfect tense sentences</li>
+                </ul>
+                <div class="alert alert-info">
+                    <h5>Important:</h5>
+                    <p>While German has two past tenses (Perfekt and Präteritum), the Perfekt is more common in everyday speech. The Präteritum is used more in written German and mostly for certain verbs like "sein" (to be), "haben" (to have), and modal verbs.</p>
+                </div>
+            </section>
+            
+            <section id="formation" class="mb-5">
+                <h2>Formation of the Perfect Tense</h2>
+                <p>The Perfect tense is formed with two parts:</p>
+                <ol>
+                    <li>A conjugated <strong>auxiliary verb</strong> ("haben" or "sein") in the present tense</li>
+                    <li>The <strong>past participle</strong> of the main verb (usually at the end of the sentence)</li>
+                </ol>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Basic Formula</div>
+                    <div class="card-body">
+                        <p class="lead text-center">Subject + auxiliary verb (haben/sein) + objects + past participle</p>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <h5>Example with "haben":</h5>
+                                <p><strong>Ich habe</strong> gestern einen Film <strong>gesehen</strong>.</p>
+                                <p><em>I saw/have seen a movie yesterday.</em></p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Example with "sein":</h5>
+                                <p><strong>Sie ist</strong> nach Berlin <strong>gefahren</strong>.</p>
+                                <p><em>She went/has gone to Berlin.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Past Participle Formation (Regular Verbs)</div>
+                    <div class="card-body">
+                        <p>For regular verbs, the past participle is formed by:</p>
+                        <ol>
+                            <li>Adding <strong>ge-</strong> to the beginning of the verb stem</li>
+                            <li>Adding <strong>-t</strong> to the end</li>
+                        </ol>
+                        <table class="table table-bordered mt-3">
+                            <thead>
+                                <tr>
+                                    <th>Infinitive</th>
+                                    <th>Verb Stem</th>
+                                    <th>Past Participle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>spielen (to play)</td>
+                                    <td>spiel-</td>
+                                    <td><strong>ge</strong>spiel<strong>t</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>machen (to make/do)</td>
+                                    <td>mach-</td>
+                                    <td><strong>ge</strong>mach<strong>t</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>kaufen (to buy)</td>
+                                    <td>kauf-</td>
+                                    <td><strong>ge</strong>kauf<strong>t</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="haben" class="mb-5">
+                <h2>Perfect Tense with "haben"</h2>
+                <p>Most verbs form the Perfect tense with "haben". These include:</p>
+                <ul>
+                    <li>Transitive verbs (verbs that take a direct object)</li>
+                    <li>Reflexive verbs (verbs used with a reflexive pronoun)</li>
+                    <li>Most intransitive verbs (verbs that don't show movement or change of state)</li>
+                </ul>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Auxiliary (haben)</th>
+                                <th>Past Participle Example</th>
+                                <th>Complete Sentence</th>
+                                <th>English</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>habe</td>
+                                <td>gesehen</td>
+                                <td>Ich habe einen Film gesehen.</td>
+                                <td>I saw/have seen a movie.</td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>hast</td>
+                                <td>gekauft</td>
+                                <td>Du hast ein Buch gekauft.</td>
+                                <td>You bought/have bought a book.</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>hat</td>
+                                <td>gespielt</td>
+                                <td>Er hat Fußball gespielt.</td>
+                                <td>He played/has played soccer.</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>haben</td>
+                                <td>gegessen</td>
+                                <td>Wir haben Pizza gegessen.</td>
+                                <td>We ate/have eaten pizza.</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>habt</td>
+                                <td>gehört</td>
+                                <td>Ihr habt Musik gehört.</td>
+                                <td>You (pl.) listened to/have listened to music.</td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>haben</td>
+                                <td>gearbeitet</td>
+                                <td>Sie haben viel gearbeitet.</td>
+                                <td>They worked/have worked a lot.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="sein" class="mb-5">
+                <h2>Perfect Tense with "sein"</h2>
+                <p>Some verbs form the Perfect tense with "sein" instead of "haben". These include:</p>
+                <ul>
+                    <li>Verbs of <strong>movement</strong> or <strong>change of location</strong> (e.g., gehen, fahren, fliegen)</li>
+                    <li>Verbs that indicate a <strong>change of state</strong> (e.g., werden, aufwachen, einschlafen)</li>
+                    <li>A few specific verbs: sein, bleiben, passieren, geschehen, gelingen, misslingen</li>
+                </ul>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Auxiliary (sein)</th>
+                                <th>Past Participle Example</th>
+                                <th>Complete Sentence</th>
+                                <th>English</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ich</td>
+                                <td>bin</td>
+                                <td>gegangen</td>
+                                <td>Ich bin nach Hause gegangen.</td>
+                                <td>I went/have gone home.</td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>bist</td>
+                                <td>gefahren</td>
+                                <td>Du bist nach Berlin gefahren.</td>
+                                <td>You drove/have driven to Berlin.</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>ist</td>
+                                <td>aufgewacht</td>
+                                <td>Er ist früh aufgewacht.</td>
+                                <td>He woke up/has woken up early.</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>sind</td>
+                                <td>gelaufen</td>
+                                <td>Wir sind im Park gelaufen.</td>
+                                <td>We ran/have run in the park.</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>seid</td>
+                                <td>gekommen</td>
+                                <td>Ihr seid spät gekommen.</td>
+                                <td>You (pl.) came/have come late.</td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>sind</td>
+                                <td>geworden</td>
+                                <td>Sie sind krank geworden.</td>
+                                <td>They became/have become sick.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="alert alert-warning mt-3">
+                    <h5>Important to Remember!</h5>
+                    <p>A helpful way to remember which verbs use "sein" is with the mnemonic:</p>
+                    <ul>
+                        <li>Movement/motion verbs (gehen, fahren, fliegen...)</li>
+                        <li>Change of state verbs (werden, einschlafen...)</li>
+                        <li>The specific verbs: sein, bleiben, passieren</li>
+                    </ul>
+                    <p>When in doubt, most verbs use "haben".</p>
+                </div>
+            </section>
+            
+            <section id="irregulars" class="mb-5">
+                <h2>Irregular Past Participles</h2>
+                <p>Many common German verbs have irregular past participles. These still start with "ge-" but often have a vowel change and end with "-en" instead of "-t".</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Infinitive</th>
+                                <th>Past Participle</th>
+                                <th>Auxiliary</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>sehen (to see)</td>
+                                <td>gesehen</td>
+                                <td>haben</td>
+                                <td>Ich habe ihn gesehen.</td>
+                            </tr>
+                            <tr>
+                                <td>gehen (to go)</td>
+                                <td>gegangen</td>
+                                <td>sein</td>
+                                <td>Ich bin zur Schule gegangen.</td>
+                            </tr>
+                            <tr>
+                                <td>essen (to eat)</td>
+                                <td>gegessen</td>
+                                <td>haben</td>
+                                <td>Wir haben gegessen.</td>
+                            </tr>
+                            <tr>
+                                <td>trinken (to drink)</td>
+                                <td>getrunken</td>
+                                <td>haben</td>
+                                <td>Er hat Wasser getrunken.</td>
+                            </tr>
+                            <tr>
+                                <td>lesen (to read)</td>
+                                <td>gelesen</td>
+                                <td>haben</td>
+                                <td>Sie hat ein Buch gelesen.</td>
+                            </tr>
+                            <tr>
+                                <td>fahren (to drive)</td>
+                                <td>gefahren</td>
+                                <td>sein</td>
+                                <td>Wir sind nach München gefahren.</td>
+                            </tr>
+                            <tr>
+                                <td>finden (to find)</td>
+                                <td>gefunden</td>
+                                <td>haben</td>
+                                <td>Ich habe meine Schlüssel gefunden.</td>
+                            </tr>
+                            <tr>
+                                <td>schreiben (to write)</td>
+                                <td>geschrieben</td>
+                                <td>haben</td>
+                                <td>Er hat einen Brief geschrieben.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <h5>Special Cases:</h5>
+                    <ul>
+                        <li>Verbs with <strong>separable prefixes</strong> (e.g., aufmachen, ankommen) place "ge" between the prefix and stem: aufgemacht, angekommen.</li>
+                        <li>Verbs ending in <strong>-ieren</strong> (e.g., studieren, telefonieren) don't add "ge-": studiert, telefoniert.</li>
+                        <li>Verbs with <strong>inseparable prefixes</strong> (be-, ge-, er-, ver-, zer-, ent-, emp-, miss-) also don't add "ge-": bezahlt (from bezahlen), verstanden (from verstehen).</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="word-order" class="mb-5">
+                <h2>Word Order in Perfect Tense</h2>
+                <p>In the Perfect tense, the past participle typically goes at the end of the clause:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Basic Word Order in Main Clauses</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Position 1</th>
+                                        <th>Position 2 (Conjugated auxiliary)</th>
+                                        <th>Middle field (Objects, adverbs, etc.)</th>
+                                        <th>Last position (Past participle)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Ich</td>
+                                        <td>habe</td>
+                                        <td>gestern im Restaurant</td>
+                                        <td>gegessen.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Er</td>
+                                        <td>hat</td>
+                                        <td>den Film zweimal</td>
+                                        <td>gesehen.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wir</td>
+                                        <td>sind</td>
+                                        <td>letztes Jahr nach Deutschland</td>
+                                        <td>gefahren.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Word Order in Subordinate Clauses</div>
+                    <div class="card-body">
+                        <p>In subordinate clauses (introduced by conjunctions like "weil," "dass," "wenn," etc.), the conjugated auxiliary verb moves to the end, right after the past participle:</p>
+                        <pre class="bg-light p-3">
+Ich weiß, dass sie das Buch <strong>gelesen hat</strong>.
+(I know that she has read the book.)
+
+Er sagt, dass er in Berlin <strong>gewesen ist</strong>.
+(He says that he has been to Berlin.)
+                        </pre>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <h5>Time Expressions</h5>
+                    <p>When talking about past events, you can use time expressions such as:</p>
+                    <ul>
+                        <li>gestern (yesterday)</li>
+                        <li>vorgestern (the day before yesterday)</li>
+                        <li>letzte Woche/letzten Monat/letztes Jahr (last week/month/year)</li>
+                        <li>vor zwei Tagen/Wochen/Monaten (two days/weeks/months ago)</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice using the Perfect tense:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 1: Choose the correct auxiliary verb</div>
+                    <div class="card-body">
+                        <form id="auxiliary-practice">
+                            <div class="mb-3">
+                                <p>1. Er ________ gestern ins Kino gegangen.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1-a" value="incorrect">
+                                    <label class="form-check-label" for="q1-a">hat</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1-b" value="correct">
+                                    <label class="form-check-label" for="q1-b">ist</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <p>2. Ich ________ meine Hausaufgaben gemacht.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2-a" value="correct">
+                                    <label class="form-check-label" for="q2-a">habe</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q2" id="q2-b" value="incorrect">
+                                    <label class="form-check-label" for="q2-b">bin</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <p>3. Wir ________ mit dem Zug gefahren.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3-a" value="incorrect">
+                                    <label class="form-check-label" for="q3-a">haben</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q3" id="q3-b" value="correct">
+                                    <label class="form-check-label" for="q3-b">sind</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <p>4. Sie ________ viel Deutsch gelernt.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4-a" value="correct">
+                                    <label class="form-check-label" for="q4-a">hat</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q4" id="q4-b" value="incorrect">
+                                    <label class="form-check-label" for="q4-b">ist</label>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-auxiliary">Check Answers</button>
+                        </form>
+                        <div id="auxiliary-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 2: Form the past participle</div>
+                    <div class="card-body">
+                        <form id="participle-practice">
+                            <div class="mb-3">
+                                <label for="p1" class="form-label">1. spielen → </label>
+                                <input type="text" class="form-control" id="p1" data-answer="gespielt">
+                            </div>
+                            <div class="mb-3">
+                                <label for="p2" class="form-label">2. fahren → </label>
+                                <input type="text" class="form-control" id="p2" data-answer="gefahren">
+                            </div>
+                            <div class="mb-3">
+                                <label for="p3" class="form-label">3. trinken → </label>
+                                <input type="text" class="form-control" id="p3" data-answer="getrunken">
+                            </div>
+                            <div class="mb-3">
+                                <label for="p4" class="form-label">4. kaufen → </label>
+                                <input type="text" class="form-control" id="p4" data-answer="gekauft">
+                            </div>
+                            <div class="mb-3">
+                                <label for="p5" class="form-label">5. verstehen → </label>
+                                <input type="text" class="form-control" id="p5" data-answer="verstanden">
+                            </div>
+                            <div class="mb-3">
+                                <label for="p6" class="form-label">6. aufmachen → </label>
+                                <input type="text" class="form-control" id="p6" data-answer="aufgemacht">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-participle">Check Answers</button>
+                        </form>
+                        <div id="participle-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 3: Complete sentences in Perfect tense</div>
+                    <div class="card-body">
+                        <form id="sentence-practice">
+                            <div class="mb-3">
+                                <label for="s1" class="form-label">1. Ich ________ gestern einen Film ________. (sehen)</label>
+                                <input type="text" class="form-control" id="s1" data-answer="habe gesehen">
+                            </div>
+                            <div class="mb-3">
+                                <label for="s2" class="form-label">2. Er ________ nach Berlin ________. (fahren)</label>
+                                <input type="text" class="form-control" id="s2" data-answer="ist gefahren">
+                            </div>
+                            <div class="mb-3">
+                                <label for="s3" class="form-label">3. Wir ________ viel Spaß ________. (haben)</label>
+                                <input type="text" class="form-control" id="s3" data-answer="haben gehabt">
+                            </div>
+                            <div class="mb-3">
+                                <label for="s4" class="form-label">4. Sie ________ spät nach Hause ________. (kommen)</label>
+                                <input type="text" class="form-control" id="s4" data-answer="ist gekommen">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-sentences">Check Answers</button>
+                        </form>
+                        <div id="sentence-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Past Tense (Perfekt) lesson. The Perfect tense is one of the most important aspects of German grammar to master as it's used extensively in everyday conversation.</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('quiz', level='a2', topic='past-tense') }}" class="alert-link">Past Tense Quiz</a>.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check auxiliary verb exercise
+        document.getElementById('check-auxiliary').addEventListener('click', function() {
+            let correct = 0;
+            const totalQuestions = 4;
+            
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedOption && selectedOption.value === 'correct') {
+                    correct++;
+                }
+            }
+            
+            const resultDiv = document.getElementById('auxiliary-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check past participle exercise
+        document.getElementById('check-participle').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#participle-practice input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('participle-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All past participles are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check complete sentences exercise
+        document.getElementById('check-sentences').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#sentence-practice input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('sentence-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All sentences are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

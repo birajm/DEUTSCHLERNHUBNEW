@@ -167,9 +167,23 @@ def a1_quiz_comprehensive():
 def a2_index():
     return render_template('a2/index.html')
 
+# A2 Lesson routes
+@app.route('/a2/expanded-basics/small-talk')
+def a2_basics_small_talk():
+    return render_template('lessons/a2/expanded_basics/small_talk.html')
+
+@app.route('/a2/grammar/past-tense')
+def a2_grammar_past_tense():
+    return render_template('lessons/a2/grammar/past_tense.html')
+
 @app.route('/b1')
 def b1_index():
     return render_template('b1/index.html')
+
+# B1 Lesson routes
+@app.route('/b1/communication/complex-ideas')
+def b1_communication_complex_ideas():
+    return render_template('lessons/b1/communication/complex_ideas.html')
 
 # Grammar reference section
 @app.route('/grammar')

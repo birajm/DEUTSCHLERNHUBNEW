@@ -1,6 +1,7 @@
+
 {% extends "layout.html" %}
 
-{% block title %}DeutschLernHub - {{ reading.title }}{% endblock %}
+{% block title %}DeutschLernHub - Der geheimnisvolle Brief{% endblock %}
 
 {% block content %}
 <div class="container py-4">
@@ -9,71 +10,116 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url_for('reading') }}">Reading</a></li>
-                    <li class="breadcrumb-item active">{{ reading.title }}</li>
+                    <li class="breadcrumb-item active">Der geheimnisvolle Brief</li>
                 </ol>
             </nav>
 
             <div class="card mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <div>
-                        <span class="badge {% if reading.level == 'A1' %}bg-success{% elif reading.level == 'A2' %}bg-primary{% else %}bg-warning text-dark{% endif %} me-2">{{ reading.level }}</span>
-                        <span class="badge bg-light text-dark">{{ reading.category }}</span>
+                        <span class="badge bg-warning text-dark me-2">B1</span>
+                        <span class="badge bg-light text-dark">Short Story</span>
                     </div>
-                    <small class="text-muted">{{ reading.word_count }} words | {{ reading.estimated_time }} min</small>
+                    <small class="text-muted">150 words | 10 min</small>
                 </div>
                 <div class="card-body">
-                    <h2 class="card-title">{{ reading.title }}</h2>
-                    <h6 class="card-subtitle mb-3 text-muted">{{ reading.subtitle }}</h6>
+                    <h2 class="card-title">Der geheimnisvolle Brief</h2>
+                    <h6 class="card-subtitle mb-3 text-muted">The Mysterious Letter</h6>
 
                     <div class="reading-text mb-4">
-                        {{ reading.content | safe }}
+                        <p>Anna räumte den Dachboden ihres Großvaters auf. Er war vor einem Monat gestorben, und das alte Haus sollte verkauft werden. Überall standen Kisten mit Erinnerungen. In einer staubigen Holzkiste fand Anna ein kleines, vergilbtes Kuvert. Ihr Name stand darauf, in einer eleganten, aber unbekannten Handschrift.</p>
+                        
+                        <p>Verwundert öffnete sie den Brief. Darin lag ein altes Foto von ihrem Großvater als junger Mann, zusammen mit einer Frau, die sie nicht kannte. Auf der Rückseite stand: "Für Anna - manchmal führt uns das Leben auf unerwartete Wege. Dies ist die Geschichte deiner wahren Großmutter."</p>
+                        
+                        <p>Anna setzte sich auf eine alte Truhe und begann zu lesen. Mit jedem Wort enthüllte sich ein Familiengeheimnis, das ihr Leben für immer verändern würde.</p>
                     </div>
 
-                    {% if reading.vocabulary %}
                     <div class="vocabulary-section mt-4">
                         <h5>Key Vocabulary</h5>
                         <div class="row">
-                            {% for word in reading.vocabulary %}
                             <div class="col-md-4 mb-2">
                                 <div class="vocabulary-item">
-                                    <strong>{{ word.german }}</strong> - {{ word.english }}
-                                    <button class="btn btn-sm btn-link pronounce-word" data-word="{{ word.german }}">
+                                    <strong>der Dachboden</strong> - the attic
+                                    <button class="btn btn-sm btn-link pronounce-word" data-word="Dachboden">
                                         <i class="fas fa-volume-up"></i>
                                     </button>
                                 </div>
                             </div>
-                            {% endfor %}
+                            <div class="col-md-4 mb-2">
+                                <div class="vocabulary-item">
+                                    <strong>vergilbt</strong> - yellowed
+                                    <button class="btn btn-sm btn-link pronounce-word" data-word="vergilbt">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <div class="vocabulary-item">
+                                    <strong>das Kuvert</strong> - the envelope
+                                    <button class="btn btn-sm btn-link pronounce-word" data-word="Kuvert">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    {% endif %}
                 </div>
             </div>
 
-            {% if reading.questions %}
             <div class="card">
                 <div class="card-header">
                     <h5 class="mb-0">Comprehension Questions</h5>
                 </div>
                 <div class="card-body">
                     <form id="comprehension-form">
-                        {% for question in reading.questions %}
                         <div class="mb-4">
-                            <p class="mb-2"><strong>{{ loop.index }}. {{ question.question }}</strong></p>
-                            {% for option in question.options %}
+                            <p class="mb-2"><strong>1. Wo findet Anna den Brief?</strong></p>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="question{{ loop.index }}" value="{{ loop.index0 }}" id="q{{ loop.index }}o{{ loop.index }}">
-                                <label class="form-check-label" for="q{{ loop.index }}o{{ loop.index }}">
-                                    {{ option }}
+                                <input class="form-check-input" type="radio" name="question1" value="0" id="q1o1">
+                                <label class="form-check-label" for="q1o1">
+                                    Im Wohnzimmer
                                 </label>
                             </div>
-                            {% endfor %}
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question1" value="1" id="q1o2">
+                                <label class="form-check-label" for="q1o2">
+                                    Auf dem Dachboden
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question1" value="2" id="q1o3">
+                                <label class="form-check-label" for="q1o3">
+                                    Im Garten
+                                </label>
+                            </div>
                         </div>
-                        {% endfor %}
+
+                        <div class="mb-4">
+                            <p class="mb-2"><strong>2. Was war in dem Brief?</strong></p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question2" value="0" id="q2o1">
+                                <label class="form-check-label" for="q2o1">
+                                    Ein Brief von ihrer Mutter
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question2" value="1" id="q2o2">
+                                <label class="form-check-label" for="q2o2">
+                                    Ein altes Foto mit einer unbekannten Frau
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="question2" value="2" id="q2o3">
+                                <label class="form-check-label" for="q2o3">
+                                    Geld
+                                </label>
+                            </div>
+                        </div>
+
                         <button type="submit" class="btn btn-primary">Check Answers</button>
                     </form>
                 </div>
             </div>
-            {% endif %}
         </div>
 
         <div class="col-lg-4">
@@ -115,7 +161,6 @@
 {% block extra_js %}
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Audio playback functionality
     const audioCache = new Map();
     
     async function playAudio(word) {
@@ -138,7 +183,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Add click handlers for pronunciation buttons
     document.querySelectorAll('.pronounce-word').forEach(button => {
         button.addEventListener('click', () => {
             const word = button.dataset.word;
@@ -146,49 +190,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Quiz functionality
     const form = document.getElementById('comprehension-form');
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get correct answers from the reading object
-            const reading = {{ reading|tojson|safe }};
-            if (!reading.questions) return;
+            const correctAnswers = {
+                question1: "1",
+                question2: "1"
+            };
 
-            // Check answers
             let score = 0;
             const formData = new FormData(form);
-            const answers = {};
             
-            reading.questions.forEach((question, index) => {
-                const answer = parseInt(formData.get(`question${index + 1}`));
-                const correct = question.correct;
-                
-                // Get the radio buttons for this question
-                const radioButtons = form.querySelectorAll(`input[name="question${index + 1}"]`);
-                const correctRadio = radioButtons[correct];
-                const selectedRadio = radioButtons[answer];
-                
-                // Clear previous feedback
-                radioButtons.forEach(radio => {
-                    radio.parentElement.classList.remove('text-success', 'text-danger');
-                });
-                
-                // Apply feedback
-                if (answer === correct) {
+            for (const [question, answer] of formData.entries()) {
+                if (correctAnswers[question] === answer) {
                     score++;
-                    selectedRadio.parentElement.classList.add('text-success');
-                } else {
-                    selectedRadio.parentElement.classList.add('text-danger');
-                    correctRadio.parentElement.classList.add('text-success');
                 }
-            });
+            }
 
-            // Show score
             const scoreDisplay = document.createElement('div');
             scoreDisplay.className = 'alert alert-info mt-3';
-            scoreDisplay.textContent = `Score: ${score}/${reading.questions.length}`;
+            scoreDisplay.textContent = `Score: ${score}/2`;
             form.appendChild(scoreDisplay);
         });
     }

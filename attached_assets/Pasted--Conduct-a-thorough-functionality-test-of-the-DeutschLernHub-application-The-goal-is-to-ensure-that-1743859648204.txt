@@ -1,0 +1,21 @@
+ Conduct a thorough functionality test of the DeutschLernHub application. The goal is to ensure that all templates are displaying correctly and all features are working as intended across all language levels (A1, A2, B1).
+
+Testing Steps:
+
+Navigate through all sections of the app: This includes all lessons (Advanced Communication, Grammar, Vocabulary), Practice areas (Listening, Reading, Writing, Conversations), and Quizzes.
+Template Verification: For each page and section, verify that the layout, formatting, and visual elements (text, images, icons, etc.) are displayed correctly according to the design templates. Check for any broken elements or display issues on different screen sizes (if applicable).
+Feature Functionality Testing: Systematically test each feature within each section:
+Lessons: Ensure that all content (text, examples, explanations) loads correctly. If there are interactive elements, verify that they function as expected. Check the "Start Lesson" functionality.
+Practice (Listening): Verify that audio content plays correctly, controls (play, pause, etc.) function, and any associated tasks or questions are working.
+Practice (Reading): Ensure that text content loads correctly and is readable. If there are comprehension questions or tasks, verify their functionality.
+Practice (Essay Writing): Check if the writing interface works, if there are any word limits or other constraints, and if there's a submission or saving mechanism.
+Practice (Advanced Conversations): Interact with the chatbot to ensure it responds appropriately and the conversation flows as expected. Test different types of questions and inputs.
+Quizzes:
+Verify that all questions and answer options are displayed correctly.
+Test the ability to select answers.
+Ensure the scoring mechanism works correctly.
+Check if feedback (if implemented) is displayed appropriately after submitting the quiz.
+Vocabulary Lists: Confirm that all vocabulary words are listed correctly and that any associated features (e.g., pronunciation playback) are functional.
+Navigation: Ensure all navigation elements (buttons, links, menus) work correctly and lead to the intended pages or sections.
+User Accounts (if applicable): Test login, registration, profile management, and progress tracking (if implemented).
+Pronunciation: Specifically check if the pronunciation feature for German words (if implemented) works correctly in all relevant areas.

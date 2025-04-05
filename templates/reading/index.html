@@ -1,0 +1,202 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Reading Practice{% endblock %}
+
+{% block content %}
+<div class="reading-header bg-light py-4">
+    <div class="container">
+        <h1>German Reading Practice</h1>
+        <p class="lead">Improve your reading comprehension with German texts</p>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-lg-3 mb-4">
+            <!-- Sidebar navigation -->
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Reading Materials</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('reading', level='a1') }}" class="list-group-item list-group-item-action {% if selected_level == 'a1' %}active{% endif %}">
+                        <span class="badge bg-success me-2">A1</span> Beginner Texts
+                    </a>
+                    <a href="{{ url_for('reading', level='a2') }}" class="list-group-item list-group-item-action {% if selected_level == 'a2' %}active{% endif %}">
+                        <span class="badge bg-primary me-2">A2</span> Elementary Texts
+                    </a>
+                    <a href="{{ url_for('reading', level='b1') }}" class="list-group-item list-group-item-action {% if selected_level == 'b1' %}active{% endif %}">
+                        <span class="badge bg-warning text-dark me-2">B1</span> Intermediate Texts
+                    </a>
+                    <div class="list-group-item bg-light text-muted small">Reading Categories</div>
+                    <a href="{{ url_for('reading', category='stories') }}" class="list-group-item list-group-item-action {% if selected_category == 'stories' %}active{% endif %}">
+                        <i class="fas fa-book me-2"></i> Short Stories
+                    </a>
+                    <a href="{{ url_for('reading', category='articles') }}" class="list-group-item list-group-item-action {% if selected_category == 'articles' %}active{% endif %}">
+                        <i class="fas fa-newspaper me-2"></i> Articles
+                    </a>
+                    <a href="{{ url_for('reading', category='dialogs') }}" class="list-group-item list-group-item-action {% if selected_category == 'dialogs' %}active{% endif %}">
+                        <i class="fas fa-comments me-2"></i> Dialogs
+                    </a>
+                </div>
+            </div>
+            
+            {% if current_user.is_authenticated %}
+            <!-- Reading history -->
+            <div class="card mt-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">My Reading History</h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted small">Recently read articles will appear here.</p>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-primary btn-sm" disabled>
+                            <i class="fas fa-bookmark me-2"></i> Reading List
+                            <span class="badge bg-secondary ms-1">Coming Soon</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="col-lg-9">
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> Reading regularly in German improves your vocabulary, grammar, and overall comprehension. Choose a text from the options below to get started.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Featured reading materials -->
+            <h2 class="mb-3">Featured Reading Materials</h2>
+            <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+                <!-- Reading Card 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">A1</span>
+                            <span class="badge bg-light text-dark">Short Story</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Meine Familie (My Family)</h5>
+                            <p class="card-text">A simple story about a German family with comprehension questions.</p>
+                            <button class="btn btn-primary mt-2" onclick="alert('This feature is coming soon!')">
+                                <i class="fas fa-book-open me-2"></i> Read Now
+                            </button>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <small class="text-muted">Estimated time: 5 minutes | 150 words</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reading Card 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">A1</span>
+                            <span class="badge bg-light text-dark">Dialog</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Im Café (At the Café)</h5>
+                            <p class="card-text">A conversation between two friends at a café with vocabulary notes.</p>
+                            <button class="btn btn-primary mt-2" onclick="alert('This feature is coming soon!')">
+                                <i class="fas fa-book-open me-2"></i> Read Now
+                            </button>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <small class="text-muted">Estimated time: 5 minutes | 120 words</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reading Card 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">A2</span>
+                            <span class="badge bg-light text-dark">Article</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Deutsche Feste (German Festivals)</h5>
+                            <p class="card-text">Learn about popular German festivals and traditions throughout the year.</p>
+                            <button class="btn btn-primary mt-2" onclick="alert('This feature is coming soon!')">
+                                <i class="fas fa-book-open me-2"></i> Read Now
+                            </button>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <small class="text-muted">Estimated time: 10 minutes | 250 words</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Reading Card 4 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning text-dark">B1</span>
+                            <span class="badge bg-light text-dark">Short Story</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Der geheimnisvolle Brief (The Mysterious Letter)</h5>
+                            <p class="card-text">A short mystery story with comprehension questions and vocabulary exercises.</p>
+                            <button class="btn btn-primary mt-2" onclick="alert('This feature is coming soon!')">
+                                <i class="fas fa-book-open me-2"></i> Read Now
+                            </button>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <small class="text-muted">Estimated time: 15 minutes | 400 words</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Reading tips section -->
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Tips for Effective Reading Practice</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Start with What You Know</h6>
+                            <p class="small">Begin with topics you're familiar with to make comprehension easier.</p>
+                            
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Don't Look Up Every Word</h6>
+                            <p class="small">Try to understand the context first, then only look up key words you don't know.</p>
+                            
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Read Aloud</h6>
+                            <p class="small">Reading aloud improves pronunciation and helps you connect written and spoken German.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Regular Practice</h6>
+                            <p class="small">Even just 10 minutes of reading per day can significantly improve your German skills.</p>
+                            
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Use Context Clues</h6>
+                            <p class="small">Try to guess the meaning of unfamiliar words from the context before checking a dictionary.</p>
+                            
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Review and Re-read</h6>
+                            <p class="small">Reading the same text multiple times helps reinforce vocabulary and grammar structures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card {
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+</style>
+{% endblock %}

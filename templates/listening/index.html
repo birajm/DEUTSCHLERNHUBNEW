@@ -1,0 +1,256 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Listening Practice{% endblock %}
+
+{% block content %}
+<div class="listening-header bg-light py-4">
+    <div class="container">
+        <h1>German Listening Practice</h1>
+        <p class="lead">Improve your listening comprehension with German audio</p>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-lg-3 mb-4">
+            <!-- Sidebar navigation -->
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Listening Categories</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="{{ url_for('listening', level='a1') }}" class="list-group-item list-group-item-action {% if selected_level == 'a1' %}active{% endif %}">
+                        <span class="badge bg-success me-2">A1</span> Beginner Audio
+                    </a>
+                    <a href="{{ url_for('listening', level='a2') }}" class="list-group-item list-group-item-action {% if selected_level == 'a2' %}active{% endif %}">
+                        <span class="badge bg-primary me-2">A2</span> Elementary Audio
+                    </a>
+                    <a href="{{ url_for('listening', level='b1') }}" class="list-group-item list-group-item-action {% if selected_level == 'b1' %}active{% endif %}">
+                        <span class="badge bg-warning text-dark me-2">B1</span> Intermediate Audio
+                    </a>
+                    <div class="list-group-item bg-light text-muted small">Audio Types</div>
+                    <a href="{{ url_for('listening', type='dialogs') }}" class="list-group-item list-group-item-action {% if selected_type == 'dialogs' %}active{% endif %}">
+                        <i class="fas fa-comments me-2"></i> Dialogs
+                    </a>
+                    <a href="{{ url_for('listening', type='stories') }}" class="list-group-item list-group-item-action {% if selected_type == 'stories' %}active{% endif %}">
+                        <i class="fas fa-book me-2"></i> Stories
+                    </a>
+                    <a href="{{ url_for('listening', type='news') }}" class="list-group-item list-group-item-action {% if selected_type == 'news' %}active{% endif %}">
+                        <i class="fas fa-newspaper me-2"></i> News Reports
+                    </a>
+                    <a href="{{ url_for('listening', type='songs') }}" class="list-group-item list-group-item-action {% if selected_type == 'songs' %}active{% endif %}">
+                        <i class="fas fa-music me-2"></i> Songs
+                    </a>
+                </div>
+            </div>
+            
+            {% if current_user.is_authenticated %}
+            <!-- Listening history -->
+            <div class="card mt-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">My Listening History</h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted small">Recently played tracks will appear here.</p>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-primary btn-sm" disabled>
+                            <i class="fas fa-headphones me-2"></i> Favorite Tracks
+                            <span class="badge bg-secondary ms-1">Coming Soon</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="col-lg-9">
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i> Regular listening practice is essential for improving your comprehension and accent. Choose an audio track below to get started.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Featured listening materials -->
+            <h2 class="mb-3">Featured Listening Exercises</h2>
+            <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+                <!-- Listening Card 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">A1</span>
+                            <span class="badge bg-light text-dark">Dialog</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Im Restaurant (At the Restaurant)</h5>
+                            <p class="card-text">A simple conversation between a customer and waiter at a restaurant.</p>
+                            <div class="audio-player mt-3 mb-2">
+                                <button class="btn btn-sm btn-primary audio-play-btn" onclick="alert('This feature is coming soon!')">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="progress ms-2" style="height: 10px; width: calc(100% - 50px);">
+                                    <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                </div>
+                                <small class="text-muted d-block mt-1">0:00 / 1:30</small>
+                            </div>
+                            <button class="btn btn-outline-secondary mt-2" onclick="alert('This feature is coming soon!')">
+                                <i class="fas fa-tasks me-2"></i> Show Exercises
+                            </button>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <small class="text-muted">Audio length: 1:30 | With transcript</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Listening Card 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge bg-success">A1</span>
+                            <span class="badge bg-light text-dark">Numbers</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Die Zahlen (Numbers)</h5>
+                            <p class="card-text">Learn to recognize and pronounce German numbers with this audio practice.</p>
+                            <div class="audio-player mt-3 mb-2">
+                                <button class="btn btn-sm btn-primary audio-play-btn" onclick="alert('This feature is coming soon!')">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="progress ms-2" style="height: 10px; width: calc(100% - 50px);">
+                                    <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                </div>
+                                <small class="text-muted d-block mt-1">0:00 / 2:15</small>
+                            </div>
+                            <button class="btn btn-outline-secondary mt-2" onclick="alert('This feature is coming soon!')">
+                                <i class="fas fa-tasks me-2"></i> Show Exercises
+                            </button>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <small class="text-muted">Audio length: 2:15 | With transcript</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Listening Card 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">A2</span>
+                            <span class="badge bg-light text-dark">Story</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Mein Haustier (My Pet)</h5>
+                            <p class="card-text">A short story about a girl and her pet dog, with comprehension questions.</p>
+                            <div class="audio-player mt-3 mb-2">
+                                <button class="btn btn-sm btn-primary audio-play-btn" onclick="alert('This feature is coming soon!')">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="progress ms-2" style="height: 10px; width: calc(100% - 50px);">
+                                    <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                </div>
+                                <small class="text-muted d-block mt-1">0:00 / 3:45</small>
+                            </div>
+                            <button class="btn btn-outline-secondary mt-2" onclick="alert('This feature is coming soon!')">
+                                <i class="fas fa-tasks me-2"></i> Show Exercises
+                            </button>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <small class="text-muted">Audio length: 3:45 | With transcript</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Listening Card 4 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-header d-flex justify-content-between align-items-center">
+                            <span class="badge bg-warning text-dark">B1</span>
+                            <span class="badge bg-light text-dark">News</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Aktuelle Nachrichten (Current News)</h5>
+                            <p class="card-text">A simplified news report in German with weather and local events.</p>
+                            <div class="audio-player mt-3 mb-2">
+                                <button class="btn btn-sm btn-primary audio-play-btn" onclick="alert('This feature is coming soon!')">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="progress ms-2" style="height: 10px; width: calc(100% - 50px);">
+                                    <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                </div>
+                                <small class="text-muted d-block mt-1">0:00 / 4:20</small>
+                            </div>
+                            <button class="btn btn-outline-secondary mt-2" onclick="alert('This feature is coming soon!')">
+                                <i class="fas fa-tasks me-2"></i> Show Exercises
+                            </button>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <small class="text-muted">Audio length: 4:20 | With transcript</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Listening tips section -->
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Tips for Effective Listening Practice</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Start with Shorter Clips</h6>
+                            <p class="small">Begin with 1-2 minute clips and gradually increase the length as your skills improve.</p>
+                            
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Listen Multiple Times</h6>
+                            <p class="small">First listen for general understanding, then listen again for specific details.</p>
+                            
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Use Visual Cues</h6>
+                            <p class="small">When available, use illustrations or video to help understand context.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Listen Actively</h6>
+                            <p class="small">Try to predict what might come next in the conversation or story.</p>
+                            
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Focus on Comprehension, Not Translation</h6>
+                            <p class="small">Aim to understand meaning directly in German without translating to English.</p>
+                            
+                            <h6><i class="fas fa-lightbulb text-warning me-2"></i> Practice Regularly</h6>
+                            <p class="small">Even 10 minutes of daily listening practice can significantly improve your skills.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card {
+        transition: transform 0.2s ease-in-out;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .audio-player {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .audio-play-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+{% endblock %}

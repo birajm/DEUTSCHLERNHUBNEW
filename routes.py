@@ -99,6 +99,30 @@ def b1_index():
 def grammar():
     return render_template('grammar.html')
 
+# Listening comprehension exercises
+@app.route('/listening')
+@app.route('/listening/<string:level>')
+@app.route('/listening/<string:type>')
+def listening(level=None, type=None):
+    selected_level = level
+    selected_type = type
+    
+    return render_template('listening/index.html', 
+                          selected_level=selected_level,
+                          selected_type=selected_type)
+
+# Reading practice
+@app.route('/reading')
+@app.route('/reading/<string:level>')
+@app.route('/reading/<string:category>')
+def reading(level=None, category=None):
+    selected_level = level
+    selected_category = category
+    
+    return render_template('reading/index.html', 
+                          selected_level=selected_level,
+                          selected_category=selected_category)
+
 # Chatbot route
 @app.route('/chatbot')
 def chatbot():

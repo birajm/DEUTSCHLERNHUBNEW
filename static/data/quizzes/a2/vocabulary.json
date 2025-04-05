@@ -1,0 +1,202 @@
+{
+  "title": "A2 - Vocabulary Quiz",
+  "description": "Test your knowledge of German vocabulary at the A2 level",
+  "timeLimit": 900,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'the clothes'?",
+      "options": [
+        "die Kleider",
+        "die Bücher",
+        "die Stühle",
+        "die Autos"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'die Kleider' means 'the clothes'."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'the house'?",
+      "options": [
+        "der Tisch",
+        "das Haus",
+        "die Lampe",
+        "das Fenster"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'das Haus' means 'the house'."
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'to work'?",
+      "options": [
+        "spielen",
+        "lernen",
+        "arbeiten",
+        "schlafen"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'arbeiten' means 'to work'."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'hobby'?",
+      "options": [
+        "das Hobby",
+        "das Essen",
+        "die Farbe",
+        "die Familie"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'das Hobby' means 'hobby'."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "text": "What is the German phrase for 'straight ahead'?",
+      "options": [
+        "links",
+        "rechts",
+        "geradeaus",
+        "zurück"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'geradeaus' means 'straight ahead'."
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'the supermarket'?",
+      "options": [
+        "die Bäckerei",
+        "die Apotheke",
+        "der Supermarkt",
+        "das Restaurant"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'der Supermarkt' means 'the supermarket'."
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "text": "What is the German phrase for 'small talk'?",
+      "options": [
+        "das Gespräch",
+        "der Small Talk",
+        "die Information",
+        "die Frage"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'der Small Talk' is used in German to mean 'small talk'."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "text": "What is the German phrase for 'to ask for information'?",
+      "options": [
+        "etwas kaufen",
+        "nach Hause gehen",
+        "nach Informationen fragen",
+        "ein Buch lesen"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'nach Informationen fragen' means 'to ask for information'."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'clothing size'?",
+      "options": [
+        "die Schuhgröße",
+        "die Farbe",
+        "die Größe",
+        "das Material"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'die Größe' means 'size', including 'clothing size'."
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'the living room'?",
+      "options": [
+        "das Schlafzimmer",
+        "die Küche",
+        "das Badezimmer",
+        "das Wohnzimmer"
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! 'das Wohnzimmer' means 'the living room'."
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'the female teacher'?",
+      "options": [
+        "der Lehrer",
+        "die Lehrerin",
+        "der Schüler",
+        "die Schülerin"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'die Lehrerin' means 'the female teacher'."
+    },
+    {
+      "id": 12,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'to travel'?",
+      "options": [
+        "kochen",
+        "reisen",
+        "singen",
+        "tanzen"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'reisen' means 'to travel'."
+    },
+    {
+      "id": 13,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'the train station'?",
+      "options": [
+        "die Haltestelle",
+        "der Bahnhof",
+        "der Flughafen",
+        "die Straße"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'der Bahnhof' means 'the train station'."
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'the bread'?",
+      "options": [
+        "das Wasser",
+        "der Kaffee",
+        "das Brot",
+        "die Milch"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'das Brot' means 'the bread'."
+    },
+    {
+      "id": 15,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'polite'?",
+      "options": [
+        "unfreundlich",
+        "nett",
+        "laut",
+        "müde"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'nett' means 'nice' or 'polite'."
+    }
+  ]
+}

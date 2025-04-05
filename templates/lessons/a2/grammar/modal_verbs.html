@@ -1,815 +1,619 @@
 {% extends "layout.html" %}
 
-{% block title %}DeutschLernHub - Modal Verbs{% endblock %}
+{% block title %}A2 - Modal Verbs | DeutschLernHub{% endblock %}
 
 {% block content %}
-<div class="lesson-header a2-header">
-    <div class="container">
-        <h1>Modal Verbs</h1>
-        <p class="lead">Learn modal verbs (können, müssen, wollen, etc.)</p>
-        <div class="badge bg-light text-dark">25 min</div>
-    </div>
-</div>
-
 <div class="container mt-4">
     <div class="row">
-        <div class="col-md-3 mb-4">
-            <div class="list-group">
-                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
-                <a href="#modal-verbs-list" class="list-group-item list-group-item-action">Modal Verbs List</a>
-                <a href="#conjugation" class="list-group-item list-group-item-action">Conjugation</a>
-                <a href="#word-order" class="list-group-item list-group-item-action">Word Order</a>
-                <a href="#past-tense" class="list-group-item list-group-item-action">Past Tense</a>
-                <a href="#usage-examples" class="list-group-item list-group-item-action">Usage Examples</a>
-                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
-            </div>
-            
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Lesson Progress</h5>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
-                    </div>
-                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a2" data-section="grammar" data-lesson="modal_verbs" data-completed="true">Mark as Complete</button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-md-9">
-            <section id="overview" class="mb-5">
-                <h2>Overview</h2>
-                <p>Modal verbs (Modalverben) are helping verbs that express ability, necessity, obligation, permission, or possibility. They're essential for effective communication in German as they add nuance to your statements.</p>
-                <p>In this lesson, you'll learn:</p>
-                <ul>
-                    <li>The six main modal verbs in German</li>
-                    <li>How to conjugate modal verbs in present and past tense</li>
-                    <li>The word order rules when using modal verbs</li>
-                    <li>How to use each modal verb in appropriate contexts</li>
-                </ul>
-                <div class="alert alert-info">
-                    <h5>Note:</h5>
-                    <p>Modal verbs are always used with another verb in its infinitive form (at the end of the sentence).</p>
-                </div>
-            </section>
-            
-            <section id="modal-verbs-list" class="mb-5">
-                <h2>The Six Modal Verbs in German</h2>
-                
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Modal Verb</th>
-                                <th>English</th>
-                                <th>Basic Meaning</th>
-                                <th>Example</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>können</strong></td>
-                                <td>can, to be able to</td>
-                                <td>Ability, possibility, permission</td>
-                                <td>Ich kann Deutsch sprechen. (I can speak German.)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>müssen</strong></td>
-                                <td>must, to have to</td>
-                                <td>Necessity, obligation</td>
-                                <td>Ich muss arbeiten. (I have to work.)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>dürfen</strong></td>
-                                <td>may, to be allowed to</td>
-                                <td>Permission, prohibition</td>
-                                <td>Darf ich fragen? (May I ask?)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>wollen</strong></td>
-                                <td>to want to</td>
-                                <td>Desire, intention</td>
-                                <td>Ich will nach Berlin fahren. (I want to go to Berlin.)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>sollen</strong></td>
-                                <td>should, ought to</td>
-                                <td>Obligation, expectation, advice</td>
-                                <td>Du sollst mehr lernen. (You should study more.)</td>
-                            </tr>
-                            <tr>
-                                <td><strong>mögen</strong></td>
-                                <td>to like, may</td>
-                                <td>Liking, preference</td>
-                                <td>Ich mag Kaffee. (I like coffee.)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="mt-4">
-                    <h5>Listen to the modal verbs:</h5>
-                    <div id="modal-verbs-audio-player" class="audio-player">
-                        <button class="btn btn-sm btn-outline-primary play-button" onclick="playAudio('/static/audio/a2/modal_verbs_list.mp3', this)">
-                            <i class="fas fa-play"></i> Listen
-                        </button>
-                        <div class="progress mt-2 audio-progress">
-                            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="conjugation" class="mb-5">
-                <h2>Conjugation of Modal Verbs</h2>
-                <p>Modal verbs are irregular in their conjugation. The singular forms (ich, du, er/sie/es) often change their vowel.</p>
-                
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Person</th>
-                                <th>können (can)</th>
-                                <th>müssen (must)</th>
-                                <th>dürfen (may)</th>
-                                <th>wollen (want)</th>
-                                <th>sollen (should)</th>
-                                <th>mögen (like)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ich</td>
-                                <td><strong>kann</strong></td>
-                                <td><strong>muss</strong></td>
-                                <td><strong>darf</strong></td>
-                                <td><strong>will</strong></td>
-                                <td><strong>soll</strong></td>
-                                <td><strong>mag</strong></td>
-                            </tr>
-                            <tr>
-                                <td>du</td>
-                                <td><strong>kannst</strong></td>
-                                <td><strong>musst</strong></td>
-                                <td><strong>darfst</strong></td>
-                                <td><strong>willst</strong></td>
-                                <td><strong>sollst</strong></td>
-                                <td><strong>magst</strong></td>
-                            </tr>
-                            <tr>
-                                <td>er/sie/es</td>
-                                <td><strong>kann</strong></td>
-                                <td><strong>muss</strong></td>
-                                <td><strong>darf</strong></td>
-                                <td><strong>will</strong></td>
-                                <td><strong>soll</strong></td>
-                                <td><strong>mag</strong></td>
-                            </tr>
-                            <tr>
-                                <td>wir</td>
-                                <td><strong>können</strong></td>
-                                <td><strong>müssen</strong></td>
-                                <td><strong>dürfen</strong></td>
-                                <td><strong>wollen</strong></td>
-                                <td><strong>sollen</strong></td>
-                                <td><strong>mögen</strong></td>
-                            </tr>
-                            <tr>
-                                <td>ihr</td>
-                                <td><strong>könnt</strong></td>
-                                <td><strong>müsst</strong></td>
-                                <td><strong>dürft</strong></td>
-                                <td><strong>wollt</strong></td>
-                                <td><strong>sollt</strong></td>
-                                <td><strong>mögt</strong></td>
-                            </tr>
-                            <tr>
-                                <td>sie/Sie</td>
-                                <td><strong>können</strong></td>
-                                <td><strong>müssen</strong></td>
-                                <td><strong>dürfen</strong></td>
-                                <td><strong>wollen</strong></td>
-                                <td><strong>sollen</strong></td>
-                                <td><strong>mögen</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="alert alert-warning mt-3">
-                    <h5>Important Patterns:</h5>
-                    <ul>
-                        <li>For all modal verbs, the <strong>ich</strong> and <strong>er/sie/es</strong> forms are identical</li>
-                        <li>The plural forms (<strong>wir</strong>, <strong>sie/Sie</strong>) match the infinitive form</li>
-                        <li>The vowel change happens only in the singular forms for most modal verbs</li>
-                        <li>The <strong>du</strong> form gets the regular -st ending</li>
-                        <li>The <strong>ihr</strong> form gets the regular -t ending</li>
-                    </ul>
-                </div>
-                
-                <div class="alert alert-info mt-3">
-                    <h5>Special Case: mögen</h5>
-                    <p>The verb "mögen" (to like) is slightly different from the other modal verbs. While it can function as a modal verb, it's often used as a regular verb to express liking something:</p>
-                    <p>Ich <strong>mag</strong> Schokolade. (I like chocolate.)</p>
-                    <p>When used as a true modal verb, it often appears in its subjunctive form "möchte" (would like to):</p>
-                    <p>Ich <strong>möchte</strong> nach Berlin fahren. (I would like to go to Berlin.)</p>
-                </div>
-            </section>
-            
-            <section id="word-order" class="mb-5">
-                <h2>Word Order with Modal Verbs</h2>
-                <p>In German sentences with modal verbs, the modal verb is conjugated and placed in the second position (following normal German word order rules), while the main verb appears in its infinitive form at the end of the sentence.</p>
-                
-                <div class="card mb-4">
-                    <div class="card-header">Basic Word Order</div>
+        <div class="col-lg-8 mx-auto">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url_for('a2_index') }}">A2</a></li>
+                    <li class="breadcrumb-item active">Modal Verbs</li>
+                </ol>
+            </nav>
+
+            <div class="lesson-container">
+                <div class="lesson-header card shadow-sm mb-4">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h5>Main Clause Pattern:</h5>
-                                <div class="alert alert-secondary">
-                                    Subject + Modal Verb (conjugated) + Other Elements + Main Verb (infinitive)
+                        <h1 class="lesson-title text-center">Modal Verbs</h1>
+                        <p class="lead text-center">Learn to express ability, permission, obligation, and possibility in German</p>
+                        
+                        {% if current_user.is_authenticated %}
+                        <div class="progress mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="lesson-content card shadow-sm mb-4">
+                    <div class="card-body">
+                        <section id="introduction">
+                            <h2>Introduction to Modal Verbs</h2>
+                            <p>Modal verbs (Modalverben) are auxiliary verbs that modify the main verb to express necessity, possibility, permission, ability, or obligation. In German, there are six main modal verbs:</p>
+                            
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">The Six Modal Verbs</div>
+                                        <div class="card-body">
+                                            <ul class="list-unstyled">
+                                                <li><strong>können</strong> - can, to be able to</li>
+                                                <li><strong>müssen</strong> - must, to have to</li>
+                                                <li><strong>dürfen</strong> - may, to be allowed to</li>
+                                                <li><strong>sollen</strong> - should, ought to</li>
+                                                <li><strong>wollen</strong> - to want to</li>
+                                                <li><strong>mögen/möchten</strong> - to like/would like to</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p>Examples:</p>
+                                <div class="col-md-6">
+                                    <div class="card h-100">
+                                        <div class="card-header">Key Characteristics</div>
+                                        <div class="card-body">
+                                            <ul>
+                                                <li>They change the <em>meaning</em> of the main verb</li>
+                                                <li>They are <em>irregular</em> in conjugation</li>
+                                                <li>In a sentence with a modal verb, the main verb goes to the <em>end</em> in its <em>infinitive</em> form</li>
+                                                <li>Modal verbs occupy the <em>second position</em> in the sentence</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="conjugation">
+                            <h2>Conjugation of Modal Verbs in Present Tense</h2>
+                            <p>Modal verbs have irregular conjugation patterns in the present tense. Notice that the <em>ich</em> and <em>er/sie/es</em> forms often have the same form.</p>
+                            
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>Pronoun</th>
+                                            <th>können<br>(can)</th>
+                                            <th>müssen<br>(must)</th>
+                                            <th>dürfen<br>(may)</th>
+                                            <th>sollen<br>(should)</th>
+                                            <th>wollen<br>(want)</th>
+                                            <th>mögen/möchten<br>(like/would like)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>ich</td>
+                                            <td>kann</td>
+                                            <td>muss</td>
+                                            <td>darf</td>
+                                            <td>soll</td>
+                                            <td>will</td>
+                                            <td>mag/möchte</td>
+                                        </tr>
+                                        <tr>
+                                            <td>du</td>
+                                            <td>kannst</td>
+                                            <td>musst</td>
+                                            <td>darfst</td>
+                                            <td>sollst</td>
+                                            <td>willst</td>
+                                            <td>magst/möchtest</td>
+                                        </tr>
+                                        <tr>
+                                            <td>er/sie/es</td>
+                                            <td>kann</td>
+                                            <td>muss</td>
+                                            <td>darf</td>
+                                            <td>soll</td>
+                                            <td>will</td>
+                                            <td>mag/möchte</td>
+                                        </tr>
+                                        <tr>
+                                            <td>wir</td>
+                                            <td>können</td>
+                                            <td>müssen</td>
+                                            <td>dürfen</td>
+                                            <td>sollen</td>
+                                            <td>wollen</td>
+                                            <td>mögen/möchten</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ihr</td>
+                                            <td>könnt</td>
+                                            <td>müsst</td>
+                                            <td>dürft</td>
+                                            <td>sollt</td>
+                                            <td>wollt</td>
+                                            <td>mögt/möchtet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>sie/Sie</td>
+                                            <td>können</td>
+                                            <td>müssen</td>
+                                            <td>dürfen</td>
+                                            <td>sollen</td>
+                                            <td>wollen</td>
+                                            <td>mögen/möchten</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="alert alert-info mt-3">
+                                <h5>Note:</h5>
+                                <p><strong>Mögen</strong> (to like) is used differently than the other modal verbs. It's often used with nouns rather than with another verb:</p>
                                 <ul>
-                                    <li><strong>Ich kann</strong> gut <strong>schwimmen</strong>.<br>(I can swim well.)</li>
-                                    <li><strong>Er will</strong> morgen nach Berlin <strong>fahren</strong>.<br>(He wants to go to Berlin tomorrow.)</li>
-                                    <li><strong>Wir müssen</strong> früh <strong>aufstehen</strong>.<br>(We have to get up early.)</li>
+                                    <li><em>Ich mag Kaffee.</em> (I like coffee.)</li>
+                                </ul>
+                                <p><strong>Möchten</strong> (would like to) is technically the subjunctive form of mögen but functions as its own modal verb for expressing polite wishes:</p>
+                                <ul>
+                                    <li><em>Ich möchte ein Bier, bitte.</em> (I would like a beer, please.)</li>
+                                    <li><em>Ich möchte nach Berlin fahren.</em> (I would like to go to Berlin.)</li>
                                 </ul>
                             </div>
-                            <div class="col-md-6">
-                                <h5>Question Pattern:</h5>
-                                <div class="alert alert-secondary">
-                                    Modal Verb (conjugated) + Subject + Other Elements + Main Verb (infinitive) + ?
+                        </section>
+                        
+                        <section id="meanings">
+                            <h2>Meanings and Uses of Modal Verbs</h2>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h3 class="mb-0">können (can, to be able to)</h3>
                                 </div>
-                                <p>Examples:</p>
+                                <div class="card-body">
+                                    <p><strong>Main uses:</strong></p>
+                                    <ul>
+                                        <li>To express ability or capability</li>
+                                        <li>To express possibility</li>
+                                        <li>To ask for or give permission (more informal than dürfen)</li>
+                                    </ul>
+                                    
+                                    <p><strong>Examples:</strong></p>
+                                    <ul>
+                                        <li><em>Ich <strong>kann</strong> Deutsch sprechen.</em> (I can speak German.)</li>
+                                        <li><em>Sie <strong>kann</strong> morgen kommen.</em> (She can come tomorrow.)</li>
+                                        <li><em><strong>Kannst</strong> du mir helfen?</em> (Can you help me?)</li>
+                                        <li><em>Das <strong>kann</strong> wahr sein.</em> (That could be true.)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h3 class="mb-0">müssen (must, to have to)</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Main uses:</strong></p>
+                                    <ul>
+                                        <li>To express necessity or obligation</li>
+                                        <li>To express logical conclusion or deduction</li>
+                                    </ul>
+                                    
+                                    <p><strong>Examples:</strong></p>
+                                    <ul>
+                                        <li><em>Ich <strong>muss</strong> jetzt gehen.</em> (I must go now.)</li>
+                                        <li><em>Du <strong>musst</strong> deine Hausaufgaben machen.</em> (You have to do your homework.)</li>
+                                        <li><em>Er <strong>muss</strong> krank sein, weil er nicht zur Arbeit gekommen ist.</em> (He must be sick because he didn't come to work.)</li>
+                                    </ul>
+                                    
+                                    <p><strong>Negation:</strong></p>
+                                    <ul>
+                                        <li><em>Ich <strong>muss nicht</strong> arbeiten.</em> (I don't have to work.) - No obligation</li>
+                                        <li><em>Ich <strong>darf nicht</strong> arbeiten.</em> (I'm not allowed to work.) - Prohibition</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h3 class="mb-0">dürfen (may, to be allowed to)</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Main uses:</strong></p>
+                                    <ul>
+                                        <li>To express permission</li>
+                                        <li>To express prohibition (in negative form)</li>
+                                        <li>To make polite requests</li>
+                                    </ul>
+                                    
+                                    <p><strong>Examples:</strong></p>
+                                    <ul>
+                                        <li><em>Ich <strong>darf</strong> heute länger aufbleiben.</em> (I am allowed to stay up later today.)</li>
+                                        <li><em>Du <strong>darfst</strong> hier nicht rauchen.</em> (You are not allowed to smoke here.)</li>
+                                        <li><em><strong>Darf</strong> ich Sie etwas fragen?</em> (May I ask you something?)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h3 class="mb-0">sollen (should, ought to)</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Main uses:</strong></p>
+                                    <ul>
+                                        <li>To express duty or obligation</li>
+                                        <li>To report what someone else has said (reported speech)</li>
+                                        <li>To give advice or recommendations</li>
+                                        <li>To express expectations</li>
+                                    </ul>
+                                    
+                                    <p><strong>Examples:</strong></p>
+                                    <ul>
+                                        <li><em>Du <strong>sollst</strong> nicht lügen.</em> (You should not lie.)</li>
+                                        <li><em>Der Arzt sagt, ich <strong>soll</strong> mehr Sport treiben.</em> (The doctor says I should exercise more.)</li>
+                                        <li><em><strong>Soll</strong> ich dir helfen?</em> (Should I help you?)</li>
+                                        <li><em>Wir <strong>sollen</strong> um 8 Uhr dort sein.</em> (We're supposed to be there at 8 o'clock.)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h3 class="mb-0">wollen (to want to)</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Main uses:</strong></p>
+                                    <ul>
+                                        <li>To express wishes, desires, or intentions</li>
+                                        <li>To express claims (often implying doubt)</li>
+                                    </ul>
+                                    
+                                    <p><strong>Examples:</strong></p>
+                                    <ul>
+                                        <li><em>Ich <strong>will</strong> Deutsch lernen.</em> (I want to learn German.)</li>
+                                        <li><em>Wir <strong>wollen</strong> nächstes Jahr nach Deutschland reisen.</em> (We want to travel to Germany next year.)</li>
+                                        <li><em>Er <strong>will</strong> den Unfall nicht gesehen haben.</em> (He claims not to have seen the accident. [implying doubt])</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h3 class="mb-0">mögen/möchten (to like/would like to)</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p><strong>Main uses of mögen:</strong></p>
+                                    <ul>
+                                        <li>To express liking something (usually with nouns)</li>
+                                        <li>To express possibility (in subjunctive form)</li>
+                                    </ul>
+                                    
+                                    <p><strong>Examples of mögen:</strong></p>
+                                    <ul>
+                                        <li><em>Ich <strong>mag</strong> Schokolade.</em> (I like chocolate.)</li>
+                                        <li><em>Er <strong>mag</strong> klassische Musik.</em> (He likes classical music.)</li>
+                                    </ul>
+                                    
+                                    <p><strong>Main uses of möchten:</strong></p>
+                                    <ul>
+                                        <li>To express polite wishes or desires</li>
+                                        <li>To make polite requests</li>
+                                    </ul>
+                                    
+                                    <p><strong>Examples of möchten:</strong></p>
+                                    <ul>
+                                        <li><em>Ich <strong>möchte</strong> ein Glas Wasser, bitte.</em> (I would like a glass of water, please.)</li>
+                                        <li><em>Wir <strong>möchten</strong> morgen ins Kino gehen.</em> (We would like to go to the cinema tomorrow.)</li>
+                                        <li><em><strong>Möchtest</strong> du etwas essen?</em> (Would you like something to eat?)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section id="sentence-structure">
+                            <h2>Sentence Structure with Modal Verbs</h2>
+                            
+                            <div class="alert alert-info mb-4">
+                                <h5>Basic Rule:</h5>
+                                <p>In sentences with modal verbs, the conjugated modal verb takes the second position in the sentence, and the main verb in its infinitive form goes to the end of the clause.</p>
+                            </div>
+                            
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="card">
+                                        <div class="card-header">Basic Word Order</div>
+                                        <div class="card-body">
+                                            <p><strong>Position 1</strong> | <strong>Position 2 (Modal Verb)</strong> | <strong>Middle Field (Objects, Adverbs)</strong> | <strong>End (Main Verb)</strong></p>
+                                            <p>Ich | <strong>kann</strong> | sehr gut | <strong>schwimmen</strong>.</p>
+                                            <p>Er | <strong>muss</strong> | heute | <strong>arbeiten</strong>.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3>Examples of Different Sentence Types:</h3>
+                            
+                            <h4>1. Statements:</h4>
+                            <ul>
+                                <li><em>Ich <strong>kann</strong> Deutsch <strong>sprechen</strong>.</em> (I can speak German.)</li>
+                                <li><em>Du <strong>musst</strong> jetzt <strong>gehen</strong>.</em> (You must go now.)</li>
+                                <li><em>Er <strong>darf</strong> hier nicht <strong>rauchen</strong>.</em> (He is not allowed to smoke here.)</li>
+                                <li><em>Wir <strong>wollen</strong> ein neues Auto <strong>kaufen</strong>.</em> (We want to buy a new car.)</li>
+                            </ul>
+                            
+                            <h4>2. Questions:</h4>
+                            <ul>
+                                <li><em><strong>Kannst</strong> du mir <strong>helfen</strong>?</em> (Can you help me?)</li>
+                                <li><em><strong>Muss</strong> ich das jetzt <strong>machen</strong>?</em> (Do I have to do this now?)</li>
+                                <li><em><strong>Darf</strong> ich hier <strong>parken</strong>?</em> (May I park here?)</li>
+                                <li><em>Warum <strong>willst</strong> du nicht <strong>kommen</strong>?</em> (Why don't you want to come?)</li>
+                            </ul>
+                            
+                            <h4>3. Negation:</h4>
+                            <ul>
+                                <li><em>Ich <strong>kann</strong> nicht <strong>schwimmen</strong>.</em> (I cannot swim.)</li>
+                                <li><em>Er <strong>darf</strong> nicht <strong>rauchen</strong>.</em> (He is not allowed to smoke.)</li>
+                                <li><em>Wir <strong>wollen</strong> nicht <strong>warten</strong>.</em> (We don't want to wait.)</li>
+                                <li><em>Sie <strong>muss</strong> heute nicht <strong>arbeiten</strong>.</em> (She doesn't have to work today.)</li>
+                            </ul>
+                            
+                            <div class="alert alert-warning">
+                                <h5>Important Note on Negation:</h5>
+                                <p>In German, the negation word "nicht" usually comes <em>before</em> the infinitive verb at the end, but <em>after</em> other elements in the middle field.</p>
                                 <ul>
-                                    <li><strong>Kannst du</strong> Deutsch <strong>sprechen</strong>?<br>(Can you speak German?)</li>
-                                    <li><strong>Darf ich</strong> hier <strong>parken</strong>?<br>(May I park here?)</li>
-                                    <li><strong>Müsst ihr</strong> jetzt <strong>gehen</strong>?<br>(Do you have to go now?)</li>
+                                    <li><em>Ich <strong>kann</strong> das Buch nicht <strong>finden</strong>.</em> (I cannot find the book.)</li>
+                                    <li><em>Du <strong>sollst</strong> nicht so laut <strong>sprechen</strong>.</em> (You shouldn't speak so loudly.)</li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card mb-4">
-                    <div class="card-header">Subordinate Clauses</div>
-                    <div class="card-body">
-                        <p>In subordinate clauses (introduced by words like "weil", "dass", "wenn", etc.), both the modal verb and the main verb move to the end of the clause, with the modal verb coming last:</p>
-                        <div class="alert alert-secondary">
-                            ..., (dass/weil/etc.) + Subject + Other Elements + Main Verb (infinitive) + Modal Verb (conjugated)
-                        </div>
-                        <p>Examples:</p>
-                        <ul>
-                            <li>Ich weiß, dass er gut Deutsch <strong>sprechen kann</strong>.<br>(I know that he can speak German well.)</li>
-                            <li>Sie bleibt zu Hause, weil sie arbeiten <strong>muss</strong>.<br>(She's staying home because she has to work.)</li>
-                            <li>Wenn du früher <strong>kommen willst</strong>, ruf mich an.<br>(If you want to come earlier, call me.)</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="past-tense" class="mb-5">
-                <h2>Modal Verbs in the Past Tense</h2>
-                <p>To use modal verbs in the past tense, you need to use the Präteritum (simple past) form. This is more common for modal verbs than using the Perfekt form (have + past participle).</p>
-                
-                <div class="table-responsive">
-                    <table class="table table-bordered">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Person</th>
-                                <th>können</th>
-                                <th>müssen</th>
-                                <th>dürfen</th>
-                                <th>wollen</th>
-                                <th>sollen</th>
-                                <th>mögen</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ich</td>
-                                <td><strong>konnte</strong></td>
-                                <td><strong>musste</strong></td>
-                                <td><strong>durfte</strong></td>
-                                <td><strong>wollte</strong></td>
-                                <td><strong>sollte</strong></td>
-                                <td><strong>mochte</strong></td>
-                            </tr>
-                            <tr>
-                                <td>du</td>
-                                <td><strong>konntest</strong></td>
-                                <td><strong>musstest</strong></td>
-                                <td><strong>durftest</strong></td>
-                                <td><strong>wolltest</strong></td>
-                                <td><strong>solltest</strong></td>
-                                <td><strong>mochtest</strong></td>
-                            </tr>
-                            <tr>
-                                <td>er/sie/es</td>
-                                <td><strong>konnte</strong></td>
-                                <td><strong>musste</strong></td>
-                                <td><strong>durfte</strong></td>
-                                <td><strong>wollte</strong></td>
-                                <td><strong>sollte</strong></td>
-                                <td><strong>mochte</strong></td>
-                            </tr>
-                            <tr>
-                                <td>wir</td>
-                                <td><strong>konnten</strong></td>
-                                <td><strong>mussten</strong></td>
-                                <td><strong>durften</strong></td>
-                                <td><strong>wollten</strong></td>
-                                <td><strong>sollten</strong></td>
-                                <td><strong>mochten</strong></td>
-                            </tr>
-                            <tr>
-                                <td>ihr</td>
-                                <td><strong>konntet</strong></td>
-                                <td><strong>musstet</strong></td>
-                                <td><strong>durftet</strong></td>
-                                <td><strong>wolltet</strong></td>
-                                <td><strong>solltet</strong></td>
-                                <td><strong>mochtet</strong></td>
-                            </tr>
-                            <tr>
-                                <td>sie/Sie</td>
-                                <td><strong>konnten</strong></td>
-                                <td><strong>mussten</strong></td>
-                                <td><strong>durften</strong></td>
-                                <td><strong>wollten</strong></td>
-                                <td><strong>sollten</strong></td>
-                                <td><strong>mochten</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <h5 class="mt-4">Examples in Past Tense:</h5>
-                <ul>
-                    <li>Ich <strong>konnte</strong> gestern nicht <strong>kommen</strong>.<br>(I couldn't come yesterday.)</li>
-                    <li>Sie <strong>musste</strong> viel <strong>arbeiten</strong>.<br>(She had to work a lot.)</li>
-                    <li>Wir <strong>wollten</strong> ins Kino <strong>gehen</strong>.<br>(We wanted to go to the cinema.)</li>
-                    <li>Die Kinder <strong>durften</strong> nicht draußen <strong>spielen</strong>.<br>(The children were not allowed to play outside.)</li>
-                </ul>
-                
-                <div class="alert alert-info mt-3">
-                    <h5>Note:</h5>
-                    <p>The word order rules for modal verbs remain the same in the past tense: the modal verb is conjugated in the Präteritum form and the main verb stays in the infinitive form at the end of the sentence.</p>
-                </div>
-            </section>
-            
-            <section id="usage-examples" class="mb-5">
-                <h2>Detailed Usage of Each Modal Verb</h2>
-                
-                <div class="accordion" id="modalVerbUsage">
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="konnenHeading">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#konnenCollapse" aria-expanded="true" aria-controls="konnenCollapse">
-                                können (can, to be able to)
-                            </button>
-                        </h3>
-                        <div id="konnenCollapse" class="accordion-collapse collapse show" aria-labelledby="konnenHeading" data-bs-parent="#modalVerbUsage">
-                            <div class="accordion-body">
-                                <p><strong>Main uses:</strong></p>
-                                <ol>
-                                    <li><strong>Physical or mental ability:</strong>
-                                        <ul>
-                                            <li>Ich <strong>kann</strong> schwimmen. (I can swim.)</li>
-                                            <li>Er <strong>kann</strong> gut kochen. (He can cook well.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Possibility:</strong>
-                                        <ul>
-                                            <li>Das <strong>kann</strong> heute regnen. (It might rain today.)</li>
-                                            <li>Es <strong>kann</strong> sein, dass sie krank ist. (It could be that she is sick.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Permission</strong> (more informal than "dürfen"):
-                                        <ul>
-                                            <li>Du <strong>kannst</strong> jetzt gehen. (You can go now.)</li>
-                                            <li><strong>Kann</strong> ich dir helfen? (Can I help you?)</li>
-                                        </ul>
-                                    </li>
-                                </ol>
+                        </section>
+                        
+                        <section id="modal-verbs-past-tense">
+                            <h2>Modal Verbs in Past Tense (Perfekt)</h2>
+                            
+                            <p>When used in the past tense (Perfekt), modal verbs follow a special pattern. Instead of forming a past participle, they use the infinitive form with "haben" as the auxiliary verb. The main verb also stays in the infinitive form and goes to the end of the sentence.</p>
+                            
+                            <div class="alert alert-info mb-4">
+                                <h5>Structure in Perfekt:</h5>
+                                <p><strong>Subject + haben (conjugated) + objects/adverbs + main verb (infinitive) + modal verb (infinitive)</strong></p>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="mussenHeading">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mussenCollapse" aria-expanded="false" aria-controls="mussenCollapse">
-                                müssen (must, to have to)
-                            </button>
-                        </h3>
-                        <div id="mussenCollapse" class="accordion-collapse collapse" aria-labelledby="mussenHeading" data-bs-parent="#modalVerbUsage">
-                            <div class="accordion-body">
-                                <p><strong>Main uses:</strong></p>
-                                <ol>
-                                    <li><strong>Necessity or obligation:</strong>
-                                        <ul>
-                                            <li>Ich <strong>muss</strong> arbeiten. (I have to work.)</li>
-                                            <li>Wir <strong>müssen</strong> früh aufstehen. (We have to get up early.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Logical conclusion:</strong>
-                                        <ul>
-                                            <li>Es <strong>muss</strong> hier irgendwo sein. (It must be somewhere here.)</li>
-                                            <li>Sie <strong>muss</strong> krank sein. (She must be sick.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Negation</strong> (nicht müssen = don't have to):
-                                        <ul>
-                                            <li>Du <strong>musst</strong> nicht kommen. (You don't have to come.)</li>
-                                            <li>Wir <strong>müssen</strong> das nicht machen. (We don't have to do that.)</li>
-                                        </ul>
-                                    </li>
-                                </ol>
+                            
+                            <h3>Examples:</h3>
+                            <ul>
+                                <li><em>Ich <strong>habe</strong> Deutsch <strong>sprechen können</strong>.</em> (I was able to speak German.)</li>
+                                <li><em>Du <strong>hast</strong> nicht <strong>kommen müssen</strong>.</em> (You didn't have to come.)</li>
+                                <li><em>Er <strong>hat</strong> nicht <strong>rauchen dürfen</strong>.</em> (He was not allowed to smoke.)</li>
+                                <li><em>Wir <strong>haben</strong> ein neues Auto <strong>kaufen wollen</strong>.</em> (We wanted to buy a new car.)</li>
+                                <li><em>Sie <strong>haben</strong> nicht <strong>warten mögen</strong>.</em> (They didn't like to wait.)</li>
+                            </ul>
+                            
+                            <div class="alert alert-warning">
+                                <h5>Note:</h5>
+                                <p>This construction with double infinitives at the end can be confusing at first but is extremely common in German. Keep practicing to get comfortable with it!</p>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="durfenHeading">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#durfenCollapse" aria-expanded="false" aria-controls="durfenCollapse">
-                                dürfen (may, to be allowed to)
-                            </button>
-                        </h3>
-                        <div id="durfenCollapse" class="accordion-collapse collapse" aria-labelledby="durfenHeading" data-bs-parent="#modalVerbUsage">
-                            <div class="accordion-body">
-                                <p><strong>Main uses:</strong></p>
-                                <ol>
-                                    <li><strong>Permission:</strong>
-                                        <ul>
-                                            <li><strong>Darf</strong> ich fragen? (May I ask?)</li>
-                                            <li>Du <strong>darfst</strong> hier rauchen. (You are allowed to smoke here.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Prohibition</strong> (with negation):
-                                        <ul>
-                                            <li>Hier <strong>darf</strong> man nicht fotografieren. (You are not allowed to take photos here.)</li>
-                                            <li>Du <strong>darfst</strong> nicht schwimmen. (You're not allowed to swim.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Polite requests:</strong>
-                                        <ul>
-                                            <li><strong>Darf</strong> ich Ihnen helfen? (May I help you?)</li>
-                                            <li><strong>Dürfte</strong> ich Sie etwas fragen? (Might I ask you something?)</li>
-                                        </ul>
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="wollenHeading">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#wollenCollapse" aria-expanded="false" aria-controls="wollenCollapse">
-                                wollen (to want to)
-                            </button>
-                        </h3>
-                        <div id="wollenCollapse" class="accordion-collapse collapse" aria-labelledby="wollenHeading" data-bs-parent="#modalVerbUsage">
-                            <div class="accordion-body">
-                                <p><strong>Main uses:</strong></p>
-                                <ol>
-                                    <li><strong>Desire or intention:</strong>
-                                        <ul>
-                                            <li>Ich <strong>will</strong> nach Berlin fahren. (I want to go to Berlin.)</li>
-                                            <li>Er <strong>will</strong> Arzt werden. (He wants to become a doctor.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Determination:</strong>
-                                        <ul>
-                                            <li>Ich <strong>will</strong> das schaffen! (I am determined to achieve this!)</li>
-                                            <li>Sie <strong>will</strong> das Problem lösen. (She is determined to solve the problem.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Claiming</strong> (often in reported speech):
-                                        <ul>
-                                            <li>Er <strong>will</strong> mich nicht gesehen haben. (He claims not to have seen me.)</li>
-                                            <li>Sie <strong>will</strong> nichts davon gewusst haben. (She claims to have known nothing about it.)</li>
-                                        </ul>
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="sollenHeading">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sollenCollapse" aria-expanded="false" aria-controls="sollenCollapse">
-                                sollen (should, ought to)
-                            </button>
-                        </h3>
-                        <div id="sollenCollapse" class="accordion-collapse collapse" aria-labelledby="sollenHeading" data-bs-parent="#modalVerbUsage">
-                            <div class="accordion-body">
-                                <p><strong>Main uses:</strong></p>
-                                <ol>
-                                    <li><strong>Obligation or expectation:</strong>
-                                        <ul>
-                                            <li>Du <strong>sollst</strong> deine Hausaufgaben machen. (You should do your homework.)</li>
-                                            <li>Ihr <strong>sollt</strong> pünktlich sein. (You should be punctual.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Advice or recommendation:</strong>
-                                        <ul>
-                                            <li>Du <strong>solltest</strong> mehr Sport treiben. (You should do more sports.)</li>
-                                            <li>Man <strong>sollte</strong> gesund essen. (One should eat healthily.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Reported orders or messages:</strong>
-                                        <ul>
-                                            <li>Er sagt, du <strong>sollst</strong> ihn anrufen. (He says you should call him.)</li>
-                                            <li>Sie <strong>soll</strong> morgen zum Chef kommen. (She is supposed to come to the boss tomorrow.)</li>
-                                        </ul>
-                                    </li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="accordion-item">
-                        <h3 class="accordion-header" id="mogenHeading">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mogenCollapse" aria-expanded="false" aria-controls="mogenCollapse">
-                                mögen (to like, may)
-                            </button>
-                        </h3>
-                        <div id="mogenCollapse" class="accordion-collapse collapse" aria-labelledby="mogenHeading" data-bs-parent="#modalVerbUsage">
-                            <div class="accordion-body">
-                                <p><strong>Main uses:</strong></p>
-                                <ol>
-                                    <li><strong>Liking something:</strong>
-                                        <ul>
-                                            <li>Ich <strong>mag</strong> Schokolade. (I like chocolate.)</li>
-                                            <li>Er <strong>mag</strong> klassische Musik. (He likes classical music.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>As "möchte" (would like to):</strong>
-                                        <ul>
-                                            <li>Ich <strong>möchte</strong> einen Kaffee. (I would like a coffee.)</li>
-                                            <li>Wir <strong>möchten</strong> ins Kino gehen. (We would like to go to the cinema.)</li>
-                                        </ul>
-                                    </li>
-                                    <li><strong>Possibility</strong> (formal or literary use):
-                                        <ul>
-                                            <li>Es <strong>mag</strong> stimmen. (It may be true.)</li>
-                                            <li>Er <strong>mag</strong> Recht haben. (He may be right.)</li>
-                                        </ul>
-                                    </li>
-                                </ol>
-                                <div class="alert alert-info">
-                                    <p><strong>Note:</strong> "möchte" (would like) is technically the subjunctive form of "mögen" but is so commonly used that it functions almost like a separate modal verb for making polite requests or expressing wishes.</p>
+                        </section>
+                        
+                        <section id="practice">
+                            <h2>Practice Activities</h2>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">Exercise 1: Choose the Correct Modal Verb</div>
+                                <div class="card-body">
+                                    <p>Select the most appropriate modal verb for each situation:</p>
+                                    <ol>
+                                        <li>Ich ________ gut Klavier spielen. (I can play the piano well.)</li>
+                                        <li>Du ________ jetzt ins Bett gehen! (You must go to bed now!)</li>
+                                        <li>Er ________ heute nicht arbeiten. (He doesn't want to work today.)</li>
+                                        <li>________ ich hier parken? (May I park here?)</li>
+                                        <li>Wir ________ morgen früh aufstehen. (We should get up early tomorrow.)</li>
+                                    </ol>
+                                    <button class="btn btn-sm btn-outline-secondary mt-2" type="button" data-toggle="collapse" data-target="#answers1">Show Answers</button>
+                                    <div class="collapse" id="answers1">
+                                        <div class="card card-body mt-2">
+                                            <ol>
+                                                <li>Ich <strong>kann</strong> gut Klavier spielen. (ability)</li>
+                                                <li>Du <strong>musst</strong> jetzt ins Bett gehen! (necessity/obligation)</li>
+                                                <li>Er <strong>will</strong> heute nicht arbeiten. (desire/intention)</li>
+                                                <li><strong>Darf</strong> ich hier parken? (permission)</li>
+                                                <li>Wir <strong>sollen</strong> morgen früh aufstehen. (expectation/recommendation)</li>
+                                            </ol>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">Exercise 2: Conjugate the Modal Verbs</div>
+                                <div class="card-body">
+                                    <p>Complete each sentence with the correct form of the modal verb in parentheses:</p>
+                                    <ol>
+                                        <li>Ich ________ heute nicht arbeiten. (müssen)</li>
+                                        <li>________ du Deutsch sprechen? (können)</li>
+                                        <li>Er ________ ein neues Auto kaufen. (wollen)</li>
+                                        <li>Wir ________ heute ins Kino gehen. (möchten)</li>
+                                        <li>Ihr ________ nicht so laut sein. (dürfen)</li>
+                                    </ol>
+                                    <button class="btn btn-sm btn-outline-secondary mt-2" type="button" data-toggle="collapse" data-target="#answers2">Show Answers</button>
+                                    <div class="collapse" id="answers2">
+                                        <div class="card card-body mt-2">
+                                            <ol>
+                                                <li>Ich <strong>muss</strong> heute nicht arbeiten.</li>
+                                                <li><strong>Kannst</strong> du Deutsch sprechen?</li>
+                                                <li>Er <strong>will</strong> ein neues Auto kaufen.</li>
+                                                <li>Wir <strong>möchten</strong> heute ins Kino gehen.</li>
+                                                <li>Ihr <strong>dürft</strong> nicht so laut sein.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">Exercise 3: Sentence Construction</div>
+                                <div class="card-body">
+                                    <p>Arrange the words to form correct sentences:</p>
+                                    <ol>
+                                        <li>können / Deutsch / sprechen / ich / gut</li>
+                                        <li>müssen / jetzt / du / gehen</li>
+                                        <li>dürfen / hier / nicht / rauchen / Sie</li>
+                                        <li>wollen / kaufen / wir / eine Wohnung</li>
+                                        <li>möchten / trinken / was / du</li>
+                                    </ol>
+                                    <button class="btn btn-sm btn-outline-secondary mt-2" type="button" data-toggle="collapse" data-target="#answers3">Show Answers</button>
+                                    <div class="collapse" id="answers3">
+                                        <div class="card card-body mt-2">
+                                            <ol>
+                                                <li>Ich <strong>kann</strong> gut Deutsch <strong>sprechen</strong>.</li>
+                                                <li>Du <strong>musst</strong> jetzt <strong>gehen</strong>.</li>
+                                                <li>Sie <strong>dürfen</strong> hier nicht <strong>rauchen</strong>.</li>
+                                                <li>Wir <strong>wollen</strong> eine Wohnung <strong>kaufen</strong>.</li>
+                                                <li>Was <strong>möchtest</strong> du <strong>trinken</strong>?</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">Exercise 4: Modal Verbs in Past Tense</div>
+                                <div class="card-body">
+                                    <p>Transform these sentences into the past tense (Perfekt):</p>
+                                    <ol>
+                                        <li>Ich kann Deutsch sprechen.</li>
+                                        <li>Er will ein Buch lesen.</li>
+                                        <li>Wir müssen früh aufstehen.</li>
+                                        <li>Sie darf nicht fahren.</li>
+                                        <li>Ich möchte ein Eis essen.</li>
+                                    </ol>
+                                    <button class="btn btn-sm btn-outline-secondary mt-2" type="button" data-toggle="collapse" data-target="#answers4">Show Answers</button>
+                                    <div class="collapse" id="answers4">
+                                        <div class="card card-body mt-2">
+                                            <ol>
+                                                <li>Ich <strong>habe</strong> Deutsch <strong>sprechen können</strong>.</li>
+                                                <li>Er <strong>hat</strong> ein Buch <strong>lesen wollen</strong>.</li>
+                                                <li>Wir <strong>haben</strong> früh <strong>aufstehen müssen</strong>.</li>
+                                                <li>Sie <strong>hat</strong> nicht <strong>fahren dürfen</strong>.</li>
+                                                <li>Ich <strong>habe</strong> ein Eis <strong>essen möchten/wollen</strong>.</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section id="common-expressions">
+                            <h2>Common Expressions with Modal Verbs</h2>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">Useful Everyday Phrases</div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h5>With können:</h5>
+                                            <ul>
+                                                <li><em>Das kann sein.</em> (That could be.)</li>
+                                                <li><em>Kannst du mir bitte helfen?</em> (Can you please help me?)</li>
+                                                <li><em>So schnell wie möglich</em> (As quickly as possible)</li>
+                                            </ul>
+                                            
+                                            <h5>With müssen:</h5>
+                                            <ul>
+                                                <li><em>Das muss so sein.</em> (It has to be that way.)</li>
+                                                <li><em>Ich muss los.</em> (I have to go. [informal])</li>
+                                                <li><em>Du musst aufpassen.</em> (You need to be careful.)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h5>With dürfen:</h5>
+                                            <ul>
+                                                <li><em>Darf ich Sie etwas fragen?</em> (May I ask you something?)</li>
+                                                <li><em>Hier darf man nicht rauchen.</em> (Smoking is not allowed here.)</li>
+                                            </ul>
+                                            
+                                            <h5>With möchten:</h5>
+                                            <ul>
+                                                <li><em>Ich möchte bestellen.</em> (I would like to order.)</li>
+                                                <li><em>Was möchtest du trinken?</em> (What would you like to drink?)</li>
+                                                <li><em>Möchten Sie mitkommen?</em> (Would you like to come along?)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
                 </div>
-            </section>
-            
-            <section id="practice" class="mb-5">
-                <h2>Practice</h2>
-                <p>Let's practice using modal verbs in different contexts:</p>
-                
-                <div class="card mb-4">
-                    <div class="card-header">Exercise 1: Choose the correct modal verb</div>
+
+                <div class="lesson-quiz card shadow-sm mb-4">
                     <div class="card-body">
-                        <form id="modal-practice">
-                            <div class="mb-3">
-                                <p>1. Ich ________ morgen früh aufstehen. (I have to wake up early tomorrow.)</p>
-                                <select class="form-select" id="m1">
-                                    <option value="">Select a modal verb...</option>
-                                    <option value="incorrect">kann</option>
-                                    <option value="correct">muss</option>
-                                    <option value="incorrect">darf</option>
-                                    <option value="incorrect">will</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <p>2. Er ________ gut Deutsch sprechen. (He can speak German well.)</p>
-                                <select class="form-select" id="m2">
-                                    <option value="">Select a modal verb...</option>
-                                    <option value="correct">kann</option>
-                                    <option value="incorrect">muss</option>
-                                    <option value="incorrect">soll</option>
-                                    <option value="incorrect">mag</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <p>3. ________ ich das Fenster öffnen? (May I open the window?)</p>
-                                <select class="form-select" id="m3">
-                                    <option value="">Select a modal verb...</option>
-                                    <option value="incorrect">Soll</option>
-                                    <option value="incorrect">Will</option>
-                                    <option value="correct">Darf</option>
-                                    <option value="incorrect">Muss</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <p>4. Wir ________ nächstes Jahr nach Berlin reisen. (We want to travel to Berlin next year.)</p>
-                                <select class="form-select" id="m4">
-                                    <option value="">Select a modal verb...</option>
-                                    <option value="incorrect">können</option>
-                                    <option value="incorrect">müssen</option>
-                                    <option value="incorrect">dürfen</option>
-                                    <option value="correct">wollen</option>
-                                </select>
-                            </div>
-                            <button type="button" class="btn btn-primary" id="check-modal">Check Answers</button>
-                        </form>
-                        <div id="modal-result" class="mt-3"></div>
+                        <h2>Test Your Knowledge</h2>
+                        <p class="mb-3">Ready to test what you've learned? Take our Modal Verbs quiz!</p>
+                        
+                        <a href="{{ url_for('quiz', level='a2', topic='modal-verbs') }}" class="btn btn-primary">Take the Quiz</a>
+                    </div>
+                </div>
+
+                <div class="lesson-navigation card shadow-sm">
+                    <div class="card-body d-flex justify-content-between">
+                        <a href="{{ url_for('a2_grammar_past_tense') }}" class="btn btn-outline-secondary">&larr; Previous: Past Tense (Perfekt)</a>
+                        <a href="{{ url_for('a2_index') }}" class="btn btn-outline-primary">Back to A2 Overview &rarr;</a>
                     </div>
                 </div>
                 
-                <div class="card mb-4">
-                    <div class="card-header">Exercise 2: Form sentences with modal verbs</div>
-                    <div class="card-body">
-                        <form id="sentence-practice">
-                            <div class="mb-3">
-                                <label for="s1" class="form-label">1. Arrange the words to form a correct sentence: ich / Deutsch / lernen / will</label>
-                                <input type="text" class="form-control" id="s1" placeholder="Type the correct sentence..." data-answer="Ich will Deutsch lernen.">
-                            </div>
-                            <div class="mb-3">
-                                <label for="s2" class="form-label">2. Arrange the words to form a correct sentence: du / mir / helfen / kannst</label>
-                                <input type="text" class="form-control" id="s2" placeholder="Type the correct sentence..." data-answer="Du kannst mir helfen.">
-                            </div>
-                            <div class="mb-3">
-                                <label for="s3" class="form-label">3. Complete the sentence with the correct form of "dürfen": Die Kinder ________ nicht alleine schwimmen.</label>
-                                <input type="text" class="form-control" id="s3" placeholder="Type the correct form..." data-answer="dürfen">
-                            </div>
-                            <div class="mb-3">
-                                <label for="s4" class="form-label">4. Complete the sentence with "müssen" in the past tense: Gestern ________ ich lange arbeiten.</label>
-                                <input type="text" class="form-control" id="s4" placeholder="Type the correct form..." data-answer="musste">
-                            </div>
-                            <button type="button" class="btn btn-primary" id="check-sentences">Check Answers</button>
-                        </form>
-                        <div id="sentence-result" class="mt-3"></div>
-                    </div>
+                {% if current_user.is_authenticated %}
+                <div class="text-center mt-4">
+                    <button id="markCompletedBtn" class="btn btn-success" data-level="A2" data-section="grammar" data-lesson="modal_verbs">Mark as Completed</button>
                 </div>
-                
-                <div class="card mb-4">
-                    <div class="card-header">Exercise 3: Translation Practice</div>
-                    <div class="card-body">
-                        <form id="translation-practice">
-                            <div class="mb-3">
-                                <label for="t1" class="form-label">1. Translate to German: "I want to learn German."</label>
-                                <input type="text" class="form-control" id="t1" placeholder="Type your translation..." data-answer="Ich will Deutsch lernen.">
-                            </div>
-                            <div class="mb-3">
-                                <label for="t2" class="form-label">2. Translate to German: "He can play the piano very well."</label>
-                                <input type="text" class="form-control" id="t2" placeholder="Type your translation..." data-answer="Er kann sehr gut Klavier spielen.">
-                            </div>
-                            <div class="mb-3">
-                                <label for="t3" class="form-label">3. Translate to German: "You should study more."</label>
-                                <input type="text" class="form-control" id="t3" placeholder="Type your translation..." data-answer="Du sollst mehr lernen.">
-                            </div>
-                            <div class="mb-3">
-                                <label for="t4" class="form-label">4. Translate to German: "May I ask a question?"</label>
-                                <input type="text" class="form-control" id="t4" placeholder="Type your translation..." data-answer="Darf ich eine Frage stellen?">
-                            </div>
-                            <button type="button" class="btn btn-primary" id="check-translations">Check Answers</button>
-                        </form>
-                        <div id="translation-result" class="mt-3"></div>
-                    </div>
-                </div>
-                
-                <div class="alert alert-success">
-                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
-                    <p>You've completed the Modal Verbs lesson. Modal verbs are essential tools for expressing nuanced meaning in German, and mastering them will greatly improve your communication skills.</p>
-                    <p>Remember the key points: modal verbs are conjugated in the second position, while the main verb goes to the end of the sentence in its infinitive form.</p>
-                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('quiz', level='a2', topic='modal-verbs') }}" class="alert-link">Modal Verbs Quiz</a>.</p>
-                </div>
-            </section>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>
-{% endblock %}
 
-{% block scripts %}
-{{ super() }}
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize progress tracking
-        initializeProgressTracking();
+$(document).ready(function() {
+    {% if current_user.is_authenticated %}
+    // Check if lesson is already completed
+    $.get('/api/progress/check', {
+        level: 'A2',
+        section: 'grammar',
+        lesson: 'modal_verbs'
+    }).done(function(data) {
+        if (data.completed) {
+            $('#markCompletedBtn').text('Completed').addClass('btn-outline-success').removeClass('btn-success').prop('disabled', true);
+            $('.progress-bar').css('width', '100%').attr('aria-valuenow', 100).text('100%');
+        }
+    });
+    
+    // Mark lesson as completed
+    $('#markCompletedBtn').click(function() {
+        const button = $(this);
+        const level = button.data('level');
+        const section = button.data('section');
+        const lesson = button.data('lesson');
         
-        // Handle scrollspy for navigation
-        document.querySelectorAll('.list-group-item').forEach(item => {
-            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
-                item.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                });
-            }
-        });
-        
-        // Update progress bar as user scrolls through content
-        const sections = document.querySelectorAll('section');
-        const totalSections = sections.length;
-        let completedSections = 0;
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const sectionIndex = Array.from(sections).indexOf(entry.target);
-                    completedSections = Math.max(completedSections, sectionIndex + 1);
-                    const progressPercent = Math.round((completedSections / totalSections) * 100);
-                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
-                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
-                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
-                }
-            });
-        }, {threshold: 0.7});
-        
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-        
-        // Check modal verb exercise
-        document.getElementById('check-modal').addEventListener('click', function() {
-            const selects = document.querySelectorAll('#modal-practice select');
-            let correct = 0;
-            const totalQuestions = selects.length;
-            
-            selects.forEach(select => {
-                if (select.value === 'correct') {
-                    select.classList.add('is-valid');
-                    select.classList.remove('is-invalid');
-                    correct++;
-                } else if (select.value === 'incorrect') {
-                    select.classList.add('is-invalid');
-                    select.classList.remove('is-valid');
-                }
-            });
-            
-            const resultDiv = document.getElementById('modal-result');
-            if (correct === totalQuestions) {
-                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! You chose all the correct modal verbs!</div>';
-            } else {
-                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
-            }
-        });
-        
-        // Check sentence exercise
-        document.getElementById('check-sentences').addEventListener('click', function() {
-            const inputs = document.querySelectorAll('#sentence-practice input');
-            let correct = 0;
-            
-            inputs.forEach(input => {
-                const userAnswer = input.value.trim().toLowerCase();
-                const correctAnswer = input.dataset.answer.toLowerCase();
-                
-                if (userAnswer === correctAnswer) {
-                    input.classList.add('is-valid');
-                    input.classList.remove('is-invalid');
-                    correct++;
-                } else {
-                    input.classList.add('is-invalid');
-                    input.classList.remove('is-valid');
-                }
-            });
-            
-            const resultDiv = document.getElementById('sentence-result');
-            if (correct === inputs.length) {
-                resultDiv.innerHTML = '<div class="alert alert-success">Excellent! All your answers are correct!</div>';
-            } else {
-                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
-            }
-        });
-        
-        // Check translation exercise
-        document.getElementById('check-translations').addEventListener('click', function() {
-            const inputs = document.querySelectorAll('#translation-practice input');
-            let correct = 0;
-            
-            inputs.forEach(input => {
-                const userAnswer = input.value.trim().toLowerCase();
-                const correctAnswer = input.dataset.answer.toLowerCase();
-                
-                // Allow for some variation in translations
-                if (userAnswer === correctAnswer || 
-                    (input.id === 't1' && (userAnswer === 'ich will deutsch lernen' || userAnswer === 'ich möchte deutsch lernen')) ||
-                    (input.id === 't2' && (userAnswer === 'er kann sehr gut klavier spielen' || userAnswer === 'er kann klavier sehr gut spielen')) ||
-                    (input.id === 't3' && (userAnswer === 'du sollst mehr lernen' || userAnswer === 'du solltest mehr lernen')) ||
-                    (input.id === 't4' && (userAnswer === 'darf ich eine frage stellen' || userAnswer === 'darf ich fragen' || userAnswer === 'darf ich etwas fragen'))) {
-                    input.classList.add('is-valid');
-                    input.classList.remove('is-invalid');
-                    correct++;
-                } else {
-                    input.classList.add('is-invalid');
-                    input.classList.remove('is-valid');
-                }
-            });
-            
-            const resultDiv = document.getElementById('translation-result');
-            if (correct === inputs.length) {
-                resultDiv.innerHTML = '<div class="alert alert-success">Ausgezeichnet! Your translations are all correct!</div>';
-            } else {
-                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing your translations!</div>`;
+        $.ajax({
+            url: '/api/progress/update',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                level: level,
+                section: section,
+                lesson: lesson,
+                completed: true
+            }),
+            success: function(response) {
+                button.text('Completed').addClass('btn-outline-success').removeClass('btn-success').prop('disabled', true);
+                $('.progress-bar').css('width', '100%').attr('aria-valuenow', 100).text('100%');
             }
         });
     });
+    {% endif %}
+    
+    // Enable Bootstrap tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+    
+    // Handle the collapsible sections
+    $('.collapse').on('shown.bs.collapse', function() {
+        $(this).prev().find('.fa-chevron-down').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    });
+    
+    $('.collapse').on('hidden.bs.collapse', function() {
+        $(this).prev().find('.fa-chevron-up').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    });
+});
 </script>
 {% endblock %}

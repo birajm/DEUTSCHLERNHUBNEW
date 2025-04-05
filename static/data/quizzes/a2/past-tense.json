@@ -1,0 +1,202 @@
+{
+  "title": "A2 - Past Tense (Perfekt) Quiz",
+  "description": "Test your understanding of the past tense (Perfekt) in German",
+  "timeLimit": 900,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "text": "Ich _______ gestern ins Kino gegangen.",
+      "options": [
+        "habe",
+        "bin",
+        "ist",
+        "hat"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'gehen' uses 'sein' as its auxiliary verb in the Perfekt tense."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "text": "Er _______ das Buch gelesen.",
+      "options": [
+        "ist",
+        "sein",
+        "hat",
+        "haben"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'lesen' is a transitive verb, so it uses 'haben' as its auxiliary verb in the Perfekt tense."
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "text": "Wir _______ ein Auto gekauft.",
+      "options": [
+        "haben",
+        "sind",
+        "hat",
+        "ist"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'kaufen' is a transitive verb, so it uses 'haben' as its auxiliary verb in the Perfekt tense."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "text": "Sie _______ sehr spät angekommen.",
+      "options": [
+        "hat",
+        "haben",
+        "ist",
+        "sind"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'ankommen' is a verb of motion, so it uses 'sein' as its auxiliary verb in the Perfekt tense."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "text": "Das Kind _______ schnell eingeschlafen.",
+      "options": [
+        "hat",
+        "ist",
+        "sein",
+        "haben"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'einschlafen' indicates a change of state, so it uses 'sein' as its auxiliary verb in the Perfekt tense."
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "text": "Which of these verbs forms its past participle as 'gegessen'?",
+      "options": [
+        "geben",
+        "gehen",
+        "essen",
+        "sehen"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'essen' (to eat) forms its past participle as 'gegessen'."
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "text": "What is the past participle of 'sehen'?",
+      "options": [
+        "gesehen",
+        "gesieht",
+        "gesah",
+        "geseht"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! The past participle of 'sehen' is 'gesehen'."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "text": "What is the correct past participle of 'aufstehen'?",
+      "options": [
+        "aufgestehen",
+        "geaufstehen",
+        "aufgestanden",
+        "gestanden auf"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! For separable verbs like 'aufstehen', the 'ge-' goes between the prefix and the verb stem, and 'stehen' has the irregular participle 'gestanden', resulting in 'aufgestanden'."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "text": "What is the past participle of 'verstehen'?",
+      "options": [
+        "geverstehen",
+        "vergestehen",
+        "verstanden",
+        "versteht"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! Verbs with inseparable prefixes like 'ver-' don't add 'ge-' in the past participle. The participle of 'verstehen' is 'verstanden'."
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "text": "What is the past participle of 'studieren'?",
+      "options": [
+        "gestudiert",
+        "studiert",
+        "gestudiern",
+        "studieren"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! Verbs ending in '-ieren' don't add 'ge-' in the past participle. The participle of 'studieren' is simply 'studiert'."
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "text": "Which sentence is correct?",
+      "options": [
+        "Ich habe nach Berlin gefahren.",
+        "Ich bin nach Berlin gefahren.",
+        "Ich habe nach Berlin gefahrt.",
+        "Ich bin nach Berlin gefahrt."
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'Fahren' is a verb of motion, so it uses 'sein' as its auxiliary verb, and its past participle is 'gefahren'."
+    },
+    {
+      "id": 12,
+      "type": "multiple-choice",
+      "text": "Which sentence is correct?",
+      "options": [
+        "Wir haben viel Spaß gehabt.",
+        "Wir sind viel Spaß gehabt.",
+        "Wir haben viel Spaß gehaben.",
+        "Wir sind viel Spaß gehaben."
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'Haben' uses 'haben' as its auxiliary verb, and its past participle is 'gehabt'."
+    },
+    {
+      "id": 13,
+      "type": "multiple-choice",
+      "text": "Was _______ du gestern _______?",
+      "options": [
+        "hast ... machen",
+        "hast ... gemacht",
+        "bist ... gemacht",
+        "bist ... machen"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'Machen' is a regular verb using 'haben', and its past participle is 'gemacht'."
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "text": "Wir _______ den Film nicht _______.",
+      "options": [
+        "haben ... verstehen",
+        "sind ... verstanden",
+        "haben ... verstanden",
+        "sind ... verstehen"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'Verstehen' is a transitive verb using 'haben', and its past participle is 'verstanden'."
+    },
+    {
+      "id": 15,
+      "type": "multiple-choice",
+      "text": "Which of these verbs always uses 'sein' in the Perfekt?",
+      "options": [
+        "arbeiten (to work)",
+        "schlafen (to sleep)",
+        "bleiben (to stay)",
+        "spielen (to play)"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'Bleiben' (to stay) always uses 'sein' in the Perfekt tense."
+    }
+  ]
+}

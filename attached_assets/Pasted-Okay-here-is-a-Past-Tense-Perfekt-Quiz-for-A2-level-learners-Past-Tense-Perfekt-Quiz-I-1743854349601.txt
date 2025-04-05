@@ -1,0 +1,127 @@
+Okay, here is a Past Tense (Perfekt) Quiz for A2 level learners:
+
+**Past Tense (Perfekt) Quiz**
+
+**Instructions:** Choose the correct answer for each question.
+
+**Question 1:**
+
+Ich _______ gestern ein Buch _______.
+
+a) habe ... gelesen
+b) bin ... gelesen
+c) habe ... gelesst
+d) bin ... gelesst
+
+**Question 2:**
+
+Wir _______ am Wochenende im Park _______.
+
+a) haben ... gespielt
+b) sind ... gespielt
+c) haben ... spielten
+d) sind ... spielten
+
+**Question 3:**
+
+Er _______ heute Morgen spät _______.
+
+a) hat ... aufgestanden
+b) ist ... aufgestanden
+c) hat ... aufsteht
+d) ist ... aufsteht
+
+**Question 4:**
+
+Sie _______ ihre Freunde auf der Party _______.
+
+a) hat ... getroffen
+b) ist ... getroffen
+c) hat ... trefft
+d) ist ... trefft
+
+**Question 5:**
+
+Was _______ du gestern Abend _______?
+
+a) hast ... gemacht
+b) bist ... gemacht
+c) hast ... machest
+d) bist ... machest
+
+**Question 6:**
+
+Meine Eltern _______ letztes Jahr nach Italien _______.
+
+a) haben ... gefahren
+b) sind ... gefahren
+c) haben ... fahrt
+d) sind ... fahrt
+
+**Question 7:**
+
+Ich _______ den Bus zur Arbeit _______.
+
+a) habe ... genommen
+b) bin ... genommen
+c) habe ... nehmte
+d) bin ... nehmte
+
+**Question 8:**
+
+Das Wetter _______ gestern sehr schön _______.
+
+a) hat ... gewesen
+b) ist ... gewesen
+c) hat ... war
+d) ist ... war
+
+**Question 9:**
+
+Wir _______ den ganzen Tag _______.
+
+a) haben ... gearbeitet
+b) sind ... gearbeitet
+c) haben ... arbeitt
+d) sind ... arbeitt
+
+**Question 10:**
+
+Er _______ sehr müde _______.
+
+a) hat ... geworden
+b) ist ... geworden
+c) hat ... wird
+d) ist ... wird
+
+---
+
+**Answer Key:**
+
+1.  **a) habe ... gelesen**
+2.  **a) haben ... gespielt**
+3.  **b) ist ... aufgestanden**
+4.  **a) hat ... getroffen**
+5.  **a) hast ... gemacht**
+6.  **b) sind ... gefahren**
+7.  **a) habe ... genommen**
+8.  **b) ist ... gewesen**
+9.  **a) haben ... gearbeitet**
+10. **b) ist ... geworden**
+
+---
+
+**Optional: Feedback after each question:**
+
+* **Question 1:** Correct! "lesen" is a transitive verb, so we use "haben."
+* **Question 2:** Correct! "spielen" is a transitive verb, so we use "haben."
+* **Question 3:** Correct! "aufstehen" indicates a change in state, so we use "sein."
+* **Question 4:** Correct! "treffen" is a transitive verb, so we use "haben."
+* **Question 5:** Correct! "machen" is a transitive verb, so we use "haben."
+* **Question 6:** Correct! "fahren" indicates a change in location, so we use "sein."
+* **Question 7:** Correct! "nehmen" is a transitive verb, so we use "haben."
+* **Question 8:** Correct! "sein" uses "sein" as the auxiliary verb in Perfekt.
+* **Question 9:** Correct! "arbeiten" is usually used with "haben."
+* **Question 10:** Correct! "werden" indicates a change in state, so we use "sein."
+
+This quiz should help A2 learners test their understanding of the *Perfekt* tense. You can integrate this into the DeutschLernHub platform with automatic scoring and feedback.

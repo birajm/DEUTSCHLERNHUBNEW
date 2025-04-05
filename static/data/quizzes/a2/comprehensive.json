@@ -1,0 +1,267 @@
+{
+  "title": "A2 - Comprehensive Quiz",
+  "description": "Test your overall knowledge of German at the A2 level",
+  "timeLimit": 1800,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "text": "Ich _______ gestern im Supermarkt _______.",
+      "options": [
+        "war ... kaufen",
+        "bin ... gekauft",
+        "habe ... gekauft",
+        "bin ... kaufen"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'kaufen' is a transitive verb, so we use 'haben' in the Perfekt tense."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "text": "Wir _______ am Wochenende einen Film _______.",
+      "options": [
+        "haben ... gesehen",
+        "sind ... gesehen",
+        "haben ... sehe",
+        "sind ... sehe"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'sehen' is a transitive verb, so we use 'haben' in the Perfekt tense."
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "text": "Du _______ jetzt deine Jacke anziehen. Es ist kalt.",
+      "options": [
+        "kannst",
+        "musst",
+        "darfst",
+        "willst"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'müssen' is used to express necessity."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "text": "Entschuldigung, wie komme ich _______ zum Bahnhof?",
+      "options": [
+        "in",
+        "zu",
+        "auf",
+        "neben"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'zu' is used with destinations."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "text": "Das Auto ist _______ als das Fahrrad.",
+      "options": [
+        "schnell",
+        "schneller",
+        "am schnellsten",
+        "schnellste"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'schneller' is the comparative form."
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "text": "Ich _______ gern Kaffee mit Milch.",
+      "options": [
+        "mag",
+        "möchte",
+        "will",
+        "muss"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'mögen' (mag) is used to express liking something."
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "text": "Sie _______ in einem Büro.",
+      "options": [
+        "arbeitet",
+        "arbeiteten",
+        "arbeitest",
+        "arbeiten"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'arbeitet' is the correct conjugation for the third person singular (sie)."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "text": "Wir _______ heute Abend Pizza _______.",
+      "options": [
+        "haben ... essen",
+        "sind ... essen",
+        "werden ... essen",
+        "würden ... essen"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'werden' is used to form the future tense."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "text": "Er kommt _______ Italien.",
+      "options": [
+        "in",
+        "nach",
+        "aus",
+        "von"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'aus' is used to indicate origin or where someone comes from."
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "text": "Das Buch liegt _______ dem Tisch.",
+      "options": [
+        "auf",
+        "an",
+        "in",
+        "unter"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'auf' is used to indicate that something is on top of a surface."
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "text": "_______ du am Wochenende zu Hause?",
+      "options": [
+        "Bist",
+        "Hast",
+        "Sind",
+        "Haben"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'Bist' is the correct form of 'sein' for the second person singular (du)."
+    },
+    {
+      "id": 12,
+      "type": "multiple-choice",
+      "text": "Ich _______ keine Zeit.",
+      "options": [
+        "bin",
+        "habe",
+        "sind",
+        "haben"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'haben' is used to express possession, so 'habe' is correct for the first person singular."
+    },
+    {
+      "id": 13,
+      "type": "multiple-choice",
+      "text": "Sie ist _______ als ihr Bruder.",
+      "options": [
+        "groß",
+        "größer",
+        "am größten",
+        "größte"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'größer' is the comparative form used in comparisons."
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "text": "Wir _______ ins Kino gehen. Hast du Lust?",
+      "options": [
+        "können",
+        "müssen",
+        "dürfen",
+        "möchten"
+      ],
+      "correctAnswer": 3,
+      "feedback": "Correct! 'möchten' is used to express a polite wish or desire."
+    },
+    {
+      "id": 15,
+      "type": "multiple-choice",
+      "text": "Das ist mein _______ Freund.",
+      "options": [
+        "gut",
+        "besser",
+        "beste",
+        "am besten"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'beste' is the superlative form used with 'mein'."
+    },
+    {
+      "id": 16,
+      "type": "multiple-choice",
+      "text": "Ich _______ dich morgen anrufen.",
+      "options": [
+        "kann",
+        "muss",
+        "werde",
+        "will"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'werden' is used to form the future tense."
+    },
+    {
+      "id": 17,
+      "type": "multiple-choice",
+      "text": "Er wohnt _______ seinen Eltern.",
+      "options": [
+        "mit",
+        "bei",
+        "von",
+        "aus"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'bei' is used to indicate living with someone in their house."
+    },
+    {
+      "id": 18,
+      "type": "multiple-choice",
+      "text": "Was _______ du in deiner Freizeit?",
+      "options": [
+        "machst",
+        "mache",
+        "macht",
+        "machen"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'machst' is the correct conjugation for the second person singular (du)."
+    },
+    {
+      "id": 19,
+      "type": "multiple-choice",
+      "text": "Ich _______ gern Musik.",
+      "options": [
+        "höre",
+        "hört",
+        "hören",
+        "hörst"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'höre' is the correct conjugation for the first person singular (ich)."
+    },
+    {
+      "id": 20,
+      "type": "multiple-choice",
+      "text": "Das Wetter _______ heute sehr schön.",
+      "options": [
+        "ist",
+        "hat",
+        "sind",
+        "haben"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'ist' is the correct form of 'sein' for the third person singular."
+    }
+  ]
+}

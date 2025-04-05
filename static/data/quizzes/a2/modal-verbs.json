@@ -1,0 +1,202 @@
+{
+  "title": "A2 - Modal Verbs Quiz",
+  "description": "Test your understanding of modal verbs in German",
+  "timeLimit": 900,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "text": "Ich _______ gut Deutsch sprechen.",
+      "options": [
+        "kann",
+        "können",
+        "kannst",
+        "können"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'kann' is the correct conjugation of 'können' for the first person singular (ich)."
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "text": "_______ du mir helfen?",
+      "options": [
+        "Kann",
+        "Kannst",
+        "Könnt",
+        "Können"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'Kannst' is the correct conjugation of 'können' for the second person singular (du)."
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "text": "Er _______ heute nicht arbeiten.",
+      "options": [
+        "muss",
+        "müssen",
+        "musst",
+        "müsst"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'muss' is the correct conjugation of 'müssen' for the third person singular (er)."
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "text": "Wir _______ morgen früh aufstehen.",
+      "options": [
+        "müssen",
+        "muss",
+        "musst",
+        "müsst"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'müssen' is the correct conjugation of 'müssen' for the first person plural (wir)."
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "text": "_______ ich hier rauchen?",
+      "options": [
+        "Darf",
+        "Dürft",
+        "Darfst",
+        "Dürfen"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'Darf' is the correct conjugation of 'dürfen' for the first person singular (ich) in a question."
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "text": "Ihr _______ nicht so laut sein.",
+      "options": [
+        "darf",
+        "dürft",
+        "darfst",
+        "dürfen"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'dürft' is the correct conjugation of 'dürfen' for the second person plural (ihr)."
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "text": "Ich _______ ein Glas Wasser, bitte.",
+      "options": [
+        "möchte",
+        "will",
+        "kann",
+        "muss"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'möchte' is used to express a polite request or wish."
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "text": "Which modal verb expresses ability?",
+      "options": [
+        "müssen",
+        "dürfen",
+        "können",
+        "sollen"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'können' is used to express ability."
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "text": "Which modal verb expresses necessity or obligation?",
+      "options": [
+        "können",
+        "müssen",
+        "wollen",
+        "mögen"
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! 'müssen' is used to express necessity or obligation."
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "text": "Which modal verb expresses permission?",
+      "options": [
+        "können",
+        "müssen",
+        "dürfen",
+        "wollen"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'dürfen' is used to express permission."
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "text": "Du _______ nicht so laut sprechen.",
+      "options": [
+        "sollst",
+        "solltest",
+        "sollt",
+        "sollen"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'sollst' is the correct conjugation of 'sollen' for the second person singular (du)."
+    },
+    {
+      "id": 12,
+      "type": "multiple-choice",
+      "text": "Wir _______ nächstes Jahr nach Deutschland reisen.",
+      "options": [
+        "wollen",
+        "wollten",
+        "will",
+        "willst"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'wollen' is the correct conjugation of 'wollen' for the first person plural (wir)."
+    },
+    {
+      "id": 13,
+      "type": "multiple-choice",
+      "text": "Which sentence is correct?",
+      "options": [
+        "Ich muss gehen jetzt.",
+        "Ich muss jetzt gehen.",
+        "Ich jetzt muss gehen.",
+        "Ich gehen muss jetzt."
+      ],
+      "correctAnswer": 1,
+      "feedback": "Correct! In sentences with modal verbs, the modal verb takes the second position, and the main verb in its infinitive form goes to the end of the clause."
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "text": "Sie _______ Schokolade.",
+      "options": [
+        "mag",
+        "mögt",
+        "magst",
+        "mögen"
+      ],
+      "correctAnswer": 0,
+      "feedback": "Correct! 'mag' is the correct conjugation of 'mögen' for the third person singular (sie)."
+    },
+    {
+      "id": 15,
+      "type": "multiple-choice",
+      "text": "Which modal verb is used in the sentence: 'Ich will ein neues Auto kaufen'?",
+      "options": [
+        "dürfen",
+        "können",
+        "wollen",
+        "müssen"
+      ],
+      "correctAnswer": 2,
+      "feedback": "Correct! 'wollen' (to want to) is used in this sentence."
+    }
+  ]
+}

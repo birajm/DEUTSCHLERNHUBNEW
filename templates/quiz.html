@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - {{ level|upper }} {{ topic|title }} Quiz{% endblock %}
+
+{% block extra_css %}
+<style>
+    .quiz-timer {
+        margin-top: 1rem;
+        text-align: center;
+    }
+    
+    .typing-indicator {
+        display: inline-block;
+    }
+    
+    .typing-indicator .dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #bbb;
+        margin-right: 3px;
+        animation: typing 1.4s infinite both;
+    }
+    
+    .typing-indicator .dot:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    
+    .typing-indicator .dot:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+    
+    @keyframes typing {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="level-header {{ level }}-header">
+    <div class="container">
+        <h1>{{ level|upper }} Level - {{ topic|title|replace('-', ' ') }} Quiz</h1>
+        <p class="lead">Test your knowledge of German {{ topic|replace('-', ' ') }}</p>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Quiz Loading State -->
+            <div id="quiz-loading" class="text-center py-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-3">Loading quiz questions...</p>
+            </div>
+            
+            <!-- Quiz Error Message -->
+            <div id="quiz-error" class="alert alert-danger" style="display: none;"></div>
+            
+            <!-- Quiz Content -->
+            <div id="quiz-content" style="display: none;">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="quiz-timer">
+                        <div class="d-inline-block bg-light px-3 py-2 rounded-pill shadow-sm">
+                            <i class="fas fa-clock"></i>
+                            <span id="quiz-timer-value">15:00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-progress">
+                        <div class="text-end mb-1">
+                            <span id="quiz-answered-questions">0</span> / 
+                            <span id="quiz-total-questions">0</span> questions answered
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div id="quiz-progress-bar" class="progress-bar" role="progressbar" 
+                                style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="quiz-form" method="POST">
+                    {{ form.hidden_tag() }}
+                    
+                    <!-- Questions will be dynamically inserted here -->
+                    <div id="quiz-questions"></div>
+                    
+                    <div class="d-grid gap-2 col-md-6 mx-auto mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-check-circle"></i> Submit Answers
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Quiz Results (hidden initially) -->
+            <div id="quiz-results" style="display: none;">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">Quiz Results</h3>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="display-1 mb-3">
+                            <span id="quiz-score">0</span>/<span id="quiz-max-score">0</span>
+                        </div>
+                        
+                        <div class="progress mb-4" style="height: 20px;">
+                            <div id="quiz-result-progress" class="progress-bar" role="progressbar" 
+                                style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                <span id="quiz-percentage">0</span>%
+                            </div>
+                        </div>
+                        
+                        <p id="quiz-message" class="lead"></p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <a href="{{ url_for('quiz', level=level, topic=topic) }}" class="btn btn-outline-primary btn-lg w-100">
+                                    <i class="fas fa-redo"></i> Take Quiz Again
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="{{ url_for(level + '_index') }}" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-book"></i> Back to {{ level|upper }} Lessons
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+<script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize the quiz result progress bar after results are shown
+        const quizResults = document.getElementById('quiz-results');
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'style' && 
+                    quizResults.style.display !== 'none') {
+                    // Update result progress bar
+                    const percentage = document.getElementById('quiz-percentage').textContent;
+                    const progressBar = document.getElementById('quiz-result-progress');
+                    progressBar.style.width = percentage + '%';
+                    progressBar.setAttribute('aria-valuenow', percentage);
+                    
+                    // Set appropriate color based on score
+                    if (parseInt(percentage) >= 75) {
+                        progressBar.classList.add('bg-success');
+                    } else if (parseInt(percentage) >= 60) {
+                        progressBar.classList.add('bg-primary');
+                    } else if (parseInt(percentage) >= 40) {
+                        progressBar.classList.add('bg-warning');
+                    } else {
+                        progressBar.classList.add('bg-danger');
+                    }
+                }
+            });
+        });
+        
+        observer.observe(quizResults, { attributes: true });
+    });
+</script>
+{% endblock %}

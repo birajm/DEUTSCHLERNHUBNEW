@@ -1,0 +1,121 @@
+{
+  "title": "A1 - Basic Phrases Quiz",
+  "description": "Test your knowledge of basic German phrases and expressions",
+  "timeLimit": 600,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "text": "How do you say 'Hello' in German?",
+      "options": [
+        "Auf Wiedersehen",
+        "Hallo",
+        "Danke",
+        "Entschuldigung"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "text": "What does 'Wie geht es dir?' mean?",
+      "options": [
+        "What is your name?",
+        "Where are you from?",
+        "How are you?",
+        "How old are you?"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "text": "How do you say 'Thank you' in German?",
+      "options": [
+        "Bitte",
+        "Danke",
+        "Entschuldigung",
+        "Tschüss"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "text": "What is the correct response to 'Danke'?",
+      "options": [
+        "Bitte",
+        "Danke",
+        "Hallo",
+        "Tschüss"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "text": "How do you say 'Goodbye' in German?",
+      "options": [
+        "Guten Tag",
+        "Guten Morgen",
+        "Auf Wiedersehen",
+        "Willkommen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "text": "What does 'Guten Morgen' mean?",
+      "options": [
+        "Good night",
+        "Good afternoon",
+        "Good evening",
+        "Good morning"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "text": "How do you ask 'What is your name?' in German?",
+      "options": [
+        "Wie alt bist du?",
+        "Woher kommst du?",
+        "Wie heißt du?",
+        "Wo wohnst du?"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "type": "fill-in",
+      "text": "Complete the phrase: 'Mein Name ist _____.' (Use your name)",
+      "correctAnswer": ["[Any name]"]
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "text": "How do you ask 'Where are you from?' in German?",
+      "options": [
+        "Wie heißt du?",
+        "Woher kommst du?",
+        "Wie alt bist du?",
+        "Was machst du?"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "text": "What does 'Ich verstehe nicht' mean?",
+      "options": [
+        "I don't know",
+        "I don't understand",
+        "I don't speak German",
+        "I don't remember"
+      ],
+      "correctAnswer": 1
+    }
+  ]
+}

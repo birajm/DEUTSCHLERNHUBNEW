@@ -1,0 +1,15 @@
+This directory contains downloadable resources for German learning.
+
+Files should be organized by level (A1, A2, B1) and type (worksheets, vocabulary lists, grammar guides).
+
+Example file structure:
+- a1/
+  - alphabet_worksheet.pdf
+  - basic_vocabulary.pdf
+  - present_tense_verbs.pdf
+- a2/
+  - past_tense_guide.pdf
+  - common_phrases.pdf
+- b1/
+  - subjunctive_guide.pdf
+  - business_german_vocab.pdf

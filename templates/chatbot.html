@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Practice Chatbot{% endblock %}
+
+{% block content %}
+<div class="chatbot-header">
+    <div class="container">
+        <h1>Practice with DeutschBot</h1>
+        <p class="lead">Improve your German conversation skills with our interactive chatbot</p>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header d-flex align-items-center">
+                    <div class="bot-avatar">
+                        <i class="fas fa-robot fa-2x"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="mb-0">DeutschBot</h5>
+                        <small class="text-muted">Online and ready to chat</small>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="chat-messages" class="chat-messages mb-3">
+                        <div class="message bot-message">
+                            <div class="message-content">
+                                <p>Hallo! Ich bin DeutschBot. Wie kann ich dir heute helfen?</p>
+                            </div>
+                            <div class="message-info">
+                                <small class="text-muted">DeutschBot</small>
+                            </div>
+                        </div>
+                        <div class="message bot-message">
+                            <div class="message-content">
+                                <p>Du kannst mit mir auf Deutsch üben. Versuch es mal mit "Hallo", "Wie geht es dir?" oder frag mich über Grammatik!</p>
+                            </div>
+                            <div class="message-info">
+                                <small class="text-muted">DeutschBot</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input">
+                        <form id="chat-form" class="d-flex">
+                            <input type="text" id="user-message" class="form-control" placeholder="Type your message in German..." autocomplete="off">
+                            <button type="submit" class="btn btn-primary ms-2">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Suggestion Chips</h6>
+                            <div class="suggestion-chips">
+                                <button class="btn btn-sm btn-outline-secondary mb-1 me-1" onclick="sendSuggestion('Hallo')">Hallo</button>
+                                <button class="btn btn-sm btn-outline-secondary mb-1 me-1" onclick="sendSuggestion('Wie geht es dir?')">Wie geht es dir?</button>
+                                <button class="btn btn-sm btn-outline-secondary mb-1 me-1" onclick="sendSuggestion('Woher kommst du?')">Woher kommst du?</button>
+                                <button class="btn btn-sm btn-outline-secondary mb-1 me-1" onclick="sendSuggestion('Was ist dein Name?')">Was ist dein Name?</button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Try asking about</h6>
+                            <div class="suggestion-chips">
+                                <button class="btn btn-sm btn-outline-secondary mb-1 me-1" onclick="sendSuggestion('Hilf mir mit Grammatik')">Grammatik</button>
+                                <button class="btn btn-sm btn-outline-secondary mb-1 me-1" onclick="sendSuggestion('Ich brauche Übungen')">Übungen</button>
+                                <button class="btn btn-sm btn-outline-secondary mb-1 me-1" onclick="sendSuggestion('Wortschatz lernen')">Wortschatz</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h5 class="mb-0">About DeutschBot</h5>
+                </div>
+                <div class="card-body">
+                    <p>DeutschBot is a simple conversation practice tool to help you practice your German language skills.</p>
+                    <p>Features:</p>
+                    <ul>
+                        <li>Practice basic German conversations</li>
+                        <li>Get simple grammar corrections</li>
+                        <li>Learn new phrases and vocabulary</li>
+                        <li>Get suggestions for learning resources</li>
+                    </ul>
+                    <p class="text-muted small">Note: DeutschBot is a rule-based chatbot with limited capabilities. It's designed for simple practice conversations, not advanced language analysis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+{% endblock %}

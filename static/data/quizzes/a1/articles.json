@@ -1,0 +1,181 @@
+{
+  "title": "A1 - German Articles Quiz",
+  "description": "Test your knowledge of German articles (der, die, das)",
+  "timeLimit": 900,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Mann' (man)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Frau' (woman)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Kind' (child)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Buch' (book)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Tisch' (table)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Wasser' (water)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Schule' (school)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Auto' (car)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Apfel' (apple)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Tasche' (bag)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "text": "Which gender typically applies to most rivers in German?",
+      "options": [
+        "Masculine (der)",
+        "Feminine (die)",
+        "Neuter (das)",
+        "It varies"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 12,
+      "type": "multiple-choice",
+      "text": "Which gender typically applies to words ending with '-chen'?",
+      "options": [
+        "Masculine (der)",
+        "Feminine (die)",
+        "Neuter (das)",
+        "It varies"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 13,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Mädchen' (girl)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "text": "Which gender typically applies to words ending with '-ung'?",
+      "options": [
+        "Masculine (der)",
+        "Feminine (die)",
+        "Neuter (das)",
+        "It varies"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 15,
+      "type": "fill-in",
+      "text": "Complete the sentence: '___ Haus ist groß.' (The house is big.)",
+      "correctAnswer": ["Das"]
+    }
+  ]
+}

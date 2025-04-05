@@ -1,0 +1,349 @@
+{
+  "title": "A1 - Comprehensive Quiz",
+  "description": "Test your overall A1 level German knowledge",
+  "timeLimit": 1800,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "text": "What does 'Guten Abend' mean?",
+      "options": [
+        "Good morning",
+        "Good day",
+        "Good evening",
+        "Good night"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "text": "What is the correct article for 'Haus' (house)?",
+      "options": [
+        "der",
+        "die",
+        "das",
+        "den"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "text": "How do you say 'My name is...' in German?",
+      "options": [
+        "Wie heißt du?",
+        "Ich heiße...",
+        "Wie alt bist du?",
+        "Woher kommst du?"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "text": "How do you conjugate 'haben' for 'er'?",
+      "options": [
+        "habe",
+        "hast",
+        "hat",
+        "haben"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'apple'?",
+      "options": [
+        "Apfel",
+        "Banane",
+        "Orange",
+        "Erdbeere"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "text": "How do you count to three in German?",
+      "options": [
+        "eins, zwei, drei",
+        "ein, zwei, drei",
+        "eins, zwei, drei, vier",
+        "uno, dos, tres"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "text": "What is the correct word order in this sentence? 'Ich ___ ___ Kaffee.'' (I drink coffee.)",
+      "options": [
+        "trinke ein",
+        "ein trinke",
+        "trinke",
+        "ein"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "text": "What is the correct sentence for 'I am 25 years old'?",
+      "options": [
+        "Ich habe 25 Jahre alt.",
+        "Ich bin 25 Jahre alt.",
+        "Ich alt 25 Jahre.",
+        "Ich 25 Jahre bin."
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "text": "Which sentence correctly asks 'Where do you live?'",
+      "options": [
+        "Wo wohnst du?",
+        "Wo du wohnst?",
+        "Wohnst wo du?",
+        "Du wohnst wo?"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "text": "What does 'Entschuldigung' mean?",
+      "options": [
+        "Thank you",
+        "Please",
+        "Excuse me/Sorry",
+        "You're welcome"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'Monday'?",
+      "options": [
+        "Dienstag",
+        "Mittwoch",
+        "Montag",
+        "Sonntag"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 12,
+      "type": "multiple-choice",
+      "text": "What is the plural form of 'das Kind' (the child)?",
+      "options": [
+        "die Kinds",
+        "die Kinder",
+        "die Kindern",
+        "die Kind"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 13,
+      "type": "multiple-choice",
+      "text": "Select the correct form: 'Maria und Thomas ___ aus Deutschland.' (Maria and Thomas are from Germany.)",
+      "options": [
+        "bin",
+        "bist",
+        "ist",
+        "sind"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "text": "What is the correct way to ask 'What time is it?' in German?",
+      "options": [
+        "Wie spät ist es?",
+        "Was ist die Zeit?",
+        "Wann ist es?",
+        "Wie viel Uhr?"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 15,
+      "type": "multiple-choice",
+      "text": "How do you say 'I don't speak German well' in German?",
+      "options": [
+        "Ich spreche gut Deutsch.",
+        "Ich spreche nicht gut Deutsch.",
+        "Ich nicht spreche gut Deutsch.",
+        "Nicht ich spreche gut Deutsch."
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 16,
+      "type": "multiple-choice",
+      "text": "What are the definite articles in German?",
+      "options": [
+        "ein, eine, ein",
+        "einen, eine, ein",
+        "der, die, das",
+        "dieser, diese, dieses"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 17,
+      "type": "multiple-choice",
+      "text": "Which preposition is used in the phrase 'in Berlin'?",
+      "options": [
+        "auf",
+        "an",
+        "in",
+        "nach"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 18,
+      "type": "multiple-choice",
+      "text": "What is the correct form of 'a book' in German?",
+      "options": [
+        "der Buch",
+        "die Buch",
+        "das Buch",
+        "ein Buch"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "id": 19,
+      "type": "multiple-choice",
+      "text": "How do you say 'I would like a coffee' in German?",
+      "options": [
+        "Ich möchte einen Kaffee.",
+        "Ich will einen Kaffee.",
+        "Ich habe einen Kaffee.",
+        "Ich nehme einen Kaffee."
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 20,
+      "type": "multiple-choice",
+      "text": "What does 'Wie geht's?' mean?",
+      "options": [
+        "What is your name?",
+        "How are you?",
+        "Where are you going?",
+        "What do you want?"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 21,
+      "type": "fill-in",
+      "text": "Complete the sentence: 'Ich komme ___ Deutschland.' (I come from Germany.)",
+      "correctAnswer": ["aus"]
+    },
+    {
+      "id": 22,
+      "type": "fill-in",
+      "text": "Complete the sentence: 'Ich wohne ___ Berlin.' (I live in Berlin.)",
+      "correctAnswer": ["in"]
+    },
+    {
+      "id": 23,
+      "type": "multiple-choice",
+      "text": "What is the correct form of 'to learn' for 'we' in German?",
+      "options": [
+        "lernen",
+        "lerne",
+        "lernst",
+        "lernt"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 24,
+      "type": "multiple-choice",
+      "text": "What are the numbers from 1 to 5 in German?",
+      "options": [
+        "eins, zwei, drei, vier, fünf",
+        "ein, zwei, drei, vier, fünf",
+        "eins, zwei, drei, vier, funf",
+        "ein, zwei, drei, vier, funf"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 25,
+      "type": "multiple-choice",
+      "text": "Which phrase means 'See you tomorrow'?",
+      "options": [
+        "Bis bald",
+        "Bis später",
+        "Bis morgen",
+        "Bis heute"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 26,
+      "type": "multiple-choice",
+      "text": "What is the word for 'bread' in German?",
+      "options": [
+        "Brot",
+        "Wasser",
+        "Käse",
+        "Milch"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 27,
+      "type": "multiple-choice",
+      "text": "Which sentence is correct?",
+      "options": [
+        "Ich esse gern Pizza.",
+        "Ich gern esse Pizza.",
+        "Ich esse Pizza gern.",
+        "Both A and C are correct."
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "id": 28,
+      "type": "multiple-choice",
+      "text": "What does 'Schönes Wochenende!' mean?",
+      "options": [
+        "Good day!",
+        "Nice to meet you!",
+        "Have a nice weekend!",
+        "See you soon!"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 29,
+      "type": "multiple-choice",
+      "text": "What is the German word for 'family'?",
+      "options": [
+        "Familie",
+        "Freunde",
+        "Verwandte",
+        "Gruppe"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 30,
+      "type": "fill-in",
+      "text": "Complete the greeting: 'Guten ___!' (for afternoon)",
+      "correctAnswer": ["Tag"]
+    }
+  ]
+}

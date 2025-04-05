@@ -1,0 +1,14 @@
+This directory contains audio files for German pronunciation examples and listening exercises.
+
+Audio files should be organized by level (A1, A2, B1) and type (words, sentences, dialogues).
+
+Example file structure:
+- words/
+  - hallo.mp3
+  - guten_morgen.mp3
+- sentences/
+  - how_are_you.mp3
+  - my_name_is.mp3
+- dialogues/
+  - at_restaurant.mp3
+  - introduction.mp3

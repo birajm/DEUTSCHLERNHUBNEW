@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - My Profile{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-4 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">My Profile</h4>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <div class="profile-avatar bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center">
+                        <span class="fs-1">{{ current_user.username[0] | upper }}</span>
+                    </div>
+                    <h3 class="mt-3">{{ current_user.username }}</h3>
+                    <p class="text-muted">{{ current_user.email }}</p>
+                    <p class="text-muted">Member since: {{ current_user.created_at.strftime('%B %d, %Y') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4 class="mb-0">Learning Progress</h4>
+            </div>
+            <div class="card-body">
+                <h5>Level Progress</h5>
+                
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span>A1 - Beginner</span>
+                        <span>{{ a1_progress|round|int }}%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: {{ a1_progress }}%" aria-valuenow="{{ a1_progress|round|int }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span>A2 - Elementary</span>
+                        <span>{{ a2_progress|round|int }}%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: {{ a2_progress }}%" aria-valuenow="{{ a2_progress|round|int }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span>B1 - Intermediate</span>
+                        <span>{{ b1_progress|round|int }}%</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: {{ b1_progress }}%" aria-valuenow="{{ b1_progress|round|int }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                
+                <h5 class="mt-4">Recent Activities</h5>
+                {% if progress %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Section</th>
+                                <th>Lesson</th>
+                                <th>Status</th>
+                                <th>Last Accessed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in progress[:5] %}
+                            <tr>
+                                <td>{{ item.level }}</td>
+                                <td>{{ item.section }}</td>
+                                <td>{{ item.lesson }}</td>
+                                <td>
+                                    {% if item.completed %}
+                                    <span class="badge bg-success">Completed</span>
+                                    {% else %}
+                                    <span class="badge bg-warning">In Progress</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ item.last_accessed.strftime('%b %d, %Y') }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-info">
+                    <p class="mb-0">You haven't started any lessons yet. <a href="{{ url_for('a1_index') }}">Begin with A1 lessons!</a></p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">Quiz Results</h4>
+            </div>
+            <div class="card-body">
+                {% if quiz_results %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Topic</th>
+                                <th>Score</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for result in quiz_results[:5] %}
+                            <tr>
+                                <td>{{ result.level }}</td>
+                                <td>{{ result.topic }}</td>
+                                <td>
+                                    {{ result.score }}/{{ result.max_score }}
+                                    ({{ (result.score / result.max_score * 100)|round|int }}%)
+                                </td>
+                                <td>{{ result.completed_at.strftime('%b %d, %Y') }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% else %}
+                <div class="alert alert-info">
+                    <p class="mb-0">You haven't taken any quizzes yet. <a href="{{ url_for('a1_index') }}">Try a quiz in the A1 section!</a></p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

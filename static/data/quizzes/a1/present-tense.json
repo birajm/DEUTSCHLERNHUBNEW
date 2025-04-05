@@ -1,0 +1,175 @@
+{
+  "title": "A1 - Present Tense Quiz",
+  "description": "Test your knowledge of German present tense verb conjugation",
+  "timeLimit": 900,
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "text": "How do you conjugate 'sein' (to be) for 'ich'?",
+      "options": [
+        "bin",
+        "bist",
+        "ist",
+        "sind"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "type": "multiple-choice",
+      "text": "How do you conjugate 'haben' (to have) for 'du'?",
+      "options": [
+        "habe",
+        "habst",
+        "hast",
+        "hat"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "text": "Select the correct form: 'Er ____ ein Buch.' (He has a book.)",
+      "options": [
+        "habe",
+        "habst",
+        "hast",
+        "hat"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "id": 4,
+      "type": "multiple-choice",
+      "text": "Select the correct form: 'Wir ____ Deutsch.' (We learn German.)",
+      "options": [
+        "lerne",
+        "lernst",
+        "lernt",
+        "lernen"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "text": "How do you conjugate 'spielen' (to play) for 'ihr'?",
+      "options": [
+        "spiele",
+        "spielst",
+        "spielt",
+        "spielen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "text": "Select the correct form: 'Du ____ Musik.' (You listen to music.)",
+      "options": [
+        "höre",
+        "hörst",
+        "hört",
+        "hören"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "id": 7,
+      "type": "multiple-choice",
+      "text": "How do you conjugate 'gehen' (to go) for 'sie' (they)?",
+      "options": [
+        "gehe",
+        "gehst",
+        "geht",
+        "gehen"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "text": "Select the correct form: 'Ich ____ einen Kaffee.' (I drink a coffee.)",
+      "options": [
+        "trinke",
+        "trinkst",
+        "trinkt",
+        "trinken"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 9,
+      "type": "multiple-choice",
+      "text": "How do you conjugate 'arbeiten' (to work) for 'er'?",
+      "options": [
+        "arbeite",
+        "arbeitest",
+        "arbeitet",
+        "arbeiten"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "text": "Select the correct form: 'Ihr ____ gut Deutsch.' (You all speak German well.)",
+      "options": [
+        "spreche",
+        "sprichst",
+        "sprecht",
+        "sprechen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 11,
+      "type": "fill-in",
+      "text": "Complete the sentence: 'Ich ____ in Berlin.' (I live in Berlin.)",
+      "correctAnswer": ["wohne"]
+    },
+    {
+      "id": 12,
+      "type": "fill-in",
+      "text": "Complete the sentence: 'Maria ____ im Restaurant.' (Maria works in the restaurant.)",
+      "correctAnswer": ["arbeitet"]
+    },
+    {
+      "id": 13,
+      "type": "multiple-choice",
+      "text": "Select the correct form: 'Wir ____ in die Stadt.' (We drive to the city.)",
+      "options": [
+        "fahre",
+        "fährst",
+        "fährt",
+        "fahren"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "id": 14,
+      "type": "multiple-choice",
+      "text": "How do you conjugate 'lesen' (to read) for 'du'?",
+      "options": [
+        "lese",
+        "lest",
+        "liest",
+        "lesen"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "id": 15,
+      "type": "multiple-choice",
+      "text": "Select the correct form: 'Er ____ gern Fußball.' (He likes to play soccer.)",
+      "options": [
+        "spiele",
+        "spielst",
+        "spielt",
+        "spielen"
+      ],
+      "correctAnswer": 2
+    }
+  ]
+}

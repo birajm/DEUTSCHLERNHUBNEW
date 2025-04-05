@@ -1,0 +1,423 @@
+/* DeutschLernHub Main Stylesheet */
+
+/* ===== Base Styles ===== */
+:root {
+    /* German flag colors */
+    --german-black: #000000;
+    --german-red: #DD0000;
+    --german-gold: #FFCE00;
+    
+    /* Other colors */
+    --primary-color: #0056b3;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+    
+    /* Animation speed */
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: #f5f5f5;
+    transition: background-color var(--transition-speed);
+}
+
+a {
+    color: var(--primary-color);
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: #003366;
+    text-decoration: none;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+/* ===== Navigation ===== */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.brand-black {
+    color: var(--german-black);
+}
+
+.brand-red {
+    color: var(--german-red);
+}
+
+.brand-gold {
+    color: var(--german-gold);
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--german-black) 0%, var(--german-red) 50%, var(--german-gold) 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Level Cards ===== */
+.level-card {
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.level-a1 {
+    border-top: 4px solid #28a745;
+}
+
+.level-a2 {
+    border-top: 4px solid #007bff;
+}
+
+.level-b1 {
+    border-top: 4px solid #ffc107;
+}
+
+.level-icon {
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+/* ===== Feature Cards ===== */
+.feature-card {
+    transition: transform var(--transition-speed);
+    border-radius: 8px;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    color: var(--primary-color);
+}
+
+/* ===== Level Headers ===== */
+.level-header {
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.a1-header {
+    background-color: #28a745;
+    background-image: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+}
+
+.a2-header {
+    background-color: #007bff;
+    background-image: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+}
+
+.b1-header {
+    background-color: #ffc107;
+    background-image: linear-gradient(135deg, #ffc107 0%, #d39e00 100%);
+}
+
+.grammar-header {
+    background-color: var(--german-black);
+    background-image: linear-gradient(135deg, var(--german-black) 0%, #333 100%);
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.chatbot-header {
+    background-color: var(--german-red);
+    background-image: linear-gradient(135deg, var(--german-red) 0%, #aa0000 100%);
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+}
+
+/* ===== Chat Styling ===== */
+.chat-messages {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.message {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-message {
+    align-items: flex-end;
+}
+
+.bot-message {
+    align-items: flex-start;
+}
+
+.message-content {
+    padding: 0.75rem;
+    border-radius: 15px;
+    max-width: 80%;
+}
+
+.user-message .message-content {
+    background-color: #007bff;
+    color: white;
+    border-bottom-right-radius: 0;
+}
+
+.bot-message .message-content {
+    background-color: #e9ecef;
+    color: #212529;
+    border-bottom-left-radius: 0;
+}
+
+.message-info {
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+}
+
+.bot-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.suggestion-chips {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+/* ===== Grammar Section ===== */
+.case-box {
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    transition: transform var(--transition-speed);
+}
+
+.case-box:hover {
+    transform: translateY(-5px);
+}
+
+.nom-case {
+    background-color: #e8f4f8;
+    border-left: 4px solid #17a2b8;
+}
+
+.acc-case {
+    background-color: #e8f8ef;
+    border-left: 4px solid #28a745;
+}
+
+.dat-case {
+    background-color: #f8f2e8;
+    border-left: 4px solid #ffc107;
+}
+
+.gen-case {
+    background-color: #f8e8e8;
+    border-left: 4px solid #dc3545;
+}
+
+.example-box {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    transition: background-color var(--transition-speed);
+}
+
+.example-box.active, .example-box:hover {
+    background-color: #e9ecef;
+}
+
+/* ===== Quiz Section ===== */
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quiz-question {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.question-number {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.quiz-options label {
+    display: block;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.quiz-options label:hover {
+    background-color: #e9ecef;
+}
+
+.quiz-options input[type="radio"]:checked + label {
+    background-color: #d1ecf1;
+    border-left: 4px solid var(--primary-color);
+}
+
+.quiz-timer {
+    position: sticky;
+    top: 1rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+}
+
+.quiz-timer i {
+    margin-right: 0.5rem;
+    color: var(--danger-color);
+}
+
+/* ===== Profile Styling ===== */
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+}
+
+/* ===== Audio Player ===== */
+.audio-player {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.audio-player button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+.audio-player button:hover {
+    background-color: #0056b3;
+}
+
+.audio-player .progress-container {
+    flex-grow: 1;
+    background-color: #e9ecef;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.audio-player .progress-bar {
+    background-color: var(--primary-color);
+    height: 100%;
+    width: 0;
+    transition: width 0.1s linear;
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: 3rem;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 3rem 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .level-header, .grammar-header, .chatbot-header {
+        padding: 2rem 0;
+    }
+    
+    .message-content {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.25rem;
+    }
+}

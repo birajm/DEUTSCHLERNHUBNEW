@@ -1,0 +1,390 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - German Grammar Reference{% endblock %}
+
+{% block content %}
+<div class="grammar-header">
+    <div class="container">
+        <h1>German Grammar Reference</h1>
+        <p class="lead">A comprehensive guide to German grammar rules and structures</p>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group sticky-top" style="top: 2rem;">
+                <a href="#articles" class="list-group-item list-group-item-action">Articles</a>
+                <a href="#nouns" class="list-group-item list-group-item-action">Nouns and Gender</a>
+                <a href="#cases" class="list-group-item list-group-item-action">Cases</a>
+                <a href="#verbs" class="list-group-item list-group-item-action">Verbs and Conjugation</a>
+                <a href="#tenses" class="list-group-item list-group-item-action">Tenses</a>
+                <a href="#sentence-structure" class="list-group-item list-group-item-action">Sentence Structure</a>
+                <a href="#prepositions" class="list-group-item list-group-item-action">Prepositions</a>
+                <a href="#adjectives" class="list-group-item list-group-item-action">Adjectives</a>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="articles" class="mb-5">
+                <h2>Articles</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>Definite Articles (The)</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Case</th>
+                                        <th>Masculine</th>
+                                        <th>Feminine</th>
+                                        <th>Neuter</th>
+                                        <th>Plural</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Nominative</td>
+                                        <td>der</td>
+                                        <td>die</td>
+                                        <td>das</td>
+                                        <td>die</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Accusative</td>
+                                        <td>den</td>
+                                        <td>die</td>
+                                        <td>das</td>
+                                        <td>die</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dative</td>
+                                        <td>dem</td>
+                                        <td>der</td>
+                                        <td>dem</td>
+                                        <td>den</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Genitive</td>
+                                        <td>des</td>
+                                        <td>der</td>
+                                        <td>des</td>
+                                        <td>der</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3 class="mt-4">Indefinite Articles (A, An)</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Case</th>
+                                        <th>Masculine</th>
+                                        <th>Feminine</th>
+                                        <th>Neuter</th>
+                                        <th>Plural</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Nominative</td>
+                                        <td>ein</td>
+                                        <td>eine</td>
+                                        <td>ein</td>
+                                        <td>keine</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Accusative</td>
+                                        <td>einen</td>
+                                        <td>eine</td>
+                                        <td>ein</td>
+                                        <td>keine</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dative</td>
+                                        <td>einem</td>
+                                        <td>einer</td>
+                                        <td>einem</td>
+                                        <td>keinen</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Genitive</td>
+                                        <td>eines</td>
+                                        <td>einer</td>
+                                        <td>eines</td>
+                                        <td>keiner</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Examples</h3>
+                        <div class="example-container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="example-box">
+                                        <p><strong>Der Mann</strong> geht zur Arbeit.</p>
+                                        <p class="text-muted"><em>The man is going to work.</em></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="example-box">
+                                        <p>Ich sehe <strong>den Mann</strong>.</p>
+                                        <p class="text-muted"><em>I see the man.</em></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="nouns" class="mb-5">
+                <h2>Nouns and Gender</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>Gender Rules</h3>
+                        <p>In German, every noun has a gender: masculine, feminine, or neuter. While there are no absolute rules, there are some patterns to help guess the gender:</p>
+                        
+                        <h4 class="mt-3">Masculine Nouns (der)</h4>
+                        <ul>
+                            <li>Days, months, and seasons</li>
+                            <li>Most nouns ending in -er when referring to male people</li>
+                            <li>Many nouns ending in -en, -el, -ling, -ismus</li>
+                            <li>Examples: der Tag (day), der Sommer (summer), der Lehrer (teacher)</li>
+                        </ul>
+                        
+                        <h4 class="mt-3">Feminine Nouns (die)</h4>
+                        <ul>
+                            <li>Most nouns ending in -e</li>
+                            <li>Nouns ending in -heit, -keit, -ung, -schaft, -tion</li>
+                            <li>Many nouns ending in -ie, -ik, -ur</li>
+                            <li>Examples: die Frau (woman), die Freiheit (freedom), die Nation (nation)</li>
+                        </ul>
+                        
+                        <h4 class="mt-3">Neuter Nouns (das)</h4>
+                        <ul>
+                            <li>Diminutives ending in -chen or -lein</li>
+                            <li>Most metals and chemical elements</li>
+                            <li>Most infinitives used as nouns</li>
+                            <li>Examples: das Kind (child), das Gold (gold), das Essen (food/eating)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Plural Formation</h3>
+                        <p>There are several ways to form plurals in German:</p>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Pattern</th>
+                                        <th>Singular</th>
+                                        <th>Plural</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Add -e</td>
+                                        <td>der Tag</td>
+                                        <td>die Tage</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Add -er (with possible umlaut)</td>
+                                        <td>das Kind</td>
+                                        <td>die Kinder</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Add -n or -en</td>
+                                        <td>die Frau</td>
+                                        <td>die Frauen</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Add -s (foreign words)</td>
+                                        <td>das Auto</td>
+                                        <td>die Autos</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Same form</td>
+                                        <td>der Lehrer</td>
+                                        <td>die Lehrer</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="cases" class="mb-5">
+                <h2>Cases</h2>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3>The Four German Cases</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="case-box nom-case">
+                                    <h4>Nominative Case</h4>
+                                    <p>Used for the subject of the sentence.</p>
+                                    <p><strong>Question:</strong> Who/what is doing the action?</p>
+                                    <div class="example-box">
+                                        <p><strong>Der Mann</strong> kauft ein Buch.</p>
+                                        <p class="text-muted"><em>The man buys a book.</em></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="case-box acc-case">
+                                    <h4>Accusative Case</h4>
+                                    <p>Used for the direct object of the sentence.</p>
+                                    <p><strong>Question:</strong> Who/what is receiving the action?</p>
+                                    <div class="example-box">
+                                        <p>Der Mann kauft <strong>ein Buch</strong>.</p>
+                                        <p class="text-muted"><em>The man buys a book.</em></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="case-box dat-case">
+                                    <h4>Dative Case</h4>
+                                    <p>Used for the indirect object of the sentence.</p>
+                                    <p><strong>Question:</strong> To/for whom is the action done?</p>
+                                    <div class="example-box">
+                                        <p>Er gibt <strong>dem Kind</strong> ein Geschenk.</p>
+                                        <p class="text-muted"><em>He gives the child a gift.</em></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="case-box gen-case">
+                                    <h4>Genitive Case</h4>
+                                    <p>Used to show possession or relationships.</p>
+                                    <p><strong>Question:</strong> Whose?</p>
+                                    <div class="example-box">
+                                        <p>Das Fahrrad <strong>des Mannes</strong> ist neu.</p>
+                                        <p class="text-muted"><em>The man's bicycle is new.</em></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Continue with the remaining grammar sections -->
+            <section id="verbs" class="mb-5">
+                <h2>Verbs and Conjugation</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Regular Verbs in Present Tense</h3>
+                        <p>Example: <strong>spielen</strong> (to play)</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Person</th>
+                                        <th>Conjugation</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ich (I)</td>
+                                        <td>stem + e</td>
+                                        <td>ich spiele</td>
+                                    </tr>
+                                    <tr>
+                                        <td>du (you, informal)</td>
+                                        <td>stem + st</td>
+                                        <td>du spielst</td>
+                                    </tr>
+                                    <tr>
+                                        <td>er/sie/es (he/she/it)</td>
+                                        <td>stem + t</td>
+                                        <td>er/sie/es spielt</td>
+                                    </tr>
+                                    <tr>
+                                        <td>wir (we)</td>
+                                        <td>stem + en</td>
+                                        <td>wir spielen</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ihr (you all, informal)</td>
+                                        <td>stem + t</td>
+                                        <td>ihr spielt</td>
+                                    </tr>
+                                    <tr>
+                                        <td>sie/Sie (they/you formal)</td>
+                                        <td>stem + en</td>
+                                        <td>sie/Sie spielen</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3 class="mt-4">Common Irregular Verbs</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>sein (to be)</h5>
+                                <ul class="list-unstyled">
+                                    <li>ich bin</li>
+                                    <li>du bist</li>
+                                    <li>er/sie/es ist</li>
+                                    <li>wir sind</li>
+                                    <li>ihr seid</li>
+                                    <li>sie/Sie sind</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>haben (to have)</h5>
+                                <ul class="list-unstyled">
+                                    <li>ich habe</li>
+                                    <li>du hast</li>
+                                    <li>er/sie/es hat</li>
+                                    <li>wir haben</li>
+                                    <li>ihr habt</li>
+                                    <li>sie/Sie haben</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- More grammar sections would go here -->
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Add interactive behavior for grammar examples
+    document.addEventListener('DOMContentLoaded', function() {
+        const examples = document.querySelectorAll('.example-box');
+        
+        examples.forEach(example => {
+            example.addEventListener('mouseenter', function() {
+                this.classList.add('active');
+            });
+            
+            example.addEventListener('mouseleave', function() {
+                this.classList.remove('active');
+            });
+        });
+    });
+</script>
+{% endblock %}

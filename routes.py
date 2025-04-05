@@ -127,6 +127,57 @@ def a2_level():
 def b1_level():
     return render_template('b1/index.html')
 
+# B1 Communication routes
+@app.route('/b1/communication/complex-ideas')
+def b1_communication_complex_ideas():
+    return render_template('lessons/b1/communication/complex_ideas.html')
+
+@app.route('/b1/communication/describing-experiences')
+def b1_communication_describing_experiences():
+    return render_template('lessons/b1/communication/describing_experiences.html')
+
+@app.route('/b1/communication/debating-persuading')
+def b1_communication_debating_persuading():
+    return render_template('lessons/b1/communication/debating_persuading.html')
+
+@app.route('/b1/communication/cultural-nuances')
+def b1_communication_cultural_nuances():
+    return render_template('lessons/b1/communication/cultural_nuances.html')
+
+# B1 Grammar routes
+@app.route('/b1/grammar/passive-voice')
+def b1_grammar_passive_voice():
+    return render_template('lessons/b1/grammar/passive_voice.html')
+
+@app.route('/b1/grammar/subjunctive')
+def b1_grammar_subjunctive():
+    return render_template('lessons/b1/grammar/subjunctive.html')
+
+@app.route('/b1/grammar/advanced-tenses')
+def b1_grammar_advanced_tenses():
+    return render_template('lessons/b1/grammar/advanced_tenses.html')
+
+@app.route('/b1/grammar/complex-sentences')
+def b1_grammar_complex_sentences():
+    return render_template('lessons/b1/grammar/complex_sentences.html')
+
+# B1 Vocabulary routes
+@app.route('/b1/vocabulary/work-career')
+def b1_vocabulary_work_career():
+    return render_template('lessons/b1/vocabulary/work_career.html')
+
+@app.route('/b1/vocabulary/current-events')
+def b1_vocabulary_current_events():
+    return render_template('lessons/b1/vocabulary/current_events.html')
+
+@app.route('/b1/vocabulary/environment-nature')
+def b1_vocabulary_environment_nature():
+    return render_template('lessons/b1/vocabulary/environment_nature.html')
+
+@app.route('/b1/vocabulary/art-culture')
+def b1_vocabulary_art_culture():
+    return render_template('lessons/b1/vocabulary/art_culture.html')
+
 # Quiz routes
 @app.route('/quiz/<level>/<topic>')
 def quiz(level, topic):

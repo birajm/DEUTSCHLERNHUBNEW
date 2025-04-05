@@ -1,3 +1,4 @@
+
 {% extends "layout.html" %}
 
 {% block title %}DeutschLernHub - B1 Level{% endblock %}
@@ -11,9 +12,93 @@
 </div>
 
 <div class="container mt-4">
-    <div class="alert alert-info">
-        <h4>Coming Soon!</h4>
-        <p>B1 level content is currently under development. Check back later for new lessons and materials.</p>
+    <div class="row">
+        <!-- Advanced Communication Section -->
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="h5 mb-0">Advanced Communication</h2>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="{{ url_for('b1_communication_complex_ideas') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Expressing Complex Ideas
+                            <span class="badge bg-primary">30 min</span>
+                        </a>
+                        <a href="{{ url_for('b1_communication_describing_experiences') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Describing Experiences
+                            <span class="badge bg-primary">25 min</span>
+                        </a>
+                        <a href="{{ url_for('b1_communication_debating_persuading') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Debating and Persuading
+                            <span class="badge bg-primary">35 min</span>
+                        </a>
+                        <a href="{{ url_for('b1_communication_cultural_nuances') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Cultural Nuances
+                            <span class="badge bg-primary">25 min</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grammar Section -->
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header bg-success text-white">
+                    <h2 class="h5 mb-0">Grammar</h2>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="{{ url_for('b1_grammar_passive_voice') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Passive Voice
+                            <span class="badge bg-success">30 min</span>
+                        </a>
+                        <a href="{{ url_for('b1_grammar_subjunctive') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Subjunctive (Konjunktiv II)
+                            <span class="badge bg-success">35 min</span>
+                        </a>
+                        <a href="{{ url_for('b1_grammar_advanced_tenses') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Advanced Tenses
+                            <span class="badge bg-success">30 min</span>
+                        </a>
+                        <a href="{{ url_for('b1_grammar_complex_sentences') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Complex Sentence Structures
+                            <span class="badge bg-success">35 min</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vocabulary Section -->
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-header bg-warning text-dark">
+                    <h2 class="h5 mb-0">Vocabulary</h2>
+                </div>
+                <div class="card-body">
+                    <div class="list-group">
+                        <a href="{{ url_for('b1_vocabulary_work_career') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Work and Career
+                            <span class="badge bg-warning text-dark">25 min</span>
+                        </a>
+                        <a href="{{ url_for('b1_vocabulary_current_events') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Current Events
+                            <span class="badge bg-warning text-dark">25 min</span>
+                        </a>
+                        <a href="{{ url_for('b1_vocabulary_environment_nature') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Environment and Nature
+                            <span class="badge bg-warning text-dark">20 min</span>
+                        </a>
+                        <a href="{{ url_for('b1_vocabulary_art_culture') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            Art and Culture
+                            <span class="badge bg-warning text-dark">25 min</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

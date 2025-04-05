@@ -1,0 +1,72 @@
+
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - B1 Complex Sentences{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Learning Tips</h5>
+                    <p class="card-text">Pay attention to word order and connecting words in complex sentences.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Complex Sentence Structures</h2>
+                <p>Learn to create sophisticated sentences by combining clauses and using advanced conjunctions.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Double Conjunctions</div>
+                    <div class="card-body">
+                        <h5>Common Pairs:</h5>
+                        <ul>
+                            <li>entweder ... oder (either ... or)</li>
+                            <li>weder ... noch (neither ... nor)</li>
+                            <li>sowohl ... als auch (both ... and)</li>
+                        </ul>
+                        <div class="example-box bg-light p-3 mt-3">
+                            <p>Entweder gehen wir ins Kino oder wir bleiben zu Hause.</p>
+                            <p>Weder hat er angerufen noch hat er eine Nachricht geschickt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">Relative Clauses with Prepositions</div>
+                    <div class="card-body">
+                        <h5>Formation:</h5>
+                        <ul>
+                            <li>Preposition + relative pronoun (dem, der, etc.)</li>
+                        </ul>
+                        <div class="example-box bg-light p-3 mt-3">
+                            <p>Der Mann, mit dem ich gesprochen habe, ist Arzt.</p>
+                            <p>Das Haus, in dem ich wohne, ist alt.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="practice" class="mb-5">
+                <h3>Practice Exercises</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="exercise mb-4">
+                            <h5>Combine these sentences using the given structures:</h5>
+                            <ol>
+                                <li>Er lernt Deutsch. Er lernt Französisch. (sowohl ... als auch)</li>
+                                <li>Das ist die Frau. Ich habe mit ihr gesprochen. (relative clause)</li>
+                                <li>Ich gehe ins Theater. Ich bleibe zu Hause. (entweder ... oder)</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

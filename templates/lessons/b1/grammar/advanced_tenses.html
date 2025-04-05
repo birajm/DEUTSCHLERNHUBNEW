@@ -1,0 +1,70 @@
+
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - B1 Advanced Tenses{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Learning Tips</h5>
+                    <p class="card-text">Focus on understanding when to use each tense and their specific formations.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Advanced Tenses</h2>
+                <p>At B1 level, you'll learn to express more complex temporal relationships using various tenses.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Future Tense (Futur I)</div>
+                    <div class="card-body">
+                        <h5>Formation:</h5>
+                        <ul>
+                            <li>werden (conjugated) + Infinitive</li>
+                        </ul>
+                        <div class="example-box bg-light p-3 mt-3">
+                            <p>Ich werde morgen nach Berlin fahren.</p>
+                            <p>Sie werden das Projekt nächste Woche beenden.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header">Past Perfect (Plusquamperfekt)</div>
+                    <div class="card-body">
+                        <h5>Formation:</h5>
+                        <ul>
+                            <li>hatte/war (auxiliary in Präteritum) + Partizip II</li>
+                        </ul>
+                        <div class="example-box bg-light p-3 mt-3">
+                            <p>Nachdem ich das Buch gelesen hatte, ging ich schlafen.</p>
+                            <p>Als er angekommen war, hatte der Zug schon abgefahren.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="practice" class="mb-5">
+                <h3>Practice Exercises</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="exercise mb-4">
+                            <h5>Convert these sentences into the correct tense:</h5>
+                            <ol>
+                                <li>Ich gehe morgen ins Kino. (Future) → ________________</li>
+                                <li>Er kommt an. Der Zug fährt ab. (Past Perfect) → ________________</li>
+                                <li>Wir machen unsere Hausaufgaben. (Future) → ________________</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

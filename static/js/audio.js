@@ -1,6 +1,6 @@
+
 // Audio context and cache for better performance
 let audioContext = null;
-let audioCache = new Map();
 let audioElements = new Map();
 
 // Initialize audio context
@@ -12,80 +12,71 @@ function initAudioContext() {
 }
 
 // Function to play audio in listening exercises
-function playListeningAudio(audioPath, button) {
-  if (!button) return;
+function playListeningAudio(audioButton) {
+  const audioPath = audioButton.dataset.audio;
+  if (!audioPath) {
+    console.error('No audio path specified');
+    return;
+  }
 
   const existingAudio = audioElements.get(audioPath);
   if (existingAudio) {
     existingAudio.pause();
     existingAudio.currentTime = 0;
     audioElements.delete(audioPath);
-    button.innerHTML = '<i class="fas fa-play"></i>';
+    audioButton.innerHTML = '<i class="fas fa-play"></i>';
     return;
   }
 
   const audio = new Audio(audioPath);
   audioElements.set(audioPath, audio);
+  
+  const progressBar = audioButton.closest('.audio-player').querySelector('.progress-bar');
+  const timeDisplay = audioButton.closest('.audio-player').querySelector('.time-display');
+  
+  audioButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
 
-  button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+  audio.addEventListener('loadedmetadata', () => {
+    updateTimeDisplay(timeDisplay, 0, audio.duration);
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    const progress = (audio.currentTime / audio.duration) * 100;
+    progressBar.style.width = `${progress}%`;
+    updateTimeDisplay(timeDisplay, audio.currentTime, audio.duration);
+  });
 
   audio.addEventListener('canplay', () => {
-    button.innerHTML = '<i class="fas fa-pause"></i>';
+    audioButton.innerHTML = '<i class="fas fa-pause"></i>';
     audio.play();
   });
 
   audio.addEventListener('ended', () => {
-    button.innerHTML = '<i class="fas fa-play"></i>';
+    audioButton.innerHTML = '<i class="fas fa-play"></i>';
+    progressBar.style.width = '0%';
     audioElements.delete(audioPath);
   });
 
-  audio.addEventListener('error', () => {
-    console.error('Error playing audio:', audioPath);
-    button.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+  audio.addEventListener('error', (e) => {
+    console.error('Error playing audio:', e);
+    audioButton.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
     audioElements.delete(audioPath);
   });
 }
 
-// Global pronounce function for legacy onclick handlers
-window.pronounce = function(word) {
-  const button = event.currentTarget;
-  const audioPath = `/static/audio/vocabulary/${word.toLowerCase()}.mp3`;
-  playListeningAudio(audioPath, button);
-};
-
-
-// Text-to-speech function
-function speakText(text) {
-  if (synth.speaking) {
-    synth.cancel();
-  }
-
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'de-DE';
-  utterance.rate = 0.9;
-  synth.speak(utterance);
+function updateTimeDisplay(element, currentTime, duration) {
+  if (!element) return;
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  };
+  element.textContent = `${formatTime(currentTime)} / ${formatTime(duration)}`;
 }
 
 // Initialize when document loads
 document.addEventListener('DOMContentLoaded', function() {
-  // Handle all audio buttons
-  document.querySelectorAll('.play-audio').forEach(button => {
-    const audioPath = button.dataset.audio;
-    if (audioPath) {
-      button.addEventListener('click', function() {
-        playListeningAudio(audioPath, this);
-      });
-    }
-  });
-
-  // Handle vocabulary pronunciation buttons
-  document.querySelectorAll('.pronounce-word').forEach(button => {
-    const word = button.dataset.word;
-    if (word) {
-      button.addEventListener('click', function() {
-        const audioPath = `/static/audio/vocabulary/${word.toLowerCase()}.mp3`;
-        playListeningAudio(audioPath, this);
-      });
-    }
+  document.querySelectorAll('.audio-play-btn').forEach(button => {
+    button.addEventListener('click', () => playListeningAudio(button));
   });
 });

@@ -1,0 +1,532 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - German Alphabet and Pronunciation{% endblock %}
+
+{% block content %}
+<div class="lesson-header a1-header">
+    <div class="container">
+        <h1>Alphabet and Pronunciation</h1>
+        <p class="lead">Learn the German alphabet and basic pronunciation rules</p>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#alphabet" class="list-group-item list-group-item-action">The German Alphabet</a>
+                <a href="#umlauts" class="list-group-item list-group-item-action">Umlauts (ä, ö, ü)</a>
+                <a href="#special" class="list-group-item list-group-item-action">Special Characters (ß)</a>
+                <a href="#pronunciation" class="list-group-item list-group-item-action">Pronunciation Rules</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a1" data-section="basics" data-lesson="alphabet" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>The German alphabet is similar to the English alphabet, with a few additions and differences in pronunciation. Learning the correct pronunciation of German letters is essential for speaking German correctly.</p>
+                <p>By the end of this lesson, you will be able to:</p>
+                <ul>
+                    <li>Recognize and pronounce all letters of the German alphabet</li>
+                    <li>Understand the special German characters (umlauts and ß)</li>
+                    <li>Apply basic German pronunciation rules</li>
+                </ul>
+            </section>
+            
+            <section id="alphabet" class="mb-5">
+                <h2>The German Alphabet</h2>
+                <p>The German alphabet consists of 26 letters, just like English, plus four additional characters (ä, ö, ü, and ß).</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Letter</th>
+                                <th>German Name</th>
+                                <th>Pronunciation</th>
+                                <th>Example</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A a</td>
+                                <td>ah</td>
+                                <td>similar to 'a' in "father"</td>
+                                <td>Apfel (apple)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('a')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>B b</td>
+                                <td>beh</td>
+                                <td>similar to English 'b'</td>
+                                <td>Buch (book)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('b')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>C c</td>
+                                <td>tseh</td>
+                                <td>like 'ts' in "bits" before e, i, ä, ö, ü; otherwise like 'k'</td>
+                                <td>Computer</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('c')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>D d</td>
+                                <td>deh</td>
+                                <td>similar to English 'd'</td>
+                                <td>Danke (thank you)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('d')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>E e</td>
+                                <td>eh</td>
+                                <td>similar to 'e' in "bed"</td>
+                                <td>Essen (food)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('e')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>F f</td>
+                                <td>eff</td>
+                                <td>similar to English 'f'</td>
+                                <td>Freund (friend)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('f')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>G g</td>
+                                <td>geh</td>
+                                <td>similar to 'g' in "go"</td>
+                                <td>Garten (garden)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('g')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>H h</td>
+                                <td>hah</td>
+                                <td>similar to English 'h'</td>
+                                <td>Haus (house)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('h')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>I i</td>
+                                <td>ih</td>
+                                <td>similar to 'i' in "machine"</td>
+                                <td>Kind (child)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('i')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>J j</td>
+                                <td>yot</td>
+                                <td>like 'y' in "yes"</td>
+                                <td>Jahr (year)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('j')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>K k</td>
+                                <td>kah</td>
+                                <td>similar to English 'k'</td>
+                                <td>Katze (cat)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('k')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>L l</td>
+                                <td>ell</td>
+                                <td>similar to English 'l'</td>
+                                <td>Lampe (lamp)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('l')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>M m</td>
+                                <td>emm</td>
+                                <td>similar to English 'm'</td>
+                                <td>Musik (music)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('m')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>N n</td>
+                                <td>enn</td>
+                                <td>similar to English 'n'</td>
+                                <td>Natur (nature)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('n')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>O o</td>
+                                <td>oh</td>
+                                <td>similar to 'o' in "more"</td>
+                                <td>Ohr (ear)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('o')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>P p</td>
+                                <td>peh</td>
+                                <td>similar to English 'p'</td>
+                                <td>Park (park)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('p')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Q q</td>
+                                <td>kuh</td>
+                                <td>similar to English 'k', always followed by 'u'</td>
+                                <td>Qualität (quality)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('q')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>R r</td>
+                                <td>err</td>
+                                <td>guttural sound made in throat</td>
+                                <td>Rot (red)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('r')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>S s</td>
+                                <td>ess</td>
+                                <td>like 'z' at beginning of words, like 's' otherwise</td>
+                                <td>Sonne (sun)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('s')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>T t</td>
+                                <td>teh</td>
+                                <td>similar to English 't'</td>
+                                <td>Tag (day)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('t')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>U u</td>
+                                <td>uh</td>
+                                <td>similar to 'oo' in "moon"</td>
+                                <td>Uhr (clock)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('u')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>V v</td>
+                                <td>fau</td>
+                                <td>like 'f' in German words, like 'v' in foreign words</td>
+                                <td>Vater (father)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('v')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>W w</td>
+                                <td>veh</td>
+                                <td>like 'v' in "very"</td>
+                                <td>Wasser (water)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('w')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>X x</td>
+                                <td>ix</td>
+                                <td>like 'ks'</td>
+                                <td>Taxi (taxi)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('x')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Y y</td>
+                                <td>üpsilon</td>
+                                <td>like 'ü' or English 'y'</td>
+                                <td>Yoga</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('y')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Z z</td>
+                                <td>tset</td>
+                                <td>like 'ts' in "bits"</td>
+                                <td>Zeit (time)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('z')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="umlauts" class="mb-5">
+                <h2>Umlauts (ä, ö, ü)</h2>
+                <p>German has three umlauts, which are vowels with two dots above them. They have distinct pronunciations:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Letter</th>
+                                <th>German Name</th>
+                                <th>Pronunciation</th>
+                                <th>Example</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ä ä</td>
+                                <td>ah-umlaut</td>
+                                <td>similar to 'e' in "bet"</td>
+                                <td>Äpfel (apples)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('ä')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Ö ö</td>
+                                <td>oh-umlaut</td>
+                                <td>like 'i' in "girl" with rounded lips</td>
+                                <td>schön (beautiful)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('ö')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Ü ü</td>
+                                <td>uh-umlaut</td>
+                                <td>like 'ee' in "see" with rounded lips</td>
+                                <td>über (over)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('ü')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Tip</h5>
+                        <p>If you can't type umlauts on your keyboard, you can use the alternative spellings: ä = ae, ö = oe, ü = ue</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="special" class="mb-5">
+                <h2>Special Characters (ß)</h2>
+                <p>The eszett or sharp s (ß) is another special character in German:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Letter</th>
+                                <th>German Name</th>
+                                <th>Pronunciation</th>
+                                <th>Example</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ß</td>
+                                <td>eszett or scharfes S (sharp S)</td>
+                                <td>like 'ss' in "hiss"</td>
+                                <td>Straße (street)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('ß')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Note</h5>
+                        <p>If you can't type ß, you can use "ss" instead. In Switzerland, "ss" is always used instead of ß.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="pronunciation" class="mb-5">
+                <h2>Pronunciation Rules</h2>
+                <p>Here are some important German pronunciation rules to remember:</p>
+                
+                <div class="accordion" id="pronunciationRules">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Vowels
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#pronunciationRules">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>A long vowel is often indicated by a double vowel (aa, ee, oo) or an 'h' after the vowel (ah, eh, oh, etc.)</li>
+                                    <li>When a vowel is followed by a single consonant, it's usually pronounced long</li>
+                                    <li>When a vowel is followed by two consonants, it's usually pronounced short</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Consonant Combinations
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#pronunciationRules">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>ch:</strong> After a, o, u - guttural sound (like Scottish "loch"); after e, i, ä, ö, ü - like "h" in "huge"</li>
+                                    <li><strong>sch:</strong> Like "sh" in "ship"</li>
+                                    <li><strong>sp:</strong> At beginning of words, like "shp"</li>
+                                    <li><strong>st:</strong> At beginning of words, like "sht"</li>
+                                    <li><strong>tsch:</strong> Like "ch" in "church"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Final Consonants
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#pronunciationRules">
+                            <div class="accordion-body">
+                                <p>In German, consonants at the end of words or syllables are often devoiced:</p>
+                                <ul>
+                                    <li><strong>b</strong> sounds like <strong>p</strong></li>
+                                    <li><strong>d</strong> sounds like <strong>t</strong></li>
+                                    <li><strong>g</strong> sounds like <strong>k</strong></li>
+                                    <li><strong>v</strong> sounds like <strong>f</strong></li>
+                                </ul>
+                                <p>Example: "Tag" (day) is pronounced with a final "k" sound, not "g".</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Try reading these words aloud, paying attention to the pronunciation rules:</p>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">Simple Words</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Buch (book)
+                                    <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Buch')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Katze (cat)
+                                    <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Katze')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Haus (house)
+                                    <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Haus')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Straße (street)
+                                    <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Straße')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Schule (school)
+                                    <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Schule')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">More Challenging Words</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Flugzeug (airplane)
+                                    <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Flugzeug')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Tschüss (bye)
+                                    <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Tschüss')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Streichholzschächtelchen (small matchbox)
+                                    <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Streichholzschächtelchen')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Schlüssel (key)
+                                    <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Schlüssel')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Höhle (cave)
+                                    <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Höhle')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Practice Sentences</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Guten Tag, wie geht's? (Hello, how are you?)
+                            <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Tag, wie geht\'s?')"><i class="fas fa-volume-up"></i></button>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Ich heiße Hans. Und du? (My name is Hans. And you?)
+                            <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Ich heiße Hans. Und du?')"><i class="fas fa-volume-up"></i></button>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Die Straße ist sehr schön. (The street is very beautiful.)
+                            <button class="btn btn-sm btn-outline-primary" onclick="pronounce('Die Straße ist sehr schön.')"><i class="fas fa-volume-up"></i></button>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the German alphabet and pronunciation lesson. Keep practicing to improve your pronunciation skills.</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('a1_quiz_comprehensive') }}" class="alert-link">A1 Comprehensive Quiz</a>, which includes questions about the alphabet and pronunciation.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+{% endblock %}

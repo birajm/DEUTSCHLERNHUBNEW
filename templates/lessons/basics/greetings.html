@@ -1,0 +1,496 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Greetings and Introductions{% endblock %}
+
+{% block content %}
+<div class="lesson-header a1-header">
+    <div class="container">
+        <h1>Greetings and Introductions</h1>
+        <p class="lead">Learn how to greet people and introduce yourself in German</p>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#formal" class="list-group-item list-group-item-action">Formal Greetings</a>
+                <a href="#informal" class="list-group-item list-group-item-action">Informal Greetings</a>
+                <a href="#introductions" class="list-group-item list-group-item-action">Introducing Yourself</a>
+                <a href="#time" class="list-group-item list-group-item-action">Time-Specific Greetings</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a1" data-section="basics" data-lesson="greetings" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Germans value proper greetings and introductions in both formal and informal settings. Learning how to greet people correctly and introduce yourself is an essential part of German language and culture.</p>
+                <p>By the end of this lesson, you will be able to:</p>
+                <ul>
+                    <li>Use appropriate formal and informal greetings in German</li>
+                    <li>Introduce yourself and ask for someone's name</li>
+                    <li>Understand the difference between "du" and "Sie" (informal vs. formal "you")</li>
+                    <li>Greet people at different times of the day</li>
+                </ul>
+            </section>
+            
+            <section id="formal" class="mb-5">
+                <h2>Formal Greetings</h2>
+                <p>In German, formal greetings are used when talking to strangers, elderly people, or in professional settings. You should use the formal "Sie" (you) form with these greetings.</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>Pronunciation</th>
+                                <th>English</th>
+                                <th>Usage</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Guten Tag</td>
+                                <td>goo-ten tahk</td>
+                                <td>Good day / Hello</td>
+                                <td>Standard formal greeting, any time of day</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Tag')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Guten Morgen</td>
+                                <td>goo-ten mor-gen</td>
+                                <td>Good morning</td>
+                                <td>Used until about noon</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Morgen')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Guten Abend</td>
+                                <td>goo-ten ah-bent</td>
+                                <td>Good evening</td>
+                                <td>Used after about 6 PM</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Abend')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Auf Wiedersehen</td>
+                                <td>owf vee-der-zayn</td>
+                                <td>Goodbye</td>
+                                <td>Formal way to say goodbye</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Auf Wiedersehen')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Wie geht es Ihnen?</td>
+                                <td>vee gayt es ee-nen</td>
+                                <td>How are you?</td>
+                                <td>Formal way to ask how someone is</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wie geht es Ihnen?')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Cultural Note</h5>
+                        <p>In German-speaking countries, it's important to greet people when entering a shop, doctor's office, or other public place. Simply saying "Guten Tag" when you enter is considered polite.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="informal" class="mb-5">
+                <h2>Informal Greetings</h2>
+                <p>Informal greetings are used with friends, family, and children. You should use the informal "du" (you) form with these greetings.</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>Pronunciation</th>
+                                <th>English</th>
+                                <th>Usage</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hallo</td>
+                                <td>hah-lo</td>
+                                <td>Hello</td>
+                                <td>Standard informal greeting</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Hallo')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Hi</td>
+                                <td>hee</td>
+                                <td>Hi</td>
+                                <td>Very casual, among friends</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Hi')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Servus</td>
+                                <td>sair-voos</td>
+                                <td>Hi/Bye</td>
+                                <td>Common in southern Germany and Austria</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Servus')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Tschüss</td>
+                                <td>choos</td>
+                                <td>Bye</td>
+                                <td>Informal way to say goodbye</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Tschüss')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Wie geht's?</td>
+                                <td>vee gayts</td>
+                                <td>How are you?</td>
+                                <td>Informal way to ask how someone is</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wie geht\'s?')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Regional Variations</h5>
+                        <p>There are many regional greetings in German-speaking countries:</p>
+                        <ul>
+                            <li><strong>Grüß Gott</strong> - Used in southern Germany, Austria, and Switzerland</li>
+                            <li><strong>Moin</strong> - Used in northern Germany (can be used any time of day)</li>
+                            <li><strong>Grüezi</strong> - Common in Switzerland</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="introductions" class="mb-5">
+                <h2>Introducing Yourself</h2>
+                <p>When meeting someone new, you'll need to know how to introduce yourself and ask for someone's name.</p>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">Formal Introductions</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <strong>Mein Name ist...</strong> (My name is...) 
+                                    <button class="btn btn-sm btn-outline-primary float-end" onclick="pronounce('Mein Name ist')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Ich heiße...</strong> (I am called...) 
+                                    <button class="btn btn-sm btn-outline-primary float-end" onclick="pronounce('Ich heiße')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Wie heißen Sie?</strong> (What is your name?) 
+                                    <button class="btn btn-sm btn-outline-primary float-end" onclick="pronounce('Wie heißen Sie?')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Es freut mich, Sie kennenzulernen.</strong> (I'm pleased to meet you.) 
+                                    <button class="btn btn-sm btn-outline-primary float-end" onclick="pronounce('Es freut mich, Sie kennenzulernen.')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card mb-4">
+                            <div class="card-header">Informal Introductions</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <strong>Ich bin...</strong> (I am...) 
+                                    <button class="btn btn-sm btn-outline-primary float-end" onclick="pronounce('Ich bin')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Wie heißt du?</strong> (What's your name?) 
+                                    <button class="btn btn-sm btn-outline-primary float-end" onclick="pronounce('Wie heißt du?')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Freut mich!</strong> (Nice to meet you!) 
+                                    <button class="btn btn-sm btn-outline-primary float-end" onclick="pronounce('Freut mich!')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Woher kommst du?</strong> (Where are you from?) 
+                                    <button class="btn btn-sm btn-outline-primary float-end" onclick="pronounce('Woher kommst du?')"><i class="fas fa-volume-up"></i></button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <h5>Du or Sie? (Informal or Formal "You")</h5>
+                    <p>In German, there are two forms of "you":</p>
+                    <ul>
+                        <li><strong>Du</strong> (informal) - Used with friends, family, children, and in casual settings.</li>
+                        <li><strong>Sie</strong> (formal) - Used with strangers, authority figures, in business, and formal settings.</li>
+                    </ul>
+                    <p>Using the wrong form can be seen as disrespectful or too familiar. When in doubt, it's safer to use the formal "Sie" form.</p>
+                </div>
+            </section>
+            
+            <section id="time" class="mb-5">
+                <h2>Time-Specific Greetings</h2>
+                <p>German has different greetings depending on the time of day. Here's when to use each one:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Time of Day</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Guten Morgen</td>
+                                <td>Good morning</td>
+                                <td>From early morning until around noon</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Morgen')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Guten Tag</td>
+                                <td>Good day</td>
+                                <td>From late morning until early evening (around 6 PM)</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Tag')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Guten Abend</td>
+                                <td>Good evening</td>
+                                <td>From early evening onwards</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Abend')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Gute Nacht</td>
+                                <td>Good night</td>
+                                <td>Used when going to bed or leaving late at night</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Gute Nacht')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Tip</h5>
+                        <p>"Hallo" works at any time of day and is increasingly common in both formal and informal situations.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Try these practice conversations to improve your greeting and introduction skills:</p>
+                
+                <div class="accordion" id="practiceDialogues">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Formal Dialogue: Meeting someone for the first time
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#practiceDialogues">
+                            <div class="accordion-body">
+                                <table class="table">
+                                    <tr>
+                                        <td><strong>Person A:</strong></td>
+                                        <td>Guten Tag! Mein Name ist Maria Schmidt.</td>
+                                        <td>Hello! My name is Maria Schmidt.</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Tag! Mein Name ist Maria Schmidt.')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Person B:</strong></td>
+                                        <td>Guten Tag, Frau Schmidt. Ich heiße Hans Müller.</td>
+                                        <td>Hello, Ms. Schmidt. My name is Hans Müller.</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Guten Tag, Frau Schmidt. Ich heiße Hans Müller.')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Person A:</strong></td>
+                                        <td>Es freut mich, Sie kennenzulernen, Herr Müller.</td>
+                                        <td>I'm pleased to meet you, Mr. Müller.</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Es freut mich, Sie kennenzulernen, Herr Müller.')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Person B:</strong></td>
+                                        <td>Die Freude ist ganz meinerseits. Wie geht es Ihnen?</td>
+                                        <td>The pleasure is all mine. How are you?</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Die Freude ist ganz meinerseits. Wie geht es Ihnen?')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Person A:</strong></td>
+                                        <td>Danke, mir geht es gut. Und Ihnen?</td>
+                                        <td>Thank you, I'm fine. And you?</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Danke, mir geht es gut. Und Ihnen?')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Person B:</strong></td>
+                                        <td>Auch gut, danke.</td>
+                                        <td>Also good, thank you.</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Auch gut, danke.')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Informal Dialogue: Meeting a friend of a friend
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#practiceDialogues">
+                            <div class="accordion-body">
+                                <table class="table">
+                                    <tr>
+                                        <td><strong>Person A:</strong></td>
+                                        <td>Hi! Ich bin Lisa. Und du?</td>
+                                        <td>Hi! I'm Lisa. And you?</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Hi! Ich bin Lisa. Und du?')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Person B:</strong></td>
+                                        <td>Hallo, ich heiße Markus. Freut mich!</td>
+                                        <td>Hello, my name is Markus. Nice to meet you!</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Hallo, ich heiße Markus. Freut mich!')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Person A:</strong></td>
+                                        <td>Woher kommst du, Markus?</td>
+                                        <td>Where are you from, Markus?</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Woher kommst du, Markus?')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Person B:</strong></td>
+                                        <td>Ich komme aus Wien. Und du?</td>
+                                        <td>I'm from Vienna. And you?</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Ich komme aus Wien. Und du?')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Person A:</strong></td>
+                                        <td>Ich bin aus Berlin. Wie geht's dir?</td>
+                                        <td>I'm from Berlin. How are you?</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Ich bin aus Berlin. Wie geht\'s dir?')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Person B:</strong></td>
+                                        <td>Gut, danke! Und dir?</td>
+                                        <td>Good, thanks! And you?</td>
+                                        <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Gut, danke! Und dir?')"><i class="fas fa-volume-up"></i></button></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4 mb-4">
+                    <div class="card-header">Interactive Practice</div>
+                    <div class="card-body">
+                        <p>Practice introducing yourself by filling in the blanks:</p>
+                        <form id="practice-form">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Your Name:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Formal introduction:</label>
+                                <p id="formal-introduction">Guten Tag! Mein Name ist _______.</p>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Informal introduction:</label>
+                                <p id="informal-introduction">Hallo! Ich bin _______.</p>
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary" id="practice-button">Update</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Greetings and Introductions lesson. Keep practicing these phrases in your daily conversations.</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('a1_quiz_phrases') }}" class="alert-link">Basic Phrases Quiz</a>.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Interactive practice form
+        const practiceButton = document.getElementById('practice-button');
+        const nameInput = document.getElementById('name');
+        const formalIntro = document.getElementById('formal-introduction');
+        const informalIntro = document.getElementById('informal-introduction');
+        
+        practiceButton.addEventListener('click', function() {
+            const name = nameInput.value.trim();
+            if (name) {
+                formalIntro.textContent = `Guten Tag! Mein Name ist ${name}.`;
+                informalIntro.textContent = `Hallo! Ich bin ${name}.`;
+            }
+        });
+    });
+</script>
+{% endblock %}

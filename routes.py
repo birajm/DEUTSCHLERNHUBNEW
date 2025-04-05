@@ -86,6 +86,83 @@ def profile():
 def a1_index():
     return render_template('a1/index.html')
 
+# A1 Lesson routes
+@app.route('/a1/basics/alphabet')
+def a1_basics_alphabet():
+    return render_template('lessons/basics/alphabet.html')
+
+@app.route('/a1/basics/greetings')
+def a1_basics_greetings():
+    return render_template('lessons/basics/greetings.html')
+
+@app.route('/a1/basics/numbers')
+def a1_basics_numbers():
+    return render_template('lessons/basics/numbers.html')
+
+@app.route('/a1/basics/phrases')
+def a1_basics_phrases():
+    return render_template('lessons/basics/phrases.html')
+
+@app.route('/a1/grammar/articles')
+def a1_grammar_articles():
+    return render_template('lessons/grammar/articles.html')
+
+@app.route('/a1/grammar/present-tense')
+def a1_grammar_present_tense():
+    return render_template('lessons/grammar/present_tense.html')
+
+@app.route('/a1/grammar/pronouns')
+def a1_grammar_pronouns():
+    return render_template('lessons/grammar/pronouns.html')
+
+@app.route('/a1/grammar/sentences')
+def a1_grammar_sentences():
+    return render_template('lessons/grammar/sentences.html')
+
+@app.route('/a1/vocabulary/family')
+def a1_vocabulary_family():
+    return render_template('lessons/vocabulary/family.html')
+
+@app.route('/a1/vocabulary/colors')
+def a1_vocabulary_colors():
+    return render_template('lessons/vocabulary/colors.html')
+
+@app.route('/a1/vocabulary/dates')
+def a1_vocabulary_dates():
+    return render_template('lessons/vocabulary/dates.html')
+
+@app.route('/a1/vocabulary/food')
+def a1_vocabulary_food():
+    return render_template('lessons/vocabulary/food.html')
+
+@app.route('/a1/practice/listening')
+def a1_practice_listening():
+    return render_template('lessons/practice/listening.html')
+
+@app.route('/a1/practice/reading')
+def a1_practice_reading():
+    return render_template('lessons/practice/reading.html')
+
+@app.route('/a1/practice/writing')
+def a1_practice_writing():
+    return render_template('lessons/practice/writing.html')
+
+@app.route('/a1/quizzes/phrases')
+def a1_quiz_phrases():
+    return render_template('lessons/quizzes/phrases.html')
+
+@app.route('/a1/quizzes/articles')
+def a1_quiz_articles():
+    return render_template('lessons/quizzes/articles.html')
+
+@app.route('/a1/quizzes/present-tense')
+def a1_quiz_present_tense():
+    return render_template('lessons/quizzes/present_tense.html')
+
+@app.route('/a1/quizzes/comprehensive')
+def a1_quiz_comprehensive():
+    return render_template('lessons/quizzes/comprehensive.html')
+
 @app.route('/a2')
 def a2_index():
     return render_template('a2/index.html')

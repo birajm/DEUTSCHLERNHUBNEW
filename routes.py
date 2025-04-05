@@ -180,6 +180,10 @@ def a2_basics_asking_information():
 def a2_basics_shopping_services():
     return render_template('lessons/a2/expanded_basics/shopping_services.html')
 
+@app.route('/a2/expanded-basics/directions-transportation')
+def a2_basics_directions_transportation():
+    return render_template('lessons/a2/expanded_basics/directions_transportation.html')
+
 @app.route('/a2/grammar/past-tense')
 def a2_grammar_past_tense():
     return render_template('lessons/a2/grammar/past_tense.html')

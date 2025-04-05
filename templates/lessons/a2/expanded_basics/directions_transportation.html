@@ -1,0 +1,901 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Directions and Transportation{% endblock %}
+
+{% block content %}
+<div class="lesson-header a2-header">
+    <div class="container">
+        <h1>Directions and Transportation</h1>
+        <p class="lead">Learn to navigate and use transportation in German</p>
+        <div class="badge bg-light text-dark">25 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#places-vocabulary" class="list-group-item list-group-item-action">Places in the City</a>
+                <a href="#prepositions" class="list-group-item list-group-item-action">Prepositions of Place</a>
+                <a href="#asking-directions" class="list-group-item list-group-item-action">Asking for Directions</a>
+                <a href="#giving-directions" class="list-group-item list-group-item-action">Giving Directions</a>
+                <a href="#transportation" class="list-group-item list-group-item-action">Transportation Vocabulary</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a2" data-section="expanded_basics" data-lesson="directions_transportation" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Being able to navigate in a German-speaking country is essential for both travelers and residents. This lesson will teach you the vocabulary and phrases you need to ask for directions, understand responses, and talk about transportation options.</p>
+                <p>In this lesson, you'll learn:</p>
+                <ul>
+                    <li>Names of common places in a city</li>
+                    <li>Prepositions of place to describe locations</li>
+                    <li>How to ask for and give directions</li>
+                    <li>Vocabulary related to different means of transportation</li>
+                    <li>Phrases for using public transportation</li>
+                </ul>
+                <div class="alert alert-info">
+                    <h5>Cultural Note:</h5>
+                    <p>In German-speaking countries, public transportation is often very efficient and well-connected. Many locals use public transport instead of cars, especially in urban areas. The "du/Sie" distinction (formal vs. informal address) is important when asking strangers for directions - when in doubt, use the formal "Sie" form.</p>
+                </div>
+            </section>
+            
+            <section id="places-vocabulary" class="mb-5">
+                <h2>Places in a City</h2>
+                <p>Let's learn vocabulary for common places you might need to find in a city:</p>
+                
+                <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Public Places</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>der Bahnhof</strong> - train station</li>
+                                    <li class="list-group-item"><strong>die Bushaltestelle</strong> - bus stop</li>
+                                    <li class="list-group-item"><strong>die U-Bahn-Station</strong> - subway/metro station</li>
+                                    <li class="list-group-item"><strong>der Flughafen</strong> - airport</li>
+                                    <li class="list-group-item"><strong>das Stadtzentrum</strong> - city center</li>
+                                    <li class="list-group-item"><strong>der Platz</strong> - square</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Streets and Navigation</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>die Straße</strong> - street</li>
+                                    <li class="list-group-item"><strong>die Kreuzung</strong> - intersection</li>
+                                    <li class="list-group-item"><strong>die Ampel</strong> - traffic light</li>
+                                    <li class="list-group-item"><strong>die Brücke</strong> - bridge</li>
+                                    <li class="list-group-item"><strong>der Zebrastreifen</strong> - pedestrian crossing</li>
+                                    <li class="list-group-item"><strong>die Ecke</strong> - corner</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Landmarks and Buildings</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>das Rathaus</strong> - city hall</li>
+                                    <li class="list-group-item"><strong>die Kirche</strong> - church</li>
+                                    <li class="list-group-item"><strong>das Museum</strong> - museum</li>
+                                    <li class="list-group-item"><strong>das Krankenhaus</strong> - hospital</li>
+                                    <li class="list-group-item"><strong>die Bibliothek</strong> - library</li>
+                                    <li class="list-group-item"><strong>die Post</strong> - post office</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Accommodations and Dining</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>das Hotel</strong> - hotel</li>
+                                    <li class="list-group-item"><strong>das Gasthaus</strong> - inn</li>
+                                    <li class="list-group-item"><strong>das Restaurant</strong> - restaurant</li>
+                                    <li class="list-group-item"><strong>das Café</strong> - café</li>
+                                    <li class="list-group-item"><strong>die Kneipe</strong> - pub</li>
+                                    <li class="list-group-item"><strong>die Jugendherberge</strong> - youth hostel</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Practice Exercise</div>
+                    <div class="card-body">
+                        <p>Match these places to their descriptions:</p>
+                        <form id="places-practice">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>1. Hier kann man Züge nehmen. (Here one can take trains.)</p>
+                                    <select class="form-select" id="p1">
+                                        <option value="">Select a place...</option>
+                                        <option value="correct">der Bahnhof</option>
+                                        <option value="incorrect">das Hotel</option>
+                                        <option value="incorrect">die Bibliothek</option>
+                                        <option value="incorrect">die Ampel</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>2. Hier kann man Bücher lesen. (Here one can read books.)</p>
+                                    <select class="form-select" id="p2">
+                                        <option value="">Select a place...</option>
+                                        <option value="incorrect">das Krankenhaus</option>
+                                        <option value="correct">die Bibliothek</option>
+                                        <option value="incorrect">das Café</option>
+                                        <option value="incorrect">die Bushaltestelle</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>3. Hier isst man Mahlzeiten. (Here one eats meals.)</p>
+                                    <select class="form-select" id="p3">
+                                        <option value="">Select a place...</option>
+                                        <option value="incorrect">die Kirche</option>
+                                        <option value="incorrect">die Post</option>
+                                        <option value="incorrect">der Flughafen</option>
+                                        <option value="correct">das Restaurant</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>4. Hier wartet man auf den Bus. (Here one waits for the bus.)</p>
+                                    <select class="form-select" id="p4">
+                                        <option value="">Select a place...</option>
+                                        <option value="correct">die Bushaltestelle</option>
+                                        <option value="incorrect">das Rathaus</option>
+                                        <option value="incorrect">die Brücke</option>
+                                        <option value="incorrect">das Museum</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-places">Check Answers</button>
+                        </form>
+                        <div id="places-result" class="mt-3"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="prepositions" class="mb-5">
+                <h2>Prepositions of Place</h2>
+                <p>Prepositions of place are essential for describing locations and giving directions. In German, these prepositions often require either the dative or accusative case, depending on whether they describe a static location or movement.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Common Prepositions of Place</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Example</th>
+                                    <th>Case</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>in</strong></td>
+                                    <td>in, into</td>
+                                    <td>Das Museum ist <strong>in</strong> der Stadt.<br>(The museum is in the city.)</td>
+                                    <td>Dative (location)<br>Accusative (movement)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>an</strong></td>
+                                    <td>at, on, by</td>
+                                    <td>Das Café ist <strong>an</strong> der Ecke.<br>(The café is on the corner.)</td>
+                                    <td>Dative (location)<br>Accusative (movement)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>auf</strong></td>
+                                    <td>on, upon</td>
+                                    <td>Das Buch ist <strong>auf</strong> dem Tisch.<br>(The book is on the table.)</td>
+                                    <td>Dative (location)<br>Accusative (movement)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>neben</strong></td>
+                                    <td>next to, beside</td>
+                                    <td>Die Bank ist <strong>neben</strong> der Post.<br>(The bank is next to the post office.)</td>
+                                    <td>Dative (location)<br>Accusative (movement)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>vor</strong></td>
+                                    <td>in front of</td>
+                                    <td>Die Bushaltestelle ist <strong>vor</strong> dem Hotel.<br>(The bus stop is in front of the hotel.)</td>
+                                    <td>Dative (location)<br>Accusative (movement)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>hinter</strong></td>
+                                    <td>behind</td>
+                                    <td>Der Parkplatz ist <strong>hinter</strong> dem Restaurant.<br>(The parking lot is behind the restaurant.)</td>
+                                    <td>Dative (location)<br>Accusative (movement)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>zwischen</strong></td>
+                                    <td>between</td>
+                                    <td>Die Bibliothek ist <strong>zwischen</strong> dem Museum und der Kirche.<br>(The library is between the museum and the church.)</td>
+                                    <td>Dative (location)<br>Accusative (movement)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>gegenüber</strong></td>
+                                    <td>opposite, across from</td>
+                                    <td>Das Kino ist dem Bahnhof <strong>gegenüber</strong>.<br>(The cinema is opposite the train station.)</td>
+                                    <td>Dative</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning mt-3">
+                    <h5>Important Grammar Note:</h5>
+                    <p><strong>Two-way prepositions (Wechselpräpositionen):</strong> Many prepositions of place can take either dative or accusative case, depending on whether they describe:</p>
+                    <ul>
+                        <li><strong>Dative (Where?)</strong> - For static location (no movement): <em>Die Uhr hängt <strong>an der Wand</strong>.</em> (The clock hangs on the wall.)</li>
+                        <li><strong>Accusative (Where to?)</strong> - For movement/direction: <em>Ich hänge das Bild <strong>an die Wand</strong>.</em> (I'm hanging the picture on the wall.)</li>
+                    </ul>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Dative Forms of Articles with Prepositions</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Article</th>
+                                        <th>Masculine</th>
+                                        <th>Feminine</th>
+                                        <th>Neuter</th>
+                                        <th>Plural</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Definite</td>
+                                        <td>dem</td>
+                                        <td>der</td>
+                                        <td>dem</td>
+                                        <td>den + n</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Indefinite</td>
+                                        <td>einem</td>
+                                        <td>einer</td>
+                                        <td>einem</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Example</td>
+                                        <td>vor <strong>dem</strong> Bahnhof<br>(in front of the station)</td>
+                                        <td>neben <strong>der</strong> Kirche<br>(next to the church)</td>
+                                        <td>in <strong>dem</strong> Museum<br>(in the museum)</td>
+                                        <td>zwischen <strong>den</strong> Häuser<strong>n</strong><br>(between the houses)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="asking-directions" class="mb-5">
+                <h2>Asking for Directions</h2>
+                <p>Here are some useful phrases to help you ask for directions in German:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Essential Phrases for Asking Directions</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Entschuldigung, wo ist...?</strong></td>
+                                    <td>Excuse me, where is...?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wie komme ich zum/zur...?</strong></td>
+                                    <td>How do I get to the...? (zum for masculine/neuter, zur for feminine)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Können Sie mir den Weg zum/zur... zeigen?</strong></td>
+                                    <td>Can you show me the way to the...?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ist es weit von hier?</strong></td>
+                                    <td>Is it far from here?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wie lange dauert es zu Fuß?</strong></td>
+                                    <td>How long does it take on foot?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wo ist die nächste U-Bahn-Station/Bushaltestelle?</strong></td>
+                                    <td>Where is the nearest subway station/bus stop?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ist das in der Nähe von...?</strong></td>
+                                    <td>Is that near...?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich habe mich verlaufen.</strong></td>
+                                    <td>I am lost.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Important Contractions with "zu"</div>
+                    <div class="card-body">
+                        <p>When asking how to get somewhere, the preposition "zu" (to) combines with the definite article:</p>
+                        <ul>
+                            <li><strong>zu + dem = zum</strong> (masculine/neuter): <em>Wie komme ich <strong>zum</strong> Bahnhof/Museum?</em></li>
+                            <li><strong>zu + der = zur</strong> (feminine): <em>Wie komme ich <strong>zur</strong> Post/Kirche?</em></li>
+                        </ul>
+                        <p class="mt-3">Examples:</p>
+                        <ul>
+                            <li><em>Entschuldigung, wie komme ich <strong>zum</strong> Rathaus?</em> (Excuse me, how do I get to the city hall?)</li>
+                            <li><em>Können Sie mir den Weg <strong>zur</strong> Bibliothek zeigen?</em> (Can you show me the way to the library?)</li>
+                            <li><em>Ist es weit <strong>zum</strong> Flughafen?</em> (Is it far to the airport?)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <h5>Cultural Tip:</h5>
+                    <p>In German-speaking countries, it's polite to start with "Entschuldigung" (Excuse me) when approaching strangers to ask for directions. Using the formal "Sie" form is appropriate when addressing people you don't know, especially older individuals.</p>
+                </div>
+            </section>
+            
+            <section id="giving-directions" class="mb-5">
+                <h2>Giving Directions</h2>
+                <p>Understanding directions in German involves knowing key vocabulary for movement, distance, and orientation:</p>
+                
+                <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Direction Words</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>links</strong> - left</li>
+                                    <li class="list-group-item"><strong>rechts</strong> - right</li>
+                                    <li class="list-group-item"><strong>geradeaus</strong> - straight ahead</li>
+                                    <li class="list-group-item"><strong>zurück</strong> - back</li>
+                                    <li class="list-group-item"><strong>nach oben</strong> - upstairs/up</li>
+                                    <li class="list-group-item"><strong>nach unten</strong> - downstairs/down</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Movement Verbs</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>gehen</strong> - to go/walk</li>
+                                    <li class="list-group-item"><strong>fahren</strong> - to drive/travel</li>
+                                    <li class="list-group-item"><strong>abbiegen</strong> - to turn</li>
+                                    <li class="list-group-item"><strong>überqueren</strong> - to cross</li>
+                                    <li class="list-group-item"><strong>nehmen</strong> - to take</li>
+                                    <li class="list-group-item"><strong>folgen</strong> - to follow</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Distance and Time</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>nah</strong> - near</li>
+                                    <li class="list-group-item"><strong>weit</strong> - far</li>
+                                    <li class="list-group-item"><strong>etwa 5 Minuten zu Fuß</strong> - about 5 minutes on foot</li>
+                                    <li class="list-group-item"><strong>ungefähr 100 Meter</strong> - approximately 100 meters</li>
+                                    <li class="list-group-item"><strong>an der zweiten Ampel</strong> - at the second traffic light</li>
+                                    <li class="list-group-item"><strong>um die Ecke</strong> - around the corner</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Useful Phrases</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>Gehen Sie geradeaus.</strong> - Go straight ahead.</li>
+                                    <li class="list-group-item"><strong>Biegen Sie links/rechts ab.</strong> - Turn left/right.</li>
+                                    <li class="list-group-item"><strong>Folgen Sie dieser Straße.</strong> - Follow this street.</li>
+                                    <li class="list-group-item"><strong>Es ist auf der linken/rechten Seite.</strong> - It's on the left/right side.</li>
+                                    <li class="list-group-item"><strong>Überqueren Sie die Straße.</strong> - Cross the street.</li>
+                                    <li class="list-group-item"><strong>Es ist gegenüber der Kirche.</strong> - It's opposite the church.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Example Dialogue: Giving Directions</div>
+                    <div class="card-body">
+                        <div class="dialogue-card">
+                            <p><strong>Tourist:</strong> Entschuldigung, wie komme ich zum Hauptbahnhof?<br>
+                            <small>(Excuse me, how do I get to the main train station?)</small></p>
+                            <p><strong>Einheimischer:</strong> Gehen Sie diese Straße geradeaus und dann an der dritten Ampel links.<br>
+                            <small>(Go straight down this street and then left at the third traffic light.)</small></p>
+                            <p><strong>Tourist:</strong> Ist es weit?<br>
+                            <small>(Is it far?)</small></p>
+                            <p><strong>Einheimischer:</strong> Nein, etwa 10 Minuten zu Fuß. Sie können auch den Bus Nummer 15 nehmen. Die Haltestelle ist gleich dort drüben.<br>
+                            <small>(No, about 10 minutes on foot. You can also take bus number 15. The stop is just over there.)</small></p>
+                            <p><strong>Tourist:</strong> Vielen Dank für Ihre Hilfe!<br>
+                            <small>(Thank you very much for your help!)</small></p>
+                            <p><strong>Einheimischer:</strong> Gern geschehen. Gute Reise!<br>
+                            <small>(You're welcome. Have a good journey!)</small></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning mt-3">
+                    <h5>Grammar Note: Imperative Forms</h5>
+                    <p>When giving directions, the imperative (command) form is commonly used:</p>
+                    <ul>
+                        <li><strong>Informal (du):</strong> <em>Geh geradeaus!</em> (Go straight ahead!)</li>
+                        <li><strong>Formal (Sie):</strong> <em>Gehen Sie geradeaus!</em> (Go straight ahead!)</li>
+                        <li><strong>Plural (ihr):</strong> <em>Geht geradeaus!</em> (Go straight ahead!)</li>
+                    </ul>
+                    <p>With strangers, use the formal Sie form: <em>Biegen Sie rechts ab.</em> (Turn right.)</p>
+                </div>
+            </section>
+            
+            <section id="transportation" class="mb-5">
+                <h2>Transportation Vocabulary</h2>
+                <p>Getting around in German-speaking countries often involves public transportation. Here's essential vocabulary for different modes of transport:</p>
+                
+                <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Modes of Transport</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>der Bus</strong> - bus</li>
+                                    <li class="list-group-item"><strong>die Bahn/der Zug</strong> - train</li>
+                                    <li class="list-group-item"><strong>die U-Bahn</strong> - subway/metro</li>
+                                    <li class="list-group-item"><strong>die S-Bahn</strong> - suburban/city train</li>
+                                    <li class="list-group-item"><strong>die Straßenbahn/die Tram</strong> - tram/streetcar</li>
+                                    <li class="list-group-item"><strong>das Auto</strong> - car</li>
+                                    <li class="list-group-item"><strong>das Taxi</strong> - taxi</li>
+                                    <li class="list-group-item"><strong>das Fahrrad</strong> - bicycle</li>
+                                    <li class="list-group-item"><strong>das Flugzeug</strong> - airplane</li>
+                                    <li class="list-group-item"><strong>das Schiff</strong> - ship</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Public Transport Terms</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>die Fahrkarte/das Ticket</strong> - ticket</li>
+                                    <li class="list-group-item"><strong>der Fahrplan</strong> - timetable/schedule</li>
+                                    <li class="list-group-item"><strong>die Haltestelle</strong> - stop (bus, tram)</li>
+                                    <li class="list-group-item"><strong>der Bahnsteig</strong> - platform (train)</li>
+                                    <li class="list-group-item"><strong>das Gleis</strong> - track (train)</li>
+                                    <li class="list-group-item"><strong>die Abfahrt</strong> - departure</li>
+                                    <li class="list-group-item"><strong>die Ankunft</strong> - arrival</li>
+                                    <li class="list-group-item"><strong>die Verspätung</strong> - delay</li>
+                                    <li class="list-group-item"><strong>umsteigen</strong> - to change (trains, buses)</li>
+                                    <li class="list-group-item"><strong>die Verbindung</strong> - connection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Useful Transportation Phrases</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Eine Fahrkarte nach [Ort], bitte.</strong></td>
+                                    <td>A ticket to [place], please.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Einfach oder hin und zurück?</strong></td>
+                                    <td>One-way or round trip?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wann fährt der nächste Bus/Zug nach [Ort]?</strong></td>
+                                    <td>When does the next bus/train to [place] leave?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Von welchem Gleis fährt der Zug ab?</strong></td>
+                                    <td>From which platform does the train depart?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Muss ich umsteigen?</strong></td>
+                                    <td>Do I need to change (trains/buses)?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Hält dieser Bus an [Ort]?</strong></td>
+                                    <td>Does this bus stop at [place]?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wie lange dauert die Fahrt?</strong></td>
+                                    <td>How long does the journey take?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich möchte ein Taxi rufen.</strong></td>
+                                    <td>I would like to call a taxi.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <h5>Cultural Note:</h5>
+                    <p>In Germany, Austria, and Switzerland, public transportation typically runs on a precise schedule. Buses, trams, and trains usually arrive and depart exactly according to the timetable. It's considered good etiquette to be at the stop or platform a few minutes before the scheduled departure time.</p>
+                    <p>Also, remember that in most German cities, you need to validate your ticket before boarding (or immediately after boarding) by stamping it in a validation machine (der Entwerter). Traveling without a valid ticket can result in a substantial fine.</p>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice what you've learned about directions and transportation:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 1: Complete the Directions</div>
+                    <div class="card-body">
+                        <form id="directions-practice">
+                            <div class="mb-3">
+                                <p>Tourist: <em>Entschuldigung, wie komme ich zum Museum?</em></p>
+                                <p>Local: <em>Gehen Sie <input type="text" class="form-control d-inline-block w-auto" id="d1" data-answer="geradeaus" placeholder="____"> und dann an der zweiten Kreuzung <input type="text" class="form-control d-inline-block w-auto" id="d2" data-answer="rechts" placeholder="____">. Das Museum ist auf der <input type="text" class="form-control d-inline-block w-auto" id="d3" data-answer="linken" placeholder="____"> Seite, <input type="text" class="form-control d-inline-block w-auto" id="d4" data-answer="gegenüber" placeholder="____"> der Kirche.</em></p>
+                            </div>
+                            <div class="mb-3">
+                                <p>Tourist: <em>Ist es weit?</em></p>
+                                <p>Local: <em>Nein, es ist nur <input type="text" class="form-control d-inline-block w-auto" id="d5" data-answer="fünf" placeholder="____"> Minuten zu Fuß. Oder Sie können den <input type="text" class="form-control d-inline-block w-auto" id="d6" data-answer="Bus" placeholder="____"> Nummer 10 nehmen. Die <input type="text" class="form-control d-inline-block w-auto" id="d7" data-answer="Haltestelle" placeholder="____"> ist gleich dort drüben.</em></p>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-directions">Check Answers</button>
+                        </form>
+                        <div id="directions-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 2: Match Transportation Terms</div>
+                    <div class="card-body">
+                        <p>Match each German transportation term to its English equivalent:</p>
+                        <form id="transportation-practice">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>1. die Fahrkarte</p>
+                                    <select class="form-select" id="t1">
+                                        <option value="">Select the meaning...</option>
+                                        <option value="correct">ticket</option>
+                                        <option value="incorrect">platform</option>
+                                        <option value="incorrect">timetable</option>
+                                        <option value="incorrect">delay</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>2. der Bahnsteig</p>
+                                    <select class="form-select" id="t2">
+                                        <option value="">Select the meaning...</option>
+                                        <option value="incorrect">connection</option>
+                                        <option value="correct">platform</option>
+                                        <option value="incorrect">stop</option>
+                                        <option value="incorrect">track</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>3. der Fahrplan</p>
+                                    <select class="form-select" id="t3">
+                                        <option value="">Select the meaning...</option>
+                                        <option value="incorrect">ticket</option>
+                                        <option value="incorrect">arrival</option>
+                                        <option value="correct">timetable</option>
+                                        <option value="incorrect">departure</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>4. umsteigen</p>
+                                    <select class="form-select" id="t4">
+                                        <option value="">Select the meaning...</option>
+                                        <option value="incorrect">to arrive</option>
+                                        <option value="incorrect">to depart</option>
+                                        <option value="incorrect">to enter</option>
+                                        <option value="correct">to change (trains, buses)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-transportation">Check Answers</button>
+                        </form>
+                        <div id="transportation-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 3: Prepositions of Place</div>
+                    <div class="card-body">
+                        <p>Choose the correct preposition for each sentence:</p>
+                        <form id="prepositions-practice">
+                            <div class="mb-3">
+                                <p>1. Das Restaurant ist ________ dem Hotel.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep1" id="prep1a" value="incorrect">
+                                    <label class="form-check-label" for="prep1a">in</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep1" id="prep1b" value="incorrect">
+                                    <label class="form-check-label" for="prep1b">auf</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep1" id="prep1c" value="correct">
+                                    <label class="form-check-label" for="prep1c">neben</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep1" id="prep1d" value="incorrect">
+                                    <label class="form-check-label" for="prep1d">unter</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <p>2. Die Bibliothek ist ________ der Kirche und dem Museum.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep2" id="prep2a" value="incorrect">
+                                    <label class="form-check-label" for="prep2a">auf</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep2" id="prep2b" value="correct">
+                                    <label class="form-check-label" for="prep2b">zwischen</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep2" id="prep2c" value="incorrect">
+                                    <label class="form-check-label" for="prep2c">hinter</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep2" id="prep2d" value="incorrect">
+                                    <label class="form-check-label" for="prep2d">vor</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <p>3. Der Supermarkt ist ________ der Ecke.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep3" id="prep3a" value="correct">
+                                    <label class="form-check-label" for="prep3a">an</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep3" id="prep3b" value="incorrect">
+                                    <label class="form-check-label" for="prep3b">in</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep3" id="prep3c" value="incorrect">
+                                    <label class="form-check-label" for="prep3c">auf</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep3" id="prep3d" value="incorrect">
+                                    <label class="form-check-label" for="prep3d">unter</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <p>4. Die Post ist dem Bahnhof ________.</p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep4" id="prep4a" value="incorrect">
+                                    <label class="form-check-label" for="prep4a">neben</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep4" id="prep4b" value="incorrect">
+                                    <label class="form-check-label" for="prep4b">hinter</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep4" id="prep4c" value="incorrect">
+                                    <label class="form-check-label" for="prep4c">zwischen</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="prep4" id="prep4d" value="correct">
+                                    <label class="form-check-label" for="prep4d">gegenüber</label>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-prepositions">Check Answers</button>
+                        </form>
+                        <div id="prepositions-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Directions and Transportation lesson! You now have the vocabulary and phrases you need to navigate and use transportation in German-speaking countries.</p>
+                    <p>Remember to practice these phrases whenever you can. Understanding and giving directions is a crucial skill when traveling in German-speaking regions!</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('quiz', level='a2', topic='directions-transportation') }}" class="alert-link">Directions and Transportation Quiz</a>.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check places exercise
+        document.getElementById('check-places').addEventListener('click', function() {
+            const selects = document.querySelectorAll('#places-practice select');
+            let correct = 0;
+            const totalQuestions = selects.length;
+            
+            selects.forEach(select => {
+                if (select.value === 'correct') {
+                    select.classList.add('is-valid');
+                    select.classList.remove('is-invalid');
+                    correct++;
+                } else if (select.value === 'incorrect') {
+                    select.classList.add('is-invalid');
+                    select.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('places-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! You matched all places correctly!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check directions exercise
+        document.getElementById('check-directions').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#directions-practice input');
+            let correct = 0;
+            const totalQuestions = inputs.length;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('directions-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Excellent! You completed all directions correctly!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Try again!</div>`;
+            }
+        });
+        
+        // Check transportation exercise
+        document.getElementById('check-transportation').addEventListener('click', function() {
+            const selects = document.querySelectorAll('#transportation-practice select');
+            let correct = 0;
+            const totalQuestions = selects.length;
+            
+            selects.forEach(select => {
+                if (select.value === 'correct') {
+                    select.classList.add('is-valid');
+                    select.classList.remove('is-invalid');
+                    correct++;
+                } else if (select.value === 'incorrect') {
+                    select.classList.add('is-invalid');
+                    select.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('transportation-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! You matched all transportation terms correctly!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check prepositions exercise
+        document.getElementById('check-prepositions').addEventListener('click', function() {
+            const questions = ['prep1', 'prep2', 'prep3', 'prep4'];
+            let correct = 0;
+            
+            questions.forEach(question => {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption) {
+                    if (selectedOption.value === 'correct') {
+                        selectedOption.parentElement.classList.add('text-success');
+                        selectedOption.parentElement.classList.remove('text-danger');
+                        correct++;
+                    } else {
+                        selectedOption.parentElement.classList.add('text-danger');
+                        selectedOption.parentElement.classList.remove('text-success');
+                    }
+                }
+            });
+            
+            const resultDiv = document.getElementById('prepositions-result');
+            if (correct === questions.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! You selected all the correct prepositions!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${questions.length} correct. Keep practicing!</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

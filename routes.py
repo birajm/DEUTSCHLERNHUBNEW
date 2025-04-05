@@ -234,6 +234,14 @@ def b1_communication_complex_ideas():
 def b1_communication_describing_experiences():
     return render_template('lessons/b1/communication/describing_experiences.html')
 
+@app.route('/b1/communication/debating-persuading')
+def b1_communication_debating_persuading():
+    return render_template('lessons/b1/communication/debating_persuading.html')
+
+@app.route('/b1/communication/cultural-nuances')
+def b1_communication_cultural_nuances():
+    return render_template('lessons/b1/communication/cultural_nuances.html')
+
 # Grammar reference section
 @app.route('/grammar')
 def grammar():

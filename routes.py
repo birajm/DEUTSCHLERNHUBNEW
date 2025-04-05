@@ -242,6 +242,34 @@ def b1_communication_debating_persuading():
 def b1_communication_cultural_nuances():
     return render_template('lessons/b1/communication/cultural_nuances.html')
 
+@app.route('/b1/practice/listening')
+def b1_practice_listening():
+    return render_template('lessons/practice/listening.html')
+
+@app.route('/b1/practice/reading') 
+def b1_practice_reading():
+    return render_template('lessons/practice/reading.html')
+
+@app.route('/b1/practice/writing')
+def b1_practice_writing():
+    return render_template('lessons/practice/writing.html')
+
+@app.route('/b1/quizzes/subjunctive')
+def b1_quiz_subjunctive():
+    return render_template('lessons/quizzes/subjunctive.html')
+
+@app.route('/b1/quizzes/vocabulary')
+def b1_quiz_vocabulary():
+    return render_template('lessons/quizzes/vocabulary.html')
+
+@app.route('/b1/quizzes/complex-grammar') 
+def b1_quiz_complex_grammar():
+    return render_template('lessons/quizzes/complex_grammar.html')
+
+@app.route('/b1/quizzes/comprehensive')
+def b1_quiz_comprehensive():
+    return render_template('lessons/quizzes/comprehensive.html')
+
 # B1 Grammar routes
 @app.route('/b1/grammar/passive-voice')
 def b1_grammar_passive_voice():

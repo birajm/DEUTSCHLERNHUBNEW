@@ -1,0 +1,115 @@
+
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - B1 Work and Career Vocabulary{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Learning Tips</h5>
+                    <p class="card-text">Practice using these terms in context, especially in job-related scenarios.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <h1>Advanced Work and Career Vocabulary</h1>
+            <p class="lead">Build upon your professional German vocabulary with these advanced terms.</p>
+
+            <!-- Career Progression Section -->
+            <section class="mb-5">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0">Career Progression</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="vocabulary-list">
+                            {% for word in [
+                                {'german': 'die Karriereleiter', 'english': 'career ladder', 'example': 'Er hat die Karriereleiter schnell erklommen.'},
+                                {'german': 'die Beförderung', 'english': 'promotion', 'example': 'Sie hat eine Beförderung zum Manager bekommen.'},
+                                {'german': 'der Aufstieg', 'english': 'rise, advancement', 'example': 'Sein beruflicher Aufstieg war beeindruckend.'},
+                                {'german': 'die Weiterbildung', 'english': 'further education', 'example': 'Viele Firmen bieten ihren Mitarbeitern Weiterbildungen an.'},
+                                {'german': 'die Umschulung', 'english': 'retraining', 'example': 'Nach dem Verlust seines Jobs machte er eine Umschulung zum Programmierer.'},
+                                {'german': 'die Selbstständigkeit', 'english': 'self-employment', 'example': 'Sie hat den Schritt in die Selbstständigkeit gewagt.'},
+                                {'german': 'das Berufsfeld', 'english': 'field of work', 'example': 'Er ist in einem ganz anderen Berufsfeld tätig.'}
+                            ] %}
+                            <div class="vocabulary-item p-2">
+                                <h4 class="h6 mb-1">{{ word.german }}</h4>
+                                <p class="text-muted small mb-1">{{ word.english }}</p>
+                                <p class="example-sentence small">{{ word.example }}</p>
+                                <button class="btn btn-sm btn-outline-primary play-audio" data-word="{{ word.german.split(' ')[1] }}">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Workplace Dynamics Section -->
+            <section class="mb-5">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0">Workplace Dynamics</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="vocabulary-list">
+                            {% for word in [
+                                {'german': 'das Teamwork', 'english': 'teamwork', 'example': 'Teamwork ist für den Erfolg des Projekts entscheidend.'},
+                                {'german': 'die Zusammenarbeit', 'english': 'collaboration', 'example': 'Die Zusammenarbeit mit den Kollegen ist sehr gut.'},
+                                {'german': 'die Besprechung', 'english': 'meeting', 'example': 'Wir haben jeden Morgen eine kurze Besprechung.'},
+                                {'german': 'die Frist', 'english': 'deadline', 'example': 'Die Frist für das Projekt ist nächste Woche.'},
+                                {'german': 'der Stress', 'english': 'stress', 'example': 'Viele Menschen leiden unter Stress bei der Arbeit.'},
+                                {'german': 'die Work-Life-Balance', 'english': 'work-life balance', 'example': 'Es ist wichtig, eine gute Work-Life-Balance zu haben.'},
+                                {'german': 'die Arbeitsbedingungen', 'english': 'working conditions', 'example': 'Die Arbeitsbedingungen in dieser Firma sind sehr gut.'}
+                            ] %}
+                            <div class="vocabulary-item p-2">
+                                <h4 class="h6 mb-1">{{ word.german }}</h4>
+                                <p class="text-muted small mb-1">{{ word.english }}</p>
+                                <p class="example-sentence small">{{ word.example }}</p>
+                                <button class="btn btn-sm btn-outline-primary play-audio" data-word="{{ word.german.split(' ')[1] }}">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section class="mb-5">
+                <h3>Practice Activities</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="practice-exercise mb-4">
+                            <h4 class="h5">Matching Exercise</h4>
+                            <p>Match the German terms with their English meanings:</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">die Karriereleiter</li>
+                                        <li class="list-group-item">die Beförderung</li>
+                                        <li class="list-group-item">der Aufstieg</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">promotion</li>
+                                        <li class="list-group-item">career ladder</li>
+                                        <li class="list-group-item">advancement</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

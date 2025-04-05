@@ -1,0 +1,102 @@
+
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - B1 Current Events Vocabulary{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Learning Tips</h5>
+                    <p class="card-text">Read German news regularly to practice these terms in context.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <h1>Current Events Vocabulary</h1>
+            <p class="lead">Learn vocabulary to discuss news and current affairs in German.</p>
+
+            <!-- General News Section -->
+            <section class="mb-5">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0">General News</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="vocabulary-list">
+                            {% for word in [
+                                {'german': 'die Nachricht', 'english': 'news, message', 'example': 'Hast du die Nachrichten heute gehört?'},
+                                {'german': 'die Schlagzeile', 'english': 'headline', 'example': 'Die Schlagzeilen berichten über das Wahlergebnis.'},
+                                {'german': 'der Artikel', 'english': 'article', 'example': 'Ich habe einen interessanten Artikel in der Zeitung gelesen.'},
+                                {'german': 'der Bericht', 'english': 'report', 'example': 'Der Fernsehsender hat einen Bericht über das Erdbeben gesendet.'},
+                                {'german': 'die Meldung', 'english': 'news item', 'example': 'Es gibt eine neue Meldung über die Wirtschaftslage.'}
+                            ] %}
+                            <div class="vocabulary-item p-2">
+                                <h4 class="h6 mb-1">{{ word.german }}</h4>
+                                <p class="text-muted small mb-1">{{ word.english }}</p>
+                                <p class="example-sentence small">{{ word.example }}</p>
+                                <button class="btn btn-sm btn-outline-primary play-audio" data-word="{{ word.german.split(' ')[1] }}">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Politics Section -->
+            <section class="mb-5">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0">Politics</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="vocabulary-list">
+                            {% for word in [
+                                {'german': 'die Regierung', 'english': 'government', 'example': 'Die Regierung hat neue Gesetze verabschiedet.'},
+                                {'german': 'die Wahl', 'english': 'election', 'example': 'Nächsten Monat finden die Wahlen statt.'},
+                                {'german': 'der Politiker', 'english': 'politician', 'example': 'Viele Politiker diskutieren über die aktuellen Probleme.'},
+                                {'german': 'die Partei', 'english': 'political party', 'example': 'Welche Partei wirst du wählen?'},
+                                {'german': 'das Gesetz', 'english': 'law', 'example': 'Das neue Gesetz tritt nächste Woche in Kraft.'}
+                            ] %}
+                            <div class="vocabulary-item p-2">
+                                <h4 class="h6 mb-1">{{ word.german }}</h4>
+                                <p class="text-muted small mb-1">{{ word.english }}</p>
+                                <p class="example-sentence small">{{ word.example }}</p>
+                                <button class="btn btn-sm btn-outline-primary play-audio" data-word="{{ word.german.split(' ')[1] }}">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section class="mb-5">
+                <h3>Practice Activities</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="practice-exercise mb-4">
+                            <h4 class="h5">Reading Comprehension</h4>
+                            <p>Read the following news article and answer the questions below:</p>
+                            <div class="article-text bg-light p-3 mb-3">
+                                <p>Die deutsche Regierung hat gestern neue Gesetze zum Klimaschutz verabschiedet...</p>
+                            </div>
+                            <ol>
+                                <li>Was hat die Regierung verabschiedet?</li>
+                                <li>Wann wurde das neue Gesetz verabschiedet?</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

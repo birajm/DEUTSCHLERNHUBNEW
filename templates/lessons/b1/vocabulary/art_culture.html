@@ -1,0 +1,99 @@
+
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - B1 Art and Culture Vocabulary{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Learning Tips</h5>
+                    <p class="card-text">Practice these terms while exploring German art and cultural events.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <h1>Art and Culture Vocabulary</h1>
+            <p class="lead">Explore vocabulary related to various forms of art and cultural expression.</p>
+
+            <!-- Visual Arts Section -->
+            <section class="mb-5">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0">Visual Arts</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="vocabulary-list">
+                            {% for word in [
+                                {'german': 'die Malerei', 'english': 'painting (art form)', 'example': 'Er interessiert sich für moderne Malerei.'},
+                                {'german': 'das Gemälde', 'english': 'painting (artwork)', 'example': 'Das Gemälde hängt im Museum.'},
+                                {'german': 'der Künstler', 'english': 'artist', 'example': 'Dieser Künstler ist sehr berühmt.'},
+                                {'german': 'die Skulptur', 'english': 'sculpture', 'example': 'Die Skulptur steht im Park.'},
+                                {'german': 'die Ausstellung', 'english': 'exhibition', 'example': 'Wir haben eine interessante Ausstellung besucht.'}
+                            ] %}
+                            <div class="vocabulary-item p-2">
+                                <h4 class="h6 mb-1">{{ word.german }}</h4>
+                                <p class="text-muted small mb-1">{{ word.english }}</p>
+                                <p class="example-sentence small">{{ word.example }}</p>
+                                <button class="btn btn-sm btn-outline-primary play-audio" data-word="{{ word.german.split(' ')[1] }}">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Literature Section -->
+            <section class="mb-5">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0">Literature</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="vocabulary-list">
+                            {% for word in [
+                                {'german': 'die Literatur', 'english': 'literature', 'example': 'Sie studiert deutsche Literatur.'},
+                                {'german': 'der Autor', 'english': 'author', 'example': 'Kennst du die Werke dieses Autors?'},
+                                {'german': 'das Gedicht', 'english': 'poem', 'example': 'Sie hat ein schönes Gedicht geschrieben.'},
+                                {'german': 'der Roman', 'english': 'novel', 'example': 'Ich lese gerade einen spannenden Roman.'}
+                            ] %}
+                            <div class="vocabulary-item p-2">
+                                <h4 class="h6 mb-1">{{ word.german }}</h4>
+                                <p class="text-muted small mb-1">{{ word.english }}</p>
+                                <p class="example-sentence small">{{ word.example }}</p>
+                                <button class="btn btn-sm btn-outline-primary play-audio" data-word="{{ word.german.split(' ')[1] }}">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section class="mb-5">
+                <h3>Practice Activities</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="practice-exercise mb-4">
+                            <h4 class="h5">Cultural Discussion</h4>
+                            <p>Practice discussing these cultural topics:</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">Beschreiben Sie Ihr Lieblingskunstwerk.</li>
+                                <li class="list-group-item">Welche kulturellen Veranstaltungen besuchen Sie gern?</li>
+                                <li class="list-group-item">Welche deutschen Autoren kennen Sie?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

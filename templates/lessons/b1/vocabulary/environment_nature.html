@@ -1,0 +1,99 @@
+
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - B1 Environment and Nature Vocabulary{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Learning Tips</h5>
+                    <p class="card-text">Pay attention to compound words common in environmental terminology.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <h1>Environment and Nature Vocabulary</h1>
+            <p class="lead">Learn advanced vocabulary related to environmental issues and nature.</p>
+
+            <!-- General Environment Section -->
+            <section class="mb-5">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0">General Environment</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="vocabulary-list">
+                            {% for word in [
+                                {'german': 'die Umwelt', 'english': 'environment', 'example': 'Wir müssen unsere Umwelt schützen.'},
+                                {'german': 'die Natur', 'english': 'nature', 'example': 'Ich liebe es, Zeit in der Natur zu verbringen.'},
+                                {'german': 'das Ökosystem', 'english': 'ecosystem', 'example': 'Das Gleichgewicht im Ökosystem ist sehr wichtig.'},
+                                {'german': 'die Ressource', 'english': 'resource', 'example': 'Wir müssen unsere natürlichen Ressourcen schonend nutzen.'},
+                                {'german': 'die Nachhaltigkeit', 'english': 'sustainability', 'example': 'Nachhaltigkeit ist ein wichtiges Prinzip für die Zukunft.'}
+                            ] %}
+                            <div class="vocabulary-item p-2">
+                                <h4 class="h6 mb-1">{{ word.german }}</h4>
+                                <p class="text-muted small mb-1">{{ word.english }}</p>
+                                <p class="example-sentence small">{{ word.example }}</p>
+                                <button class="btn btn-sm btn-outline-primary play-audio" data-word="{{ word.german.split(' ')[1] }}">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Environmental Problems Section -->
+            <section class="mb-5">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="h5 mb-0">Environmental Problems</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="vocabulary-list">
+                            {% for word in [
+                                {'german': 'die Erderwärmung', 'english': 'global warming', 'example': 'Die Erderwärmung ist eine große Bedrohung für unseren Planeten.'},
+                                {'german': 'die Abholzung', 'english': 'deforestation', 'example': 'Die Abholzung der Wälder hat negative Folgen für das Klima.'},
+                                {'german': 'der Artenschutz', 'english': 'species conservation', 'example': 'Viele Organisationen setzen sich für den Artenschutz ein.'},
+                                {'german': 'der Müll', 'english': 'garbage, trash', 'example': 'Wir müssen unseren Müll recyceln.'}
+                            ] %}
+                            <div class="vocabulary-item p-2">
+                                <h4 class="h6 mb-1">{{ word.german }}</h4>
+                                <p class="text-muted small mb-1">{{ word.english }}</p>
+                                <p class="example-sentence small">{{ word.example }}</p>
+                                <button class="btn btn-sm btn-outline-primary play-audio" data-word="{{ word.german.split(' ')[1] }}">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Practice Section -->
+            <section class="mb-5">
+                <h3>Practice Activities</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="practice-exercise mb-4">
+                            <h4 class="h5">Discussion Topics</h4>
+                            <p>Use the vocabulary to discuss these environmental topics:</p>
+                            <ul class="list-group">
+                                <li class="list-group-item">Was können wir für den Umweltschutz tun?</li>
+                                <li class="list-group-item">Wie kann man Energie sparen?</li>
+                                <li class="list-group-item">Warum ist Recycling wichtig?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,890 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Food and Drinks{% endblock %}
+
+{% block content %}
+<div class="lesson-header a1-header">
+    <div class="container">
+        <h1>Food and Drinks</h1>
+        <p class="lead">Basic vocabulary for food items and beverages</p>
+        <div class="badge bg-light text-dark">20 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#basic-foods" class="list-group-item list-group-item-action">Basic Foods</a>
+                <a href="#drinks" class="list-group-item list-group-item-action">Drinks</a>
+                <a href="#meals" class="list-group-item list-group-item-action">Meals</a>
+                <a href="#restaurant" class="list-group-item list-group-item-action">At the Restaurant</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a1" data-section="vocabulary" data-lesson="food" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Food and drink vocabulary is essential for everyday life in German-speaking countries. In this lesson, you'll learn basic food items, drinks, meal names, and useful phrases for ordering at restaurants.</p>
+                <p>As with all German nouns, food and drink terms have grammatical gender (masculine, feminine, or neuter), which determines the article used with them (der, die, das). It's important to learn each noun with its correct article.</p>
+            </section>
+            
+            <section id="basic-foods" class="mb-5">
+                <h2>Basic Foods (Lebensmittel)</h2>
+                <p>Here are some common food items in German:</p>
+                
+                <div class="accordion mb-4" id="foodCategories">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingBread">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBread" aria-expanded="true" aria-controls="collapseBread">
+                                Bread and Baked Goods
+                            </button>
+                        </h2>
+                        <div id="collapseBread" class="accordion-collapse collapse show" aria-labelledby="headingBread" data-bs-parent="#foodCategories">
+                            <div class="accordion-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>German</th>
+                                                <th>English</th>
+                                                <th>Example Sentence</th>
+                                                <th>Listen</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>das Brot</td>
+                                                <td>bread</td>
+                                                <td>Ich esse gern Brot mit Butter.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Brot')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>das Brötchen</td>
+                                                <td>bread roll</td>
+                                                <td>Zum Frühstück esse ich ein Brötchen.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Brötchen')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>der Kuchen</td>
+                                                <td>cake</td>
+                                                <td>Der Kuchen schmeckt sehr gut.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Kuchen')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>das Croissant</td>
+                                                <td>croissant</td>
+                                                <td>Ich möchte ein Croissant, bitte.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Croissant')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingDairy">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDairy" aria-expanded="false" aria-controls="collapseDairy">
+                                Dairy Products
+                            </button>
+                        </h2>
+                        <div id="collapseDairy" class="accordion-collapse collapse" aria-labelledby="headingDairy" data-bs-parent="#foodCategories">
+                            <div class="accordion-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>German</th>
+                                                <th>English</th>
+                                                <th>Example Sentence</th>
+                                                <th>Listen</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>die Milch</td>
+                                                <td>milk</td>
+                                                <td>Ich trinke jeden Morgen Milch.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Milch')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>der Käse</td>
+                                                <td>cheese</td>
+                                                <td>Ich mag Käse auf dem Brot.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Käse')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>der Joghurt</td>
+                                                <td>yogurt</td>
+                                                <td>Ich esse gern Joghurt mit Früchten.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Joghurt')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>die Butter</td>
+                                                <td>butter</td>
+                                                <td>Kannst du mir bitte die Butter geben?</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Butter')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFruits">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFruits" aria-expanded="false" aria-controls="collapseFruits">
+                                Fruits and Vegetables
+                            </button>
+                        </h2>
+                        <div id="collapseFruits" class="accordion-collapse collapse" aria-labelledby="headingFruits" data-bs-parent="#foodCategories">
+                            <div class="accordion-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>German</th>
+                                                <th>English</th>
+                                                <th>Example Sentence</th>
+                                                <th>Listen</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>der Apfel</td>
+                                                <td>apple</td>
+                                                <td>Ich esse jeden Tag einen Apfel.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Apfel')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>die Banane</td>
+                                                <td>banana</td>
+                                                <td>Die Banane ist noch nicht reif.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Banane')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>die Orange</td>
+                                                <td>orange</td>
+                                                <td>Ich mag Orangensaft zum Frühstück.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Orange')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>die Tomate</td>
+                                                <td>tomato</td>
+                                                <td>Wir brauchen Tomaten für den Salat.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Tomate')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>die Kartoffel</td>
+                                                <td>potato</td>
+                                                <td>In Deutschland isst man viele Kartoffeln.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Kartoffel')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>die Zwiebel</td>
+                                                <td>onion</td>
+                                                <td>Schneide bitte die Zwiebel.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Zwiebel')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingMeat">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMeat" aria-expanded="false" aria-controls="collapseMeat">
+                                Meat and Protein
+                            </button>
+                        </h2>
+                        <div id="collapseMeat" class="accordion-collapse collapse" aria-labelledby="headingMeat" data-bs-parent="#foodCategories">
+                            <div class="accordion-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>German</th>
+                                                <th>English</th>
+                                                <th>Example Sentence</th>
+                                                <th>Listen</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>das Fleisch</td>
+                                                <td>meat</td>
+                                                <td>Ich esse kein Fleisch, ich bin Vegetarier.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Fleisch')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>das Hähnchen</td>
+                                                <td>chicken</td>
+                                                <td>Wir essen heute Hähnchen mit Reis.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Hähnchen')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>das Rindfleisch</td>
+                                                <td>beef</td>
+                                                <td>Das Rindfleisch ist sehr zart.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Rindfleisch')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>die Wurst</td>
+                                                <td>sausage</td>
+                                                <td>Deutschland ist bekannt für verschiedene Wurstsorten.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wurst')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>der Fisch</td>
+                                                <td>fish</td>
+                                                <td>Ich esse gern Fisch mit Kartoffeln.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Fisch')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>das Ei</td>
+                                                <td>egg</td>
+                                                <td>Ich esse zum Frühstück ein Ei.</td>
+                                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Ei')"><i class="fas fa-volume-up"></i></button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <h5>Note:</h5>
+                    <p>In German, food nouns used in a general sense often don't require an article:</p>
+                    <ul>
+                        <li><strong>Ich esse Brot.</strong> (I'm eating bread.) - No article needed when speaking generally</li>
+                        <li><strong>Das Brot ist frisch.</strong> (The bread is fresh.) - Article used when referring to specific bread</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="drinks" class="mb-5">
+                <h2>Drinks (Getränke)</h2>
+                <p>Here are common drinks in German:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Example Sentence</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>das Wasser</td>
+                                <td>water</td>
+                                <td>Ich trinke jeden Tag viel Wasser.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wasser')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>der Kaffee</td>
+                                <td>coffee</td>
+                                <td>Morgens trinke ich gern Kaffee.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Kaffee')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>der Tee</td>
+                                <td>tea</td>
+                                <td>Bei Erkältung trinke ich heißen Tee.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Tee')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Milch</td>
+                                <td>milk</td>
+                                <td>Kinder sollten viel Milch trinken.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Milch')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>der Saft</td>
+                                <td>juice</td>
+                                <td>Ich mag Orangensaft zum Frühstück.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Saft')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Limonade</td>
+                                <td>lemonade/soda</td>
+                                <td>Bei heißem Wetter trinke ich kalte Limonade.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Limonade')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>das Bier</td>
+                                <td>beer</td>
+                                <td>Deutschland ist bekannt für gutes Bier.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Bier')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>der Wein</td>
+                                <td>wine</td>
+                                <td>Zum Essen trinken wir ein Glas Wein.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Wein')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>das Mineralwasser</td>
+                                <td>mineral water</td>
+                                <td>Ich möchte ein Glas Mineralwasser, bitte.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Mineralwasser')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-header">Asking for Drinks</div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Ich hätte gerne...</strong> - I would like...
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Kann ich bitte... haben?</strong> - Can I have... please?
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Ich nehme...</strong> - I'll take...
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Mit oder ohne Eis?</strong> - With or without ice?
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Noch ein Glas, bitte.</strong> - Another glass, please.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="meals" class="mb-5">
+                <h2>Meals (Mahlzeiten)</h2>
+                <p>Here are the main meals of the day in German:</p>
+                
+                <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-warning text-dark">das Frühstück</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Breakfast</h5>
+                                <p class="card-text">The first meal of the day, typically eaten in the morning.</p>
+                                <p><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Frühstück')"><i class="fas fa-volume-up"></i></button></p>
+                                <p><strong>Example:</strong> Zum Frühstück esse ich Müsli mit Joghurt.</p>
+                                <p><em>(For breakfast, I eat muesli with yogurt.)</em></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-success text-white">das Mittagessen</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Lunch</h5>
+                                <p class="card-text">The meal eaten in the middle of the day, typically around noon.</p>
+                                <p><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Mittagessen')"><i class="fas fa-volume-up"></i></button></p>
+                                <p><strong>Example:</strong> Zum Mittagessen gehe ich in die Kantine.</p>
+                                <p><em>(For lunch, I go to the cafeteria.)</em></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-primary text-white">das Abendessen</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Dinner</h5>
+                                <p class="card-text">The evening meal, typically the main meal of the day in many cultures.</p>
+                                <p><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Abendessen')"><i class="fas fa-volume-up"></i></button></p>
+                                <p><strong>Example:</strong> Zum Abendessen essen wir Brot mit Käse und Wurst.</p>
+                                <p><em>(For dinner, we eat bread with cheese and sausage.)</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info mt-4">
+                    <h5>Other meal-related terms:</h5>
+                    <ul>
+                        <li><strong>die Vorspeise</strong> - appetizer/starter</li>
+                        <li><strong>die Hauptspeise</strong> - main course</li>
+                        <li><strong>der Nachtisch / das Dessert</strong> - dessert</li>
+                        <li><strong>der Snack / der Imbiss</strong> - snack</li>
+                        <li><strong>die Jause / die Brotzeit</strong> - mid-morning or afternoon snack (regional terms)</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="restaurant" class="mb-5">
+                <h2>At the Restaurant (Im Restaurant)</h2>
+                <p>Here are useful phrases for ordering food and eating out:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Common Restaurant Phrases</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>German</th>
+                                        <th>English</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Einen Tisch für zwei, bitte.</td>
+                                        <td>A table for two, please.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Haben Sie reserviert?</td>
+                                        <td>Have you made a reservation?</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Die Speisekarte, bitte.</td>
+                                        <td>The menu, please.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ich möchte bestellen.</td>
+                                        <td>I'd like to order.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Was können Sie empfehlen?</td>
+                                        <td>What can you recommend?</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ich nehme...</td>
+                                        <td>I'll take/have...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ich bin Vegetarier/in.</td>
+                                        <td>I am a vegetarian.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ich habe eine Allergie gegen...</td>
+                                        <td>I have an allergy to...</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Die Rechnung, bitte.</td>
+                                        <td>The bill, please.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zusammen oder getrennt?</td>
+                                        <td>Together or separate? (asking about the bill)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stimmt so.</td>
+                                        <td>Keep the change.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Restaurant Vocabulary</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <strong>das Restaurant</strong> - restaurant
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>das Café</strong> - café
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>die Speisekarte</strong> - menu
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>der Kellner / die Kellnerin</strong> - waiter / waitress
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>das Trinkgeld</strong> - tip
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <strong>die Suppe</strong> - soup
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>der Salat</strong> - salad
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>das Getränk</strong> - drink/beverage
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>das Besteck</strong> - cutlery
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>der Teller</strong> - plate
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice using food and drink vocabulary:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Match the Foods</div>
+                    <div class="card-body">
+                        <p>Match the German word with its English translation:</p>
+                        <form id="food-matching">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>1. das Brot</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f1" id="f1-a" value="incorrect">
+                                        <label class="form-check-label" for="f1-a">butter</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f1" id="f1-b" value="correct">
+                                        <label class="form-check-label" for="f1-b">bread</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f1" id="f1-c" value="incorrect">
+                                        <label class="form-check-label" for="f1-c">cake</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>2. der Käse</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f2" id="f2-a" value="correct">
+                                        <label class="form-check-label" for="f2-a">cheese</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f2" id="f2-b" value="incorrect">
+                                        <label class="form-check-label" for="f2-b">milk</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f2" id="f2-c" value="incorrect">
+                                        <label class="form-check-label" for="f2-c">yogurt</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>3. das Ei</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f3" id="f3-a" value="incorrect">
+                                        <label class="form-check-label" for="f3-a">ice</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f3" id="f3-b" value="incorrect">
+                                        <label class="form-check-label" for="f3-b">onion</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f3" id="f3-c" value="correct">
+                                        <label class="form-check-label" for="f3-c">egg</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>4. der Apfel</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f4" id="f4-a" value="incorrect">
+                                        <label class="form-check-label" for="f4-a">orange</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f4" id="f4-b" value="correct">
+                                        <label class="form-check-label" for="f4-b">apple</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="f4" id="f4-c" value="incorrect">
+                                        <label class="form-check-label" for="f4-c">potato</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-food">Check Answers</button>
+                        </form>
+                        <div id="food-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Match the Drinks</div>
+                    <div class="card-body">
+                        <p>Match the German word with its English translation:</p>
+                        <form id="drink-matching">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>1. das Wasser</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d1" id="d1-a" value="correct">
+                                        <label class="form-check-label" for="d1-a">water</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d1" id="d1-b" value="incorrect">
+                                        <label class="form-check-label" for="d1-b">wine</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d1" id="d1-c" value="incorrect">
+                                        <label class="form-check-label" for="d1-c">juice</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>2. der Kaffee</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d2" id="d2-a" value="incorrect">
+                                        <label class="form-check-label" for="d2-a">tea</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d2" id="d2-b" value="correct">
+                                        <label class="form-check-label" for="d2-b">coffee</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d2" id="d2-c" value="incorrect">
+                                        <label class="form-check-label" for="d2-c">milk</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-drinks">Check Answers</button>
+                        </form>
+                        <div id="drink-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Fill in the Blanks</div>
+                    <div class="card-body">
+                        <p>Complete the sentences with the appropriate food or drink word:</p>
+                        <form id="fill-blanks">
+                            <div class="mb-3">
+                                <label for="blank1" class="form-label">1. Zum Frühstück trinke ich ________. (coffee)</label>
+                                <input type="text" class="form-control" id="blank1" data-answer="Kaffee">
+                            </div>
+                            <div class="mb-3">
+                                <label for="blank2" class="form-label">2. Ich esse gern ________ mit Käse. (bread)</label>
+                                <input type="text" class="form-control" id="blank2" data-answer="Brot">
+                            </div>
+                            <div class="mb-3">
+                                <label for="blank3" class="form-label">3. Zum ________ essen wir Suppe und Salat. (lunch)</label>
+                                <input type="text" class="form-control" id="blank3" data-answer="Mittagessen">
+                            </div>
+                            <div class="mb-3">
+                                <label for="blank4" class="form-label">4. Bitte, die ________ ! (bill/check)</label>
+                                <input type="text" class="form-control" id="blank4" data-answer="Rechnung">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-blanks">Check Answers</button>
+                        </form>
+                        <div id="blanks-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Restaurant Dialogue</div>
+                    <div class="card-body">
+                        <p>Complete the dialogue between a waiter (W) and a customer (C):</p>
+                        <form id="dialogue-exercise">
+                            <p><strong>W:</strong> Guten Tag! Was möchten Sie?</p>
+                            <p><strong>C:</strong> 
+                                <select class="form-select" id="dialogue1">
+                                    <option value="">Select...</option>
+                                    <option value="incorrect">Bitte schön.</option>
+                                    <option value="incorrect">Auf Wiedersehen.</option>
+                                    <option value="correct">Ich hätte gerne die Speisekarte, bitte.</option>
+                                </select>
+                            </p>
+                            <p><strong>W:</strong> Hier ist die Speisekarte. Möchten Sie etwas trinken?</p>
+                            <p><strong>C:</strong> 
+                                <select class="form-select" id="dialogue2">
+                                    <option value="">Select...</option>
+                                    <option value="correct">Ja, ein Glas Wasser, bitte.</option>
+                                    <option value="incorrect">Nein, ich habe keine Zeit.</option>
+                                    <option value="incorrect">Ja, die Rechnung, bitte.</option>
+                                </select>
+                            </p>
+                            <p><strong>W:</strong> Sind Sie fertig zum Bestellen?</p>
+                            <p><strong>C:</strong> 
+                                <select class="form-select" id="dialogue3">
+                                    <option value="">Select...</option>
+                                    <option value="incorrect">Ja, ein Tisch für zwei, bitte.</option>
+                                    <option value="correct">Ja, ich nehme den Salat und das Hähnchen.</option>
+                                    <option value="incorrect">Ja, morgen um 18 Uhr.</option>
+                                </select>
+                            </p>
+                            <p><strong>W:</strong> Guten Appetit!</p>
+                            <p><strong>C:</strong> 
+                                <select class="form-select" id="dialogue4">
+                                    <option value="">Select...</option>
+                                    <option value="incorrect">Auf Wiedersehen!</option>
+                                    <option value="incorrect">Die Rechnung, bitte.</option>
+                                    <option value="correct">Danke schön!</option>
+                                </select>
+                            </p>
+                            <button type="button" class="btn btn-primary mt-3" id="check-dialogue">Check Answers</button>
+                        </form>
+                        <div id="dialogue-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Food and Drinks vocabulary lesson. This vocabulary will be very useful when you're ordering food in German-speaking countries!</p>
+                    <p>Now that you've learned all the basic vocabulary sets, you might want to try some <a href="{{ url_for('a1_practice_listening') }}" class="alert-link">Listening Practice</a> to test your comprehension skills.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check food matching exercise
+        document.getElementById('check-food').addEventListener('click', function() {
+            let correct = 0;
+            const totalQuestions = 4;
+            
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="f${i}"]:checked`);
+                if (selectedOption && selectedOption.value === 'correct') {
+                    correct++;
+                }
+            }
+            
+            const resultDiv = document.getElementById('food-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check drink matching exercise
+        document.getElementById('check-drinks').addEventListener('click', function() {
+            let correct = 0;
+            const totalQuestions = 2;
+            
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="d${i}"]:checked`);
+                if (selectedOption && selectedOption.value === 'correct') {
+                    correct++;
+                }
+            }
+            
+            const resultDiv = document.getElementById('drink-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check fill-in-the-blanks exercise
+        document.getElementById('check-blanks').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#fill-blanks input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('blanks-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check dialogue exercise
+        document.getElementById('check-dialogue').addEventListener('click', function() {
+            let correct = 0;
+            const totalQuestions = 4;
+            
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.getElementById(`dialogue${i}`);
+                if (selectedOption && selectedOption.value === 'correct') {
+                    selectedOption.classList.add('is-valid');
+                    selectedOption.classList.remove('is-invalid');
+                    correct++;
+                } else if (selectedOption) {
+                    selectedOption.classList.add('is-invalid');
+                    selectedOption.classList.remove('is-valid');
+                }
+            }
+            
+            const resultDiv = document.getElementById('dialogue-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! You completed the dialogue correctly!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Try again!</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

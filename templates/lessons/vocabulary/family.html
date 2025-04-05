@@ -1,0 +1,485 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Family Vocabulary{% endblock %}
+
+{% block content %}
+<div class="lesson-header a1-header">
+    <div class="container">
+        <h1>Family Members</h1>
+        <p class="lead">Learn vocabulary related to family</p>
+        <div class="badge bg-light text-dark">15 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#immediate-family" class="list-group-item list-group-item-action">Immediate Family</a>
+                <a href="#extended-family" class="list-group-item list-group-item-action">Extended Family</a>
+                <a href="#family-phrases" class="list-group-item list-group-item-action">Useful Phrases</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a1" data-section="vocabulary" data-lesson="family" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Family vocabulary is essential for talking about yourself and your relationships in German. In this lesson, you'll learn the German words for various family members and some useful phrases to describe your family.</p>
+                <p>Note that in German, all nouns have a gender (masculine, feminine, or neuter), which determines the article used with the noun. Remember to learn each noun with its corresponding article:</p>
+                <ul>
+                    <li><strong>der</strong> for masculine nouns</li>
+                    <li><strong>die</strong> for feminine nouns</li>
+                    <li><strong>das</strong> for neuter nouns</li>
+                </ul>
+            </section>
+            
+            <section id="immediate-family" class="mb-5">
+                <h2>Immediate Family</h2>
+                <p>Let's start with the most basic family vocabulary for immediate family members:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Example Sentence</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>die Familie</td>
+                                <td>family</td>
+                                <td>Meine Familie ist groß.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Familie')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Eltern (pl.)</td>
+                                <td>parents</td>
+                                <td>Meine Eltern wohnen in Berlin.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Eltern')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>der Vater</td>
+                                <td>father</td>
+                                <td>Mein Vater ist Arzt.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Vater')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Mutter</td>
+                                <td>mother</td>
+                                <td>Meine Mutter ist Lehrerin.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Mutter')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>der Bruder</td>
+                                <td>brother</td>
+                                <td>Mein Bruder ist 15 Jahre alt.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Bruder')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Schwester</td>
+                                <td>sister</td>
+                                <td>Meine Schwester studiert Medizin.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Schwester')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>der Sohn</td>
+                                <td>son</td>
+                                <td>Ihr Sohn spielt Fußball.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Sohn')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Tochter</td>
+                                <td>daughter</td>
+                                <td>Ihre Tochter ist sehr intelligent.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Tochter')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Geschwister (pl.)</td>
+                                <td>siblings</td>
+                                <td>Ich habe zwei Geschwister.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Geschwister')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>das Kind</td>
+                                <td>child</td>
+                                <td>Das Kind spielt im Garten.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Kind')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Kinder (pl.)</td>
+                                <td>children</td>
+                                <td>Die Kinder gehen zur Schule.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Kinder')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <h5>Vocabulary Note:</h5>
+                    <p>In German, there are informal terms for family members that are commonly used, especially by children:</p>
+                    <ul>
+                        <li><strong>der Papa</strong> - dad</li>
+                        <li><strong>die Mama</strong> - mom</li>
+                        <li><strong>der Opa</strong> - grandpa</li>
+                        <li><strong>die Oma</strong> - grandma</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="extended-family" class="mb-5">
+                <h2>Extended Family</h2>
+                <p>Now let's learn vocabulary for extended family members:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Example Sentence</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>die Großeltern (pl.)</td>
+                                <td>grandparents</td>
+                                <td>Meine Großeltern leben auf dem Land.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Großeltern')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>der Großvater</td>
+                                <td>grandfather</td>
+                                <td>Mein Großvater war Ingenieur.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Großvater')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Großmutter</td>
+                                <td>grandmother</td>
+                                <td>Meine Großmutter kann gut kochen.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Großmutter')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>der Onkel</td>
+                                <td>uncle</td>
+                                <td>Mein Onkel lebt in München.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Onkel')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Tante</td>
+                                <td>aunt</td>
+                                <td>Meine Tante ist sehr nett.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Tante')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>der Cousin</td>
+                                <td>male cousin</td>
+                                <td>Mein Cousin spielt Gitarre.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Cousin')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Cousine</td>
+                                <td>female cousin</td>
+                                <td>Meine Cousine wohnt in Frankfurt.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Cousine')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>der Neffe</td>
+                                <td>nephew</td>
+                                <td>Mein Neffe ist drei Jahre alt.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Neffe')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>die Nichte</td>
+                                <td>niece</td>
+                                <td>Meine Nichte geht in den Kindergarten.</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Nichte')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="family-phrases" class="mb-5">
+                <h2>Useful Phrases for Talking About Family</h2>
+                <p>Here are some useful phrases to help you talk about your family in German:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Describing Your Family</div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Ich habe eine große/kleine Familie.</strong> - I have a big/small family.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Ich habe einen Bruder und zwei Schwestern.</strong> - I have one brother and two sisters.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Meine Eltern sind geschieden.</strong> - My parents are divorced.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Meine Großeltern wohnen bei uns.</strong> - My grandparents live with us.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Ich bin Einzelkind.</strong> - I am an only child.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Er ist verheiratet.</strong> - He is married.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Sie haben zwei Kinder.</strong> - They have two children.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Asking About Family</div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Hast du Geschwister?</strong> - Do you have siblings?
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Wie groß ist deine Familie?</strong> - How big is your family?
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Wie alt ist dein Bruder?</strong> - How old is your brother?
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Wo wohnen deine Eltern?</strong> - Where do your parents live?
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Was macht deine Schwester beruflich?</strong> - What does your sister do for a living?
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice using the family vocabulary:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Match the Family Members</div>
+                    <div class="card-body">
+                        <p>Match the German word with its English translation by selecting the correct option:</p>
+                        <form id="matching-exercise">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>1. der Vater</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q1" id="q1-a" value="incorrect">
+                                        <label class="form-check-label" for="q1-a">mother</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q1" id="q1-b" value="correct">
+                                        <label class="form-check-label" for="q1-b">father</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q1" id="q1-c" value="incorrect">
+                                        <label class="form-check-label" for="q1-c">brother</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>2. die Großmutter</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2" id="q2-a" value="incorrect">
+                                        <label class="form-check-label" for="q2-a">grandfather</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2" id="q2-b" value="incorrect">
+                                        <label class="form-check-label" for="q2-b">aunt</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q2" id="q2-c" value="correct">
+                                        <label class="form-check-label" for="q2-c">grandmother</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>3. die Tochter</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q3" id="q3-a" value="correct">
+                                        <label class="form-check-label" for="q3-a">daughter</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q3" id="q3-b" value="incorrect">
+                                        <label class="form-check-label" for="q3-b">son</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q3" id="q3-c" value="incorrect">
+                                        <label class="form-check-label" for="q3-c">sister</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>4. der Cousin</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q4" id="q4-a" value="incorrect">
+                                        <label class="form-check-label" for="q4-a">uncle</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q4" id="q4-b" value="correct">
+                                        <label class="form-check-label" for="q4-b">male cousin</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="q4" id="q4-c" value="incorrect">
+                                        <label class="form-check-label" for="q4-c">nephew</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-matching">Check Answers</button>
+                        </form>
+                        <div id="matching-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Fill in the Blanks</div>
+                    <div class="card-body">
+                        <p>Complete the sentences with the appropriate family vocabulary:</p>
+                        <form id="fill-blanks">
+                            <div class="mb-3">
+                                <label for="blank1" class="form-label">1. Mein ________ (father) arbeitet als Arzt.</label>
+                                <input type="text" class="form-control" id="blank1" data-answer="Vater">
+                            </div>
+                            <div class="mb-3">
+                                <label for="blank2" class="form-label">2. Ich habe zwei ________ (siblings).</label>
+                                <input type="text" class="form-control" id="blank2" data-answer="Geschwister">
+                            </div>
+                            <div class="mb-3">
+                                <label for="blank3" class="form-label">3. Ihre ________ (daughter) geht zur Schule.</label>
+                                <input type="text" class="form-control" id="blank3" data-answer="Tochter">
+                            </div>
+                            <div class="mb-3">
+                                <label for="blank4" class="form-label">4. Meine ________ (aunt) und mein ________ (uncle) wohnen in Berlin.</label>
+                                <input type="text" class="form-control" id="blank4" data-answer="Tante, Onkel">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-blanks">Check Answers</button>
+                        </form>
+                        <div id="blanks-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Family Members vocabulary lesson. Keep practicing these words to improve your fluency when talking about family in German.</p>
+                    <p>Next, you might want to learn <a href="{{ url_for('a1_vocabulary_colors') }}" class="alert-link">Colors and Shapes</a> vocabulary.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check matching exercise
+        document.getElementById('check-matching').addEventListener('click', function() {
+            let correct = 0;
+            const totalQuestions = 4;
+            
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedOption && selectedOption.value === 'correct') {
+                    correct++;
+                }
+            }
+            
+            const resultDiv = document.getElementById('matching-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check fill-in-the-blanks exercise
+        document.getElementById('check-blanks').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#fill-blanks input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('blanks-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

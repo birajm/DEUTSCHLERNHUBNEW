@@ -1,0 +1,640 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Days and Months{% endblock %}
+
+{% block content %}
+<div class="lesson-header a1-header">
+    <div class="container">
+        <h1>Days and Months</h1>
+        <p class="lead">Learn days of the week and months of the year in German</p>
+        <div class="badge bg-light text-dark">15 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#days" class="list-group-item list-group-item-action">Days of the Week</a>
+                <a href="#months" class="list-group-item list-group-item-action">Months of the Year</a>
+                <a href="#seasons" class="list-group-item list-group-item-action">Seasons</a>
+                <a href="#usage" class="list-group-item list-group-item-action">Asking about Dates</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a1" data-section="vocabulary" data-lesson="dates" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Being able to talk about days, months, and dates is essential for everyday conversations in German. In this lesson, you'll learn the names of days of the week, months of the year, and seasons, as well as how to ask and answer questions about dates.</p>
+                <p>Note that in German:</p>
+                <ul>
+                    <li>All days of the week and months of the year are <strong>capitalized</strong> (like all nouns in German).</li>
+                    <li>Days of the week are <strong>masculine</strong> (der).</li>
+                    <li>Months of the year are also <strong>masculine</strong> (der).</li>
+                </ul>
+            </section>
+            
+            <section id="days" class="mb-5">
+                <h2>Days of the Week (die Wochentage)</h2>
+                <p>Here are the days of the week in German:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Pronunciation</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Montag</td>
+                                <td>Monday</td>
+                                <td>MON-tahk</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Montag')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Dienstag</td>
+                                <td>Tuesday</td>
+                                <td>DEENS-tahk</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Dienstag')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Mittwoch</td>
+                                <td>Wednesday</td>
+                                <td>MIT-vokh</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Mittwoch')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Donnerstag</td>
+                                <td>Thursday</td>
+                                <td>DON-ers-tahk</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Donnerstag')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Freitag</td>
+                                <td>Friday</td>
+                                <td>FRY-tahk</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Freitag')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Samstag/Sonnabend*</td>
+                                <td>Saturday</td>
+                                <td>ZAMS-tahk/ZON-ah-bent</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Samstag')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Sonntag</td>
+                                <td>Sunday</td>
+                                <td>ZON-tahk</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Sonntag')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="alert alert-info mt-3">
+                    <h5>Note:</h5>
+                    <ul>
+                        <li>"Tag" means "day" in German. You can see this ending in most of the days of the week.</li>
+                        <li>* "Sonnabend" is an alternative word for Saturday used mainly in northern and eastern Germany.</li>
+                        <li>The German week starts with Monday (Montag) as the first day.</li>
+                    </ul>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Useful Phrases with Days</div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Heute ist Montag.</strong> - Today is Monday.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Morgen ist Dienstag.</strong> - Tomorrow is Tuesday.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Gestern war Sonntag.</strong> - Yesterday was Sunday.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Am Mittwoch habe ich Deutschunterricht.</strong> - On Wednesday I have German class.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Ich arbeite von Montag bis Freitag.</strong> - I work from Monday to Friday.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Das Geschäft ist am Sonntag geschlossen.</strong> - The store is closed on Sunday.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="months" class="mb-5">
+                <h2>Months of the Year (die Monate)</h2>
+                <p>Here are the months of the year in German:</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Pronunciation</th>
+                                <th>Listen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Januar</td>
+                                <td>January</td>
+                                <td>yah-noo-AR</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Januar')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Februar</td>
+                                <td>February</td>
+                                <td>feh-broo-AR</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Februar')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>März</td>
+                                <td>March</td>
+                                <td>merts</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('März')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>April</td>
+                                <td>April</td>
+                                <td>ah-PRIL</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('April')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Mai</td>
+                                <td>May</td>
+                                <td>my</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Mai')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Juni</td>
+                                <td>June</td>
+                                <td>YOO-nee</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Juni')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Juli</td>
+                                <td>July</td>
+                                <td>YOO-lee</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Juli')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>August</td>
+                                <td>August</td>
+                                <td>ow-GOOST</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('August')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>September</td>
+                                <td>September</td>
+                                <td>zep-TEM-ber</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('September')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Oktober</td>
+                                <td>October</td>
+                                <td>ok-TOE-ber</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Oktober')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>November</td>
+                                <td>November</td>
+                                <td>no-VEM-ber</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('November')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>Dezember</td>
+                                <td>December</td>
+                                <td>deh-TSEM-ber</td>
+                                <td><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Dezember')"><i class="fas fa-volume-up"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="card mb-4 mt-4">
+                    <div class="card-header">Useful Phrases with Months</div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Wir sind jetzt im Mai.</strong> - We are now in May.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Mein Geburtstag ist im Juli.</strong> - My birthday is in July.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Im Dezember ist Weihnachten.</strong> - Christmas is in December.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Die Schule beginnt im September.</strong> - School starts in September.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="seasons" class="mb-5">
+                <h2>Seasons (die Jahreszeiten)</h2>
+                <p>Here are the four seasons in German:</p>
+                
+                <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-success text-white">Spring (der Frühling)</div>
+                            <div class="card-body">
+                                <p>German: <strong>der Frühling</strong> or <strong>das Frühjahr</strong></p>
+                                <p>Pronunciation: FROO-ling / FROO-yar</p>
+                                <p><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Frühling')"><i class="fas fa-volume-up"></i></button></p>
+                                <p>Months: März, April, Mai</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-warning text-dark">Summer (der Sommer)</div>
+                            <div class="card-body">
+                                <p>German: <strong>der Sommer</strong></p>
+                                <p>Pronunciation: ZOM-mer</p>
+                                <p><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Sommer')"><i class="fas fa-volume-up"></i></button></p>
+                                <p>Months: Juni, Juli, August</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-danger text-white">Autumn/Fall (der Herbst)</div>
+                            <div class="card-body">
+                                <p>German: <strong>der Herbst</strong></p>
+                                <p>Pronunciation: HERPST</p>
+                                <p><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Herbst')"><i class="fas fa-volume-up"></i></button></p>
+                                <p>Months: September, Oktober, November</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-header bg-info text-white">Winter (der Winter)</div>
+                            <div class="card-body">
+                                <p>German: <strong>der Winter</strong></p>
+                                <p>Pronunciation: VIN-ter</p>
+                                <p><button class="btn btn-sm btn-outline-primary" onclick="pronounce('Winter')"><i class="fas fa-volume-up"></i></button></p>
+                                <p>Months: Dezember, Januar, Februar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Useful Phrases with Seasons</div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Im Sommer ist es warm.</strong> - It's warm in the summer.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Der Frühling beginnt im März.</strong> - Spring begins in March.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Im Herbst fallen die Blätter von den Bäumen.</strong> - In autumn, the leaves fall from the trees.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Es schneit oft im Winter.</strong> - It often snows in winter.
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Meine Lieblingsjahreszeit ist der Sommer.</strong> - My favorite season is summer.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="usage" class="mb-5">
+                <h2>Asking about Dates</h2>
+                <p>Here are some useful phrases and questions related to dates in German:</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">Questions</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <strong>Welcher Tag ist heute?</strong> - What day is today?
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Welches Datum haben wir heute?</strong> - What's today's date?
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Welcher Monat ist jetzt?</strong> - What month is it now?
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>In welchem Monat hast du Geburtstag?</strong> - In which month is your birthday?
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Wann ist das Konzert?</strong> - When is the concert?
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-header">Answers</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <strong>Heute ist Montag.</strong> - Today is Monday.
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Heute ist der 15. Mai.</strong> - Today is May 15th.
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Jetzt ist April.</strong> - It's April now.
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Ich habe im September Geburtstag.</strong> - My birthday is in September.
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Das Konzert ist am Freitag, dem 20. Juli.</strong> - The concert is on Friday, July 20th.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <h5>Grammar Note:</h5>
+                    <ul>
+                        <li>When talking about specific dates, use "<strong>am</strong>" (on) + the day: <em>am Montag</em> (on Monday).</li>
+                        <li>When talking about months, use "<strong>im</strong>" (in) + the month: <em>im Januar</em> (in January).</li>
+                        <li>To express dates, the format in German is: <em>den [number]. [month]</em> or <em>am [number]. [month]</em>.</li>
+                        <li>Example: <em>den 23. April</em> or <em>am 23. April</em> (April 23rd).</li>
+                        <li>Note the period after the number, which indicates an ordinal number (23rd, not just 23).</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice using the days, months, and seasons vocabulary:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Match the Days</div>
+                    <div class="card-body">
+                        <p>Match the German day with its English translation:</p>
+                        <form id="days-matching">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>1. Montag</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d1" id="d1-a" value="incorrect">
+                                        <label class="form-check-label" for="d1-a">Sunday</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d1" id="d1-b" value="correct">
+                                        <label class="form-check-label" for="d1-b">Monday</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d1" id="d1-c" value="incorrect">
+                                        <label class="form-check-label" for="d1-c">Saturday</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>2. Mittwoch</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d2" id="d2-a" value="incorrect">
+                                        <label class="form-check-label" for="d2-a">Tuesday</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d2" id="d2-b" value="incorrect">
+                                        <label class="form-check-label" for="d2-b">Thursday</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="d2" id="d2-c" value="correct">
+                                        <label class="form-check-label" for="d2-c">Wednesday</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-days">Check Answers</button>
+                        </form>
+                        <div id="days-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Match the Months</div>
+                    <div class="card-body">
+                        <p>Match the German month with its English translation:</p>
+                        <form id="months-matching">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>1. Dezember</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="m1" id="m1-a" value="incorrect">
+                                        <label class="form-check-label" for="m1-a">October</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="m1" id="m1-b" value="incorrect">
+                                        <label class="form-check-label" for="m1-b">November</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="m1" id="m1-c" value="correct">
+                                        <label class="form-check-label" for="m1-c">December</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>2. Juli</p>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="m2" id="m2-a" value="correct">
+                                        <label class="form-check-label" for="m2-a">July</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="m2" id="m2-b" value="incorrect">
+                                        <label class="form-check-label" for="m2-b">June</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="m2" id="m2-c" value="incorrect">
+                                        <label class="form-check-label" for="m2-c">January</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-months">Check Answers</button>
+                        </form>
+                        <div id="months-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Fill in the Blanks</div>
+                    <div class="card-body">
+                        <p>Complete the sentences with the appropriate word:</p>
+                        <form id="fill-blanks">
+                            <div class="mb-3">
+                                <label for="blank1" class="form-label">1. Heute ist ________. (day after Tuesday)</label>
+                                <input type="text" class="form-control" id="blank1" data-answer="Mittwoch">
+                            </div>
+                            <div class="mb-3">
+                                <label for="blank2" class="form-label">2. Wir haben jetzt ________. (month after July)</label>
+                                <input type="text" class="form-control" id="blank2" data-answer="August">
+                            </div>
+                            <div class="mb-3">
+                                <label for="blank3" class="form-label">3. ________ ist die kalte Jahreszeit. (cold season)</label>
+                                <input type="text" class="form-control" id="blank3" data-answer="Winter">
+                            </div>
+                            <div class="mb-3">
+                                <label for="blank4" class="form-label">4. Ich gehe ________ Freitag ins Kino. (on Friday)</label>
+                                <input type="text" class="form-control" id="blank4" data-answer="am">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-blanks">Check Answers</button>
+                        </form>
+                        <div id="blanks-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Days and Months vocabulary lesson. Keep practicing these words to improve your ability to talk about dates and schedules in German.</p>
+                    <p>Next, you might want to learn <a href="{{ url_for('a1_vocabulary_food') }}" class="alert-link">Food and Drinks</a> vocabulary.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check days matching exercise
+        document.getElementById('check-days').addEventListener('click', function() {
+            let correct = 0;
+            const totalQuestions = 2;
+            
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="d${i}"]:checked`);
+                if (selectedOption && selectedOption.value === 'correct') {
+                    correct++;
+                }
+            }
+            
+            const resultDiv = document.getElementById('days-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check months matching exercise
+        document.getElementById('check-months').addEventListener('click', function() {
+            let correct = 0;
+            const totalQuestions = 2;
+            
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="m${i}"]:checked`);
+                if (selectedOption && selectedOption.value === 'correct') {
+                    correct++;
+                }
+            }
+            
+            const resultDiv = document.getElementById('months-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check fill-in-the-blanks exercise
+        document.getElementById('check-blanks').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#fill-blanks input');
+            let correct = 0;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim();
+                const correctAnswer = input.dataset.answer;
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('blanks-result');
+            if (correct === inputs.length) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! All answers are correct!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${inputs.length} correct. Keep practicing!</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,147 @@
+Okay, here is the detailed content for the four B1 level grammar lessons you requested:
+
+**Passive Voice (30 min):**
+
+* **Introduction:** Explain that the passive voice is used when the focus is on the action and the receiver of the action, rather than the doer. Introduce the two main types of passive in German: the *Vorgangspassiv* (process passive) and the *Zustandspassiv* (statal passive).
+
+* **Vorgangspassiv (Process Passive):**
+    * **Formation:** Explain that the *Vorgangspassiv* is formed with the auxiliary verb *werden* and the *Partizip II* of the main verb.
+        * Present Passive: *werden* (present tense) + *Partizip II*
+        * Past Passive (Präteritum): *wurde* + *Partizip II*
+        * Perfect Passive: *sein* + *Partizip II* + *worden*
+    * **Usage:** Describe how the *Vorgangspassiv* is used to describe an action that is being done or was done. The agent (the person or thing doing the action) can be mentioned using the preposition *von* (by) with the dative case. If the agent is unimportant or unknown, it is often omitted.
+    * **Examples:**
+        * Active: *Der Lehrer korrigiert die Tests.* (The teacher corrects the tests.)
+        * Passive (Present): *Die Tests **werden** vom Lehrer **korrigiert**.* (The tests are corrected by the teacher.)
+        * Passive (Past): *Die Tests **wurden** gestern **korrigiert**.* (The tests were corrected yesterday.)
+        * Passive (Perfect): *Die Tests **sind** **korrigiert** **worden**.* (The tests have been corrected.)
+        * Passive (without agent): *Das Fenster **wird** geöffnet.* (The window is being opened.)
+
+* **Zustandspassiv (Statal Passive):**
+    * **Formation:** Explain that the *Zustandspassiv* is formed with the auxiliary verb *sein* and the *Partizip II* of the main verb.
+        * Present Statal Passive: *sein* (present tense) + *Partizip II*
+        * Past Statal Passive (Präteritum): *war* + *Partizip II*
+    * **Usage:** Describe how the *Zustandspassiv* describes a state that is the result of a previous action. It focuses on the condition of something or someone. An agent is usually not mentioned.
+    * **Examples:**
+        * Active: *Jemand hat das Fenster geöffnet.* (Someone opened the window.)
+        * Passive (Present Statal): *Das Fenster **ist** **geöffnet**.* (The window is open.)
+        * Passive (Past Statal): *Die Tür **war** **geschlossen**.* (The door was closed.)
+
+* **Verbs that commonly form the Passive:** Emphasize that primarily transitive verbs (verbs that take a direct object) can form the passive voice.
+
+* **Practice Activities:**
+    1.  **Identifying Passive Sentences:** Ask learners to identify passive sentences and differentiate between *Vorgangspassiv* and *Zustandspassiv*.
+    2.  **Transforming Active Sentences to Passive:** Provide active sentences and ask learners to rewrite them in the passive voice.
+    3.  **Filling in the Blanks:** Provide passive sentences with missing parts (auxiliary verb or *Partizip II*) and ask learners to complete them.
+    4.  **Translating Sentences:** Ask learners to translate sentences between English and German, focusing on the passive voice.
+    5.  **Creating Passive Sentences:** Provide a scenario and ask learners to create passive sentences to describe it.
+
+**Subjunctive (Konjunktiv II) (35 min):**
+
+* **Introduction:** Explain that the *Konjunktiv II* is used to express hypothetical situations, wishes, polite requests, and indirect speech.
+
+* **Formation of Konjunktiv II (Present):**
+    * **Regular Verbs:** Explain that the *Konjunktiv II* form of regular verbs is usually the same as the *Präteritum* form.
+    * **Irregular Verbs:** Explain that irregular verbs often have a modified verb stem (often with an umlaut) and the endings *-e*, *-est*, *-e*, *-en*, *-et*, *-en*.
+        * Example: *haben* -> *hätte*, *sein* -> *wäre*, *werden* -> *würde*, *gehen* -> *ginge*, *kommen* -> *käme*.
+    * **Using "würde + Infinitive":** Explain that for many verbs, especially regular verbs, the form *würde* + infinitive is commonly used as an alternative to the *Konjunktiv II* form.
+        * Example: *machen* -> *würde machen* instead of *machte*.
+
+* **Formation of Konjunktiv II (Past):**
+    * Explain that the past *Konjunktiv II* is formed with the *Konjunktiv II* of the auxiliary verbs *haben* or *sein* and the *Partizip II* of the main verb.
+        * *hätten* + *Partizip II*
+        * *wären* + *Partizip II*
+    * Example: *Ich hätte das nicht gesagt.* (I shouldn't have said that.) *Er wäre gern gekommen.* (He would have liked to come.)
+
+* **Usage of Konjunktiv II:**
+    * **Hypothetical Situations:** Describe unreal or imagined situations in the present or future.
+        * *Wenn ich Zeit **hätte**, **würde** ich ins Kino **gehen**.* (If I had time, I would go to the cinema.)
+        * *Wenn ich reich **wäre**, **könnte** ich ein Haus kaufen.* (If I were rich, I could buy a house.)
+    * **Wishes:** Express desires that are unlikely or impossible.
+        * *Ich **wünschte**, ich **wäre** jetzt im Urlaub.* (I wish I were on vacation now.)
+        * *Wenn ich doch nur mehr Zeit **hätte**!* (If only I had more time!)
+    * **Polite Requests and Suggestions:** Make requests and suggestions sound more polite.
+        * ***Könntest** du mir bitte helfen?* (Could you please help me?)
+        * ***Wären** Sie so freundlich, mir das zu erklären?* (Would you be so kind as to explain that to me?)
+    * **Advice:** Give advice in a less direct way.
+        * *Ich **würde** an deiner Stelle mehr lernen.* (I would study more if I were you.)
+
+* **Practice Activities:**
+    1.  **Forming Konjunktiv II:** Ask learners to form the *Konjunktiv II* (present) of given verbs.
+    2.  **Sentence Completion:** Provide sentences with hypothetical situations or wishes and ask learners to complete them using the *Konjunktiv II*.
+    3.  **Transforming Sentences:** Ask learners to rewrite sentences using the *Konjunktiv II* to make them more polite or express a wish.
+    4.  **Translating Sentences:** Ask learners to translate sentences with hypothetical meanings into German using the *Konjunktiv II*.
+    5.  **Creating Sentences:** Provide a scenario and ask learners to create sentences using the *Konjunktiv II* to express a hypothetical situation or a wish.
+
+**Advanced Tenses (30 min):**
+
+* **Introduction:** Explain that at the B1 level, learners should become familiar with more advanced past and future tenses to express more complex temporal relationships.
+
+* **Plusquamperfekt (Past Perfect):**
+    * **Formation:** Explain that the *Plusquamperfekt* is formed with the *Präteritum* of the auxiliary verbs *haben* or *sein* and the *Partizip II* of the main verb.
+        * *hatte* + *Partizip II*
+        * *war* + *Partizip II*
+    * **Usage:** Describe how the *Plusquamperfekt* is used to talk about an action that was completed before another action in the past. It often corresponds to the English "had + past participle."
+    * **Examples:**
+        * *Nachdem ich gefrühstückt **hatte**, ging ich zur Arbeit.* (After I had eaten breakfast, I went to work.)
+        * *Als er ankam, war der Film schon angefangen **worden**.* (When he arrived, the movie had already started.)
+        * *Sie war traurig, weil ihr Freund weggefahren **war**.* (She was sad because her boyfriend had left.)
+
+* **Futur I (Future I) - Review:** Briefly review the formation (*werden* + infinitive) and usage (predictions, intentions) of the *Futur I* tense.
+
+* **Futur II (Future Perfect):**
+    * **Formation:** Explain that the *Futur II* is formed with the auxiliary verb *werden*, the infinitive of *haben* or *sein*, and the *Partizip II* of the main verb.
+        * *werden* + *Partizip II* + *haben/sein* (infinitive)
+    * **Usage:** Describe how the *Futur II* is used to talk about an action that will be completed at a specific point in the future or before another future action. It can also express an assumption about the past. It often corresponds to the English "will have + past participle."
+    * **Examples:**
+        * *Bis nächste Woche **werde** ich das Buch **gelesen haben**.* (By next week, I will have read the book.)
+        * *Wenn du morgen anrufst, **werde** ich wahrscheinlich schon **gekommen sein**.* (When you call tomorrow, I will probably have already arrived.)
+        * *Er wird den Zug verpasst **haben**.* (He will have missed the train. - Assumption about the past.)
+
+* **Practice Activities:**
+    1.  **Identifying Tenses:** Ask learners to identify the *Plusquamperfekt* and *Futur II* in sentences.
+    2.  **Sentence Completion:** Provide sentences with time clauses and ask learners to complete them using the correct advanced tense.
+    3.  **Transforming Sentences:** Ask learners to rewrite sentences to express past actions that occurred before other past actions (using *Plusquamperfekt*) or future actions that will be completed by a certain time (using *Futur II*).
+    4.  **Translating Sentences:** Ask learners to translate sentences involving past perfect and future perfect tenses.
+    5.  **Creating Sentences:** Provide a scenario and ask learners to create sentences using the *Plusquamperfekt* and *Futur II*.
+
+**Complex Sentence Structures (35 min):**
+
+* **Introduction:** Explain that at the B1 level, learners should be able to construct and understand more complex sentences using various types of clauses.
+
+* **Relative Clauses (Relativsätze):**
+    * **Formation:** Review the use of relative pronouns (*der*, *die*, *das*, *welcher*, *welche*, *welches*) and explain that the verb in the relative clause goes to the end. The relative pronoun's gender and case depend on the noun it refers to and its function within the relative clause.
+    * **Examples:**
+        * *Das ist der Mann, **der** gestern hier war.* (That's the man who was here yesterday.)
+        * *Ich lese das Buch, **das** du mir empfohlen hast.* (I'm reading the book that you recommended to me.)
+        * *Sie spricht mit der Frau, **deren** Auto kaputt ist.* (She is talking to the woman whose car is broken.)
+
+* **Indirect Questions (Indirekte Fragen):**
+    * **Formation:** Explain that indirect questions are introduced by words like *ob* (whether) or question words (e.g., *wer*, *was*, *wann*, *wo*, *warum*, *wie*). The word order in the indirect question is the same as in a subordinate clause (verb at the end).
+    * **Examples:**
+        * Direct: *Wo ist der Bahnhof?* (Where is the train station?)
+        * Indirect: *Ich möchte wissen, **wo** der Bahnhof **ist**.* (I would like to know where the train station is.)
+        * Direct: *Kommt er heute?* (Is he coming today?)
+        * Indirect: *Ich frage mich, **ob** er heute **kommt**.* (I wonder if he is coming today.)
+
+* **Adverbial Clauses (Adverbialsätze):**
+    * **Temporal Clauses (Temporalsätze):** Introduced by conjunctions like *als* (when - past), *wenn* (when - present/future), *bevor* (before), *nachdem* (after), *während* (while), *bis* (until), *sobald* (as soon as).
+        * *Als ich jung war, habe ich viel gelesen.* (When I was young, I read a lot.)
+        * *Wir gehen spazieren, nachdem wir gegessen haben.* (We will go for a walk after we have eaten.)
+    * **Causal Clauses (Kausalsätze):** Introduced by *weil* (because), *da* (since).
+        * *Ich kann nicht kommen, weil ich krank bin.* (I can't come because I am sick.)
+    * **Conditional Clauses (Konditionalsätze):** Introduced by *wenn* (if).
+        * *Wenn es regnet, bleiben wir zu Hause.* (If it rains, we will stay home.)
+    * **Concessive Clauses (Konzessivsätze):** Introduced by *obwohl* (although), *obgleich* (though).
+        * *Obwohl es kalt war, sind wir schwimmen gegangen.* (Although it was cold, we went swimming.)
+    * **Final Clauses (Finalsätze):** Introduced by *damit* (so that), *um...zu* (in order to).
+        * *Ich lerne Deutsch, damit ich in Deutschland studieren kann.* (I am learning German so that I can study in Germany.)
+    * **Modal Clauses (Modalsätze):** Introduced by *indem* (by), *dadurch dass* (by the fact that).
+        * *Er hat die Prüfung bestanden, indem er viel gelernt hat.* (He passed the exam by studying a lot.)
+
+* **Practice Activities:**
+    1.  **Combining Sentences with Relative Clauses:** Ask learners to combine two simple sentences into one using a relative clause.
+    2.  **Transforming Direct Questions to Indirect Questions:** Provide direct questions and ask learners to rewrite them as indirect questions.
+    3.  **Identifying Types of Adverbial Clauses:** Ask learners to identify the type of adverbial clause (temporal, causal, etc.) in given sentences.
+    4.  **Completing Sentences with Subordinate Clauses:** Provide a main clause and ask learners to complete it with an appropriate subordinate clause using a given conjunction or relative pronoun.
+    5.  **Sentence Transformation:** Ask learners to rewrite sentences using different types of complex sentence structures.

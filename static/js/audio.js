@@ -84,16 +84,19 @@ function getTextFromPath(path) {
 }
 
 // Main function to handle pronunciation
-function pronounce(word) {
-  const button = document.querySelector(`[data-word="${word}"]`);
-  if (!button) {
-    console.error('Button not found for word:', word);
-    return;
-  }
-  
-  const audioPath = `/static/audio/vocabulary/${word.toLowerCase()}.mp3`;
-  playAudio(button, audioPath, word);
-}
+// Initialize when document loads
+document.addEventListener('DOMContentLoaded', function() {
+  // Handle all play-audio buttons
+  document.querySelectorAll('.play-audio').forEach(button => {
+    button.addEventListener('click', function() {
+      const word = this.dataset.word;
+      if (!word) return;
+      
+      const audioPath = `/static/audio/vocabulary/${word.toLowerCase()}.mp3`;
+      playAudio(this, audioPath, word);
+    });
+  });
+});
 
 // Initialize audio buttons
 document.addEventListener('DOMContentLoaded', function() {

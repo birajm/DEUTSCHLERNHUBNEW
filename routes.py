@@ -176,6 +176,10 @@ def a2_basics_small_talk():
 def a2_basics_asking_information():
     return render_template('lessons/a2/expanded_basics/asking_information.html')
 
+@app.route('/a2/expanded-basics/shopping-services')
+def a2_basics_shopping_services():
+    return render_template('lessons/a2/expanded_basics/shopping_services.html')
+
 @app.route('/a2/grammar/past-tense')
 def a2_grammar_past_tense():
     return render_template('lessons/a2/grammar/past_tense.html')

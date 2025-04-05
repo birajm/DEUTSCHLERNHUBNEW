@@ -1,0 +1,944 @@
+{% extends "layout.html" %}
+
+{% block title %}DeutschLernHub - Shopping and Services{% endblock %}
+
+{% block content %}
+<div class="lesson-header a2-header">
+    <div class="container">
+        <h1>Shopping and Services</h1>
+        <p class="lead">Learn how to shop and use services in German</p>
+        <div class="badge bg-light text-dark">25 min</div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <div class="list-group">
+                <a href="#overview" class="list-group-item list-group-item-action">Overview</a>
+                <a href="#shops-vocabulary" class="list-group-item list-group-item-action">Types of Shops</a>
+                <a href="#shopping-phrases" class="list-group-item list-group-item-action">Shopping Phrases</a>
+                <a href="#prices-payment" class="list-group-item list-group-item-action">Prices & Payment</a>
+                <a href="#sizes-descriptions" class="list-group-item list-group-item-action">Sizes & Descriptions</a>
+                <a href="#services-phrases" class="list-group-item list-group-item-action">Services Phrases</a>
+                <a href="#practice" class="list-group-item list-group-item-action">Practice</a>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson Progress</h5>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <button id="complete-lesson" class="btn btn-success btn-sm mt-2" data-level="a2" data-section="expanded_basics" data-lesson="shopping_services" data-completed="true">Mark as Complete</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <section id="overview" class="mb-5">
+                <h2>Overview</h2>
+                <p>Being able to shop and use services is essential when visiting or living in a German-speaking country. This lesson will teach you the vocabulary and phrases you need to navigate shopping situations, ask about products, understand prices, and use various services.</p>
+                <p>In this lesson, you'll learn:</p>
+                <ul>
+                    <li>Names of common shops and businesses</li>
+                    <li>How to ask for items and information about products</li>
+                    <li>How to understand and ask about prices</li>
+                    <li>Vocabulary related to sizes, payment, and services</li>
+                    <li>Useful phrases for different shopping and service scenarios</li>
+                </ul>
+                <div class="alert alert-info">
+                    <h5>Cultural Note:</h5>
+                    <p>In smaller German shops, it's common to greet the staff with "Guten Tag" when entering and say "Auf Wiedersehen" when leaving, even if you don't buy anything. Self-service is less common in specialty shops, and staff will often ask "Kann ich Ihnen helfen?" (Can I help you?).</p>
+                </div>
+            </section>
+            
+            <section id="shops-vocabulary" class="mb-5">
+                <h2>Types of Shops and Businesses</h2>
+                <p>Let's learn vocabulary for common shops and businesses you might visit:</p>
+                
+                <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Food and Groceries</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>der Supermarkt</strong> - supermarket</li>
+                                    <li class="list-group-item"><strong>die Bäckerei</strong> - bakery</li>
+                                    <li class="list-group-item"><strong>die Metzgerei/die Fleischerei</strong> - butcher's shop</li>
+                                    <li class="list-group-item"><strong>der Markt</strong> - market</li>
+                                    <li class="list-group-item"><strong>die Konditorei</strong> - pastry shop</li>
+                                    <li class="list-group-item"><strong>der Bioladen</strong> - organic food store</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Clothing and Accessories</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>das Kleidungsgeschäft</strong> - clothing store</li>
+                                    <li class="list-group-item"><strong>das Schuhgeschäft</strong> - shoe store</li>
+                                    <li class="list-group-item"><strong>das Modegeschäft</strong> - fashion store</li>
+                                    <li class="list-group-item"><strong>die Boutique</strong> - boutique</li>
+                                    <li class="list-group-item"><strong>das Kaufhaus</strong> - department store</li>
+                                    <li class="list-group-item"><strong>der Schmuckladen</strong> - jewelry store</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Services</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>die Apotheke</strong> - pharmacy</li>
+                                    <li class="list-group-item"><strong>die Bank</strong> - bank</li>
+                                    <li class="list-group-item"><strong>die Post</strong> - post office</li>
+                                    <li class="list-group-item"><strong>der Friseur/der Friseursalon</strong> - hairdresser</li>
+                                    <li class="list-group-item"><strong>die Reinigung</strong> - dry cleaner's</li>
+                                    <li class="list-group-item"><strong>das Reisebüro</strong> - travel agency</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Other Shops</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><strong>die Buchhandlung</strong> - bookstore</li>
+                                    <li class="list-group-item"><strong>der Blumenladen</strong> - flower shop</li>
+                                    <li class="list-group-item"><strong>die Drogerie</strong> - drugstore</li>
+                                    <li class="list-group-item"><strong>das Elektrogeschäft</strong> - electronics store</li>
+                                    <li class="list-group-item"><strong>der Spielzeugladen</strong> - toy store</li>
+                                    <li class="list-group-item"><strong>der Kiosk</strong> - kiosk (small shop selling newspapers, snacks)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Practice Exercise</div>
+                    <div class="card-body">
+                        <p>Where would you go to buy these items? Match the items to the appropriate shops:</p>
+                        <form id="shops-practice">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>1. ein Brot (bread)</p>
+                                    <select class="form-select" id="s1">
+                                        <option value="">Select a shop...</option>
+                                        <option value="correct">die Bäckerei</option>
+                                        <option value="incorrect">die Apotheke</option>
+                                        <option value="incorrect">das Schuhgeschäft</option>
+                                        <option value="incorrect">der Blumenladen</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>2. Medikamente (medicines)</p>
+                                    <select class="form-select" id="s2">
+                                        <option value="">Select a shop...</option>
+                                        <option value="incorrect">die Bank</option>
+                                        <option value="correct">die Apotheke</option>
+                                        <option value="incorrect">die Metzgerei</option>
+                                        <option value="incorrect">die Buchhandlung</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>3. eine Briefmarke (a stamp)</p>
+                                    <select class="form-select" id="s3">
+                                        <option value="">Select a shop...</option>
+                                        <option value="incorrect">der Friseur</option>
+                                        <option value="incorrect">die Drogerie</option>
+                                        <option value="incorrect">der Supermarkt</option>
+                                        <option value="correct">die Post</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>4. ein Kleid (a dress)</p>
+                                    <select class="form-select" id="s4">
+                                        <option value="">Select a shop...</option>
+                                        <option value="correct">das Kleidungsgeschäft</option>
+                                        <option value="incorrect">die Konditorei</option>
+                                        <option value="incorrect">die Reinigung</option>
+                                        <option value="incorrect">das Reisebüro</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-shops">Check Answers</button>
+                        </form>
+                        <div id="shops-result" class="mt-3"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="shopping-phrases" class="mb-5">
+                <h2>Essential Shopping Phrases</h2>
+                <p>Here are some useful phrases to help you communicate effectively when shopping:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Asking for Items and Help</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Ich suche...</strong></td>
+                                    <td>I'm looking for...</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Haben Sie...?</strong></td>
+                                    <td>Do you have...?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich möchte...</strong></td>
+                                    <td>I would like...</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Können Sie mir helfen?</strong></td>
+                                    <td>Can you help me?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wo finde ich...?</strong></td>
+                                    <td>Where can I find...?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ich brauche...</strong></td>
+                                    <td>I need...</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Gibt es... in einer anderen Farbe/Größe?</strong></td>
+                                    <td>Is there... in a different color/size?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Example Dialogues</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>At a clothing store</h5>
+                                <div class="card dialogue-card mb-3">
+                                    <div class="card-body">
+                                        <p><strong>Verkäufer:</strong> Guten Tag! Kann ich Ihnen helfen?<br>
+                                        <small>(Good day! Can I help you?)</small></p>
+                                        <p><strong>Kunde:</strong> Ja, ich suche eine Jacke für den Winter.<br>
+                                        <small>(Yes, I'm looking for a jacket for winter.)</small></p>
+                                        <p><strong>Verkäufer:</strong> Die Winterjacken sind hier drüben. Welche Größe haben Sie?<br>
+                                        <small>(The winter jackets are over here. What's your size?)</small></p>
+                                        <p><strong>Kunde:</strong> Größe M, bitte. Haben Sie diese Jacke auch in Blau?<br>
+                                        <small>(Size M, please. Do you also have this jacket in blue?)</small></p>
+                                        <p><strong>Verkäufer:</strong> Ja, wir haben sie in Blau, Schwarz und Grün.<br>
+                                        <small>(Yes, we have it in blue, black and green.)</small></p>
+                                        <p><strong>Kunde:</strong> Ich möchte die blaue anprobieren.<br>
+                                        <small>(I would like to try on the blue one.)</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>At a bakery</h5>
+                                <div class="card dialogue-card">
+                                    <div class="card-body">
+                                        <p><strong>Bäcker:</strong> Guten Morgen, was darf es sein?<br>
+                                        <small>(Good morning, what would you like?)</small></p>
+                                        <p><strong>Kunde:</strong> Guten Morgen. Ich hätte gern zwei Brötchen und ein Vollkornbrot, bitte.<br>
+                                        <small>(Good morning. I would like two rolls and a whole grain bread, please.)</small></p>
+                                        <p><strong>Bäcker:</strong> Gerne. Noch etwas?<br>
+                                        <small>(Certainly. Anything else?)</small></p>
+                                        <p><strong>Kunde:</strong> Ja, ein Stück Apfelkuchen, bitte.<br>
+                                        <small>(Yes, a piece of apple cake, please.)</small></p>
+                                        <p><strong>Bäcker:</strong> Das macht zusammen 7,50 €.<br>
+                                        <small>(That comes to 7.50 euros.)</small></p>
+                                        <p><strong>Kunde:</strong> Hier, bitte. Danke schön!<br>
+                                        <small>(Here you are. Thank you very much!)</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="prices-payment" class="mb-5">
+                <h2>Prices and Payment</h2>
+                <p>Learning to ask about prices and how to pay is essential for shopping in German-speaking countries.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Asking About Prices</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Was kostet das?</strong></td>
+                                    <td>How much is this?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wie viel kostet...?</strong></td>
+                                    <td>How much does... cost?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ist das im Angebot?</strong></td>
+                                    <td>Is this on sale?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Gibt es Rabatt?</strong></td>
+                                    <td>Is there a discount?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Das ist (zu) teuer.</strong></td>
+                                    <td>That's (too) expensive.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Das ist günstig/billig.</strong></td>
+                                    <td>That's inexpensive/cheap.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Payment Vocabulary</div>
+                    <div class="card-body">
+                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Payment Methods</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><strong>das Bargeld</strong> - cash</li>
+                                            <li class="list-group-item"><strong>die EC-Karte / die Bankkarte</strong> - debit card</li>
+                                            <li class="list-group-item"><strong>die Kreditkarte</strong> - credit card</li>
+                                            <li class="list-group-item"><strong>die Rechnung</strong> - invoice/bill</li>
+                                            <li class="list-group-item"><strong>das Kleingeld</strong> - small change</li>
+                                            <li class="list-group-item"><strong>der Geldschein</strong> - banknote</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Payment Phrases</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item"><strong>Ich möchte bezahlen.</strong> - I would like to pay.</li>
+                                            <li class="list-group-item"><strong>Kann ich mit Karte bezahlen?</strong> - Can I pay by card?</li>
+                                            <li class="list-group-item"><strong>Stimmt so.</strong> - Keep the change.</li>
+                                            <li class="list-group-item"><strong>Haben Sie es kleiner?</strong> - Do you have smaller bills/coins?</li>
+                                            <li class="list-group-item"><strong>Die Quittung, bitte.</strong> - The receipt, please.</li>
+                                            <li class="list-group-item"><strong>Das macht zusammen...</strong> - That comes to...</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-info">
+                    <h5>Cultural Note:</h5>
+                    <p>In Germany, Switzerland, and Austria, cash is still quite commonly used, although card payments are becoming more popular. Many smaller shops may not accept credit cards or might have a minimum purchase amount for card payments. It's always good to have some cash with you.</p>
+                </div>
+            </section>
+            
+            <section id="sizes-descriptions" class="mb-5">
+                <h2>Sizes and Descriptions</h2>
+                <p>Understanding how to describe what you want and knowing size terminology is important for shopping effectively.</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Clothing Sizes</div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>German</th>
+                                        <th>Abbreviation</th>
+                                        <th>International Equivalent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>sehr klein</strong></td>
+                                        <td>XS</td>
+                                        <td>Extra Small</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>klein</strong></td>
+                                        <td>S</td>
+                                        <td>Small</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>mittel</strong></td>
+                                        <td>M</td>
+                                        <td>Medium</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>groß</strong></td>
+                                        <td>L</td>
+                                        <td>Large</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>sehr groß</strong></td>
+                                        <td>XL</td>
+                                        <td>Extra Large</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>übergroß</strong></td>
+                                        <td>XXL</td>
+                                        <td>Double Extra Large</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="mt-3"><strong>Numeric sizes:</strong> German clothing sizes can also be numeric (e.g., 36, 38, 40, 42 for women), which are generally one size up from UK sizes (e.g., German 38 ≈ UK 10) and approximately 30 more than US sizes (e.g., German 38 ≈ US 8).</p>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Shoe Sizes</div>
+                    <div class="card-body">
+                        <p>Shoe sizes in German-speaking countries follow the European system, which is different from UK and US systems:</p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>EU (German) Size</th>
+                                        <th>UK Size (approx.)</th>
+                                        <th>US Size (approx.)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>36-37</td>
+                                        <td>3-4</td>
+                                        <td>5-6 (women)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>38-39</td>
+                                        <td>5-6</td>
+                                        <td>7-8 (women)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>40-41</td>
+                                        <td>6.5-7.5</td>
+                                        <td>8.5-9.5 (women) / 7-8 (men)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>42-43</td>
+                                        <td>8-9</td>
+                                        <td>9-10 (men)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>44-45</td>
+                                        <td>9.5-10.5</td>
+                                        <td>10.5-11.5 (men)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Descriptive Adjectives</div>
+                    <div class="card-body">
+                        <p>Useful adjectives to describe products:</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>For Clothing</h5>
+                                <ul>
+                                    <li><strong>eng</strong> - tight</li>
+                                    <li><strong>weit</strong> - loose, wide</li>
+                                    <li><strong>zu groß/klein</strong> - too big/small</li>
+                                    <li><strong>bequem</strong> - comfortable</li>
+                                    <li><strong>unbequem</strong> - uncomfortable</li>
+                                    <li><strong>modisch</strong> - fashionable</li>
+                                    <li><strong>altmodisch</strong> - old-fashioned</li>
+                                    <li><strong>elegant</strong> - elegant</li>
+                                    <li><strong>sportlich</strong> - sporty</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>For Products in General</h5>
+                                <ul>
+                                    <li><strong>gut</strong> - good</li>
+                                    <li><strong>schlecht</strong> - bad</li>
+                                    <li><strong>teuer</strong> - expensive</li>
+                                    <li><strong>billig/günstig</strong> - cheap/inexpensive</li>
+                                    <li><strong>neu</strong> - new</li>
+                                    <li><strong>alt</strong> - old</li>
+                                    <li><strong>hochwertig</strong> - high quality</li>
+                                    <li><strong>minderwertig</strong> - poor quality</li>
+                                    <li><strong>praktisch</strong> - practical</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Phrases for Trying Things</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Kann ich das anprobieren?</strong></td>
+                                    <td>Can I try this on?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Wo ist die Umkleidekabine?</strong></td>
+                                    <td>Where is the fitting room?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Das passt gut/nicht.</strong></td>
+                                    <td>This fits well/doesn't fit.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Es ist zu eng/weit.</strong></td>
+                                    <td>It's too tight/loose.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Haben Sie eine andere Größe?</strong></td>
+                                    <td>Do you have a different size?</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Kann ich das probieren?</strong></td>
+                                    <td>Can I try this? (for food, products)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Kann ich das mal sehen?</strong></td>
+                                    <td>Can I see this?</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="services-phrases" class="mb-5">
+                <h2>Using Services</h2>
+                <p>Here are phrases for using common services in German-speaking countries:</p>
+                
+                <div class="accordion" id="servicesAccordion">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="postHeading">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#postCollapse" aria-expanded="true" aria-controls="postCollapse">
+                                At the Post Office (die Post)
+                            </button>
+                        </h3>
+                        <div id="postCollapse" class="accordion-collapse collapse show" aria-labelledby="postHeading">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Ich möchte diesen Brief absenden.</strong> - I would like to send this letter.</li>
+                                    <li><strong>Ich möchte dieses Paket verschicken.</strong> - I would like to ship this package.</li>
+                                    <li><strong>Wie viel kostet der Versand nach...?</strong> - How much does shipping to... cost?</li>
+                                    <li><strong>Ich brauche Briefmarken.</strong> - I need stamps.</li>
+                                    <li><strong>Ist ein Einschreiben möglich?</strong> - Is registered mail possible?</li>
+                                    <li><strong>Wie lange dauert die Lieferung?</strong> - How long will delivery take?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="pharmacyHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pharmacyCollapse" aria-expanded="false" aria-controls="pharmacyCollapse">
+                                At the Pharmacy (die Apotheke)
+                            </button>
+                        </h3>
+                        <div id="pharmacyCollapse" class="accordion-collapse collapse" aria-labelledby="pharmacyHeading">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Ich brauche ein Medikament gegen...</strong> - I need medication for...</li>
+                                    <li><strong>Ich habe ein Rezept.</strong> - I have a prescription.</li>
+                                    <li><strong>Haben Sie etwas gegen Kopfschmerzen/Husten/Erkältung?</strong> - Do you have something for headache/cough/cold?</li>
+                                    <li><strong>Wie oft soll ich das einnehmen?</strong> - How often should I take this?</li>
+                                    <li><strong>Gibt es Nebenwirkungen?</strong> - Are there side effects?</li>
+                                    <li><strong>Ich bin allergisch gegen...</strong> - I am allergic to...</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="hairHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hairCollapse" aria-expanded="false" aria-controls="hairCollapse">
+                                At the Hairdresser (der Friseur)
+                            </button>
+                        </h3>
+                        <div id="hairCollapse" class="accordion-collapse collapse" aria-labelledby="hairHeading">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Ich möchte meine Haare schneiden lassen.</strong> - I would like a haircut.</li>
+                                    <li><strong>Ich hätte gern...</strong> - I would like... (followed by the style)</li>
+                                    <li><strong>Etwa so viel abschneiden, bitte.</strong> - Cut about this much, please.</li>
+                                    <li><strong>Können Sie mir die Haare färben?</strong> - Can you color my hair?</li>
+                                    <li><strong>Ich möchte nur die Spitzen schneiden lassen.</strong> - I just want to have the ends trimmed.</li>
+                                    <li><strong>Brauche ich einen Termin?</strong> - Do I need an appointment?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="bankHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#bankCollapse" aria-expanded="false" aria-controls="bankCollapse">
+                                At the Bank (die Bank)
+                            </button>
+                        </h3>
+                        <div id="bankCollapse" class="accordion-collapse collapse" aria-labelledby="bankHeading">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Ich möchte Geld abheben.</strong> - I would like to withdraw money.</li>
+                                    <li><strong>Ich möchte Geld einzahlen.</strong> - I would like to deposit money.</li>
+                                    <li><strong>Ich möchte Geld wechseln.</strong> - I would like to exchange money.</li>
+                                    <li><strong>Wie ist der Wechselkurs?</strong> - What is the exchange rate?</li>
+                                    <li><strong>Ich möchte ein Konto eröffnen.</strong> - I would like to open an account.</li>
+                                    <li><strong>Wo ist der nächste Geldautomat?</strong> - Where is the nearest ATM?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="hotelHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hotelCollapse" aria-expanded="false" aria-controls="hotelCollapse">
+                                At a Hotel (das Hotel)
+                            </button>
+                        </h3>
+                        <div id="hotelCollapse" class="accordion-collapse collapse" aria-labelledby="hotelHeading">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li><strong>Ich möchte ein Zimmer reservieren.</strong> - I would like to reserve a room.</li>
+                                    <li><strong>Ich habe eine Reservierung.</strong> - I have a reservation.</li>
+                                    <li><strong>Wie viel kostet das Zimmer pro Nacht?</strong> - How much does the room cost per night?</li>
+                                    <li><strong>Ist Frühstück inklusive?</strong> - Is breakfast included?</li>
+                                    <li><strong>Haben Sie ein Einzelzimmer/Doppelzimmer?</strong> - Do you have a single/double room?</li>
+                                    <li><strong>Ich möchte auschecken.</strong> - I would like to check out.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="practice" class="mb-5">
+                <h2>Practice</h2>
+                <p>Let's practice what you've learned about shopping and services:</p>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 1: Complete the Dialogues</div>
+                    <div class="card-body">
+                        <form id="dialogue-practice">
+                            <div class="mb-3">
+                                <p><strong>At a clothing store:</strong></p>
+                                <p>Verkäufer: Guten Tag! Kann ich Ihnen helfen?<br>
+                                Kunde: Ja, ich <input type="text" class="form-control d-inline-block w-auto" id="d1" data-answer="suche" placeholder="____"> eine Winterjacke.<br>
+                                Verkäufer: Die Winterjacken sind hier drüben. Welche <input type="text" class="form-control d-inline-block w-auto" id="d2" data-answer="Größe" placeholder="____"> haben Sie?<br>
+                                Kunde: Größe L, bitte. <input type="text" class="form-control d-inline-block w-auto" id="d3" data-answer="Haben Sie" placeholder="____"> diese Jacke auch in Blau?</p>
+                            </div>
+                            <div class="mb-3">
+                                <p><strong>At a pharmacy:</strong></p>
+                                <p>Kunde: Guten Tag. Ich <input type="text" class="form-control d-inline-block w-auto" id="d4" data-answer="brauche" placeholder="____"> etwas gegen Kopfschmerzen.<br>
+                                Apotheker: Ich empfehle dieses Medikament. Es wirkt schnell.<br>
+                                Kunde: <input type="text" class="form-control d-inline-block w-auto" id="d5" data-answer="Wie oft" placeholder="____"> soll ich das einnehmen?<br>
+                                Apotheker: Dreimal täglich nach den Mahlzeiten, mit viel Wasser.<br>
+                                Kunde: <input type="text" class="form-control d-inline-block w-auto" id="d6" data-answer="Wie viel kostet" placeholder="____"> das?</p>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-dialogues">Check Answers</button>
+                        </form>
+                        <div id="dialogue-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 2: Match the Phrases</div>
+                    <div class="card-body">
+                        <p>Match each German phrase to its English equivalent:</p>
+                        <form id="matching-practice">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>1. Ich möchte bezahlen.</p>
+                                    <select class="form-select" id="m1">
+                                        <option value="">Select the meaning...</option>
+                                        <option value="incorrect">Where is the fitting room?</option>
+                                        <option value="incorrect">How much does this cost?</option>
+                                        <option value="correct">I would like to pay.</option>
+                                        <option value="incorrect">Do you have this in another color?</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>2. Kann ich das anprobieren?</p>
+                                    <select class="form-select" id="m2">
+                                        <option value="">Select the meaning...</option>
+                                        <option value="incorrect">Can I see this?</option>
+                                        <option value="correct">Can I try this on?</option>
+                                        <option value="incorrect">Can I have the receipt?</option>
+                                        <option value="incorrect">Can I return this?</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <p>3. Gibt es Rabatt?</p>
+                                    <select class="form-select" id="m3">
+                                        <option value="">Select the meaning...</option>
+                                        <option value="incorrect">Is this comfortable?</option>
+                                        <option value="incorrect">Do you accept credit cards?</option>
+                                        <option value="incorrect">Are you open on Sundays?</option>
+                                        <option value="correct">Is there a discount?</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>4. Die Quittung, bitte.</p>
+                                    <select class="form-select" id="m4">
+                                        <option value="">Select the meaning...</option>
+                                        <option value="incorrect">The change, please.</option>
+                                        <option value="correct">The receipt, please.</option>
+                                        <option value="incorrect">The bag, please.</option>
+                                        <option value="incorrect">The price, please.</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-matching">Check Answers</button>
+                        </form>
+                        <div id="matching-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="card mb-4">
+                    <div class="card-header">Exercise 3: Shopping Scenario</div>
+                    <div class="card-body">
+                        <p>Read the scenario and answer the questions:</p>
+                        <div class="scenario-text mb-3">
+                            <p>Sie möchten eine neue Hose kaufen. Sie gehen in ein Kleidungsgeschäft im Stadtzentrum. Sie suchen eine blaue Jeans in Größe 32. Der Verkäufer zeigt Ihnen verschiedene Modelle. Eine Jeans kostet 49,99 €, eine andere 79,99 €. Sie probieren beide an, aber die teurere passt besser. Sie entscheiden sich, die teurere Jeans zu kaufen. Sie bezahlen mit EC-Karte.</p>
+                        </div>
+                        <form id="scenario-practice">
+                            <div class="mb-3">
+                                <p>1. Was möchten Sie kaufen?</p>
+                                <select class="form-select" id="sc1">
+                                    <option value="">Select your answer...</option>
+                                    <option value="correct">Eine blaue Jeans</option>
+                                    <option value="incorrect">Ein blaues T-Shirt</option>
+                                    <option value="incorrect">Eine schwarze Hose</option>
+                                    <option value="incorrect">Einen braunen Pullover</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <p>2. Welche Größe suchen Sie?</p>
+                                <select class="form-select" id="sc2">
+                                    <option value="">Select your answer...</option>
+                                    <option value="incorrect">30</option>
+                                    <option value="correct">32</option>
+                                    <option value="incorrect">34</option>
+                                    <option value="incorrect">36</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <p>3. Wie viel kostet die Jeans, die Sie kaufen?</p>
+                                <select class="form-select" id="sc3">
+                                    <option value="">Select your answer...</option>
+                                    <option value="incorrect">29,99 €</option>
+                                    <option value="incorrect">49,99 €</option>
+                                    <option value="correct">79,99 €</option>
+                                    <option value="incorrect">99,99 €</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <p>4. Wie bezahlen Sie?</p>
+                                <select class="form-select" id="sc4">
+                                    <option value="">Select your answer...</option>
+                                    <option value="incorrect">Mit Bargeld</option>
+                                    <option value="correct">Mit EC-Karte</option>
+                                    <option value="incorrect">Mit Kreditkarte</option>
+                                    <option value="incorrect">Mit Rechnung</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="check-scenario">Check Answers</button>
+                        </form>
+                        <div id="scenario-result" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-success">
+                    <h5><i class="fas fa-check-circle"></i> Well done!</h5>
+                    <p>You've completed the Shopping and Services lesson! You now have the vocabulary and phrases you need to shop and use services in German-speaking countries.</p>
+                    <p>Remember to practice these phrases whenever you can. The best way to improve is to use them in real situations!</p>
+                    <p>Ready to test your knowledge? Try the <a href="{{ url_for('quiz', level='a2', topic='shopping-services') }}" class="alert-link">Shopping and Services Quiz</a>.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize progress tracking
+        initializeProgressTracking();
+        
+        // Handle scrollspy for navigation
+        document.querySelectorAll('.list-group-item').forEach(item => {
+            if (item.getAttribute('href') && item.getAttribute('href').startsWith('#')) {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+        
+        // Update progress bar as user scrolls through content
+        const sections = document.querySelectorAll('section');
+        const totalSections = sections.length;
+        let completedSections = 0;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    completedSections = Math.max(completedSections, sectionIndex + 1);
+                    const progressPercent = Math.round((completedSections / totalSections) * 100);
+                    document.querySelector('.progress-bar').style.width = progressPercent + '%';
+                    document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                    document.querySelector('.progress-bar').textContent = progressPercent + '%';
+                }
+            });
+        }, {threshold: 0.7});
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Check shops exercise
+        document.getElementById('check-shops').addEventListener('click', function() {
+            const selects = document.querySelectorAll('#shops-practice select');
+            let correct = 0;
+            const totalQuestions = selects.length;
+            
+            selects.forEach(select => {
+                if (select.value === 'correct') {
+                    select.classList.add('is-valid');
+                    select.classList.remove('is-invalid');
+                    correct++;
+                } else if (select.value === 'incorrect') {
+                    select.classList.add('is-invalid');
+                    select.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('shops-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! You matched all items to the correct shops!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check dialogue exercise
+        document.getElementById('check-dialogues').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('#dialogue-practice input');
+            let correct = 0;
+            const totalQuestions = inputs.length;
+            
+            inputs.forEach(input => {
+                const userAnswer = input.value.trim().toLowerCase();
+                const correctAnswer = input.dataset.answer.toLowerCase();
+                
+                if (userAnswer === correctAnswer) {
+                    input.classList.add('is-valid');
+                    input.classList.remove('is-invalid');
+                    correct++;
+                } else {
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('dialogue-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Excellent! You completed all dialogues correctly!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Try again!</div>`;
+            }
+        });
+        
+        // Check matching exercise
+        document.getElementById('check-matching').addEventListener('click', function() {
+            const selects = document.querySelectorAll('#matching-practice select');
+            let correct = 0;
+            const totalQuestions = selects.length;
+            
+            selects.forEach(select => {
+                if (select.value === 'correct') {
+                    select.classList.add('is-valid');
+                    select.classList.remove('is-invalid');
+                    correct++;
+                } else if (select.value === 'incorrect') {
+                    select.classList.add('is-invalid');
+                    select.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('matching-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! You matched all phrases correctly!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Keep practicing!</div>`;
+            }
+        });
+        
+        // Check scenario exercise
+        document.getElementById('check-scenario').addEventListener('click', function() {
+            const selects = document.querySelectorAll('#scenario-practice select');
+            let correct = 0;
+            const totalQuestions = selects.length;
+            
+            selects.forEach(select => {
+                if (select.value === 'correct') {
+                    select.classList.add('is-valid');
+                    select.classList.remove('is-invalid');
+                    correct++;
+                } else if (select.value === 'incorrect') {
+                    select.classList.add('is-invalid');
+                    select.classList.remove('is-valid');
+                }
+            });
+            
+            const resultDiv = document.getElementById('scenario-result');
+            if (correct === totalQuestions) {
+                resultDiv.innerHTML = '<div class="alert alert-success">Perfect! You understood the shopping scenario completely!</div>';
+            } else {
+                resultDiv.innerHTML = `<div class="alert alert-info">You got ${correct} out of ${totalQuestions} correct. Try reading the scenario again!</div>`;
+            }
+        });
+    });
+</script>
+{% endblock %}

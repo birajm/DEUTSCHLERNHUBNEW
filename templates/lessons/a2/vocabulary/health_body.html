@@ -1,0 +1,423 @@
+{% extends 'layout.html' %}
+
+{% block title %}Health and Body Vocabulary | A2 Level | DeutschLernHub{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('a2_index') }}">A2 Level</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Health and Body Vocabulary</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h1 class="card-title mb-4">Health and Body Vocabulary</h1>
+                    <p class="text-muted mb-4">Estimated time: 20 minutes</p>
+                    
+                    <div class="lesson-intro mb-4">
+                        <p>Knowing the German words for parts of the body and common health issues is very useful for everyday situations, whether you're talking about yourself or understanding others. In this lesson, you will learn some important vocabulary related to health and the body.</p>
+                    </div>
+
+                    <!-- Body Parts Vocabulary -->
+                    <section class="mb-5">
+                        <h2 class="h3 mb-4">Body Parts Vocabulary</h2>
+                        
+                        <div class="mb-4">
+                            <h3 class="h5">Head (Der Kopf):</h3>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                {% for word in [
+                                    {'german': 'das Haar', 'english': 'hair'},
+                                    {'german': 'der Kopf', 'english': 'head'},
+                                    {'german': 'das Gesicht', 'english': 'face'},
+                                    {'german': 'die Stirn', 'english': 'forehead'},
+                                    {'german': 'das Auge', 'english': 'eye'},
+                                    {'german': 'die Augenbraue', 'english': 'eyebrow'},
+                                    {'german': 'das Ohr', 'english': 'ear'},
+                                    {'german': 'die Nase', 'english': 'nose'},
+                                    {'german': 'der Mund', 'english': 'mouth'},
+                                    {'german': 'die Lippe', 'english': 'lip'},
+                                    {'german': 'die Zunge', 'english': 'tongue'},
+                                    {'german': 'der Zahn', 'english': 'tooth'},
+                                    {'german': 'das Kinn', 'english': 'chin'},
+                                    {'german': 'die Wange', 'english': 'cheek'}
+                                ] %}
+                                <div class="col">
+                                    <div class="vocabulary-item">
+                                        <span class="german fw-bold">{{ word.german }}</span>
+                                        <span class="english text-muted"> - {{ word.english }}</span>
+                                        <button class="btn btn-sm play-audio" data-word="{{ word.german }}">
+                                            <i class="fas fa-volume-up"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="h5">Torso (Der Oberkörper):</h3>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                {% for word in [
+                                    {'german': 'der Hals', 'english': 'neck'},
+                                    {'german': 'die Schulter', 'english': 'shoulder'},
+                                    {'german': 'die Brust', 'english': 'chest'},
+                                    {'german': 'der Bauch', 'english': 'stomach'},
+                                    {'german': 'der Rücken', 'english': 'back'}
+                                ] %}
+                                <div class="col">
+                                    <div class="vocabulary-item">
+                                        <span class="german fw-bold">{{ word.german }}</span>
+                                        <span class="english text-muted"> - {{ word.english }}</span>
+                                        <button class="btn btn-sm play-audio" data-word="{{ word.german }}">
+                                            <i class="fas fa-volume-up"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="h5">Arms and Hands (Die Arme und Hände):</h3>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                {% for word in [
+                                    {'german': 'der Arm', 'english': 'arm'},
+                                    {'german': 'der Ellenbogen', 'english': 'elbow'},
+                                    {'german': 'das Handgelenk', 'english': 'wrist'},
+                                    {'german': 'die Hand', 'english': 'hand'},
+                                    {'german': 'der Finger', 'english': 'finger'},
+                                    {'german': 'der Daumen', 'english': 'thumb'}
+                                ] %}
+                                <div class="col">
+                                    <div class="vocabulary-item">
+                                        <span class="german fw-bold">{{ word.german }}</span>
+                                        <span class="english text-muted"> - {{ word.english }}</span>
+                                        <button class="btn btn-sm play-audio" data-word="{{ word.german }}">
+                                            <i class="fas fa-volume-up"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="h5">Legs and Feet (Die Beine und Füße):</h3>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                {% for word in [
+                                    {'german': 'das Bein', 'english': 'leg'},
+                                    {'german': 'das Knie', 'english': 'knee'},
+                                    {'german': 'der Fuß', 'english': 'foot'},
+                                    {'german': 'die Zehe', 'english': 'toe'}
+                                ] %}
+                                <div class="col">
+                                    <div class="vocabulary-item">
+                                        <span class="german fw-bold">{{ word.german }}</span>
+                                        <span class="english text-muted"> - {{ word.english }}</span>
+                                        <button class="btn btn-sm play-audio" data-word="{{ word.german }}">
+                                            <i class="fas fa-volume-up"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <h3 class="h5">Internal Organs (Innere Organe) - Basic:</h3>
+                            <div class="row row-cols-1 row-cols-md-2 g-4">
+                                {% for word in [
+                                    {'german': 'das Herz', 'english': 'heart'},
+                                    {'german': 'der Magen', 'english': 'stomach'}
+                                ] %}
+                                <div class="col">
+                                    <div class="vocabulary-item">
+                                        <span class="german fw-bold">{{ word.german }}</span>
+                                        <span class="english text-muted"> - {{ word.english }}</span>
+                                        <button class="btn btn-sm play-audio" data-word="{{ word.german }}">
+                                            <i class="fas fa-volume-up"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="mb-4 text-center">
+                            <img src="{{ url_for('static', filename='images/human_body_diagram.svg') }}" 
+                                 alt="Human body diagram" 
+                                 class="img-fluid rounded" 
+                                 style="max-width: 400px;">
+                            <p class="text-muted small mt-2">Human body parts in German</p>
+                        </div>
+                    </section>
+
+                    <!-- Common Illnesses Vocabulary -->
+                    <section class="mb-5">
+                        <h2 class="h3 mb-4">Common Illnesses Vocabulary</h2>
+                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                            {% for word in [
+                                {'german': 'die Erkältung', 'english': 'cold'},
+                                {'german': 'der Husten', 'english': 'cough'},
+                                {'german': 'der Schnupfen', 'english': 'runny nose'},
+                                {'german': 'das Fieber', 'english': 'fever'},
+                                {'german': 'die Grippe', 'english': 'flu'},
+                                {'german': 'der Kopfschmerz', 'english': 'headache'},
+                                {'german': 'der Bauchschmerz', 'english': 'stomach ache'},
+                                {'german': 'die Zahnschmerzen', 'english': 'toothache'},
+                                {'german': 'die Allergie', 'english': 'allergy'},
+                                {'german': 'die Verletzung', 'english': 'injury'}
+                            ] %}
+                            <div class="col">
+                                <div class="vocabulary-item">
+                                    <span class="german fw-bold">{{ word.german }}</span>
+                                    <span class="english text-muted"> - {{ word.english }}</span>
+                                    <button class="btn btn-sm play-audio" data-word="{{ word.german }}">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <!-- Actions Related to Health -->
+                    <section class="mb-5">
+                        <h2 class="h3 mb-4">Actions Related to Health</h2>
+                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                            {% for word in [
+                                {'german': 'sich fühlen', 'english': 'to feel', 'example': 'Ich fühle mich gut/schlecht/krank. (I feel good/bad/sick.)'},
+                                {'german': 'haben', 'english': 'to have', 'example': 'Ich habe Kopfschmerzen. (I have a headache.)'},
+                                {'german': 'weh tun', 'english': 'to hurt', 'example': 'Mein Kopf tut weh. (My head hurts.)'},
+                                {'german': 'husten', 'english': 'to cough', 'example': 'Ich muss oft husten. (I have to cough often.)'},
+                                {'german': 'niesen', 'english': 'to sneeze', 'example': 'Ich niese wegen meiner Allergie. (I sneeze because of my allergy.)'},
+                                {'german': 'zum Arzt gehen', 'english': 'to go to the doctor', 'example': 'Ich gehe morgen zum Arzt. (I am going to the doctor tomorrow.)'},
+                                {'german': 'Medizin nehmen', 'english': 'to take medicine', 'example': 'Ich nehme Medizin gegen die Erkältung. (I take medicine for the cold.)'},
+                                {'german': 'sich ausruhen', 'english': 'to rest', 'example': 'Ich muss mich ausruhen. (I have to rest.)'},
+                                {'german': 'gesund sein', 'english': 'to be healthy', 'example': 'Ich bin wieder gesund. (I am healthy again.)'},
+                                {'german': 'krank sein', 'english': 'to be sick', 'example': 'Er ist krank und bleibt zu Hause. (He is sick and stays at home.)'}
+                            ] %}
+                            <div class="col">
+                                <div class="vocabulary-item">
+                                    <div>
+                                        <span class="german fw-bold">{{ word.german }}</span>
+                                        <span class="english text-muted"> - {{ word.english }}</span>
+                                        <button class="btn btn-sm play-audio" data-word="{{ word.german }}">
+                                            <i class="fas fa-volume-up"></i>
+                                        </button>
+                                    </div>
+                                    <div class="example-sentence text-muted small mt-1">
+                                        {{ word.example }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <!-- Useful Phrases -->
+                    <section class="mb-5">
+                        <h2 class="h3 mb-4">Useful Phrases</h2>
+                        <div class="row row-cols-1 g-4">
+                            {% for phrase in [
+                                {'german': 'Was fehlt dir/Ihnen?', 'english': 'What\'s wrong with you? (informal/formal)'},
+                                {'german': 'Ich fühle mich nicht gut.', 'english': 'I don\'t feel well.'},
+                                {'german': 'Ich habe...', 'english': 'I have... (followed by an illness)'},
+                                {'german': 'Wo tut es weh?', 'english': 'Where does it hurt?'},
+                                {'german': 'Ich brauche einen Arzt.', 'english': 'I need a doctor.'},
+                                {'german': 'Gute Besserung!', 'english': 'Get well soon!'}
+                            ] %}
+                            <div class="col">
+                                <div class="vocabulary-item">
+                                    <span class="german fw-bold">{{ phrase.german }}</span>
+                                    <span class="english text-muted"> - {{ phrase.english }}</span>
+                                    <button class="btn btn-sm play-audio" data-word="{{ phrase.german }}">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <!-- Practice Activities -->
+                    <section class="mb-5">
+                        <h2 class="h3 mb-4">Practice Activities</h2>
+                        
+                        <!-- Matching Activity -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h3 class="h5 mb-0">Matching Activity</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Match the German body part words to their corresponding English translations.</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ol>
+                                            <li>der Kopf</li>
+                                            <li>das Auge</li>
+                                            <li>der Mund</li>
+                                            <li>die Hand</li>
+                                            <li>das Bein</li>
+                                        </ol>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ol type="a">
+                                            <li>leg</li>
+                                            <li>hand</li>
+                                            <li>eye</li>
+                                            <li>head</li>
+                                            <li>mouth</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-sm mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#matchingAnswers">
+                                    Show Answers
+                                </button>
+                                <div class="collapse mt-2" id="matchingAnswers">
+                                    <div class="card card-body">
+                                        <p class="mb-0">1-d, 2-c, 3-e, 4-b, 5-a</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Fill in the Blanks -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h3 class="h5 mb-0">Fill in the Blanks</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Complete the sentences using the vocabulary you've learned.</p>
+                                <ol>
+                                    <li>Ich habe ________ und muss oft _________. (cold, to cough)</li>
+                                    <li>Mein ________ tut weh. Ich habe __________. (head, headache)</li>
+                                    <li>Er hat _________ und eine hohe ___________. (flu, fever)</li>
+                                    <li>Sie _________ sich nicht gut und geht zum _________. (to feel, doctor)</li>
+                                    <li>_________ Besserung! Du musst dich __________. (Get well, to rest)</li>
+                                </ol>
+                                <button class="btn btn-primary btn-sm mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#blanksAnswers">
+                                    Show Answers
+                                </button>
+                                <div class="collapse mt-2" id="blanksAnswers">
+                                    <div class="card card-body">
+                                        <ol>
+                                            <li>Ich habe eine Erkältung und muss oft husten.</li>
+                                            <li>Mein Kopf tut weh. Ich habe Kopfschmerzen.</li>
+                                            <li>Er hat die Grippe und eine hohe Fieber.</li>
+                                            <li>Sie fühlt sich nicht gut und geht zum Arzt.</li>
+                                            <li>Gute Besserung! Du musst dich ausruhen.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dialogue Practice -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="h5 mb-0">Dialogue Practice</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Read the following dialogue about health:</p>
+                                <div class="dialogue-box p-3 mb-3 border rounded">
+                                    <p><strong>Person A:</strong> Hallo! Wie geht es dir?</p>
+                                    <p><strong>Person B:</strong> Nicht so gut. Ich habe Kopfschmerzen und fühle mich müde.</p>
+                                    <p><strong>Person A:</strong> Oh, das tut mir leid. Hast du Fieber?</p>
+                                    <p><strong>Person B:</strong> Ich glaube nicht. Aber ich habe gestern zu lange gearbeitet.</p>
+                                    <p><strong>Person A:</strong> Dann ruh dich gut aus! Gute Besserung!</p>
+                                </div>
+                                <p>Comprehension Question: Was hat Person B?</p>
+                                <button class="btn btn-primary btn-sm mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#dialogueAnswer">
+                                    Show Answer
+                                </button>
+                                <div class="collapse mt-2" id="dialogueAnswer">
+                                    <div class="card card-body">
+                                        <p class="mb-0">Person B hat Kopfschmerzen und fühlt sich müde.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Conclusion -->
+                    <section class="mb-4">
+                        <h2 class="h3 mb-3">Conclusion</h2>
+                        <p>In this lesson, you've learned important vocabulary related to health and the body in German. You can now:</p>
+                        <ul>
+                            <li>Name different parts of the body</li>
+                            <li>Describe common illnesses and symptoms</li>
+                            <li>Use key phrases to talk about health situations</li>
+                            <li>Understand and participate in simple conversations about health</li>
+                        </ul>
+                        <p>Try to use these new words in your everyday German practice!</p>
+                        
+                        <div class="mt-4 d-flex justify-content-between">
+                            <a href="{{ url_for('a2_index') }}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Back to A2 Level
+                            </a>
+                            {% if current_user.is_authenticated %}
+                            <form action="{{ url_for('update_progress') }}" method="post">
+                                <input type="hidden" name="level" value="A2">
+                                <input type="hidden" name="section" value="vocabulary">
+                                <input type="hidden" name="lesson" value="health_body">
+                                <input type="hidden" name="completed" value="true">
+                                <button type="submit" class="btn btn-success">
+                                    Mark as Complete<i class="fas fa-check ms-2"></i>
+                                </button>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h3 class="h5 mb-3">Vocabulary Tips</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Notice that body parts in German can be masculine (der), feminine (die), or neuter (das).</li>
+                        <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>To say "My head hurts," you use "Mein Kopf tut weh" in German.</li>
+                        <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>The word "Schmerz" (pain) is often used to form compound words for specific pains.</li>
+                        <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>Click on the speaker icons to hear the pronunciation of each word.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="h5 mb-3">Related Resources</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="{{ url_for('a2_quiz', level='a2', topic='vocabulary') }}" class="text-decoration-none">
+                                <i class="fas fa-tasks text-primary me-2"></i>A2 Vocabulary Quiz
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ url_for('vocabulary') }}" class="text-decoration-none">
+                                <i class="fas fa-book text-primary me-2"></i>Vocabulary Trainer
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ url_for('resources_by_category', category='vocabulary') }}" class="text-decoration-none">
+                                <i class="fas fa-external-link-alt text-primary me-2"></i>More Vocabulary Resources
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+{% endblock %}

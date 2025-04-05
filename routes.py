@@ -197,6 +197,14 @@ def a2_grammar_past_tense():
 def a2_grammar_modal_verbs():
     return render_template('lessons/a2/grammar/modal_verbs.html')
 
+@app.route('/a2/vocabulary/health-body')
+def a2_vocabulary_health_body():
+    return render_template('lessons/a2/vocabulary/health_body.html')
+
+@app.route('/a2/vocabulary/work-education')
+def a2_vocabulary_work_education():
+    return render_template('lessons/a2/vocabulary/work_education.html')
+
 @app.route('/b1')
 def b1_index():
     return render_template('b1/index.html')

@@ -1,0 +1,390 @@
+{% extends 'layout.html' %}
+
+{% block title %}Work and Education Vocabulary | A2 Level | DeutschLernHub{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('a2_index') }}">A2 Level</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Work and Education Vocabulary</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h1 class="card-title mb-4">Work and Education Vocabulary</h1>
+                    <p class="text-muted mb-4">Estimated time: 25 minutes</p>
+                    
+                    <div class="lesson-intro mb-4">
+                        <p>Whether you are talking about your job, your studies, or asking others about theirs, knowing the right vocabulary for work and education is essential. In this lesson, you will learn some important German words related to these areas.</p>
+                    </div>
+
+                    <!-- Professions Vocabulary -->
+                    <section class="mb-5">
+                        <h2 class="h3 mb-4">Professions Vocabulary (Die Berufe)</h2>
+                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                            {% for word in [
+                                {'german': 'der Arzt / die Ärztin', 'english': 'doctor (male/female)'},
+                                {'german': 'der Lehrer / die Lehrerin', 'english': 'teacher (male/female)'},
+                                {'german': 'der Schüler / die Schülerin', 'english': 'student at school (male/female)'},
+                                {'german': 'der Student / die Studentin', 'english': 'student at university (male/female)'},
+                                {'german': 'der Verkäufer / die Verkäuferin', 'english': 'salesperson (male/female)'},
+                                {'german': 'der Kellner / die Kellnerin', 'english': 'waiter/waitress'},
+                                {'german': 'der Koch / die Köchin', 'english': 'cook (male/female)'},
+                                {'german': 'der Polizist / die Polizistin', 'english': 'police officer (male/female)'},
+                                {'german': 'der Feuerwehrmann / die Feuerwehrfrau', 'english': 'firefighter (male/female)'},
+                                {'german': 'der Ingenieur / die Ingenieurin', 'english': 'engineer (male/female)'},
+                                {'german': 'der Sekretär / die Sekretärin', 'english': 'secretary (male/female)'},
+                                {'german': 'der Arbeiter / die Arbeiterin', 'english': 'worker (male/female)'},
+                                {'german': 'der Chef / die Chefin', 'english': 'boss (male/female)'}
+                            ] %}
+                            <div class="col">
+                                <div class="vocabulary-item">
+                                    <span class="german fw-bold">{{ word.german }}</span>
+                                    <span class="english text-muted"> - {{ word.english }}</span>
+                                    <button class="btn btn-sm play-audio" data-word="{{ word.german.split(' / ')[0] }}">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <!-- Workplace Vocabulary -->
+                    <section class="mb-5">
+                        <h2 class="h3 mb-4">Workplace Vocabulary (Der Arbeitsplatz)</h2>
+                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                            {% for word in [
+                                {'german': 'die Arbeit', 'english': 'work'},
+                                {'german': 'der Job', 'english': 'job'},
+                                {'german': 'das Büro', 'english': 'office'},
+                                {'german': 'die Fabrik', 'english': 'factory'},
+                                {'german': 'das Geschäft', 'english': 'shop, store'},
+                                {'german': 'das Restaurant', 'english': 'restaurant'},
+                                {'german': 'das Krankenhaus', 'english': 'hospital'},
+                                {'german': 'die Schule', 'english': 'school'},
+                                {'german': 'die Universität', 'english': 'university'},
+                                {'german': 'die Firma', 'english': 'company'}
+                            ] %}
+                            <div class="col">
+                                <div class="vocabulary-item">
+                                    <span class="german fw-bold">{{ word.german }}</span>
+                                    <span class="english text-muted"> - {{ word.english }}</span>
+                                    <button class="btn btn-sm play-audio" data-word="{{ word.german }}">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <!-- Education Vocabulary -->
+                    <section class="mb-5">
+                        <h2 class="h3 mb-4">Education Vocabulary (Die Bildung)</h2>
+                        <div class="row row-cols-1 row-cols-md-2 g-4">
+                            {% for word in [
+                                {'german': 'die Schule', 'english': 'school'},
+                                {'german': 'der Kindergarten', 'english': 'kindergarten'},
+                                {'german': 'die Grundschule', 'english': 'elementary school'},
+                                {'german': 'die Realschule', 'english': 'intermediate school'},
+                                {'german': 'das Gymnasium', 'english': 'grammar school (preparing for university)'},
+                                {'german': 'die Universität', 'english': 'university'},
+                                {'german': 'das Studium', 'english': 'studies (at university)'},
+                                {'german': 'der Kurs', 'english': 'course'},
+                                {'german': 'die Klasse', 'english': 'class (at school)'},
+                                {'german': 'die Prüfung', 'english': 'exam'},
+                                {'german': 'das Zeugnis', 'english': 'report card, certificate'},
+                                {'german': 'das Fach', 'english': 'subject (in school/university)'},
+                                {'german': 'das Buch', 'english': 'book'},
+                                {'german': 'der Stift', 'english': 'pen'},
+                                {'german': 'das Papier', 'english': 'paper'}
+                            ] %}
+                            <div class="col">
+                                <div class="vocabulary-item">
+                                    <span class="german fw-bold">{{ word.german }}</span>
+                                    <span class="english text-muted"> - {{ word.english }}</span>
+                                    <button class="btn btn-sm play-audio" data-word="{{ word.german }}">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <!-- Actions Related to Work and Education -->
+                    <section class="mb-5">
+                        <h2 class="h3 mb-4">Actions Related to Work and Education (Verben)</h2>
+                        <div class="row row-cols-1 g-4">
+                            {% for word in [
+                                {'german': 'arbeiten', 'english': 'to work', 'example': 'Ich arbeite in einem Büro. (I work in an office.)'},
+                                {'german': 'lernen', 'english': 'to learn', 'example': 'Ich lerne Deutsch. (I am learning German.)'},
+                                {'german': 'studieren', 'english': 'to study (at university)', 'example': 'Er studiert Medizin. (He studies medicine.)'},
+                                {'german': 'lehren', 'english': 'to teach', 'example': 'Sie lehrt Englisch. (She teaches English.)'},
+                                {'german': 'gehen', 'english': 'to go', 'example': 'Ich gehe zur Schule/Universität/Arbeit. (I go to school/university/work.)'},
+                                {'german': 'haben', 'english': 'to have', 'example': 'Ich habe einen Job. (I have a job.) / Ich habe Unterricht. (I have lessons.)'},
+                                {'german': 'machen', 'english': 'to do', 'example': 'Ich mache meine Hausaufgaben. (I am doing my homework.)'},
+                                {'german': 'schreiben', 'english': 'to write', 'example': 'Wir schreiben eine Prüfung. (We are writing an exam.)'},
+                                {'german': 'lesen', 'english': 'to read', 'example': 'Ich lese ein Buch. (I am reading a book.)'}
+                            ] %}
+                            <div class="col">
+                                <div class="vocabulary-item">
+                                    <div>
+                                        <span class="german fw-bold">{{ word.german }}</span>
+                                        <span class="english text-muted"> - {{ word.english }}</span>
+                                        <button class="btn btn-sm play-audio" data-word="{{ word.german }}">
+                                            <i class="fas fa-volume-up"></i>
+                                        </button>
+                                    </div>
+                                    <div class="example-sentence text-muted small mt-1">
+                                        {{ word.example }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <!-- Useful Phrases -->
+                    <section class="mb-5">
+                        <h2 class="h3 mb-4">Useful Phrases</h2>
+                        <div class="row row-cols-1 g-4">
+                            {% for phrase in [
+                                {'german': 'Was bist du von Beruf?', 'english': 'What is your profession? (informal)'},
+                                {'german': 'Was sind Sie von Beruf?', 'english': 'What is your profession? (formal)'},
+                                {'german': 'Ich bin...', 'english': 'I am... (followed by a profession)'},
+                                {'german': 'Wo arbeitest du?', 'english': 'Where do you work? (informal)'},
+                                {'german': 'Wo arbeiten Sie?', 'english': 'Where do you work? (formal)'},
+                                {'german': 'Ich arbeite bei...', 'english': 'I work at/for... (followed by a company)'},
+                                {'german': 'Was studierst du?', 'english': 'What do you study? (informal)'},
+                                {'german': 'Was studieren Sie?', 'english': 'What do you study? (formal)'},
+                                {'german': 'Ich studiere...', 'english': 'I study... (followed by a subject)'},
+                                {'german': 'Gehst du zur Schule/Universität?', 'english': 'Do you go to school/university? (informal)'},
+                                {'german': 'Gehen Sie zur Schule/Universität?', 'english': 'Do you go to school/university? (formal)'},
+                                {'german': 'Ich habe einen Job als...', 'english': 'I have a job as a...'}
+                            ] %}
+                            <div class="col">
+                                <div class="vocabulary-item">
+                                    <span class="german fw-bold">{{ phrase.german }}</span>
+                                    <span class="english text-muted"> - {{ phrase.english }}</span>
+                                    <button class="btn btn-sm play-audio" data-word="{{ phrase.german }}">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <!-- Practice Activities -->
+                    <section class="mb-5">
+                        <h2 class="h3 mb-4">Practice Activities</h2>
+                        
+                        <!-- Matching Activity -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h3 class="h5 mb-0">Matching Activity</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Match the German profession words to their corresponding English translations.</p>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ol>
+                                            <li>der Lehrer</li>
+                                            <li>der Koch</li>
+                                            <li>der Polizist</li>
+                                            <li>der Arzt</li>
+                                            <li>der Ingenieur</li>
+                                        </ol>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ol type="a">
+                                            <li>doctor</li>
+                                            <li>cook</li>
+                                            <li>engineer</li>
+                                            <li>police officer</li>
+                                            <li>teacher</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-sm mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#matchingAnswers">
+                                    Show Answers
+                                </button>
+                                <div class="collapse mt-2" id="matchingAnswers">
+                                    <div class="card card-body">
+                                        <p class="mb-0">1-e, 2-b, 3-d, 4-a, 5-c</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Categorization Activity -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h3 class="h5 mb-0">Categorization Activity</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Group the following words into the correct categories: Professions, Workplaces, Education.</p>
+                                <p class="small text-muted">Words to categorize: die Universität, der Lehrer, das Büro, die Prüfung, der Arzt, die Fabrik, das Buch, der Student, das Krankenhaus</p>
+                                
+                                <button class="btn btn-primary btn-sm mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#categorizationAnswers">
+                                    Show Answers
+                                </button>
+                                <div class="collapse mt-2" id="categorizationAnswers">
+                                    <div class="card card-body">
+                                        <p><strong>Professions:</strong> der Lehrer, der Arzt, der Student</p>
+                                        <p><strong>Workplaces:</strong> das Büro, die Fabrik, das Krankenhaus</p>
+                                        <p><strong>Education:</strong> die Universität, die Prüfung, das Buch</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Fill in the Blanks -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h3 class="h5 mb-0">Fill in the Blanks</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Complete the sentences using the vocabulary you've learned.</p>
+                                <ol>
+                                    <li>Er ________ als ________ in einem _________. (to work, doctor, hospital)</li>
+                                    <li>Sie ________ Deutsch an der _________. (to teach, university)</li>
+                                    <li>Ich ________ Medizin und möchte ________ werden. (to study, doctor)</li>
+                                    <li>Meine Schwester ist ________ und arbeitet in einer _________. (teacher, school)</li>
+                                    <li>Wir ________ eine ________ nächste Woche. (to write, exam)</li>
+                                </ol>
+                                <button class="btn btn-primary btn-sm mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#blanksAnswers">
+                                    Show Answers
+                                </button>
+                                <div class="collapse mt-2" id="blanksAnswers">
+                                    <div class="card card-body">
+                                        <ol>
+                                            <li>Er arbeitet als Arzt in einem Krankenhaus.</li>
+                                            <li>Sie lehrt Deutsch an der Universität.</li>
+                                            <li>Ich studiere Medizin und möchte Arzt werden.</li>
+                                            <li>Meine Schwester ist Lehrerin und arbeitet in einer Schule.</li>
+                                            <li>Wir schreiben eine Prüfung nächste Woche.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dialogue Practice -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="h5 mb-0">Dialogue Practice</h3>
+                            </div>
+                            <div class="card-body">
+                                <p>Read the following dialogue about work and education:</p>
+                                <div class="dialogue-box p-3 mb-3 border rounded">
+                                    <p><strong>Person A:</strong> Hallo Anna! Was machst du jetzt?</p>
+                                    <p><strong>Person B:</strong> Hallo Max! Ich studiere an der Universität.</p>
+                                    <p><strong>Person A:</strong> Ah, interessant! Was studierst du denn?</p>
+                                    <p><strong>Person B:</strong> Ich studiere Informatik. Und du? Bist du Student?</p>
+                                    <p><strong>Person A:</strong> Nein, ich bin Lehrer an einer Grundschule.</p>
+                                </div>
+                                <p>Comprehension Questions:</p>
+                                <ol>
+                                    <li>Was ist Max von Beruf?</li>
+                                    <li>Was studiert Anna?</li>
+                                </ol>
+                                <button class="btn btn-primary btn-sm mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#dialogueAnswers">
+                                    Show Answers
+                                </button>
+                                <div class="collapse mt-2" id="dialogueAnswers">
+                                    <div class="card card-body">
+                                        <ol>
+                                            <li>Max ist Lehrer.</li>
+                                            <li>Anna studiert Informatik.</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Conclusion -->
+                    <section class="mb-4">
+                        <h2 class="h3 mb-3">Conclusion</h2>
+                        <p>In this lesson, you've learned important vocabulary related to work and education in German. You can now:</p>
+                        <ul>
+                            <li>Name different professions in both masculine and feminine forms</li>
+                            <li>Talk about various workplaces</li>
+                            <li>Describe different types of educational institutions and related terms</li>
+                            <li>Use key verbs and phrases to talk about work and education</li>
+                            <li>Understand and participate in simple conversations about jobs and studies</li>
+                        </ul>
+                        <p>Try to use these new words in your everyday German practice!</p>
+                        
+                        <div class="mt-4 d-flex justify-content-between">
+                            <a href="{{ url_for('a2_index') }}" class="btn btn-outline-secondary">
+                                <i class="fas fa-arrow-left me-2"></i>Back to A2 Level
+                            </a>
+                            {% if current_user.is_authenticated %}
+                            <form action="{{ url_for('update_progress') }}" method="post">
+                                <input type="hidden" name="level" value="A2">
+                                <input type="hidden" name="section" value="vocabulary">
+                                <input type="hidden" name="lesson" value="work_education">
+                                <input type="hidden" name="completed" value="true">
+                                <button type="submit" class="btn btn-success">
+                                    Mark as Complete<i class="fas fa-check ms-2"></i>
+                                </button>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h3 class="h5 mb-3">Vocabulary Tips</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>In German, most profession names have masculine and feminine forms. The feminine form often ends in "-in".</li>
+                        <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>In German, "Student" refers specifically to university students, while "Schüler" refers to school students.</li>
+                        <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>The German school system is different from many other countries, with several types of schools after primary education.</li>
+                        <li class="list-group-item"><i class="fas fa-lightbulb text-warning me-2"></i>To ask someone about their profession, use "Was bist du von Beruf?" or "Was sind Sie von Beruf?" (formal).</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="h5 mb-3">Related Resources</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="{{ url_for('a2_quiz', level='a2', topic='vocabulary') }}" class="text-decoration-none">
+                                <i class="fas fa-tasks text-primary me-2"></i>A2 Vocabulary Quiz
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ url_for('vocabulary') }}" class="text-decoration-none">
+                                <i class="fas fa-book text-primary me-2"></i>Vocabulary Trainer
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{{ url_for('resources_by_category', category='vocabulary') }}" class="text-decoration-none">
+                                <i class="fas fa-external-link-alt text-primary me-2"></i>More Vocabulary Resources
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+{% endblock %}

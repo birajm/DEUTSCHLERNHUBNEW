@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for, flash, request, jsonify, send_from_directory
+from flask import render_template, redirect, url_for, flash, request, jsonify, send_from_directory, abort
 from flask_login import login_user, logout_user, login_required, current_user
 from app import app, db
 from models import User, Progress, QuizResult, Vocabulary, Theme, Badge, UserBadge, Resource
@@ -681,9 +681,9 @@ def page_not_found(e):
 @app.errorhandler(500)
 def internal_error(e):
     return render_template('500.html'), 500
+
 @app.route('/reading/content/<int:reading_id>')
 def reading_content(reading_id):
-    # Sample reading data - In production, this would come from a database
     readings = {
         1: {
             'title': 'Meine Familie',
@@ -691,50 +691,126 @@ def reading_content(reading_id):
             'level': 'A1',
             'category': 'Short Story',
             'content': '''
-                <p>Hallo! Ich möchte euch meine Familie vorstellen. Ich heiße Thomas und bin 25 Jahre alt. 
-                Meine Familie ist nicht sehr groß, aber ich liebe sie sehr.</p>
-                
-                <p>Mein Vater heißt Michael und ist 50 Jahre alt. Er ist Lehrer von Beruf. 
-                Meine Mutter heißt Anna und ist 48 Jahre alt. Sie arbeitet als Krankenschwester.</p>
-                
-                <p>Ich habe eine Schwester. Sie heißt Laura und ist 20 Jahre alt. 
-                Sie studiert Medizin an der Universität. Wir haben auch eine Katze. 
-                Sie heißt Luna und ist 3 Jahre alt.</p>
+                <p>Ich heiße Lisa. Ich bin sieben Jahre alt. Das ist meine Familie.</p>
+
+                <p>Das ist meine Mutter. Sie heißt Anna. Sie ist Lehrerin. Sie ist sehr nett.</p>
+
+                <p>Das ist mein Vater. Er heißt Thomas. Er ist Ingenieur. Er ist sehr lustig.</p>
+
+                <p>Das ist mein Bruder. Er heißt Max. Er ist fünf Jahre alt. Er spielt gern mit Autos.</p>
+
+                <p>Das ist meine Schwester. Sie heißt Sophie. Sie ist zehn Jahre alt. Sie liest gern Bücher.</p>
+
+                <p>Und das bin ich. Ich spiele gern Fußball und male gern. Wir wohnen in einem kleinen Haus mit einem Garten. 
+                Ich liebe meine Familie sehr. Wir machen oft Ausflüge zusammen. Am Wochenende gehen wir manchmal in den Zoo 
+                oder ins Schwimmbad. Meine Familie ist toll!</p>
             ''',
-            'vocabulary': [
-                {'german': 'Familie', 'english': 'family'},
-                {'german': 'Vater', 'english': 'father'},
-                {'german': 'Mutter', 'english': 'mother'},
-                {'german': 'Schwester', 'english': 'sister'},
-                {'german': 'Katze', 'english': 'cat'},
-                {'german': 'Lehrer', 'english': 'teacher'},
-                {'german': 'Krankenschwester', 'english': 'nurse'}
-            ],
             'questions': [
                 {
-                    'text': 'Wie alt ist Thomas?',
-                    'options': ['20 Jahre alt', '25 Jahre alt', '48 Jahre alt', '50 Jahre alt'],
+                    'question': 'Wie heißt das Mädchen in der Geschichte?',
+                    'options': ['Anna', 'Lisa', 'Sophie', 'Max'],
                     'correct': 1
                 },
                 {
-                    'text': 'Was ist der Beruf von Thomas Vater?',
-                    'options': ['Arzt', 'Lehrer', 'Krankenpfleger', 'Student'],
+                    'question': 'Was ist die Mutter von Lisa von Beruf?',
+                    'options': ['Ärztin', 'Lehrerin', 'Ingenieurin', 'Köchin'],
                     'correct': 1
                 },
                 {
-                    'text': 'Was studiert Laura?',
-                    'options': ['Medizin', 'Deutsch', 'Mathematik', 'Geschichte'],
+                    'question': 'Was macht Lisas Bruder gern?',
+                    'options': ['Mit Autos spielen', 'Bücher lesen', 'Fußball spielen', 'Malen'],
                     'correct': 0
                 }
             ],
             'word_count': 150,
             'estimated_time': 5
+        },
+        2: {
+            'title': 'Im Café',
+            'subtitle': 'At the Café',
+            'level': 'A1',
+            'category': 'Dialog',
+            'content': '''
+                <p><strong>Kellner:</strong> Guten Tag! Was möchten Sie bestellen?</p>
+                <p><strong>Freund 1:</strong> Hallo! Ich möchte einen Kaffee, bitte.</p>
+                <p><strong>Kellner:</strong> Gern. Mit Milch und Zucker?</p>
+                <p><strong>Freund 1:</strong> Ja, bitte.</p>
+                <p><strong>Freund 2:</strong> Ich nehme einen Tee, bitte. Schwarztee.</p>
+                <p><strong>Kellner:</strong> Schwarztee, kommt sofort. Noch etwas?</p>
+                <p><strong>Freund 1:</strong> Nein, danke.</p>
+                <p><strong>Freund 2:</strong> Ich auch nicht, danke.</p>
+                <p><em>(Kurze Zeit später)</em></p>
+                <p><strong>Kellner:</strong> Hier sind Ihr Kaffee und Ihr Tee.</p>
+                <p><strong>Freund 1 & 2:</strong> Danke schön!</p>
+                <p><strong>Freund 1:</strong> Der Kaffee ist gut.</p>
+                <p><strong>Freund 2:</strong> Mein Tee auch.</p>
+            ''',
+            'vocabulary': [
+                {'german': 'bestellen', 'english': 'to order'},
+                {'german': 'gern', 'english': 'gladly, with pleasure'},
+                {'german': 'mit', 'english': 'with'},
+                {'german': 'nehmen', 'english': 'to take'},
+                {'german': 'kommt sofort', 'english': 'coming right up'},
+                {'german': 'noch etwas?', 'english': 'anything else?'},
+                {'german': 'danke schön', 'english': 'thank you very much'},
+                {'german': 'auch nicht', 'english': 'not either'}
+            ],
+            'word_count': 120,
+            'estimated_time': 5
+        },
+        3: {
+            'title': 'Der geheimnisvolle Brief',
+            'subtitle': 'The Mysterious Letter',
+            'level': 'B1',
+            'category': 'Short Story',
+            'content': '''
+                <p>Anna räumte den Dachboden ihres Großvaters auf. Er war vor einem Monat gestorben, und das alte Haus sollte 
+                verkauft werden. Überall standen Kisten mit Erinnerungen. In einer staubigen Holzkiste fand Anna ein kleines, 
+                vergilbtes Kuvert. Ihr Name stand darauf, in einer eleganten, aber unbekannten Handschrift. Verwundert öffnete 
+                sie den Brief.</p>
+
+                <p>Der Brief war kurz und in altmodischem Deutsch geschrieben:</p>
+
+                <p><em>"Liebe Anna,</em></p>
+
+                <p><em>wenn du diesen Brief findest, ist viel Zeit vergangen. Ich hoffe, du bist glücklich. In meinem 
+                Arbeitszimmer, hinter dem großen Gemälde an der Ostwand, befindet sich ein kleines Geheimnis. Es war mir 
+                immer wichtig, aber ich konnte es dir nie persönlich zeigen. Ich hoffe, es bringt dir Freude.</em></p>
+
+                <p><em>In Liebe,</em></p>
+                <p><em>Dein Großvater Paul"</em></p>
+            ''',
+            'questions': [
+                {
+                    'question': 'Was hat Anna auf dem Dachboden ihres Großvaters gefunden?',
+                    'options': ['Ein Buch', 'Einen Brief', 'Ein Foto', 'Ein Gemälde'],
+                    'correct': 1
+                },
+                {
+                    'question': 'Wo befand sich das Geheimnis laut dem Brief?',
+                    'options': [
+                        'Im Keller',
+                        'Auf dem Dachboden',
+                        'Hinter dem Gemälde an der Ostwand',
+                        'In einer Holzkiste'
+                    ],
+                    'correct': 2
+                }
+            ],
+            'vocabulary': [
+                {'german': 'der Dachboden', 'english': 'attic'},
+                {'german': 'verkaufen', 'english': 'to sell'},
+                {'german': 'verwundert', 'english': 'surprised'},
+                {'german': 'die Handschrift', 'english': 'writing'},
+                {'german': 'die Freude', 'english': 'joy'}
+            ],
+            'word_count': 400,
+            'estimated_time': 15
         }
-        # Add more readings here
     }
-    
+
     reading = readings.get(reading_id)
     if not reading:
         abort(404)
-    
+
     return render_template('reading/content.html', reading=reading)

@@ -11,20 +11,33 @@ function initAudioContext() {
   return audioContext;
 }
 
+// Global pronounce function for legacy onclick handlers
+window.pronounce = function(word) {
+  const button = event.currentTarget;
+  playAudio(button, word);
+};
+
 // Play audio with fallback to AI voice
 async function playAudio(button, word) {
   try {
+    if (!button) {
+      console.error("Button not found for word:", word);
+      return;
+    }
+
     const audioPath = `/static/audio/vocabulary/${word.toLowerCase()}.mp3`;
     const context = initAudioContext();
 
     button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
 
     try {
-      let audioBuffer = audioCache.get(audioPath);
+      const response = await fetch(audioPath);
+      if (!response.ok) {
+        throw new Error('Audio file not found');
+      }
 
+      let audioBuffer = audioCache.get(audioPath);
       if (!audioBuffer) {
-        const response = await fetch(audioPath);
-        if (!response.ok) throw new Error('Audio file not found');
         const arrayBuffer = await response.arrayBuffer();
         audioBuffer = await context.decodeAudioData(arrayBuffer);
         audioCache.set(audioPath, audioBuffer);
@@ -44,6 +57,7 @@ async function playAudio(button, word) {
     } catch (error) {
       console.log("Falling back to AI voice synthesis");
       speakText(word);
+      button.innerHTML = '<i class="fas fa-play"></i>';
     }
   } catch (error) {
     console.error('Error playing audio:', error);
@@ -66,62 +80,12 @@ function speakText(text) {
 // Initialize when document loads
 document.addEventListener('DOMContentLoaded', function() {
   // Handle all audio buttons
-  document.querySelectorAll('.play-audio, [onclick*="pronounce"]').forEach(button => {
-    const word = button.dataset.word || button.getAttribute('onclick')?.match(/pronounce\(['"](.+?)['"]\)/)?.[1];
-
+  document.querySelectorAll('.play-audio').forEach(button => {
+    const word = button.dataset.word;
     if (word) {
-      // Remove old onclick handler and add new one
-      button.removeAttribute('onclick');
       button.addEventListener('click', function() {
         playAudio(this, word);
       });
     }
   });
 });
-
-//The functions below are removed because they are not used anymore.
-/*
-// Extract text from audio path
-function getTextFromPath(path) {
-  const filename = path.split('/').pop();
-  return filename.replace('.mp3', '').replace(/_/g, ' ');
-}
-
-//This whole block is removed because the functionality is replaced by the new event listener above
-document.addEventListener('DOMContentLoaded', function() {
-  // Handle all play-audio buttons
-  document.querySelectorAll('.play-audio').forEach(button => {
-    button.addEventListener('click', function() {
-      const word = this.dataset.word;
-      if (!word) return;
-      const audioPath = `/static/audio/vocabulary/${word.toLowerCase()}.mp3`;
-      playAudio(this, audioPath, word);
-    });
-  });
-});
-
-//This whole block is removed because the functionality is replaced by the new event listener above
-document.addEventListener('DOMContentLoaded', function() {
-  // Handle vocabulary pronunciation buttons
-  document.querySelectorAll('.play-audio[data-word]').forEach(button => {
-    button.addEventListener('click', function() {
-      const word = this.dataset.word;
-      if (word) {
-        pronounce(word);
-      }
-    });
-  });
-
-  // Handle conversation audio buttons
-  document.querySelectorAll('.play-audio[data-type="conversation"]').forEach(button => {
-    button.addEventListener('click', function() {
-      const conversationId = this.dataset.word;
-      const text = this.dataset.text || '';
-      if (conversationId) {
-        const audioPath = `/static/audio/conversations/${conversationId}.mp3`;
-        playAudio(this, audioPath, text);
-      }
-    });
-  });
-});
-*/

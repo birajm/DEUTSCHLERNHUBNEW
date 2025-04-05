@@ -1,7 +1,7 @@
 // Audio context and cache for better performance
 let audioContext = null;
 let audioCache = new Map();
-let synth = window.speechSynthesis;
+let audioElements = new Map();
 
 // Initialize audio context
 function initAudioContext() {
@@ -11,59 +11,48 @@ function initAudioContext() {
   return audioContext;
 }
 
+// Function to play audio in listening exercises
+function playListeningAudio(audioPath, button) {
+  if (!button) return;
+
+  const existingAudio = audioElements.get(audioPath);
+  if (existingAudio) {
+    existingAudio.pause();
+    existingAudio.currentTime = 0;
+    audioElements.delete(audioPath);
+    button.innerHTML = '<i class="fas fa-play"></i>';
+    return;
+  }
+
+  const audio = new Audio(audioPath);
+  audioElements.set(audioPath, audio);
+
+  button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
+  audio.addEventListener('canplay', () => {
+    button.innerHTML = '<i class="fas fa-pause"></i>';
+    audio.play();
+  });
+
+  audio.addEventListener('ended', () => {
+    button.innerHTML = '<i class="fas fa-play"></i>';
+    audioElements.delete(audioPath);
+  });
+
+  audio.addEventListener('error', () => {
+    console.error('Error playing audio:', audioPath);
+    button.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
+    audioElements.delete(audioPath);
+  });
+}
+
 // Global pronounce function for legacy onclick handlers
 window.pronounce = function(word) {
   const button = event.currentTarget;
-  playAudio(button, word);
+  const audioPath = `/static/audio/vocabulary/${word.toLowerCase()}.mp3`;
+  playListeningAudio(audioPath, button);
 };
 
-// Play audio with fallback to AI voice
-async function playAudio(button, word) {
-  try {
-    if (!button) {
-      console.error("Button not found for word:", word);
-      return;
-    }
-
-    const audioPath = `/static/audio/vocabulary/${word.toLowerCase()}.mp3`;
-    const context = initAudioContext();
-
-    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-
-    try {
-      const response = await fetch(audioPath);
-      if (!response.ok) {
-        throw new Error('Audio file not found');
-      }
-
-      let audioBuffer = audioCache.get(audioPath);
-      if (!audioBuffer) {
-        const arrayBuffer = await response.arrayBuffer();
-        audioBuffer = await context.decodeAudioData(arrayBuffer);
-        audioCache.set(audioPath, audioBuffer);
-      }
-
-      const source = context.createBufferSource();
-      source.buffer = audioBuffer;
-      source.connect(context.destination);
-
-      button.innerHTML = '<i class="fas fa-volume-up"></i>';
-
-      source.onended = () => {
-        button.innerHTML = '<i class="fas fa-play"></i>';
-      };
-
-      source.start(0);
-    } catch (error) {
-      console.log("Falling back to AI voice synthesis");
-      speakText(word);
-      button.innerHTML = '<i class="fas fa-play"></i>';
-    }
-  } catch (error) {
-    console.error('Error playing audio:', error);
-    button.innerHTML = '<i class="fas fa-exclamation-triangle"></i>';
-  }
-}
 
 // Text-to-speech function
 function speakText(text) {
@@ -81,10 +70,21 @@ function speakText(text) {
 document.addEventListener('DOMContentLoaded', function() {
   // Handle all audio buttons
   document.querySelectorAll('.play-audio').forEach(button => {
+    const audioPath = button.dataset.audio;
+    if (audioPath) {
+      button.addEventListener('click', function() {
+        playListeningAudio(audioPath, this);
+      });
+    }
+  });
+
+  // Handle vocabulary pronunciation buttons
+  document.querySelectorAll('.pronounce-word').forEach(button => {
     const word = button.dataset.word;
     if (word) {
       button.addEventListener('click', function() {
-        playAudio(this, word);
+        const audioPath = `/static/audio/vocabulary/${word.toLowerCase()}.mp3`;
+        playListeningAudio(audioPath, this);
       });
     }
   });
